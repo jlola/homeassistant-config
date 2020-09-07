@@ -1,0 +1,6 @@
+deps/
+.storage/
+__pycache__/
+*.db
+*.log
+

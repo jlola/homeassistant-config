@@ -1,0 +1,28 @@
+read_holdings:
+  description: "reads holdings registers"
+  fields: 
+    unit: 
+      description: "address of slave"
+      example: 4      
+    address:
+      description: "start address 0 - 120"
+      example: '0'
+    hub:
+      description: "name of hub can (optional)"
+    count:
+      description: "count of holdings to return"
+      example: 100      
+    timeoutms:
+      description: "timeout in ms"
+      example: 150
+read_holding:
+  description: "reads one holdings register"
+  fields: 
+    unit: 
+      description: "address of slave"
+      example: 4      
+    address:
+      description: "start address 0 - 120"
+      example: '0'
+    hub:
+      description: "name of hub can (optional)"            
