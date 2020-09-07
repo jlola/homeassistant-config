@@ -91,6 +91,15 @@ SERVICE_READ_HOLDING_SCHEMA = vol.Schema(
     }
 )
 
+SERVICE_WRITE_HOLDING_SCHEMA = vol.Schema(
+    {
+        vol.Optional(ATTR_HUB, default=DEFAULT_HUB): cv.string,
+        vol.Required(ATTR_UNIT): cv.positive_int,
+        vol.Required(ATTR_ADDRESS): cv.positive_int,
+        vol.Required(ATTR_VALUE): cv.positive_int
+    }
+)
+
 SERVICE_READ_HOLDINGS_SCHEMA = vol.Schema(    
     {
         vol.Optional(ATTR_HUB, default=DEFAULT_HUB): cv.string,
@@ -113,6 +122,15 @@ def setup(hass, config):
         #for client in hub_collect.values():
         #    client.close()
         # Return boolean to indicate that initialization was successful.
+
+    def write_holding(service):
+        """Write holding"""
+        unit = int(float(service.data[ATTR_UNIT]))
+        address = int(float(service.data[ATTR_ADDRESS]))    
+        value = int(float(service.data[ATTR_VALUE]))    
+        client_name = service.data[ATTR_HUB]  
+        
+        hub_collect[client_name].writeHolding(unit, address,value)
 
     def read_holding(service):
         """Read holding"""
@@ -143,6 +161,13 @@ def setup(hass, config):
         SERVICE_READ_HOLDING,
         read_holding,
         schema=SERVICE_READ_HOLDING_SCHEMA,
+    )
+
+    hass.services.register(
+        DOMAIN,
+        SERVICE_WRITE_HOLDING,
+        write_holding,
+        schema=SERVICE_WRITE_HOLDING_SCHEMA,
     )
 
     hass.services.register(
@@ -217,7 +242,7 @@ class ModifiedModbusHub(implements(IDeviceEventConsumer)):
         else:
             raise Exception(errormsg)
     
-    def setHolding(self,adr:int,offset:int,value:int):
+    def writeHolding(self,adr:int,offset:int,value:int):
         with self._lock:
             self._client.setHolding(adr,CHANGE_FLAG,1)
     

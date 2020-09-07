@@ -16,7 +16,7 @@ read_holdings:
       description: "timeout in ms"
       example: 150
 read_holding:
-  description: "reads one holdings register"
+  description: "reads one holding register"
   fields: 
     unit: 
       description: "address of slave"
@@ -26,3 +26,17 @@ read_holding:
       example: '0'
     hub:
       description: "name of hub can (optional)"            
+write_holding:
+  description: "write to holding register"
+  fields: 
+    unit: 
+      description: "address of slave"
+      example: 4      
+    address:
+      description: "start address 0 - 120"
+      example: '0'
+    hub:
+      description: "name of hub can (optional)"            
+    value:
+      description: "value to be written to register"
+      example: '1'

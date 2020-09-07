@@ -53,6 +53,7 @@ ATTR_COUNT = "count"
 ATTR_TIMEOUTMS = "timeoutms"
 SERVICE_WRITE_HOLDING = "write_holding"
 SERVICE_READ_HOLDING = "read_holding"
+SERVICE_WRITE_HOLDING = "write_holding"
 SERVICE_READ_HOLDINGS = "read_holdings"
 
 # binary_sensor.py
