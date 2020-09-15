@@ -3,10 +3,13 @@ Created on Aug 24, 2020
 
 @author: pc
 '''
-import threading;
-import serial
 from enum import Enum
-from ModifiedModbus.ISerialReceiver import ISerialReceiver
+import threading;
+
+import serial
+
+from .ISerialReceiver import ISerialReceiver
+
 
 class State(Enum):
     OPEN=0,

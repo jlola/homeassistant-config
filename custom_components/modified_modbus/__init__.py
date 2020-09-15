@@ -1,14 +1,12 @@
 """Support for Modbus."""
+import importlib
 import logging
 import threading
-import importlib
 from interface import implements
-from ModifiedModbus import ModifiedModbus
-from ModifiedModbus import IDeviceEventConsumer
-#mm = importlib.import_module('homeassistant.components.modified_modbus.ModifiedModbus.SerialPort')
+from .IModifiedModbusHub import IModifiedModbusHub
 
-import voluptuous as vol
-
+from .ModifiedModbus.IDeviceEventConsumer import IDeviceEventConsumer
+from .ModifiedModbus import ModifiedModbus
 from homeassistant.const import (
     ATTR_STATE,
     CONF_DELAY,
@@ -21,6 +19,8 @@ from homeassistant.const import (
     EVENT_HOMEASSISTANT_STOP,
 )
 import homeassistant.helpers.config_validation as cv
+
+import voluptuous as vol
 
 from .const import (
     ATTR_ADDRESS,
@@ -38,8 +38,8 @@ from .const import (
     SERVICE_WRITE_HOLDING,
     SERVICE_READ_HOLDING,
     SERVICE_READ_HOLDINGS,
+    SERVICE_SCAN_UNIT
 )
-
 
 DEVICEBASE = 0
 DEVADDR_OFFSET = DEVICEBASE+0
@@ -48,6 +48,8 @@ TYPE_DEFS_OFFSET = DEVICEBASE+2
 RESET_REG_OFFSET = DEVICEBASE+3
 LAST_INDEX = DEVICEBASE+4
 CHANGE_FLAG = DEVICEBASE+5
+
+from .unit_scanner import UnitScanner
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -110,6 +112,14 @@ SERVICE_READ_HOLDINGS_SCHEMA = vol.Schema(
     }
 )
 
+SERVICE_SCAN_SCHEMA = vol.Schema(    
+    {
+        vol.Optional(ATTR_HUB, default=DEFAULT_HUB): cv.string,
+        vol.Required(ATTR_UNIT): cv.positive_int,            
+        vol.Optional(ATTR_TIMEOUTMS,150): cv.positive_int
+    }
+)
+
 def setup(hass, config):    
     """Set up Modified modbus component."""
     hass.data[DOMAIN] = hub_collect = {}
@@ -141,6 +151,11 @@ def setup(hass, config):
         result = hub_collect[client_name].readHolding(unit, address)
         hass.states.set("modified_modbus.read_holding", result)
     
+    def scan_unit(service):                
+        unit = int(float(service.data[ATTR_UNIT]))
+        client_name = service.data[ATTR_HUB]                    
+        result = hub_collect[client_name].scanUnit(unit)
+    
     def read_holdings(service):
         """Read holdings"""
         unit = int(float(service.data[ATTR_UNIT]))
@@ -151,11 +166,11 @@ def setup(hass, config):
 
         result = hub_collect[client_name].readHoldings(unit, address, count, timeout) 
 
-     # do not wait for EVENT_HOMEASSISTANT_START, activate pymodbus now
+    # do not wait for EVENT_HOMEASSISTANT_START, activate pymodbus now
     for client in hub_collect.values():
         client.setup()
 
-     # Register services for modbus
+    # Register services for modbus
     hass.services.register(
         DOMAIN,
         SERVICE_READ_HOLDING,
@@ -176,13 +191,20 @@ def setup(hass, config):
         read_holdings,
         schema=SERVICE_READ_HOLDINGS_SCHEMA,
     )
+    
+    hass.services.register(
+        DOMAIN,
+        SERVICE_SCAN_UNIT,
+        scan_unit,
+        schema=SERVICE_SCAN_SCHEMA,
+    )
 
     return True
 
     
 
 
-class ModifiedModbusHub(implements(IDeviceEventConsumer)):
+class ModifiedModbusHub(IDeviceEventConsumer,IModifiedModbusHub):
     """wrapper class for ModifiedModbus."""
     def __init__(self, client_config):
         """Initialize the Modbus hub."""
@@ -212,7 +234,9 @@ class ModifiedModbusHub(implements(IDeviceEventConsumer)):
                     "Parameter delay is accepted but not used in this version"
                 )
 
-        
+    @property
+    def ConfigName(self):
+        return self._config_name    
         
     def setup(self):
         """Set up pymodbus client."""
@@ -224,27 +248,30 @@ class ModifiedModbusHub(implements(IDeviceEventConsumer)):
 
         # Connect device
         self.connect()
+        
+    def scanUnit(self,unit:int):
+        scanner = UnitScanner(self)
+        scanner.Scan(unit)
+
+    def AddConsumer(self,consumer:IDeviceEventConsumer):
+        self._client.AddConsumer(consumer)
 
     def FireEvent(self,adr:int):        
-       self.resetChangeFlag(adr) 
+        self.resetChangeFlag(adr) 
 
     def readHolding(self,unit:int,adr:int):
-        result,bufferbytes,errormsg = self._client.getHoldings(unit,adr,1)
-        if (result):
-            return bufferbytes[0]
-        else:
-            raise errormsg
+        with self._lock:
+            bufferbytes = self._client.getHoldings(unit,adr,1)    
+            return bufferbytes[0]        
     
     def readHoldings(self,unit:int,adr:int,count:int, timeout:int):
-        result,bufferbytes,errormsg = self._client.getHoldings(unit,adr,count,timeoutMs=timeout)
-        if (result):
-            return bufferbytes
-        else:
-            raise Exception(errormsg)
+        with self._lock:
+            bufferbytes = self._client.getHoldings(unit,adr,count,timeoutMs=timeout)        
+        return bufferbytes        
     
     def writeHolding(self,adr:int,offset:int,value:int):
         with self._lock:
-            self._client.setHolding(adr,CHANGE_FLAG,1)
+            self._client.setHolding(adr,offset,value)
     
     def resetChangeFlag(self,adr:int):
         print(f"received alarm from unit: {adr}")

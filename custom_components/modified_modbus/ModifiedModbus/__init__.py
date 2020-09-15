@@ -3,16 +3,19 @@ Created on Aug 27, 2020
 
 @author: pc
 '''
-from ModifiedModbus.SerialPort import SerialPort
-from ModifiedModbus.ISerialReceiver import ISerialReceiver
-from interface import implements
 from builtins import bool
-import threading
-from ModifiedModbus.IDeviceEventConsumer import IDeviceEventConsumer
-import time
-from ModifiedModbus.ModbusRequest import ModbusRequest
 from ctypes import *
 from sys import byteorder
+import threading
+import time
+
+from interface import implements
+
+from .IDeviceEventConsumer import IDeviceEventConsumer
+from .ISerialReceiver import ISerialReceiver
+from .SerialPort import SerialPort
+from .Helper import Helper
+
 
 FUNC_GETHOLDINGS = 0x03
 FUNC_SETHOLDING = 0x06
@@ -28,12 +31,12 @@ class ModifiedModbus(implements(ISerialReceiver)):
     def __init__(self,port:str,speed:int):
         '''
         Constructor
-        '''
+        '''        
         self.serial = SerialPort(port,speed)
         self.serial.SetReceiver(self)
         self.getholdingsBuffer = []
         self.event = threading.Event()        
-        self.receiving = False;
+        self.receiving = False
         self.buffer = []
         self.consumers = []
         self.lock = threading.RLock()
@@ -158,8 +161,7 @@ class ModifiedModbus(implements(ISerialReceiver)):
         data = bytes(data)
         return data
         
-    def getHoldings(self,address,offset:int,count,timeoutMs=50):
-        result = False
+    def getHoldings(self,address,offset:int,count,timeoutMs=50):        
         bufferbytes = bytes(0)
         errormsg = ""
         try:                    
@@ -198,14 +200,13 @@ class ModifiedModbus(implements(ISerialReceiver)):
                         else:
                             if (not self.checkFrameCrc(self.getholdingsBuffer)):
                                 errormsg = "incorrect crc";
-                            else:                        
+                            #else:                        
                                                 
                                 #auto end = DateTime::Now();
                                 #auto duration = end - start;
                                 #logger.Trace("finished getHoldings: %d, offest: %d, count: %d, seconds: %f",
                                 #        address, offset, count, duration);
-                    
-                                result = True                                
+                                                                                    
             else:        
                 if (address!=1 ):
                     errormsg = "timeout";            
@@ -214,20 +215,23 @@ class ModifiedModbus(implements(ISerialReceiver)):
             #logger.Error("Error getHoldings: %d, offest: %d, count: %d, timeoutMs: %d, error: %s",
             #        address, offset, count, timeoutMs, errormsg.c_str());
                         
-            bufferbytes = bytes(self.getholdingsBuffer[4:-2])
-            print("received: ",bufferbytes.hex())
-            
+            bufferbytes = bytes(self.getholdingsBuffer[3:-2])
+            holdings = Helper.convertBytesToHoldings(bufferbytes)
+            Helper.printHoldings(holdings)
+            return bufferbytes
+        except Exception as inst:
+            print(inst.args) 
+            raise inst           
         finally:
             self.locked = False
             self.lock.release()
         
-        return result,bufferbytes,errormsg;
+        raise Exception(errormsg);
     
     def setHolding(self,address,offset, val):
 
         #HisLock lock(modbusmutex);
-        errormsg="";
-        result = False
+        errormsg="";        
         try:  
 
             while(self.receiving):
@@ -257,7 +261,8 @@ class ModifiedModbus(implements(ISerialReceiver)):
                 if (respAddress == address):            
                     if (data[6] == self.getholdingsBuffer[6] and 
                         data[7] == self.getholdingsBuffer[7]):
-                        result = True;
+                        print("received: ",bytes(self.getholdingsBuffer).hex())
+                        return True;
                         
                     else:
                         errormsg = "wrong CRC";
@@ -271,10 +276,11 @@ class ModifiedModbus(implements(ISerialReceiver)):
             self.lock.release()
             
 
-        print("received: ",bytes(self.getholdingsBuffer).hex())
+        
         #logger.Error("Error setHolding: %d, offset: %d, value: %d, timeoutMs: %d error: %s",
         #address, offset, val, timeoutMs, errormsg.c_str());
         #print("Error setHolding: %d, offset: %d, value: %d, timeoutMs: %d error: %s")        
-        return result, errormsg
-        
+        raise Exception(errormsg)
+
+    
         

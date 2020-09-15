@@ -3,9 +3,10 @@ Created on Aug 30, 2020
 
 @author: pc
 '''
-from interface import Interface
+from abc import ABC
 
-class IDeviceEventConsumer(Interface):
+
+class IDeviceEventConsumer(ABC):
     '''
     object that want to receive events
     '''

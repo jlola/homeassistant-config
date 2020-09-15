@@ -35,7 +35,7 @@ DATA_TYPE_STRING = "string"
 # call types
 CALL_TYPE_COIL = "coil"
 CALL_TYPE_DISCRETE = "discrete_input"
-CALL_TYPE_REGISTER_HOLDING = "holding"
+CALL_TYPE_HOLDING = "holding"
 CALL_TYPE_REGISTER_INPUT = "input"
 
 # the following constants are TBD.
@@ -55,11 +55,15 @@ SERVICE_WRITE_HOLDING = "write_holding"
 SERVICE_READ_HOLDING = "read_holding"
 SERVICE_WRITE_HOLDING = "write_holding"
 SERVICE_READ_HOLDINGS = "read_holdings"
+SERVICE_SCAN_UNIT = "scan_unit"
 
 # binary_sensor.py
 CONF_INPUTS = "inputs"
 CONF_INPUT_TYPE = "input_type"
 CONF_ADDRESS = "address"
+CONF_HOLDING = "holding"
+CONF_HOLDING_VALUE_ON = "value_on"
+CONF_HOLDING_VALUE_OFF = "value_off"
 
 # switch.py
 CONF_STATE_OFF = "state_off"
