@@ -20,6 +20,7 @@ CONF_COUNT = "count"
 CONF_PRECISION = "precision"
 CONF_OFFSET = "offset"
 CONF_COILS = "coils"
+CONF_OFFSET = "offset"
 
 # integration names
 DEFAULT_HUB = "default"

@@ -1,32 +1,31 @@
 """Support for Modbus Coil and Discrete Input sensors."""
-from abc import ABC
+#from abc import ABC
 import logging
 from typing import Optional
-
+#import pydevd
 from .ModifiedModbus import IDeviceEventConsumer
 from homeassistant.components.binary_sensor import (
     DEVICE_CLASSES_SCHEMA,
     PLATFORM_SCHEMA,
     BinarySensorEntity,
 )
-from homeassistant.const import CONF_DEVICE_CLASS, CONF_NAME, CONF_SLAVE
+from homeassistant.const import (
+    CONF_DEVICE_CLASS, 
+    CONF_NAME, 
+    CONF_SLAVE
+)
 from homeassistant.helpers import config_validation as cv
+from .IModifiedModbusHub import IModifiedModbusHub
 import voluptuous as vol
 
 from .const import (
-    CALL_TYPE_COIL,
-    CALL_TYPE_DISCRETE,
-    CALL_TYPE_HOLDING,
-    CONF_ADDRESS,
-    CONF_COILS,
     CONF_HUB,
-    CONF_INPUT_TYPE,
-    CONF_INPUTS,
     DEFAULT_HUB,
     MODIFIED_MODBUS_DOMAIN,
     CONF_HOLDING_VALUE_ON,
     CONF_HOLDING_VALUE_OFF,
-    CONF_HOLDINGS
+    CONF_HOLDINGS,
+    CONF_OFFSET
 )
 
 
@@ -39,7 +38,7 @@ PLATFORM_SCHEMA = vol.All(
                 vol.All(                    
                     vol.Schema(
                         {
-                            vol.Required(CONF_ADDRESS): cv.positive_int,
+                            vol.Required(CONF_OFFSET): cv.positive_int,
                             vol.Required(CONF_NAME): cv.string,
                             vol.Optional(CONF_DEVICE_CLASS): DEVICE_CLASSES_SCHEMA,
                             vol.Optional(CONF_HUB, default=DEFAULT_HUB): cv.string,
@@ -65,7 +64,7 @@ def setup_platform(hass, config, add_entities, discovery_info=None):
                 hub,
                 entry[CONF_NAME],
                 entry.get(CONF_SLAVE),
-                entry[CONF_ADDRESS],
+                entry[CONF_OFFSET],
                 entry.get(CONF_DEVICE_CLASS),                
                 entry[CONF_HOLDING_VALUE_ON],
                 entry[CONF_HOLDING_VALUE_OFF]
@@ -78,21 +77,23 @@ def setup_platform(hass, config, add_entities, discovery_info=None):
 class ModifiedModbusBinarySensor(BinarySensorEntity,IDeviceEventConsumer):
     """Modbus binary sensor."""
 
-    def __init__(self, hub, name, slave, address, device_class, value_on,value_off):
+    def __init__(self, hub:IModifiedModbusHub, name, slave, offset, device_class, value_on,value_off):
         """Initialize the Modbus binary sensor."""
         self._hub = hub
         self._name = name
         self._slave = int(slave) if slave else None
-        self._address = int(address)
+        self._offset = int(offset)
         self._device_class = device_class        
         self._value = None
         self._available = True
         self._value_on = value_on
         self._value_off = value_off
         self._hub.AddConsumer(self)
-    
-    def FireEvent(self,adr:int):
-        self.async_update_ha_state(force_refresh = True)
+            
+    def FireEvent(self,slave:int):
+        if (slave == self._slave):
+            print(f"force refresh {slave}")
+            self.schedule_update_ha_state(force_refresh=True)
 
     @property
     def name(self):
@@ -114,21 +115,25 @@ class ModifiedModbusBinarySensor(BinarySensorEntity,IDeviceEventConsumer):
         """Return True if entity is available."""
         return self._available
 
-    def update(self):
+    def update(self):        
         """Update the state of the sensor."""
+        #pydevd.settrace("192.168.89.25", port=5678)
         try:
-            result = self._hub.readHolding(self._slave,self._address)        
-        except Exception:
+            result = self._hub.readHolding(self._slave, self._offset)        
+        except Exception as arg:
+            _LOGGER.error(arg.args)
+            print(f"slave: {self._slave} available false exception")
             self._available = False
             return    
 
         self._available = True
-
+        print("{0:04X} ".format(result))
         if (result == self._value_on):
             self._value = True
         elif (result == self._value_off):
             self._value = False
         else:
+            print(f"slave: {self._slave} available false, received {result} expected on {self._value_on} expected off {self._value_off}")
             self._available = False
 
         

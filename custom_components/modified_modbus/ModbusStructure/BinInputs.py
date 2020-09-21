@@ -11,10 +11,11 @@ class BinInput(object):
     binnary inputs
     '''
 
-    def __init__(self):
+    def __init__(self, address):
         '''
         Constructor
         '''
+        self.address = address
         self.pinNumber:uint1 = 0
         self.value:bool = False
         self.quality:bool = False
@@ -30,6 +31,22 @@ class BinInput(object):
         '''
         return 2
     
+    @property
+    def Address(self):
+        return self.address
+    
+    @property
+    def PinNumber(self):
+        return self.pinNumber
+    
+    @property
+    def ValueOn(self):
+        return self.valueOn
+    
+    @property
+    def ValueOff(self):
+        return self.valueOff
+        
     def Parse(self,data:uint2):        
         self.pinNumber = 0xFF & data
         self.valueOn = data | 0x0100

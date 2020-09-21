@@ -1,0 +1,25 @@
+binary_sensor:
+- holdings:
+  - address: 23
+    hub: default
+    name: binary_sensor4.1
+    slave: 4
+    value_off: 513
+    value_on: 769
+  platform: modified_modbus
+- holdings:
+  - address: 24
+    hub: default
+    name: binary_sensor4.2
+    slave: 4
+    value_off: 1538
+    value_on: 1794
+  platform: modified_modbus
+- holdings:
+  - address: 25
+    hub: default
+    name: binary_sensor4.3
+    slave: 4
+    value_off: 515
+    value_on: 771
+  platform: modified_modbus

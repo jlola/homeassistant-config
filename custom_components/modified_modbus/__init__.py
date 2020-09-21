@@ -2,6 +2,8 @@
 import importlib
 import logging
 import threading
+from datetime import datetime
+
 from interface import implements
 from .IModifiedModbusHub import IModifiedModbusHub
 
@@ -18,6 +20,7 @@ from homeassistant.const import (
     CONF_TYPE,
     EVENT_HOMEASSISTANT_STOP,
 )
+
 import homeassistant.helpers.config_validation as cv
 
 import voluptuous as vol
@@ -40,6 +43,7 @@ from .const import (
     SERVICE_READ_HOLDINGS,
     SERVICE_SCAN_UNIT
 )
+from _datetime import date
 
 DEVICEBASE = 0
 DEVADDR_OFFSET = DEVICEBASE+0
@@ -135,36 +139,36 @@ def setup(hass, config):
 
     def write_holding(service):
         """Write holding"""
-        unit = int(float(service.data[ATTR_UNIT]))
-        address = int(float(service.data[ATTR_ADDRESS]))    
+        slave = int(float(service.data[ATTR_UNIT]))
+        offset = int(float(service.data[ATTR_ADDRESS]))    
         value = int(float(service.data[ATTR_VALUE]))    
         client_name = service.data[ATTR_HUB]  
         
-        hub_collect[client_name].writeHolding(unit, address,value)
+        hub_collect[client_name].writeHolding(slave, offset,value)
 
     def read_holding(service):
         """Read holding"""
-        unit = int(float(service.data[ATTR_UNIT]))
-        address = int(float(service.data[ATTR_ADDRESS]))    
+        slave = int(float(service.data[ATTR_UNIT]))
+        offset = int(float(service.data[ATTR_ADDRESS]))    
         client_name = service.data[ATTR_HUB]    
         
-        result = hub_collect[client_name].readHolding(unit, address)
+        result = hub_collect[client_name].readHolding(slave, offset)
         hass.states.set("modified_modbus.read_holding", result)
     
     def scan_unit(service):                
-        unit = int(float(service.data[ATTR_UNIT]))
+        slave = int(float(service.data[ATTR_UNIT]))
         client_name = service.data[ATTR_HUB]                    
-        result = hub_collect[client_name].scanUnit(unit)
+        result = hub_collect[client_name].scanUnit(slave)
     
     def read_holdings(service):
         """Read holdings"""
-        unit = int(float(service.data[ATTR_UNIT]))
-        address = int(float(service.data[ATTR_ADDRESS]))    
+        slave = int(float(service.data[ATTR_UNIT]))
+        offset = int(float(service.data[ATTR_ADDRESS]))    
         client_name = service.data[ATTR_HUB]    
         count = int(float(service.data[ATTR_COUNT]))
         timeout = int(float(service.data[ATTR_TIMEOUTMS]))
 
-        result = hub_collect[client_name].readHoldings(unit, address, count, timeout) 
+        result = hub_collect[client_name].readHoldings(slave, offset, count, timeout) 
 
     # do not wait for EVENT_HOMEASSISTANT_START, activate pymodbus now
     for client in hub_collect.values():
@@ -201,6 +205,66 @@ def setup(hass, config):
 
     return True
 
+class SlaveCache():        
+    def __init__(self,slave):
+        self.refreshTime:datetime = None
+        self.holdings = []
+        self.slave = slave
+        self.cacheExpiredInSeconds = 5
+    
+    def NeedRefresh(self) -> bool:        
+        now = datetime.now()
+        if (self.refreshTime==None):
+            return True
+        delta = (now - self.refreshTime).total_seconds()
+        if (delta > self.cacheExpiredInSeconds):
+            return True
+        
+        return False    
+    
+    def GetHoldings(self,offset,count):
+        if (offset+count > len(self.holdings)):
+            raise Exception(f"requested: offset: {offset}, count: {count} out of range")
+            
+        return self.holdings[offset:offset+count]
+    
+    def GetCacheData(self):
+        return self.holdings
+    
+    def SetUpdatedData(self,data):
+        self.holdings = data
+        self.refreshTime = datetime.now()
+        
+class ModbusCache():
+    DEVICEBASE =                    0
+    LAST_INDEX =                    DEVICEBASE+4
+    def __init__(self,serial:ModifiedModbus):
+        self._serial = serial
+        self.dict = {}
+        
+    def getSlaveCache(self,slave)->SlaveCache:
+        if (not slave in self.dict):
+            self.dict[slave] = SlaveCache(slave)
+        
+        return self.dict[slave]
+    
+    def ForceRefresh(self,slave):
+        slaveCache = self.getSlaveCache(slave)
+        slaveCache.refreshTime = None
+    
+    def getHoldings(self,slave,offset,count):
+        cache = self.getSlaveCache(slave)
+        if (cache.NeedRefresh()):            
+            lastIndex = self._serial.getHoldings(slave, LAST_INDEX, 1)            
+            holdings = self._serial.getHoldings(slave, 0, lastIndex[0], 150)
+            cache.SetUpdatedData(holdings)
+        
+        cachedHoldings = cache.GetHoldings(offset,count)
+        return cachedHoldings
+        
+    
+        
+    
     
 
 
@@ -217,6 +281,8 @@ class ModifiedModbusHub(IDeviceEventConsumer,IModifiedModbusHub):
         self._config_port = client_config[CONF_PORT]
         self._config_timeout = client_config[CONF_TIMEOUT]
         self._config_delay = 0
+        self._consumers = []        
+        self._modbusCacheTimeout:datetime = datetime.now()
 
         if self._config_type == "serial":
             # serial configuration
@@ -240,8 +306,9 @@ class ModifiedModbusHub(IDeviceEventConsumer,IModifiedModbusHub):
         
     def setup(self):
         """Set up pymodbus client."""
-        if self._config_type == "serial":
+        if self._config_type == "serial":            
             self._client = ModifiedModbus(self._config_port,self._config_baudrate)
+            self._modbusCache = ModbusCache(self._client)
             self._client.AddConsumer(self)
         else:
             assert False
@@ -254,29 +321,41 @@ class ModifiedModbusHub(IDeviceEventConsumer,IModifiedModbusHub):
         scanner.Scan(unit)
 
     def AddConsumer(self,consumer:IDeviceEventConsumer):
-        self._client.AddConsumer(consumer)
+        #self._client.AddConsumer(consumer)
+        self._consumers.append(consumer)
 
-    def FireEvent(self,adr:int):        
-        self.resetChangeFlag(adr) 
+    def FireEvent(self,slave:int):                
+        self.resetChangeFlag(slave)
+        self._modbusCache.ForceRefresh(slave) 
+        for c in self._consumers:            
+            c.FireEvent(slave)
 
-    def readHolding(self,unit:int,adr:int):
+    def readHolding(self,slave:int,offset:int):
         with self._lock:
-            bufferbytes = self._client.getHoldings(unit,adr,1)    
-            return bufferbytes[0]        
+#             _LOGGER.debug(f"readHolding slave:{slave},offset:{offset}")
+            bufferbytes = self._modbusCache.getHoldings(slave, offset, 1)  
+#             _LOGGER.debug(f"readHolding slave finished:{slave},offset:{offset}")  
+            return bufferbytes[0]
+            
     
-    def readHoldings(self,unit:int,adr:int,count:int, timeout:int):
+    def readHoldings(self,slave:int,offset:int,count:int, timeout:int):
         with self._lock:
-            bufferbytes = self._client.getHoldings(unit,adr,count,timeoutMs=timeout)        
-        return bufferbytes        
+#             _LOGGER.debug(f"readHoldings slave:{slave},offset:{offset},count:{count}")
+            bufferbytes = self._modbusCache.getHoldings(slave, offset, count)      
+#             _LOGGER.debug(f"readHoldings finished slave:{slave},offset:{offset},count:{count}")  
+            return bufferbytes        
     
-    def writeHolding(self,adr:int,offset:int,value:int):
+    def writeHolding(self,slave:int,offset:int,value:int):
         with self._lock:
-            self._client.setHolding(adr,offset,value)
+#             _LOGGER.debug(f"writeHolding slave:{slave},offset:{offset}")
+            self._client.setHolding(slave,offset,value)
+#             _LOGGER.debug(f"writeHolding finished slave:{slave},offset:{offset}")
     
-    def resetChangeFlag(self,adr:int):
-        print(f"received alarm from unit: {adr}")
+    def resetChangeFlag(self,slave:int):
         with self._lock:
-            self._client.setHolding(adr,CHANGE_FLAG,1)
+#             _LOGGER.debug(f"writeHolding reset change flag: slave:{slave},offset:{CHANGE_FLAG}")
+            self._client.setHolding(slave,CHANGE_FLAG,1)
+#             _LOGGER.debug(f"writeHolding reset change finished flag: slave:{slave},offset:{CHANGE_FLAG}")
 
     def connect(self):
         """Connect client."""

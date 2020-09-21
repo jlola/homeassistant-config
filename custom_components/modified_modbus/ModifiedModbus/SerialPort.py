@@ -75,8 +75,9 @@ class SerialPort(object):
         if len(data) < 0 :
             # Read was unsuccessful
             raise OSError();
+
         # std::cout << *str << " and size of string =" << str->size() << "\r\n";
-        if (self.receiver is not None):
+        if (self.receiver is not None and len(data)>0):
             self.receiver.OnData(data);
         
         # If code reaches here, read must of been successful
