@@ -1,0 +1,29 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+modbus:
+  name: hub1
+  type: serial
+  method: rtu
+  port: /dev/ttyUSB0
+  baudrate: 11500
+  stopbits: 1
+  bytesize: 8
+  parity: N
+
+switch:
+  platform: modbus
+  scan_interval: 10
+  coils:
+     name: Switch1 hub: hub1 slave: 4 register: 13 command_on: 1 
+      command_off: 0 register_type: holding

@@ -3,4 +3,5 @@ deps/
 __pycache__/
 *.db
 *.log
-
+compile/
+tts/

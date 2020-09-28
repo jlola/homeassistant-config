@@ -23,7 +23,7 @@ from .const import (
     CONF_DATA_TYPE,
     CONF_HUB,
     CONF_HOLDINGS,
-    CONF_ONEWIRE_ID,    
+    CONF_REGISTER,    
     CONF_REGISTERS,
     DATA_TYPE_CUSTOM,
     DATA_TYPE_FLOAT,
@@ -62,7 +62,7 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
         vol.Required(CONF_HOLDINGS): [
             {
                 vol.Required(CONF_NAME): cv.string,                
-                vol.Required(CONF_ONEWIRE_ID): cv.string,
+                vol.Required(CONF_COUNT, default=1): cv.positive_int,
                 vol.Required(CONF_DEVICE_CLASS): DEVICE_CLASSES_SCHEMA,
                 vol.Required(CONF_HUB, default=DEFAULT_HUB): cv.string,
                 vol.Required(CONF_OFFSET): number,                                
@@ -89,7 +89,7 @@ def setup_platform(hass, config, add_entities, discovery_info=None):
                 register.get(CONF_SLAVE),
                 register[CONF_OFFSET],
                 register.get(CONF_UNIT_OF_MEASUREMENT),
-                register[CONF_ONEWIRE_ID],                                                                                                
+                register[CONF_COUNT],                                                                                                
                 register.get(CONF_DEVICE_CLASS),
             )
         )
@@ -109,7 +109,7 @@ class ModbusRegisterSensor(RestoreEntity):
         slave,                
         offset,
         unit_of_measurement,
-        _onewireid,                                
+        count,                                
         device_class,
     ):
         """Initialize the modbus register sensor."""
@@ -117,8 +117,7 @@ class ModbusRegisterSensor(RestoreEntity):
         self._name = name
         self._slave = int(slave) if slave else None           
         self._unit_of_measurement = unit_of_measurement
-        self._onewireid = _onewireid
-        self._count = 1                
+        self._count = int(count)                
         self._offset = offset                        
         self._device_class = device_class
         self._value = None
@@ -165,7 +164,6 @@ class ModbusRegisterSensor(RestoreEntity):
                     self._slave, self._offset, self._count,150)
                 
         except Exception as args:
-            _LOGGER.error(args.args)
             self._available = False
             return
 

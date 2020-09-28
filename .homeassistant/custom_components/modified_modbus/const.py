@@ -68,9 +68,6 @@ CONF_HOLDING = "holding"
 CONF_HOLDING_VALUE_ON = "value_on"
 CONF_HOLDING_VALUE_OFF = "value_off"
 
-#ds18b20
-CONF_ONEWIRE_ID = "ONEWIRE_ID"
-
 # switch.py
 CONF_STATE_OFF = "state_off"
 CONF_STATE_ON = "state_on"

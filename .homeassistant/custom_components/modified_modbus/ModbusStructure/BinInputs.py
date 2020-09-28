@@ -11,11 +11,11 @@ class BinInput(object):
     binnary inputs
     '''
 
-    def __init__(self,offset):
+    def __init__(self, address):
         '''
         Constructor
         '''
-        self.offset = offset
+        self.address = address
         self.pinNumber:uint1 = 0
         self.value:bool = False
         self.quality:bool = False
@@ -25,15 +25,15 @@ class BinInput(object):
         self.valueOff = 0
     
     @staticmethod
-    def HoldingsSize() -> uint1:
+    def Size() -> uint1:
         '''
         Size of inputs struct in bytes
         '''
-        return 1
+        return 2
     
     @property
     def Address(self):
-        return self.offset
+        return self.address
     
     @property
     def PinNumber(self):
