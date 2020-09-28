@@ -3,7 +3,10 @@ from .ModbusStructure.TypeDefs import TypeDefs
 from .ModbusStructure.TypeDefs import ETypes
 from .ModbusStructure.BinInputs import BinInput
 from .IModifiedModbusHub import IModifiedModbusHub
+from .ModbusStructure.DS18B20 import OneWireHeader
 import yaml
+from aiohttp import _frozenlist
+from modified_modbus.ModbusStructure.DS18B20 import DS18B20
 #import pydevd
 
 class UnitScanner(object):
@@ -28,6 +31,9 @@ class UnitScanner(object):
             if (typedefs.Type == ETypes.BinInputs):
                 inputs = self.ParseInputs(holdings, typedefs)
                 self.GenerateInputConfig(inputs, slave)            
+            elif (typedefs.Type == ETypes.DS18B20Temp):    
+                temps = self.ParseDS18B20(holdings, typedefs)
+            
             typeIndex += 1
 
     def GenerateInputConfig(self,inputs:list,slave):
@@ -66,11 +72,27 @@ class UnitScanner(object):
         inputsData = holdings[typedefs.OffsetOfType:typedefs.OffsetOfType+typedefs.Count]            
         typedefIndex = 0 
         while typedefIndex < typedefs.Count:
-            binput = BinInput(typedefs.OffsetOfType+typedefIndex)
-            binput.Parse(inputsData[typedefIndex])
+            binput = BinInput(typedefs.OffsetOfType+typedefIndex*BinInput.HoldingsSize())
+            binput.Parse(inputsData[typedefIndex*BinInput.HoldingsSize()])
             inputs.append(binput)
             typedefIndex+=1
         return inputs
+    
+    def ParseOutputs(self):
+        pass
+    
+    def ParseDS18B20(self,holdings:list, typedefs:TypeDefs)->_frozenlist:
+        temps:list = []        
+        typedefIndex = 0        
+        owHeader = OneWireHeader(typedefs.OffsetOfType)
+        owHeader.Parse(holdings)
+        while typedefIndex < owHeader.CountDevices:
+            temp = DS18B20(owHeader.GetFirstDS18B20Offset()+typedefIndex*DS18B20.HoldingsSize())
+            temp.Parse(holdings)
+            str = temp.OwId
+            temps.append(temp)
+            typedefIndex += 1
+        return temps
     
         
 

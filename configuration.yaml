@@ -1,10 +1,22 @@
-
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
 debugpy:
-  start: true
+  start: false
   wait: false
+
+logger:
+  default: info
+  logs:
+    custom_components.modified_modbus: debug
+
+#homeassistant:
+#  auth_providers:
+#    - type: homeassistant
+#    - type: legacy_api_password
+#      api_password: 'AppDaemon'
+        
+        
 
 # Text to speech
 tts:
@@ -15,20 +27,68 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 
-logger:
-  default: info
-  logs:
-    homeassistant.components.cloud: debug
-
 modified_modbus:
-  name: hub1
+  name: default
   type: serial
   method: rtu
   port: /dev/ttyUSB0
-  baudrate: 112500
+  baudrate: 115200
   stopbits: 1
   bytesize: 8
   parity: N
 
+binary_sensor:
+- holdings:
+  - offset: 23
+    hub: default
+    name: binary_sensor4.1
+    slave: 4
+    value_off: 513
+    value_on: 769
+  platform: modified_modbus
+- holdings:
+  - offset: 24
+    hub: default
+    name: binary_sensor4.2
+    slave: 4
+    value_off: 1538
+    value_on: 1794
+  platform: modified_modbus
+- holdings:
+  - offset: 25
+    hub: default
+    name: binary_sensor4.3
+    slave: 4
+    value_off: 515
+    value_on: 771
+  platform: modified_modbus
 
-  
+switch:
+- holdings:  
+  - hub: default
+    name: myswitch
+    slave: 4
+    offset: 26
+    command_on: 260
+    command_off: 4
+    state_on: 260
+    state_off: 4
+    verify_state: False
+  platform: modified_modbus
+
+sensor:
+- holdings:
+  - hub: default
+    name: tempBathRoom
+    slave: 4
+    unit_of_measurement: °C
+    count: 1
+    offset: 36
+    device_class: temperature
+  platform: modified_modbus
+
+timer:
+  test:
+    duration: '00:01:00'
+
+

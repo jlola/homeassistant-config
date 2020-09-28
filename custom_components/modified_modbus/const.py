@@ -58,6 +58,8 @@ SERVICE_WRITE_HOLDING = "write_holding"
 SERVICE_READ_HOLDINGS = "read_holdings"
 SERVICE_SCAN_UNIT = "scan_unit"
 
+CONF_DATA_TYPE = "data_type"
+
 # binary_sensor.py
 CONF_INPUTS = "inputs"
 CONF_INPUT_TYPE = "input_type"
@@ -65,6 +67,9 @@ CONF_ADDRESS = "address"
 CONF_HOLDING = "holding"
 CONF_HOLDING_VALUE_ON = "value_on"
 CONF_HOLDING_VALUE_OFF = "value_off"
+
+#ds18b20
+CONF_ONEWIRE_ID = "ONEWIRE_ID"
 
 # switch.py
 CONF_STATE_OFF = "state_off"
