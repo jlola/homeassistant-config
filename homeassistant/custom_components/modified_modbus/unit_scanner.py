@@ -1,76 +1,148 @@
 from .ModbusStructure.Header import Header
 from .ModbusStructure.TypeDefs import TypeDefs
 from .ModbusStructure.TypeDefs import ETypes
-from .ModbusStructure.BinInputs import BinInput
+from .ModbusStructure.BinInput import BinInput
+from .ModbusStructure.BinOutput import BinOutput
 from .IModifiedModbusHub import IModifiedModbusHub
+from .ModbusStructure.DS18B20 import OneWireHeader
 import yaml
+import os
+from .ModbusStructure.DS18B20 import DS18B20
+
 #import pydevd
 
 class UnitScanner(object):
-    def __init__(self, hub:IModifiedModbusHub):
+    def __init__(self, hub:IModifiedModbusHub, slave):
         self._hub = hub
-
-    def Scan(self,slave):
-        #pydevd.settrace("192.168.89.25", port=5678)
-        h = Header()
-        holdings = self._hub.getHoldings(slave,0,10)
-        h.Parse(holdings)
+        self._slave = slave
+         
+    def __scan(self):
         
-        holdings = self._hub.getHoldings(slave,0,h.LastIndex)
-
+        self._header = Header()
+        self._holdings = self._hub.readHoldings(self._slave,0,10,100)
+        self._header.Parse(self._holdings)
+        
+        self._holdings = self._hub.readHoldings(self._slave,0,self._header.LastIndex,150)
+        
+        #pydevd.settrace("192.168.89.25", port=5678)
+        self._typedefs = self.__ParseTypeDefs(self._holdings, self._header)
+        
+        return self._holdings
+                
+               
+    def GetDS18B20Value(self, owid): 
+        self.__scan()       
+        for typedef in self._typedefs:       
+            if (typedef.Type == ETypes.DS18B20Temp):    
+                temps = self.__ParseDS18B20(self._holdings, typedef)
+                for temp in temps:
+                    if (temp.OwId == owid):
+                        return temp.Value
+        raise Exception(f"ds18b20: {owid} on slave: {self._slave} desn't exits")
+                      
+        
+            
+    def __ParseTypeDefs(self,holdings, h)->[]:
+        typedefs = []
         typeIndex = 0
         while(typeIndex < h.CountOfTypes):
             startIndex = h.TypesOffset()+TypeDefs.Size()*typeIndex
-            typedefsData = holdings[startIndex:startIndex+TypeDefs.Size()]
-            typedefs = TypeDefs()
-            typedefs.Parse(typedefsData)
-            
-            if (typedefs.Type == ETypes.BinInputs):
-                inputs = self.ParseInputs(holdings, typedefs)
-                self.GenerateInputConfig(inputs, slave)            
+            typedefData = holdings[startIndex:startIndex+TypeDefs.Size()]
+            typedef = TypeDefs()
+            typedef.Parse(typedefData)
+            typedefs.append(typedef)                             
             typeIndex += 1
+        return typedefs
+                                            
+            
+    def GenerateYaml(self):
+        dictf = {}
+        self.__scan()
+        for typedef in self._typedefs:        
+            if (typedef.Type == ETypes.BinInputs):
+                inputs = self.__ParseInputs(self._holdings, typedef)
+                self.__GenerateInputConfig(inputs, dictf)
+            if (typedef.Type == ETypes.BinOutputs):
+                outputs = self.__ParseOutputs(self._holdings, typedef)
+                self.__GenerateOutputConfig(outputs, dictf)
+            elif (typedef.Type == ETypes.DS18B20Temp):    
+                temps = self.__ParseDS18B20(self._holdings, typedef)
+                self.__GenerateDS18B20Config(temps,dictf)
+        
+        yamlsdir = f'{os.getcwd()}/scan'
+        if not os.path.exists(yamlsdir):
+            os.makedirs(yamlsdir)
+        
+        #write to file
+        fileName = f'{yamlsdir}/homeismodule.{self._slave}.yaml'
+        with open(fileName, 'w') as file:
+            yaml.dump(dictf, file)
+        return fileName
 
-    def GenerateInputConfig(self,inputs:list,slave):
-#         binary_sensor:
-#           - platform: modified_modbus
-#             holdings:
-#               - name: Sensor1
-#                 hub: default
-#                 slave: 4
-#                 address: 100
-#                 value_on: 1254
-#                 value_off: 158
-        sensors = []
+    def __GenerateInputConfig(self,inputs:list,dictf:[]):        
+        
+        yamlinputs = []
         for binput in inputs:            
-            sensor = {
-                "platform" : "modified_modbus",                 
-                "holdings" : [
-                     { "name" : f"binary_sensor{slave}.{binput.PinNumber}",
-                       "hub" : self._hub.ConfigName(),
-                       "slave" : slave,
-                      "address" : binput.Address,
-                     "value_on" : binput.ValueOn,
-                     "value_off" : binput.ValueOff
-                     }
-                ],                
-            }
-            sensors.append(sensor)
+            yaml = binput.GenerateYaml()
+            yamlinputs.append(yaml)
             
-        dictf = {"binary_sensor" : sensors}
+        dictf[f"binary_sensor {self._slave}"] = yamlinputs
+    
+    def __GenerateOutputConfig(self,outputs:list,dictf:[]):        
+        
+        yamlouputs = []
+        for boutput in outputs:            
+            yaml = boutput.GenerateYaml()
+            yamlouputs.append(yaml)
             
-        with open(r'bin_sensor.yaml', 'w') as file:
-            documents = yaml.dump(dictf, file)
+        dictf[f"switch {self._slave}"] = yamlouputs
+            
+    def __ParseOutputs(self, holdings, typedef):
+        outputs:list = []
+        typedefIndex = 0
+        while typedefIndex < typedef.Count:
+            offset = typedef.OffsetOfType+typedefIndex*BinOutput.HoldingsSize()
+            binoutput = BinOutput(self._hub ,self._slave, offset)
+            binoutput.Parse(holdings)
+            outputs.append(binoutput)
+            typedefIndex+=1
+        return outputs
 
-    def ParseInputs(self,holdings:list, typedefs:TypeDefs)->list:
-        inputs:list = []
-        inputsData = holdings[typedefs.OffsetOfType:typedefs.OffsetOfType+typedefs.Count]            
+    def __ParseInputs(self, holdings:list, typedef:TypeDefs)->list:
+        inputs:list = []                
         typedefIndex = 0 
-        while typedefIndex < typedefs.Count:
-            binput = BinInput(typedefs.OffsetOfType+typedefIndex)
-            binput.Parse(inputsData[typedefIndex])
+        while typedefIndex < typedef.Count:
+            offset = typedef.OffsetOfType+typedefIndex*BinInput.HoldingsSize()
+            binput = BinInput(self._hub ,self._slave, offset)
+            binput.Parse(holdings)
             inputs.append(binput)
             typedefIndex+=1
         return inputs
+            
+    def __GenerateDS18B20Config(self,ds18b20s:list,dictf:[]):
+        sensors = []
+        for ds18b20 in ds18b20s:    
+            ds18b20yaml = ds18b20.GenerateYaml()                    
+            sensors.append(ds18b20yaml)                    
+        dictf[f"sensor  {self._slave}"] = sensors
+    
+    '''
+    returns: list of ds18b20 structs
+    '''
+    def __ParseDS18B20(self,holdings:list, typedefs:TypeDefs):
+        temps:list = []        
+        typedefIndex = 0        
+        owHeader = OneWireHeader(self._slave, typedefs.OffsetOfType)
+        owHeader.Parse(holdings)
+        while typedefIndex < owHeader.CountDevices:
+            offset = owHeader.GetFirstDS18B20Offset()+typedefIndex*DS18B20.HoldingsSize()
+            temp = DS18B20(self._hub, self._slave, offset)
+            temp.Parse(offset, holdings)
+            mstr = temp.OwId
+            print(mstr)
+            temps.append(temp)
+            typedefIndex += 1
+        return temps
     
         
 

@@ -31,6 +31,7 @@ from .const import (
     ATTR_UNIT,
     ATTR_VALUE,
     ATTR_COUNT,
+    ATTR_SLAVE,
     ATTR_TIMEOUTMS,
     CONF_BAUDRATE,
     CONF_BYTESIZE,
@@ -119,7 +120,7 @@ SERVICE_READ_HOLDINGS_SCHEMA = vol.Schema(
 SERVICE_SCAN_SCHEMA = vol.Schema(    
     {
         vol.Optional(ATTR_HUB, default=DEFAULT_HUB): cv.string,
-        vol.Required(ATTR_UNIT): cv.positive_int,            
+        vol.Required(ATTR_SLAVE): cv.positive_int,            
         vol.Optional(ATTR_TIMEOUTMS,150): cv.positive_int
     }
 )
@@ -156,7 +157,7 @@ def setup(hass, config):
         hass.states.set("modified_modbus.read_holding", result)
     
     def scan_unit(service):                
-        slave = int(float(service.data[ATTR_UNIT]))
+        slave = int(float(service.data[ATTR_SLAVE]))
         client_name = service.data[ATTR_HUB]                    
         result = hub_collect[client_name].scanUnit(slave)
     
@@ -317,8 +318,9 @@ class ModifiedModbusHub(IDeviceEventConsumer,IModifiedModbusHub):
         self.connect()
         
     def scanUnit(self,unit:int):
-        scanner = UnitScanner(self)
-        scanner.Scan(unit)
+        scanner = UnitScanner(self,unit)
+        file = scanner.GenerateYaml()
+        _LOGGER.info(f"Scanned configuration of unit: {unit} was stored to file: {file}")
 
     def AddConsumer(self,consumer:IDeviceEventConsumer):
         #self._client.AddConsumer(consumer)

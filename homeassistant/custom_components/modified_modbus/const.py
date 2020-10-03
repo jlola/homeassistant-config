@@ -11,6 +11,7 @@ CONF_PARITY = "parity"
 CONF_STOPBITS = "stopbits"
 CONF_HOLDING = "holding"
 CONF_HOLDINGS = "holdings"
+CONF_DS18B20 = "ds18b20"
 CONF_REGISTER = "register"
 CONF_REGISTER_TYPE = "register_type"
 CONF_REGISTERS = "registers"
@@ -21,6 +22,7 @@ CONF_PRECISION = "precision"
 CONF_OFFSET = "offset"
 CONF_COILS = "coils"
 CONF_OFFSET = "offset"
+CONF_OWID = "OwId"
 
 # integration names
 DEFAULT_HUB = "default"
@@ -49,6 +51,7 @@ CALL_TYPE_REGISTER_INPUT = "input"
 ATTR_ADDRESS = "address"
 ATTR_HUB = "hub"
 ATTR_UNIT = "unit"
+ATTR_SLAVE = "slave"
 ATTR_VALUE = "value"
 ATTR_COUNT = "count"
 ATTR_TIMEOUTMS = "timeoutms"
@@ -67,6 +70,9 @@ CONF_ADDRESS = "address"
 CONF_HOLDING = "holding"
 CONF_HOLDING_VALUE_ON = "value_on"
 CONF_HOLDING_VALUE_OFF = "value_off"
+
+#ds18b20
+CONF_ONEWIRE_ID = "ONEWIRE_ID"
 
 # switch.py
 CONF_STATE_OFF = "state_off"

@@ -40,3 +40,13 @@ write_holding:
     value:
       description: "value to be written to register"
       example: '1'
+scan_unit:
+  description: "scan structure of slave and generate yaml file. Response and file path is logged in logger"
+  fields:
+    slave:
+      description: "address of slave"
+      example: 4
+    hub:
+      description: "name of hub"
+      example: "default"
+

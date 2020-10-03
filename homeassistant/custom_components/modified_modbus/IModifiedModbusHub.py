@@ -22,3 +22,6 @@ class IModifiedModbusHub(ABC):
     @property
     def ConfigName(self):
         pass
+    
+    def scanUnit(self,unit:int):
+        pass

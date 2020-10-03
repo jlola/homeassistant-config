@@ -11,28 +11,33 @@ import threading
 import time
 from modified_modbus import ModbusCache
 
-x = "0004 0003 000a 0c80 005c 0000 0000 0000 0000 0000 0001 0003 0017 0003 0002 0001 001a 0003 0005 0001 001b 0003 0000 0301 0702 0303 0004 0000 0001 0000 0000 0000 9028 085d 0006 1b00 097f 0001 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000"
+x = "0004 0003 000a 0c80 005c 0000 0000 0000 0000 0000 \
+     0001 0003 0017 0003 0002 0001 001a 0003 0005 0001 \
+     001b 0003 0000 0301 0702 0303 0004 0000 0001 0000 \
+     0000 0000 9028 085d 0006 1b00 097f 0001 0000 0000 \
+     0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 \
+     0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 \
+     0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 \
+     0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 \
+     0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 \
+     0000 0000 0000 0000 0000 0000 0000 0000 0000 0000"
 byteholdings = bytes.fromhex(x)
 holdings = Helper.convertBytesToHoldings(byteholdings)
 serial = Mock()
 
-serial.getHoldings(4,4,1).return_value = 0x5C
-serial.getHoldings(4,0,0x5C).return_value = holdings
+serial.readHoldings = Mock(return_value = holdings)
+#serial.getHoldings(4,0,0x005C).return_value = holdings
 serial.ConfigName.return_value = "default"
 
 cache = ModbusCache(serial)
 
-holding = cache.getHoldings(4, 23, 1)
+#holding = cache.getHoldings(4, 23, 1)
 
-scanner = UnitScanner(serial)
+scanner = UnitScanner(serial,4)
 
-scanner.Scan(4,)
-
-d1 = datetime.now()
-time.sleep(2)
-d2 = datetime.now()
-
-print((d2 - d1).total_seconds())
+print(scanner.GenerateYaml())
+temvalue = scanner.GetDS18B20Value("28905d080600001b")
+print(temvalue)
 
 
 

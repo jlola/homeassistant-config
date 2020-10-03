@@ -20,6 +20,15 @@ class Helper(object):
             ints16.append(intv)    
             i += 2
         return ints16
+    
+    @staticmethod
+    def convertHoldingsToBytes(holdings):
+        result = []
+        for i in holdings:
+            result.append(i.to_bytes(2, byteorder='little')[0])
+            result.append(i.to_bytes(2, byteorder='little')[1])
+        return bytes(result)
+        
 
     @staticmethod
     def printHoldings(holdings):
