@@ -80,6 +80,8 @@ class UnitScanner(object):
         return fileName
 
     def __GenerateInputConfig(self,inputs:list,dictf:[]):        
+        if (len(inputs)==0):
+            return
         
         yamlinputs = []
         for binput in inputs:            
@@ -89,6 +91,8 @@ class UnitScanner(object):
         dictf[f"binary_sensor {self._slave}"] = yamlinputs
     
     def __GenerateOutputConfig(self,outputs:list,dictf:[]):        
+        if (len(outputs)==0):
+            return
         
         yamlouputs = []
         for boutput in outputs:            
@@ -120,6 +124,9 @@ class UnitScanner(object):
         return inputs
             
     def __GenerateDS18B20Config(self,ds18b20s:list,dictf:[]):
+        if (len(ds18b20s)==0):
+            return
+        
         sensors = []
         for ds18b20 in ds18b20s:    
             ds18b20yaml = ds18b20.GenerateYaml()                    

@@ -13,7 +13,7 @@ class ETypes(Enum):
     AInputs=3
     AOutputs=4
     DS18B20Temp=5
-    RFID=6
+    RFID=6    
     
 class EModbusFunc(Enum):
     Unknown = 0

@@ -251,7 +251,8 @@ class ModbusCache():
     
     def ForceRefresh(self,slave):
         slaveCache = self.getSlaveCache(slave)
-        slaveCache.refreshTime = None
+        if (slaveCache!=None):
+            slaveCache.refreshTime = None
     
     def getHoldings(self,slave,offset,count):
         cache = self.getSlaveCache(slave)
@@ -351,6 +352,7 @@ class ModifiedModbusHub(IDeviceEventConsumer,IModifiedModbusHub):
         with self._lock:
 #             _LOGGER.debug(f"writeHolding slave:{slave},offset:{offset}")
             self._client.setHolding(slave,offset,value)
+            self._modbusCache.ForceRefresh(slave)
 #             _LOGGER.debug(f"writeHolding finished slave:{slave},offset:{offset}")
     
     def resetChangeFlag(self,slave:int):
