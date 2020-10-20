@@ -27,6 +27,12 @@ class UnitScanner(object):
         #pydevd.settrace("192.168.89.25", port=5678)
         self._typedefs = self.__ParseTypeDefs(self._holdings, self._header)
         
+        owtypedef = self.FindTypeDefByType(self._typedefs, ETypes.DS18B20Temp)
+        if (owtypedef!=None):
+            self._scanOneWire(owtypedef)
+            self._holdings = self._hub.readHoldings(self._slave,0,self._header.LastIndex,150)
+            
+                        
         return self._holdings
                 
                
@@ -135,7 +141,20 @@ class UnitScanner(object):
     
     '''
     returns: list of ds18b20 structs
-    '''
+    '''       
+    
+    def FindTypeDefByType(self, typedefs:[],type:ETypes):
+        for t in typedefs:
+            if (t.Type==type):
+                return t
+        
+        return None
+        
+    
+    def _scanOneWire(self, typedef:TypeDefs):                    
+        self._hub.writeHolding(self._slave, typedef.OffsetOfType, 1)
+        
+    
     def __ParseDS18B20(self,holdings:list, typedefs:TypeDefs):
         temps:list = []        
         typedefIndex = 0        
