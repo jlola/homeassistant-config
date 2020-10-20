@@ -9,6 +9,7 @@ read_holdings:
       example: '0'
     hub:
       description: "name of hub can (optional)"
+      example: 'default'    
     count:
       description: "count of holdings to return"
       example: 100      
@@ -25,7 +26,8 @@ read_holding:
       description: "start address 0 - 120"
       example: '0'
     hub:
-      description: "name of hub can (optional)"            
+      description: "name of hub"       
+      example: 'default'         
 write_holding:
   description: "write to holding register"
   fields: 
@@ -36,7 +38,8 @@ write_holding:
       description: "start address 0 - 120"
       example: '0'
     hub:
-      description: "name of hub can (optional)"            
+      description: "name of hub"     
+      example: 'default'       
     value:
       description: "value to be written to register"
       example: '1'

@@ -8,8 +8,6 @@ from ctypes import *
 from sys import byteorder
 import threading
 
-from interface import implements
-
 from .IDeviceEventConsumer import IDeviceEventConsumer
 from .ISerialReceiver import ISerialReceiver
 from .SerialPort import SerialPort
@@ -23,7 +21,7 @@ FUNC_EVENT = 0xF8
 OFFSET_FUNC = 1
 OFFSET_COUNT = 2
 
-class ModifiedModbus(implements(ISerialReceiver)):
+class ModifiedModbus(ISerialReceiver):
     '''
     classdocs
     '''

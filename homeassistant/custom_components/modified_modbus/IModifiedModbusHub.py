@@ -25,3 +25,6 @@ class IModifiedModbusHub(ABC):
     
     def scanUnit(self,unit:int):
         pass
+    
+    def ResetCache(self,slave:int):
+        pass

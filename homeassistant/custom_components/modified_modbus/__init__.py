@@ -4,8 +4,8 @@ import logging
 import threading
 from datetime import datetime
 
-from interface import implements
 from .IModifiedModbusHub import IModifiedModbusHub
+from .ModifiedModbus.Helper import Helper
 
 from .ModifiedModbus.IDeviceEventConsumer import IDeviceEventConsumer
 from .ModifiedModbus import ModifiedModbus
@@ -153,13 +153,13 @@ def setup(hass, config):
         offset = int(float(service.data[ATTR_ADDRESS]))    
         client_name = service.data[ATTR_HUB]    
         
-        result = hub_collect[client_name].readHolding(slave, offset)
-        hass.states.set("modified_modbus.read_holding", result)
+        strHolding = hub_collect[client_name].readHolding(slave, offset)
+        _LOGGER.info(f"read_holding: slave: {slave}, offset: {offset}, result: {strHolding}")
     
     def scan_unit(service):                
         slave = int(float(service.data[ATTR_SLAVE]))
         client_name = service.data[ATTR_HUB]                    
-        result = hub_collect[client_name].scanUnit(slave)
+        hub_collect[client_name].scanUnit(slave)
     
     def read_holdings(service):
         """Read holdings"""
@@ -169,7 +169,10 @@ def setup(hass, config):
         count = int(float(service.data[ATTR_COUNT]))
         timeout = int(float(service.data[ATTR_TIMEOUTMS]))
 
-        result = hub_collect[client_name].readHoldings(slave, offset, count, timeout) 
+        holdings = hub_collect[client_name].readHoldings(slave, offset, count, timeout)
+        
+        strholdings = Helper.printHoldings(holdings)
+        _LOGGER.info(f"read_holdings: slave: {slave}, offset: {offset}, count: {count}, result: {strholdings}") 
 
     # do not wait for EVENT_HOMEASSISTANT_START, activate pymodbus now
     for client in hub_collect.values():
@@ -221,11 +224,19 @@ class SlaveCache():
         if (delta > self.cacheExpiredInSeconds):
             return True
         
-        return False    
+        return False   
+    
+    def ResetCache(self):
+        self.refreshTime = None 
     
     def GetHoldings(self,offset,count):
-        if (offset+count > len(self.holdings)):
-            raise Exception(f"requested: offset: {offset}, count: {count} out of range")
+        if (len(self.holdings)<=0):
+            self.ResetCache()
+            return []
+                    
+        if (offset+count > len(self.holdings)-offset):
+            count = len(self.holdings)-offset
+            #raise Exception(f"requested: offset: {offset}, count: {count} out of range. Max range {len(self.holdings)}")
             
         return self.holdings[offset:offset+count]
     
@@ -326,6 +337,9 @@ class ModifiedModbusHub(IDeviceEventConsumer,IModifiedModbusHub):
     def AddConsumer(self,consumer:IDeviceEventConsumer):
         #self._client.AddConsumer(consumer)
         self._consumers.append(consumer)
+        
+    def ResetCache(self,slave:int):
+        self._modbusCache.ForceRefresh(slave)
 
     def FireEvent(self,slave:int):                
         self.resetChangeFlag(slave)
@@ -336,17 +350,17 @@ class ModifiedModbusHub(IDeviceEventConsumer,IModifiedModbusHub):
     def readHolding(self,slave:int,offset:int):
         with self._lock:
 #             _LOGGER.debug(f"readHolding slave:{slave},offset:{offset}")
-            bufferbytes = self._modbusCache.getHoldings(slave, offset, 1)  
+            holdings = self._modbusCache.getHoldings(slave, offset, 1)  
 #             _LOGGER.debug(f"readHolding slave finished:{slave},offset:{offset}")  
-            return bufferbytes[0]
+            return holdings[0]
             
     
     def readHoldings(self,slave:int,offset:int,count:int, timeout:int):
         with self._lock:
 #             _LOGGER.debug(f"readHoldings slave:{slave},offset:{offset},count:{count}")
-            bufferbytes = self._modbusCache.getHoldings(slave, offset, count)      
+            holdings = self._modbusCache.getHoldings(slave, offset, count)      
 #             _LOGGER.debug(f"readHoldings finished slave:{slave},offset:{offset},count:{count}")  
-            return bufferbytes        
+            return holdings        
     
     def writeHolding(self,slave:int,offset:int,value:int):
         with self._lock:

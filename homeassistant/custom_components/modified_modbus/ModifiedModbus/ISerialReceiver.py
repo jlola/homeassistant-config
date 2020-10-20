@@ -6,10 +6,8 @@ Created on Aug 25, 2020
 
 from abc import ABC
 
-from interface import Interface
 
-
-class ISerialReceiver(Interface):
+class ISerialReceiver(ABC):
     '''
     classdocs
     '''    

@@ -36,6 +36,7 @@ class Helper(object):
         for i in holdings:
             result = result + "{0:04x} ".format(i)
         print(result)
+        return result
 
     
     
