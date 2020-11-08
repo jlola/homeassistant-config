@@ -4,6 +4,7 @@ import logging
 from typing import Optional
 #import pydevd
 from .ModifiedModbus import IDeviceEventConsumer
+from .ModbusStructure.BinInput import BinInput
 from homeassistant.components.binary_sensor import (
     DEVICE_CLASSES_SCHEMA,
     PLATFORM_SCHEMA,
@@ -128,12 +129,13 @@ class ModifiedModbusBinarySensor(BinarySensorEntity,IDeviceEventConsumer):
 
         self._available = True
         print("{0:04X} ".format(result))
-        if (result == self._value_on):
-            self._value = True
-        elif (result == self._value_off):
-            self._value = False
-        else:
-            print(f"slave: {self._slave} available false, received {result} expected on {self._value_on} expected off {self._value_off}")
-            self._available = False
+#         if (result == self._value_on):
+#             self._value = True
+#         elif (result == self._value_off):
+#             self._value = False
+#         else:
+#             print(f"slave: {self._slave} available false, received {result} expected on {self._value_on} expected off {self._value_off}")
+#             self._available = False
+        self._value = BinInput.IsValueOn(result)            
 
         

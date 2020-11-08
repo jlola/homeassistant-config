@@ -55,6 +55,13 @@ class BinInput(object):
         self.valueOn = data | 0x0100
         self.valueOff = data & 0xFEFF
         
+    @staticmethod
+    def IsValueOn(value):
+        if ((value & 0x0100) > 0):
+            return True
+        else:
+            return False 
+        
     def GenerateYaml(self):        
 #         binary_sensor:
 #           - platform: modified_modbus

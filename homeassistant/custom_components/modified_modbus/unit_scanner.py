@@ -5,6 +5,7 @@ from .ModbusStructure.BinInput import BinInput
 from .ModbusStructure.BinOutput import BinOutput
 from .IModifiedModbusHub import IModifiedModbusHub
 from .ModbusStructure.DS18B20 import OneWireHeader
+from .ModbusStructure.Rfid import Rfid
 import yaml
 import os
 from .ModbusStructure.DS18B20 import DS18B20
@@ -74,6 +75,9 @@ class UnitScanner(object):
             elif (typedef.Type == ETypes.DS18B20Temp):    
                 temps = self.__ParseDS18B20(self._holdings, typedef)
                 self.__GenerateDS18B20Config(temps,dictf)
+            elif (typedef.Type == ETypes.RFID):    
+                temps = self.__ParseRFIDs(self._holdings, typedef)
+                #self.__GenerateDS18B20Config(temps,dictf)
         
         yamlsdir = f'{os.getcwd()}/scan'
         if not os.path.exists(yamlsdir):
@@ -128,6 +132,17 @@ class UnitScanner(object):
             inputs.append(binput)
             typedefIndex+=1
         return inputs
+    
+    def __ParseRFIDs(self, holdings:list, typedef:TypeDefs)->list:
+        rfids:list = []                
+        typedefIndex = 0 
+        while typedefIndex < typedef.Count:
+            offset = typedef.OffsetOfType+typedefIndex*Rfid.HoldingsSize()
+            rfid = Rfid(self._hub ,self._slave, offset)
+            rfid.Parse(holdings)
+            rfids.append(rfid)
+            typedefIndex+=1
+        return rfids
             
     def __GenerateDS18B20Config(self,ds18b20s:list,dictf:[]):
         if (len(ds18b20s)==0):
@@ -138,6 +153,17 @@ class UnitScanner(object):
             ds18b20yaml = ds18b20.GenerateYaml()                    
             sensors.append(ds18b20yaml)                    
         dictf[f"sensor  {self._slave}"] = sensors
+        
+        
+    def __GenerateRFIDsConfig(self,rfids:list,dictf:[]):
+        if (len(rfids)==0):
+            return
+        
+        rfidsensors = []
+        for rfidobj in rfids:    
+            rfidobjyaml = rfidobj.GenerateYaml()                    
+            rfidsensors.append(rfidobjyaml)                    
+        dictf[f"sensor  {self._slave}"] = rfidsensors
     
     '''
     returns: list of ds18b20 structs
