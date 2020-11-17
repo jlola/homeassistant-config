@@ -52,3 +52,5 @@ class Header(object):
     def TypesOffset(self) -> uint2:
         return self._typeDefsOffset
     
+    
+    

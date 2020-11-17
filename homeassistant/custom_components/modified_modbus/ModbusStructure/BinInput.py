@@ -25,6 +25,7 @@ class BinInput(object):
         self.latchDirection = False
         self.valueOn = 0
         self.valueOff = 0
+        self.bit = None
     
     @staticmethod
     def HoldingsSize() -> uint1:
@@ -42,26 +43,22 @@ class BinInput(object):
         return self.pinNumber
     
     @property
-    def ValueOn(self):
-        return self.valueOn
+    def Bit(self):
+        return self.bit
     
-    @property
-    def ValueOff(self):
-        return self.valueOff
-        
+    def Set(self,valueOn,valueOff,bit):
+        self._bit = bit
+        self.valueOff = valueOff
+        self.valueOn = valueOn
+    
+    '''parse for homeis modules'''
     def Parse(self,holdings):
         data = holdings[self.offset]        
         self.pinNumber = 0xFF & data
-        self.valueOn = data | 0x0100
-        self.valueOff = data & 0xFEFF
-        
-    @staticmethod
-    def IsValueOn(value):
-        if ((value & 0x0100) > 0):
-            return True
-        else:
-            return False 
-        
+        self.bit = 8
+        self.valueOn = 1#f"{self.offset}.{self.bit}"#data | 0x0100
+        self.valueOff = 0#f"{self.offset}.{self.bit}"#data & 0xFEFF
+                                            
     def GenerateYaml(self):        
 #         binary_sensor:
 #           - platform: modified_modbus
@@ -79,9 +76,10 @@ class BinInput(object):
                      { "name" : f"binary_sensor{self.slave}.{self.PinNumber}",
                        "hub" : self._hub.ConfigName,
                        "slave" : self.slave,
-                      "offset" : self.Offset,
-                     "value_on" : self.ValueOn,
-                     "value_off" : self.ValueOff
+                       "offset" : self.Offset,
+                       "value_on" : self.valueOn,
+                       "value_off" : self.valueOff,
+                       "bit" : self.bit
                      }
                 ],                
             }

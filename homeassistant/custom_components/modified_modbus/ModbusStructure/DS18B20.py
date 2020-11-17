@@ -5,6 +5,8 @@ Created on Sep 24, 2020
 '''
 from pickletools import uint2
 from ..ModifiedModbus.Helper import Helper
+from ..const import CONF_HOLDINGS_TYPE,CONF_DS18B20,CONF_OWID,CONF_HOLDINGS
+
 
 OFFSET_ID12 = 0
 OFFSET_ID34 = 1
@@ -90,13 +92,15 @@ class DS18B20(object):
     def GenerateYaml(self):
         sensor = {
             "platform" : "modified_modbus",                 
-            "ds18b20" : [
-                 { "name" : f"ds18b20_{self.OwId}",
+            CONF_HOLDINGS : [
+                 { 
+                   "name" : f"ds18b20_{self.OwId}",
                    "hub" : self._hub.ConfigName,
-                   "slave" : self.slave,                       
+                   "slave" : self.slave,
+                   CONF_HOLDINGS_TYPE : CONF_DS18B20,                       
                    "device_class" : "temperature",
                    "unit_of_measurement" : '°C',
-                   "OwId": self.OwId                       
+                   CONF_OWID: self.OwId                       
                  }
             ],                
         }

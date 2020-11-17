@@ -77,7 +77,7 @@ class UnitScanner(object):
                 self.__GenerateDS18B20Config(temps,dictf)
             elif (typedef.Type == ETypes.RFID):    
                 temps = self.__ParseRFIDs(self._holdings, typedef)
-                #self.__GenerateDS18B20Config(temps,dictf)
+                self.__GenerateRFIDsConfig(temps, dictf)
         
         yamlsdir = f'{os.getcwd()}/scan'
         if not os.path.exists(yamlsdir):
@@ -160,10 +160,14 @@ class UnitScanner(object):
             return
         
         rfidsensors = []
+        rfidResetSwitches = []
         for rfidobj in rfids:    
             rfidobjyaml = rfidobj.GenerateYaml()                    
-            rfidsensors.append(rfidobjyaml)                    
+            rfidsensors.append(rfidobjyaml)
+            rfidResetSwitch = rfidobj.GenerateYamlReset()
+            rfidResetSwitches.append(rfidResetSwitches)
         dictf[f"sensor  {self._slave}"] = rfidsensors
+        dictf[f"switch {self._slave}"] = rfidResetSwitch
     
     '''
     returns: list of ds18b20 structs

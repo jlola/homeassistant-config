@@ -25,12 +25,18 @@ class BinOutput(object):
         self._quality:bool = False            
         self._valueOn = 0
         self._valueOff = 0
+        self._name = f"switch.{self._slave}.{self._pinNumber}"
     
     def Parse(self,holdings):
         data = holdings[self._offset]        
         self._pinNumber = 0xFF & data
         self._valueOn = data | 0x0100
         self._valueOff = data & 0xFEFF
+        
+    def SetValues(self,valueOn,valueOff, name):
+        self._valueOn = valueOn
+        self._valueOff = valueOff
+        self._name = name
         
     @property
     def Offset(self):
@@ -64,8 +70,9 @@ class BinOutput(object):
                     
         outputyaml = {
             "platform" : "modified_modbus",                 
-            "holdings" : [{ 
-                "name" : f"switch.{self._slave}.{self._pinNumber}",
+            "holdings" : [
+                { 
+                "name" : self._name,
                 "hub" : self._hub.ConfigName,
                 "slave" : self._slave,
                 "offset" : self.Offset,

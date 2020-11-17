@@ -37,7 +37,28 @@ class Helper(object):
             result = result + "{0:04x} ".format(i)
         print(result)
         return result
-
     
+    @staticmethod
+    def printHoldingsHiexWithoutSpaces(holdings):
+        result = ""
+        for i in holdings:
+            result = result + "{0:04x}".format(i)
+        print(result)
+        return result
     
+    @staticmethod
+    def printHoldingsAscii(holdings):
+        bts = Helper.convertHoldingsToBytes(holdings)
+        result = ''.join(chr(number) for number in bts)
+        #for b in bts:
+        #    result = result + "{0}".format(b)
+        #print(result)
+        return result
+    
+    @staticmethod
+    def BitValue(value,bit):        
+        if ((value & 1<<bit) > 0):
+            return True
+        else:
+            return False
         

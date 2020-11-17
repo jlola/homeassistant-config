@@ -1,20 +1,49 @@
 binary_sensor 4:
 - holdings:
-  - hub: default
-    name: binary_sensor4.2
-    offset: 28
+  - bit: 8
+    hub: default
+    name: binary_sensor4.1
+    offset: 23
     slave: 4
-    value_off: 1538
-    value_on: 1794
+    value_off: 0
+    value_on: 1
+  platform: modified_modbus
+- holdings:
+  - bit: 8
+    hub: default
+    name: binary_sensor4.2
+    offset: 24
+    slave: 4
+    value_off: 0
+    value_on: 1
+  platform: modified_modbus
+- holdings:
+  - bit: 8
+    hub: default
+    name: binary_sensor4.3
+    offset: 25
+    slave: 4
+    value_off: 0
+    value_on: 1
+  platform: modified_modbus
+sensor  4:
+- holdings:
+  - OwId: 28905d080600001b
+    device_class: temperature
+    holdings_type: ds18b20
+    hub: default
+    name: ds18b20_28905d080600001b
+    slave: 4
+    unit_of_measurement: "\xB0C"
   platform: modified_modbus
 switch 4:
 - holdings:
-  - command_off: 3
-    command_on: 259
+  - command_off: 4
+    command_on: 260
     hub: default
-    name: switch.4.3
-    offset: 27
+    name: switch.4.0
+    offset: 26
     slave: 4
-    state_off: 3
-    state_on: 259
+    state_off: 4
+    state_on: 260
   platform: modified_modbus

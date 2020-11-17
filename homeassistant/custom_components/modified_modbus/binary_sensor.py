@@ -4,7 +4,7 @@ import logging
 from typing import Optional
 #import pydevd
 from .ModifiedModbus import IDeviceEventConsumer
-from .ModbusStructure.BinInput import BinInput
+from .ModifiedModbus.Helper import Helper
 from homeassistant.components.binary_sensor import (
     DEVICE_CLASSES_SCHEMA,
     PLATFORM_SCHEMA,
@@ -26,9 +26,9 @@ from .const import (
     CONF_HOLDING_VALUE_ON,
     CONF_HOLDING_VALUE_OFF,
     CONF_HOLDINGS,
-    CONF_OFFSET
+    CONF_OFFSET,
+    CONF_BIT
 )
-
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -44,8 +44,9 @@ PLATFORM_SCHEMA = vol.All(
                             vol.Optional(CONF_DEVICE_CLASS): DEVICE_CLASSES_SCHEMA,
                             vol.Optional(CONF_HUB, default=DEFAULT_HUB): cv.string,
                             vol.Required(CONF_SLAVE): cv.positive_int,
-                            vol.Required(CONF_HOLDING_VALUE_ON):cv.positive_int,
-                            vol.Required(CONF_HOLDING_VALUE_OFF):cv.positive_int                    
+                            vol.Optional(CONF_HOLDING_VALUE_ON):cv.positive_int,
+                            vol.Optional(CONF_HOLDING_VALUE_OFF):cv.positive_int,
+                            vol.Optional(CONF_BIT,default=-1):cv.positive_int                   
                         }
                     ),
                 )
@@ -68,7 +69,8 @@ def setup_platform(hass, config, add_entities, discovery_info=None):
                 entry[CONF_OFFSET],
                 entry.get(CONF_DEVICE_CLASS),                
                 entry[CONF_HOLDING_VALUE_ON],
-                entry[CONF_HOLDING_VALUE_OFF]
+                entry[CONF_HOLDING_VALUE_OFF],
+                entry[CONF_BIT]
             )
         )
 
@@ -78,7 +80,7 @@ def setup_platform(hass, config, add_entities, discovery_info=None):
 class ModifiedModbusBinarySensor(BinarySensorEntity,IDeviceEventConsumer):
     """Modbus binary sensor."""
 
-    def __init__(self, hub:IModifiedModbusHub, name, slave, offset, device_class, value_on,value_off):
+    def __init__(self, hub:IModifiedModbusHub, name, slave, offset, device_class, value_on,value_off,bit):
         """Initialize the Modbus binary sensor."""
         self._hub = hub
         self._name = name
@@ -90,6 +92,7 @@ class ModifiedModbusBinarySensor(BinarySensorEntity,IDeviceEventConsumer):
         self._value_on = value_on
         self._value_off = value_off
         self._hub.AddConsumer(self)
+        self._bit = bit
             
     def FireEvent(self,slave:int):
         if (slave == self._slave):
@@ -136,6 +139,24 @@ class ModifiedModbusBinarySensor(BinarySensorEntity,IDeviceEventConsumer):
 #         else:
 #             print(f"slave: {self._slave} available false, received {result} expected on {self._value_on} expected off {self._value_off}")
 #             self._available = False
-        self._value = BinInput.IsValueOn(result)            
+        try:
+            self._value = self.GetBoolValue(result)
+        except Exception as arg:
+            _LOGGER.error(arg.args)
+            print(f"slave: {self._slave} available false exception")
+            self._available = False
+        
+    
+            
+    def GetBoolValue(self,value):
+        if (self._bit!=None or self._bit < 0):
+            return Helper.BitValue(value,self._bit)
+        else:
+            if (value == self._valueOn):
+                return True
+            elif (value == self._valueOff):
+                return False
+            else:
+                raise Exception("Incorrect value")            
 
         

@@ -4,6 +4,8 @@ Created on Nov 8, 2020
 @author: pc
 '''
 from pickletools import uint1
+from .BinOutput import BinOutput
+from ..const import CONF_STRING,CONF_HOLDINGS_TYPE
 class Rfid():
     '''
     rfid
@@ -43,16 +45,23 @@ class Rfid():
     def GenerateYaml(self):
         sensor = {
             "platform" : "modified_modbus",                 
-            "rfid" : [
-                 { "name" : "rfidreader",
+            "holdings" : [
+                 { 
+                   "name" : f"rfidreader_{self.slave}",
                    "hub" : self._hub.ConfigName,
+                   CONF_HOLDINGS_TYPE : CONF_STRING,
                    "slave" : self.slave,
-                   "offset" : self.Offset                                                                           
+                   "offset" : self.Offset+self.OFFSET_RFID,
+                   "count" : self.RFID_HOLDINGS_LEN                                                                          
                  }
             ],                
-        }
+        }        
         
         return sensor
-
+    
+    def GenerateYamlReset(self):
+        binOutput = BinOutput(self._hub,self.slave, self.offset+self.OFFSET_NEWDATA)
+        binOutput.SetValues(1, 0, f"rfidreader_reset_{self.slave}")
+        return binOutput.GenerateYaml()
         
         
