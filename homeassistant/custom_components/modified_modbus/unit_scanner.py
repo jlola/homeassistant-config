@@ -155,19 +155,25 @@ class UnitScanner(object):
         dictf[f"sensor  {self._slave}"] = sensors
         
         
-    def __GenerateRFIDsConfig(self,rfids:list,dictf:[]):
+    def __GenerateRFIDsConfig(self,rfids:list,dictf:{}):
         if (len(rfids)==0):
             return
+        sensorskey = f"sensor  {self._slave}"
+        switcheskey = f"switch {self._slave}"
         
-        rfidsensors = []
-        rfidResetSwitches = []
+        rfidsensors = dictf.get(sensorskey,[])        
+        switches =  dictf.get(switcheskey,[])
+        if (switches==None):
+            dictf[switcheskey] = []
+            switches = dictf[switcheskey]
         for rfidobj in rfids:    
             rfidobjyaml = rfidobj.GenerateYaml()                    
             rfidsensors.append(rfidobjyaml)
             rfidResetSwitch = rfidobj.GenerateYamlReset()
-            rfidResetSwitches.append(rfidResetSwitches)
-        dictf[f"sensor  {self._slave}"] = rfidsensors
-        dictf[f"switch {self._slave}"] = rfidResetSwitch
+            switches.append(rfidResetSwitch)
+                                    
+        dictf[sensorskey] = rfidsensors
+        dictf[switcheskey] = switches
     
     '''
     returns: list of ds18b20 structs
