@@ -71,7 +71,7 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
                     ])),                
                 vol.Required(CONF_HUB, default=DEFAULT_HUB): cv.string,                                            
                 vol.Required(CONF_SLAVE): cv.positive_int,
-                vol.Required(CONF_UNIT_OF_MEASUREMENT): cv.string,
+                vol.Optional(CONF_UNIT_OF_MEASUREMENT): cv.string,
                 vol.Optional(CONF_DEVICE_CLASS): DEVICE_CLASSES_SCHEMA,
                 vol.Optional(CONF_OWID): cv.string,
                 vol.Optional(CONF_OFFSET, default = 0): cv.positive_int,

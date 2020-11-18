@@ -36,7 +36,7 @@ y = "0008 0004 000a 0c80 0078 0000 0000 0000 0000 0000 \
      0000 0000 0000 0000 0001 3002 3630 4534 4132 0d34 \
      030a 0000 0000 0000 0000 0000 0000 0000 0000 0000 \
      0000 0000 0000 0000 0000 0000 0000 0000 0000 0000"
-byteholdings = bytes.fromhex(x)
+byteholdings = bytes.fromhex(y)
 holdings = Helper.convertBytesToHoldings(byteholdings)
 serial = Mock()
 
@@ -49,7 +49,7 @@ cache = ModbusCache(serial)
 
 #holding = cache.getHoldings(4, 23, 1)
 
-scanner = UnitScanner(serial,4)
+scanner = UnitScanner(serial,7)
 
 print(scanner.GenerateYaml())
 #temvalue = scanner.GetDS18B20Value("28905d080600001b")
