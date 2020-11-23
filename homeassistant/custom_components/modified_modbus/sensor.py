@@ -5,7 +5,7 @@ from .IModifiedModbusHub import IModifiedModbusHub
 from .ModifiedModbus.Helper import Helper
 #import pydevd
 from .unit_scanner import UnitScanner 
-
+from .ModifiedModbus import IDeviceEventConsumer
 from homeassistant.components.sensor import DEVICE_CLASSES_SCHEMA, PLATFORM_SCHEMA
 from homeassistant.const import (
     CONF_DEVICE_CLASS,
@@ -108,7 +108,7 @@ def setup_platform(hass, config, add_entities, discovery_info=None):
     add_entities(sensors)
 
 
-class ModbusRegisterSensor(RestoreEntity):
+class ModbusRegisterSensor(RestoreEntity,IDeviceEventConsumer):
     """Modbus register sensor."""
 
     def __init__(
@@ -137,6 +137,13 @@ class ModbusRegisterSensor(RestoreEntity):
         self._count = count
         self._offset = offset
         self.__validateParams()
+        self._hub.AddConsumer(self)
+        
+    def FireEvent(self,slave:int):
+        if (slave == self._slave):
+            print(f"force refresh {slave}")
+            self.schedule_update_ha_state(force_refresh=True)            
+    
         
     def __validateParams(self):
         if (self._holdingsType==CONF_DS18B20):

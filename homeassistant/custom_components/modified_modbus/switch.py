@@ -1,7 +1,7 @@
 """Support for Modbus switches."""
 import logging
 from typing import Optional
-
+from .ModifiedModbus import IDeviceEventConsumer
 from homeassistant.components.switch import PLATFORM_SCHEMA
 from homeassistant.const import (
     CONF_COMMAND_OFF,
@@ -143,7 +143,7 @@ class ModbusEntity(ToggleEntity, RestoreEntity):
         self._write_coil(self._coil, False)
     
 
-class ModbusRegisterSwitch(ModbusEntity):
+class ModbusRegisterSwitch(ModbusEntity,IDeviceEventConsumer):
     """Representation of a Modbus register switch."""
 
     # pylint: disable=super-init-not-called
@@ -184,6 +184,12 @@ class ModbusRegisterSwitch(ModbusEntity):
             self._state_off = self._command_off
 
         self._is_on = None
+        self._hub.AddConsumer(self)
+        
+    def FireEvent(self,slave:int):
+        if (slave == self._slave):
+            print(f"force refresh {slave}")
+            self.schedule_update_ha_state(force_refresh=True)
 
     def turn_on(self, **kwargs):
         """Set switch on."""
