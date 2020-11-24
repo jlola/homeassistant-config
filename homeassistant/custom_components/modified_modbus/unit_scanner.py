@@ -200,8 +200,7 @@ class UnitScanner(object):
             offset = owHeader.GetFirstDS18B20Offset()+typedefIndex*DS18B20.HoldingsSize()
             temp = DS18B20(self._hub, self._slave, offset)
             temp.Parse(offset, holdings)
-            mstr = temp.OwId
-            print(mstr)
+            mstr = temp.OwId            
             temps.append(temp)
             typedefIndex += 1
         return temps

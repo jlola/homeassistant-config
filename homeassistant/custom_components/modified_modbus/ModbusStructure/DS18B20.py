@@ -87,7 +87,7 @@ class DS18B20(object):
         '''
         Size of inputs struct in bytes
         '''
-        return 4
+        return 6
     
     def GenerateYaml(self):
         sensor = {

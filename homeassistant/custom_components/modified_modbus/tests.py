@@ -36,7 +36,20 @@ y = "0008 0004 000a 0c80 0078 0000 0000 0000 0000 0000 \
      0000 0000 0000 0000 0001 3002 3630 4534 4132 0d34 \
      030a 0000 0000 0000 0000 0000 0000 0000 0000 0000 \
      0000 0000 0000 0000 0000 0000 0000 0000 0000 0000"
-byteholdings = bytes.fromhex(y)
+     
+     
+lukasTeploty = "\
+     0002 0003 000a 0c80 005a 0000 0000 0000 0000 0000 \
+     0001 0001 0017 0003 0002 0001 0018 0003 0005 0001 \
+     0019 0003 0000 0301 0004 0001 0004 0000 0000 0000 \
+     ee28 6ada 162e 3401 0627 0001 ee28 2ca6 1613 bd02 \
+     090e 0001 ee28 3041 1613 1c02 0891 0001 ee28 072d \
+     1616 3501 0765 0001 0000 0000 0000 0000 0000 0000 \
+     0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 \
+     0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 \
+     0000 0000 0000 0000 0000 0000 0000 0000 0000 0000"
+     
+byteholdings = bytes.fromhex(lukasTeploty)
 holdings = Helper.convertBytesToHoldings(byteholdings)
 serial = Mock()
 
@@ -49,11 +62,18 @@ cache = ModbusCache(serial)
 
 #holding = cache.getHoldings(4, 23, 1)
 
-scanner = UnitScanner(serial,7)
+scanner = UnitScanner(serial,2)
 
 print(scanner.GenerateYaml())
-#temvalue = scanner.GetDS18B20Value("28905d080600001b")
-#print(temvalue)
+temvalue = scanner.GetDS18B20Value("28eeda6a2e160134")
+print(temvalue)
+temvalue = scanner.GetDS18B20Value("28eea62c131602bd")
+print(temvalue)
+temvalue = scanner.GetDS18B20Value("28ee41301316021c")
+print(temvalue)
+temvalue = scanner.GetDS18B20Value("28ee2d0716160135")
+print(temvalue)
+
 
 value = 1539
 print(Helper.BitValue(value, 8))
