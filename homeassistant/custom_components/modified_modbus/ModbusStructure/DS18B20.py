@@ -48,7 +48,7 @@ class DS18B20(object):
         self.slave = slave
         self._hub = hub
         self._offset = offset
-        self.value:uint2 = 0
+        self.value:int = 0
         self.owid = []
         self.owHeaderOffset = 0
         
@@ -63,7 +63,14 @@ class DS18B20(object):
         self.owid.append(data[self._offset+OFFSET_ID56])
         self.owid.append(data[self._offset+OFFSET_ID78])
         self.error = data[self._offset+OFFSET_ERROR]
-        self.value = data[self._offset+OFFSET_VALUE]
+        self.value = self.GetValue(data[self._offset+OFFSET_VALUE])
+        
+    def GetValue(self,val):
+        bts = self.int_to_bytes(val)
+        return int.from_bytes(bts, 'big', signed=True)
+        
+    def int_to_bytes(self,x: int) -> bytes:
+        return x.to_bytes((x.bit_length() + 7) // 8, 'big')
         
     @property
     def OneWireHeaderOffset(self):
