@@ -193,8 +193,10 @@ class ModbusRegisterSensor(RestoreEntity,IDeviceEventConsumer):
         """Update the state of the sensor."""
         #pydevd.settrace("192.168.89.25", port=5678)        
         try:         
-            if (self._holdingsType==CONF_DS18B20):           
-                self._value = self._unitScanner.GetDS18B20Value(self._owid)
+            if (self._holdingsType==CONF_DS18B20):
+                dsval = self._unitScanner.GetDS18B20Value(self._owid)           
+                if (dsval!=85):
+                    self._value = dsval
             elif (self._holdingsType==CONF_STRING):
                 self._value = self.__ReadString(self._slave, self._offset, self._count)
             elif (self._holdingsType==CONF_HEX):
