@@ -176,7 +176,7 @@ class ModifiedModbus(ISerialReceiver):
             while(attempt < 3):                
                 attempt += 1
                 bufferbytes = bytes(0)
-                print(f"getHoldings slave:{slave},offset: {offset} count: {count}, attepmt:{attempt}")
+                errormsg = f"getHoldings slave:{slave},offset: {offset} count: {count}, attepmt:{attempt}"
                 data = []            
                 data.append(slave)
                 data.append(FUNC_GETHOLDINGS)
@@ -189,7 +189,7 @@ class ModifiedModbus(ISerialReceiver):
                 
                 data = self.AppendCRC(data)
                 
-                print("sended: ",data.hex())
+                errormsg = "sended: ",data.hex()
                             
                 #logger.Trace("getHoldings: %d, offest: %d, count: %d, timeoutMs: %d",
                 #            address, offset, count, timeoutMs);
@@ -197,13 +197,13 @@ class ModifiedModbus(ISerialReceiver):
                 if (self.Send(data,timeoutMs)):        
                     #//check buffer
                     if (self.getholdingsBuffer[0]!=slave):
-                        errormsg = "wrong address Sended: %d, Received: %d".format(slave,self.getholdingsBuffer[0]);
+                        errormsg += "wrong address Sended: %d, Received: %d".format(slave,self.getholdingsBuffer[0]);
                     elif (self.getholdingsBuffer[1]!=FUNC_GETHOLDINGS):
-                        errormsg = "Incorrect function. Request:%d, Response: %d".format(FUNC_GETHOLDINGS, self.getholdingsBuffer[1])
+                        errormsg += "Incorrect function. Request:%d, Response: %d".format(FUNC_GETHOLDINGS, self.getholdingsBuffer[1])
                     elif (self.getholdingsBuffer[2]!=count*2):
-                        errormsg = "Incorrect count of bytes request:%d, response:%d".format(count*2,self.getholdingsBuffer[2]);                        
+                        errormsg += "Incorrect count of bytes request:%d, response:%d".format(count*2,self.getholdingsBuffer[2]);                        
                     elif (not self.checkFrameCrc(self.getholdingsBuffer)):
-                        errormsg = "incorrect crc";
+                        errormsg += "incorrect crc";
                                 #else:                        
                                                     
                                     #auto end = DateTime::Now();
@@ -218,10 +218,10 @@ class ModifiedModbus(ISerialReceiver):
                                                                                         
                 else:        
                     if (slave!=1 ):
-                        errormsg = "timeout";            
+                        errormsg += " timeout";            
                 
                 errormsg += f" attempt: {attempt}"
-                print(errormsg)
+                #print(errormsg)
                 #logger.Error("Error getHoldings: %d, offest: %d, count: %d, timeoutMs: %d, error: %s",
                 #        address, offset, count, timeoutMs, errormsg.c_str());                
                 time.sleep(0.05)
@@ -245,10 +245,10 @@ class ModifiedModbus(ISerialReceiver):
         self.lock.acquire()
         self.locked = True 
         try:                    
-            while(attempt < 3):
-                errormsg="";   
+            while(attempt < 3):                
                 attempt += 1 
-                print(f"setHolding slave:{slave},offset: {offset} attempt: {attempt}")
+                errormsg = f"setHolding slave:{slave},offset: {offset} attempt: {attempt} -> \
+                " 
                    
                 
                 timeoutMs = 200;
@@ -272,17 +272,17 @@ class ModifiedModbus(ISerialReceiver):
                     if (respAddress == slave):            
                         if (data[6] == self.getholdingsBuffer[6] and 
                             data[7] == self.getholdingsBuffer[7]):
-                            print("received: ",bytes(self.getholdingsBuffer).hex())
+                            errormsg += "received: " + bytes(self.getholdingsBuffer).hex()
                             return True;
                             
                         else:
-                            errormsg = "wrong CRC";
+                            errormsg += f"wrong CRC, slave: {slave}";
                 
                     else:
-                        errormsg = "wrong response address";                
+                        errormsg += f"wrong response address, slave: {slave}";                
                 else:
-                    errormsg = "timeout";
-                errormsg += f"attempt: {attempt}"                
+                    errormsg += f", timeout {slave}";
+                errormsg += f", attempt: {attempt}"                
                 time.sleep(0.05)
         finally:
             self.locked = False
