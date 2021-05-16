@@ -28,11 +28,10 @@ from .const import (
     CONF_HOLDINGS,
     CONF_HOLDINGS_TYPE,
     CONF_STRING,
-    CONF_HEX
+    CONF_HEX,
+    CONF_COUNT
 )
 from homeassistant.components.deutsche_bahn.sensor import CONF_OFFSET
-from homeassistant.components.modbus.const import CONF_COUNT
-
 
 _LOGGER = logging.getLogger(__name__)
 
