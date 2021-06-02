@@ -1,6 +1,7 @@
 {
   "domain": "modified_modbus",
   "name": "modified_modbus",
+  "version": "1.0.0",
   "config_flow": false,
   "documentation": "",
   "requirements": ["pyserial==3.4"],

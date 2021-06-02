@@ -176,7 +176,7 @@ class ModifiedModbus(ISerialReceiver):
             while(attempt < 3):                
                 attempt += 1
                 bufferbytes = bytes(0)
-                errormsg = f"getHoldings slave:{slave},offset: {offset} count: {count}, attepmt:{attempt}"
+                errormsg = f"getHoldings slave:{slave},offset: {offset} count: {count}, attepmt:{attempt} \n"
                 data = []            
                 data.append(slave)
                 data.append(FUNC_GETHOLDINGS)
@@ -189,7 +189,7 @@ class ModifiedModbus(ISerialReceiver):
                 
                 data = self.AppendCRC(data)
                 
-                errormsg = "sended: ",data.hex()
+                errormsg += f"sended: {data.hex()}\n"
                             
                 #logger.Trace("getHoldings: %d, offest: %d, count: %d, timeoutMs: %d",
                 #            address, offset, count, timeoutMs);
