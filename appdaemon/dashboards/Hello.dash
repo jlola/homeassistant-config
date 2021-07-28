@@ -1,0 +1,33 @@
+##
+## Main arguments, all optional
+##
+title: Main Panel
+widget_dimensions: [120, 120]
+widget_size: [1, 1]
+widget_margins: [5, 5]
+columns: 2
+global_parameters:
+    use_comma: 1
+    precision: 1
+    use_hass_icon: 1
+    namespace: default
+
+layout:
+    - input_circle_floor, gauge_circle_floor
+
+
+gauge_circle_floor:
+  entity: input_number.setpoint_circle_floor
+  widget_type: sensor
+  max: 50
+  min: 20
+  title: Okruh podlahove topeni
+  units: "°C"
+
+input_circle_floor:
+  entity: input_number.setpoint_circle_floor
+  widget_type: input_slider
+  max: 50
+  min: 20
+  title: Setpoint podlahove topeni
+  units: "°C"

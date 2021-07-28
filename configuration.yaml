@@ -1,0 +1,454 @@
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+logger:
+  default: info
+  logs:
+    modified_modbus: info
+homeassistant:
+  customize:
+    switch.switch_wc:
+      friendly_name: Vetrak wc
+    switch.switch_bathroom:
+      friendly_name: Vetrak koupelna
+    sensor.temp_bathroom:
+      friendly_name: Teplota koupelna
+    sensor.temp_wc:
+      friendly_name: Teplota wc
+    binary_sensor.binary_sensor_bathroom:
+      friendly_name: Tlacitko koupelna
+    binary_sensor.binary_sensor_wc:
+      friendly_name: Tlacitko wc
+
+template:
+  - sensor:
+      - name: "Floor setpoint"
+        unit_of_measurement: "°C"
+        state: "{{  state_attr('climate.Floor','temperature') }}"
+
+climate:
+  - platform: smart_thermostat
+    name: Floor
+    heater: input_number.floor_servo_value
+    target_sensor: input_number.temp_floor_circuit
+    min_temp: 15
+    max_temp: 45
+    ac_mode: False
+    target_temp: 17
+    keep_alive:
+      seconds: 5
+    initial_hvac_mode: "heat"
+    away_temp: 16
+    kp: 5
+    ki: 3
+    kd: 2
+    pwm: 0
+    difference: 100
+    noiseband: 0.5
+  - platform: smart_thermostat
+    name: Heater
+    heater: input_number.heater_servo_value
+    target_sensor: input_number.temp_heater_circuit
+    min_temp: 15
+    max_temp: 60
+    ac_mode: False
+    target_temp: 40
+    keep_alive:
+      seconds: 5
+    initial_hvac_mode: "heat"
+    away_temp: 16
+    kp: 5
+    ki: 3
+    kd: 2
+    pwm: 0
+    difference: 100
+    noiseband: 0.5
+
+input_select:
+  floor_pump_mode:
+    name: Režim čerpadla
+    options:
+      - On
+      - Off
+      - Auto
+  heater_pump_mode:
+    name: Režim čerpadla
+    options:
+      - On
+      - Off
+      - Auto
+
+input_number:
+  floor_servo_value:
+    name: Otevreni serva (%)
+    initial: 0
+    min: 0
+    max: 100
+    step: 1
+    mode: box
+    unit_of_measurement: "%"
+  heater_servo_value:
+    name: Otevreni serva (%)
+    initial: 0
+    min: 0
+    max: 100
+    step: 1
+    mode: box
+    unit_of_measurement: "%"
+  heater_servo_time:
+    name: Heater servo time
+    initial: 0
+    min: -130
+    max: 130
+    step: 1
+    mode: box
+    unit_of_measurement: "s"
+  floor_servo_time:
+    name: Floor servo time
+    initial: 0
+    min: -130
+    max: 130
+    step: 1
+    mode: box
+    unit_of_measurement: "s"
+  setpoint_circle_floor:
+    name: Set point circle floor
+    initial: 30
+    min: 20
+    max: 100
+    step: 0.2
+    mode: box
+    unit_of_measurement: "°C"
+  setpoint_circle_radiator:
+    name: Set point circle radiator
+    initial: 30
+    min: 20
+    max: 100
+    step: 0.2
+    mode: box
+    unit_of_measurement: "°C"
+  pump_t_drum_min:
+    name: Minimalni teplota kotle
+    max: 100
+    min: 0
+  pump_t_tank_min:
+    name: Minimalni teplota nadrze
+    max: 100
+    min: 0
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+modified_modbus:
+  name: default
+  type: serial
+  method: rtu
+  port: /dev/ttyUSB0
+  baudrate: 115200
+  stopbits: 1
+  bytesize: 8
+  parity: N
+
+binary_sensor 4:
+  - holdings:
+      - hub: default
+        name: binary_sensor4.1
+        offset: 23
+        slave: 4
+        value_off: 513
+        value_on: 769
+        bit: 8
+    platform: modified_modbus
+  - holdings:
+      - hub: default
+        name: binary_sensor_bathroom
+        offset: 24
+        slave: 4
+        value_off: 1538
+        value_on: 1794
+        bit: 8
+    platform: modified_modbus
+  - holdings:
+      - hub: default
+        name: binary_sensor4.3
+        offset: 25
+        slave: 4
+        value_off: 515
+        value_on: 771
+        bit: 8
+    platform: modified_modbus
+sensor  4:
+  - holdings:
+      - OwId: 28905d080600001b
+        holdings_type: ds18b20
+        device_class: temperature
+        hub: default
+        name: temp_bathroom
+        slave: 4
+        unit_of_measurement: "°C"
+    platform: modified_modbus
+switch 4:
+  - holdings:
+      - command_off: 4
+        command_on: 260
+        hub: default
+        name: switch_bathroom
+        offset: 26
+        slave: 4
+        state_off: 4
+        state_on: 260
+    platform: modified_modbus
+
+binary_sensor 5:
+  - holdings:
+      - hub: default
+        name: thermostat #binary_sensor5.1
+        offset: 23
+        slave: 5
+        value_off: 513
+        value_on: 769
+        bit: 8
+    platform: modified_modbus
+  - holdings:
+      - hub: default
+        name: binary_sensor5.2
+        offset: 24
+        slave: 5
+        value_off: 514
+        value_on: 770
+        bit: 8
+    platform: modified_modbus
+  - holdings:
+      - hub: default
+        name: binary_sensor5.3
+        offset: 25
+        slave: 5
+        value_off: 515
+        value_on: 771
+        bit: 8
+    platform: modified_modbus
+  - holdings:
+      - hub: default
+        name: binary_sensor5.4
+        offset: 26
+        slave: 5
+        value_off: 516
+        value_on: 772
+        bit: 8
+    platform: modified_modbus
+  - holdings:
+      - hub: default
+        name: binary_sensor5.5
+        offset: 27
+        slave: 5
+        value_off: 517
+        value_on: 773
+        bit: 8
+    platform: modified_modbus
+  - holdings:
+      - hub: default
+        name: binary_sensor5.6
+        offset: 28
+        slave: 5
+        value_off: 518
+        value_on: 774
+        bit: 8
+    platform: modified_modbus
+switch 5:
+  - holdings:
+      - command_off: 7
+        command_on: 263
+        hub: default
+        name: floor_servo_open
+        offset: 29
+        slave: 5
+        state_off: 7
+        state_on: 263
+    platform: modified_modbus
+  - holdings:
+      - command_off: 8
+        command_on: 264
+        hub: default
+        name: floor_servo_close
+        offset: 30
+        slave: 5
+        state_off: 8
+        state_on: 264
+    platform: modified_modbus
+  - holdings:
+      - command_off: 9
+        command_on: 265
+        hub: default
+        name: heater_servo_open
+        offset: 31
+        slave: 5
+        state_off: 9
+        state_on: 265
+    platform: modified_modbus
+  - holdings:
+      - command_off: 10
+        command_on: 266
+        hub: default
+        name: heater_servo_close
+        offset: 32
+        slave: 5
+        state_off: 10
+        state_on: 266
+    platform: modified_modbus
+  - holdings:
+      - command_off: 11
+        command_on: 267
+        hub: default
+        name: floor_pump
+        offset: 33
+        slave: 5
+        state_off: 11
+        state_on: 267
+    platform: modified_modbus
+  - holdings:
+      - command_off: 12
+        command_on: 268
+        hub: default
+        name: heater_pump
+        offset: 34
+        slave: 5
+        state_off: 12
+        state_on: 268
+    platform: modified_modbus
+  - holdings:
+      - command_off: 13
+        command_on: 269
+        hub: default
+        name: switch.5.13
+        offset: 35
+        slave: 5
+        state_off: 13
+        state_on: 269
+    platform: modified_modbus
+  - holdings:
+      - command_off: 14
+        command_on: 270
+        hub: default
+        name: switch.5.14
+        offset: 36
+        slave: 5
+        state_off: 14
+        state_on: 270
+    platform: modified_modbus
+  - holdings:
+      - command_off: 15
+        command_on: 271
+        hub: default
+        name: switch.5.15
+        offset: 37
+        slave: 5
+        state_off: 15
+        state_on: 271
+    platform: modified_modbus
+
+binary_sensor 6:
+  - holdings:
+      - hub: default
+        name: binary_sensor6.1
+        offset: 23
+        slave: 6
+        value_off: 513
+        value_on: 769
+        bit: 8
+    platform: modified_modbus
+  - holdings:
+      - hub: default
+        name: binary_sensor6.2
+        offset: 24
+        slave: 6
+        value_off: 1538
+        value_on: 1794
+        bit: 8
+    platform: modified_modbus
+  - holdings:
+      - hub: default
+        name: binary_sensor_wc
+        offset: 25
+        slave: 6
+        value_off: 1539
+        value_on: 1795
+        bit: 8
+    platform: modified_modbus
+sensor  6:
+  - holdings:
+      - OwId: 28f69f0a060000cc
+        holdings_type: ds18b20
+        device_class: temperature
+        hub: default
+        name: temp_wc
+        slave: 6
+        unit_of_measurement: "°C"
+    platform: modified_modbus
+  - holdings:
+      - holdings_type: hex
+        hub: default
+        name: test_string
+        slave: 6
+        unit_of_measurement: ""
+        offset: 0
+        count: 4
+    platform: modified_modbus
+
+switch 6:
+  - holdings:
+      - command_off: 4
+        command_on: 260
+        hub: default
+        name: switch_wc
+        offset: 26
+        slave: 6
+        state_off: 4
+        state_on: 260
+    platform: modified_modbus
+
+binary_sensor 3:
+  - holdings:
+      - bit: 8
+        hub: default
+        name: binary_sensor3.2
+        offset: 28
+        slave: 3
+        value_off: 0
+        value_on: 1
+    platform: modified_modbus
+sensor  3:
+  - holdings:
+      - count: 25
+        holdings_type: string
+        hub: default
+        name: rfidreader_3
+        offset: 95
+        slave: 3
+    platform: modified_modbus
+switch 3:
+  - holdings:
+      - command_off: 3
+        command_on: 259
+        hub: default
+        name: switch.3.0
+        offset: 27
+        slave: 3
+        state_off: 3
+        state_on: 259
+    platform: modified_modbus
+  - holdings:
+      - command_off: 0
+        command_on: 1
+        hub: default
+        name: rfidreader_reset_3
+        offset: 94
+        slave: 3
+        state_off: 0
+        state_on: 1
+    platform: modified_modbus

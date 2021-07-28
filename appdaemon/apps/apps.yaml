@@ -1,3 +1,56 @@
+---
 hello_world:
   module: hello
   class: HelloWorld
+
+bathroom_fun:
+  module: funcontroller
+  class: FunController
+  fan_button: binary_sensor.binary_sensor_bathroom
+  fan_switch: switch.switch_bathroom
+
+floor_servo:
+  module: servocontroller
+  class: ServoController
+  servo_value: input_number.floor_servo_value
+  servo_time: input_number.floor_servo_time
+  servo_open_switch: switch.floor_servo_open
+  servo_close_switch: switch.floor_servo_close
+
+heater_servo:
+  module: servocontroller
+  class: ServoController
+  servo_value: input_number.heater_servo_value
+  servo_time: input_number.heater_servo_time
+  servo_open_switch: switch.heater_servo_open
+  servo_close_switch: switch.heater_servo_close
+
+floor_pump_controller:
+  module: pumpcontroller
+  class: PumpController
+  pump_mode: input_select.floor_pump_mode
+  pump_switch: switch.floor_pump
+  min_temp_drum: input_number.pump_t_drum_min
+  temp_drum: input_number.temp_boiler
+  min_temp_tank: input_number.pump_t_tank_min
+  temp_tank: input_number.temp_tank_top
+  thermostat: binary_sensor.thermostat
+  climate: climate.floor
+  servo_value: input_number.floor_servo_value
+
+heater_pump_controller:
+  module: pumpcontroller
+  class: PumpController
+  pump_mode: input_select.heater_pump_mode
+  pump_switch: switch.heater_pump
+  min_temp_drum: input_number.pump_t_drum_min
+  temp_drum: input_number.temp_boiler
+  min_temp_tank: input_number.pump_t_tank_min
+  temp_tank: input_number.temp_tank_top
+  thermostat: binary_sensor.thermostat
+  climate: climate.heater
+  servo_value: input_number.heater_servo_value
+
+floorheater:
+  module: floorheater
+  class: FloorHeater

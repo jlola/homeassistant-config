@@ -1,12 +1,15 @@
+---
+secrets: /config/secrets.yaml
 appdaemon:
+  latitude: 52.379189
+  longitude: 4.899431
+  elevation: 2
   time_zone: Europe/Prague
-  latitude: 49.422942600000006
-  longitude: 16.3538212
-  elevation:  1.0
   plugins:
     HASS:
       type: hass
-      ha_url: http://192.168.89.248:8123
-      token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJiYzg4ZThkODY0N2I0MTNjOTlmOWE1YzdmMjk1NzRkNCIsImlhdCI6MTYwMTIzODczOSwiZXhwIjoxOTE2NTk4NzM5fQ.FKiG3sfaQVhg1zp9aaK5V6BnSygXZKCkhpqJ1_Qi1qM
-      ha_key: "AppDaemon"
-  app_dir: /root/conf/apps
+http:
+  url: http://127.0.0.1:5050
+admin:
+api:
+hadashboard:
