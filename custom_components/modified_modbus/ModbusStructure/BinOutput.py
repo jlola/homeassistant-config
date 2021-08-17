@@ -32,6 +32,7 @@ class BinOutput(object):
         self._pinNumber = 0xFF & data
         self._valueOn = data | 0x0100
         self._valueOff = data & 0xFEFF
+        self._name = f"switch.{self._slave}.{self._pinNumber}"
         
     def SetValues(self,valueOn,valueOff, name):
         self._valueOn = valueOn
