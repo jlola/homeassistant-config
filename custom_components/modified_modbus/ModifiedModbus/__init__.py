@@ -248,9 +248,7 @@ class ModifiedModbus(ISerialReceiver):
             while(attempt < 3):                
                 attempt += 1 
                 errormsg = f"setHolding slave:{slave},offset: {offset} attempt: {attempt} -> \
-                " 
-                   
-                
+                "
                 timeoutMs = 200;
                 data = []
                 data.append(slave)

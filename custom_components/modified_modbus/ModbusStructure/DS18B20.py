@@ -101,7 +101,7 @@ class DS18B20(object):
             "platform" : "modified_modbus",                 
             CONF_HOLDINGS : [
                  { 
-                   "name" : f"ds18b20_{self.OwId}",
+                   "name" : f"{self.slave}.ds18b20_{self.OwId}",
                    "hub" : self._hub.ConfigName,
                    "slave" : self.slave,
                    CONF_HOLDINGS_TYPE : CONF_DS18B20,                       

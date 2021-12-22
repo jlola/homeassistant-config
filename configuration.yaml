@@ -1,11 +1,40 @@
 # Configure a default setup of Home Assistant (frontend, api, etc)
-default_config:
+#default_config:
+
+history:
+recorder:
+cloud:
+counter:
+dhcp:
+energy:
+frontend:
+input_boolean:
+input_datetime:
+input_text:
+logbook:
+map:
+media_source:
+mobile_app:
+my:
+network:
+person:
+ssdp:
+sun:
+system_health:
+tag:
+timer:
+usb:
+updater:
+webhook:
+zeroconf:
+zone:
 
 logger:
-  default: info
+  default: debug
   logs:
     modified_modbus: info
 homeassistant:
+  time_zone: Europe/Prague
   customize:
     switch.switch_wc:
       friendly_name: Vetrak wc
@@ -136,10 +165,6 @@ input_number:
     max: 100
     min: 0
 
-# Text to speech
-tts:
-  - platform: google_translate
-
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
@@ -260,6 +285,18 @@ binary_sensor 5:
         value_on: 774
         bit: 8
     platform: modified_modbus
+
+sensor  5:
+  - holdings:
+      - OwId: 28cf74b4010000e3
+        device_class: temperature
+        holdings_type: ds18b20
+        hub: default
+        name: ds18b20_28cf74b4010000e3
+        slave: 5
+        unit_of_measurement: "°C"
+    platform: modified_modbus
+
 switch 5:
   - holdings:
       - command_off: 7
@@ -454,149 +491,148 @@ switch 3:
     platform: modified_modbus
 
 binary_sensor 7:
-- holdings:
-  - bit: 8
-    hub: default
-    name: binary_sensor7.1
-    offset: 23
-    slave: 7
-    value_off: 0
-    value_on: 1
-  platform: modified_modbus
-- holdings:
-  - bit: 8
-    hub: default
-    name: binary_sensor7.2
-    offset: 24
-    slave: 7
-    value_off: 0
-    value_on: 1
-  platform: modified_modbus
-- holdings:
-  - bit: 8
-    hub: default
-    name: binary_sensor7.3
-    offset: 25
-    slave: 7
-    value_off: 0
-    value_on: 1
-  platform: modified_modbus
-- holdings:
-  - bit: 8
-    hub: default
-    name: binary_sensor7.4
-    offset: 26
-    slave: 7
-    value_off: 0
-    value_on: 1
-  platform: modified_modbus
-- holdings:
-  - bit: 8
-    hub: default
-    name: binary_sensor7.5
-    offset: 27
-    slave: 7
-    value_off: 0
-    value_on: 1
-  platform: modified_modbus
-- holdings:
-  - bit: 8
-    hub: default
-    name: binary_sensor7.6
-    offset: 28
-    slave: 7
-    value_off: 0
-    value_on: 1
-  platform: modified_modbus
+  - holdings:
+      - bit: 8
+        hub: default
+        name: binary_sensor7.1
+        offset: 23
+        slave: 7
+        value_off: 0
+        value_on: 1
+    platform: modified_modbus
+  - holdings:
+      - bit: 8
+        hub: default
+        name: binary_sensor7.2
+        offset: 24
+        slave: 7
+        value_off: 0
+        value_on: 1
+    platform: modified_modbus
+  - holdings:
+      - bit: 8
+        hub: default
+        name: binary_sensor7.3
+        offset: 25
+        slave: 7
+        value_off: 0
+        value_on: 1
+    platform: modified_modbus
+  - holdings:
+      - bit: 8
+        hub: default
+        name: binary_sensor7.4
+        offset: 26
+        slave: 7
+        value_off: 0
+        value_on: 1
+    platform: modified_modbus
+  - holdings:
+      - bit: 8
+        hub: default
+        name: binary_sensor7.5
+        offset: 27
+        slave: 7
+        value_off: 0
+        value_on: 1
+    platform: modified_modbus
+  - holdings:
+      - bit: 8
+        hub: default
+        name: binary_sensor7.6
+        offset: 28
+        slave: 7
+        value_off: 0
+        value_on: 1
+    platform: modified_modbus
 switch 7:
-- holdings:
-  - command_off: 7
-    command_on: 263
-    hub: default
-    name: switch.7.7
-    offset: 29
-    slave: 7
-    state_off: 7
-    state_on: 263
-  platform: modified_modbus
-- holdings:
-  - command_off: 8
-    command_on: 264
-    hub: default
-    name: switch.7.8
-    offset: 30
-    slave: 7
-    state_off: 8
-    state_on: 264
-  platform: modified_modbus
-- holdings:
-  - command_off: 9
-    command_on: 265
-    hub: default
-    name: switch.7.9
-    offset: 31
-    slave: 7
-    state_off: 9
-    state_on: 265
-  platform: modified_modbus
-- holdings:
-  - command_off: 10
-    command_on: 266
-    hub: default
-    name: switch.7.10
-    offset: 32
-    slave: 7
-    state_off: 10
-    state_on: 266
-  platform: modified_modbus
-- holdings:
-  - command_off: 11
-    command_on: 267
-    hub: default
-    name: switch.7.11
-    offset: 33
-    slave: 7
-    state_off: 11
-    state_on: 267
-  platform: modified_modbus
-- holdings:
-  - command_off: 12
-    command_on: 268
-    hub: default
-    name: switch.7.12
-    offset: 34
-    slave: 7
-    state_off: 12
-    state_on: 268
-  platform: modified_modbus
-- holdings:
-  - command_off: 13
-    command_on: 269
-    hub: default
-    name: switch.7.13
-    offset: 35
-    slave: 7
-    state_off: 13
-    state_on: 269
-  platform: modified_modbus
-- holdings:
-  - command_off: 14
-    command_on: 270
-    hub: default
-    name: switch.7.14
-    offset: 36
-    slave: 7
-    state_off: 14
-    state_on: 270
-  platform: modified_modbus
-- holdings:
-  - command_off: 15
-    command_on: 271
-    hub: default
-    name: switch.7.15
-    offset: 37
-    slave: 7
-    state_off: 15
-    state_on: 271
-  platform: modified_modbus
-
+  - holdings:
+      - command_off: 7
+        command_on: 263
+        hub: default
+        name: switch.7.7
+        offset: 29
+        slave: 7
+        state_off: 7
+        state_on: 263
+    platform: modified_modbus
+  - holdings:
+      - command_off: 8
+        command_on: 264
+        hub: default
+        name: switch.7.8
+        offset: 30
+        slave: 7
+        state_off: 8
+        state_on: 264
+    platform: modified_modbus
+  - holdings:
+      - command_off: 9
+        command_on: 265
+        hub: default
+        name: switch.7.9
+        offset: 31
+        slave: 7
+        state_off: 9
+        state_on: 265
+    platform: modified_modbus
+  - holdings:
+      - command_off: 10
+        command_on: 266
+        hub: default
+        name: switch.7.10
+        offset: 32
+        slave: 7
+        state_off: 10
+        state_on: 266
+    platform: modified_modbus
+  - holdings:
+      - command_off: 11
+        command_on: 267
+        hub: default
+        name: switch.7.11
+        offset: 33
+        slave: 7
+        state_off: 11
+        state_on: 267
+    platform: modified_modbus
+  - holdings:
+      - command_off: 12
+        command_on: 268
+        hub: default
+        name: switch.7.12
+        offset: 34
+        slave: 7
+        state_off: 12
+        state_on: 268
+    platform: modified_modbus
+  - holdings:
+      - command_off: 13
+        command_on: 269
+        hub: default
+        name: switch.7.13
+        offset: 35
+        slave: 7
+        state_off: 13
+        state_on: 269
+    platform: modified_modbus
+  - holdings:
+      - command_off: 14
+        command_on: 270
+        hub: default
+        name: switch.7.14
+        offset: 36
+        slave: 7
+        state_off: 14
+        state_on: 270
+    platform: modified_modbus
+  - holdings:
+      - command_off: 15
+        command_on: 271
+        hub: default
+        name: switch.7.15
+        offset: 37
+        slave: 7
+        state_off: 15
+        state_on: 271
+    platform: modified_modbus

@@ -1,0 +1,4 @@
+sensor.ds18b20_28cf74b4010000e3:
+  unit_of_measurement: °C
+  friendly_name: ds18b20_28cf74b4010000e3
+  device_class: temperature
