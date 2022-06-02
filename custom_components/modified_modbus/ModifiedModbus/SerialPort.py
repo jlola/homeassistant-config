@@ -85,8 +85,5 @@ class SerialPort(object):
     def ThreadMethod(self):                    
         while(self.state == State.OPEN):        
             self.Read();                
-    
-    
-         
-        
-        
+    def GetName(self):
+        return "SerialPort"

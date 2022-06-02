@@ -4,6 +4,7 @@
 """Constants used in modbus integration."""
 
 # configuration names
+CONF_HOST = "host"
 CONF_BAUDRATE = "baudrate"
 CONF_BYTESIZE = "bytesize"
 CONF_HUB = "hub"

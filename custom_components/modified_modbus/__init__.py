@@ -6,7 +6,8 @@ from datetime import datetime
 
 from .IModifiedModbusHub import IModifiedModbusHub
 from .ModifiedModbus.Helper import Helper
-
+from .ModifiedModbus.SocketClient import SocketClient
+from .ModifiedModbus.SerialPort import SerialPort
 from .ModifiedModbus.IDeviceEventConsumer import IDeviceEventConsumer
 from .ModifiedModbus import ModifiedModbus
 from homeassistant.const import (
@@ -69,13 +70,22 @@ SERIAL_SCHEMA = BASE_SCHEMA.extend(
         vol.Required(CONF_PORT): cv.string,
         vol.Required(CONF_PARITY): vol.Any("E", "O", "N"),
         vol.Required(CONF_STOPBITS): vol.Any(1, 2),
-        vol.Required(CONF_TYPE): "serial",
+        vol.Required(CONF_TYPE): vol.Any("serial"),
+        vol.Optional(CONF_TIMEOUT, default=3): cv.socket_timeout,
+    }
+)
+
+SOCKET_SCHEMA = BASE_SCHEMA.extend(
+    {
+        vol.Required(CONF_TYPE): vol.Any("tcp"),
+        vol.Required(CONF_PORT): cv.positive_int,
+        vol.Required(CONF_HOST): cv.string,
         vol.Optional(CONF_TIMEOUT, default=3): cv.socket_timeout,
     }
 )
 
 CONFIG_SCHEMA = vol.Schema(
-    {DOMAIN: vol.All(cv.ensure_list, [vol.Any(SERIAL_SCHEMA)])},
+    {DOMAIN: vol.All(cv.ensure_list, [vol.Any(SERIAL_SCHEMA, SOCKET_SCHEMA)])},
     extra=vol.ALLOW_EXTRA,
 )
 
@@ -168,11 +178,10 @@ def setup(hass, config):
         client_name = service.data[ATTR_HUB]    
         count = int(float(service.data[ATTR_COUNT]))
         timeout = int(float(service.data[ATTR_TIMEOUTMS]))
-
+        _LOGGER.info(f"read_holdings request: hub: {client_name}, slave: {slave}, offset: {offset}, count: {count}") 
         holdings = hub_collect[client_name].readHoldings(slave, offset, count, timeout)
-        
-        strholdings = Helper.printHoldings(holdings)
-        _LOGGER.info(f"read_holdings: slave: {slave}, offset: {offset}, count: {count}, result: {strholdings}") 
+        strholdings = Helper.printHoldings(holdings)        
+        _LOGGER.info(f"read_holdings response: hub: {client_name}, slave: {slave}, offset: {offset}, count: {count}, result: {strholdings}") 
 
     # do not wait for EVENT_HOMEASSISTANT_START, activate pymodbus now
     for client in hub_collect.values():
@@ -296,6 +305,7 @@ class ModifiedModbusHub(IDeviceEventConsumer,IModifiedModbusHub):
         self._config_delay = 0
         self._consumers = []        
         self._modbusCacheTimeout:datetime = datetime.now()
+        _LOGGER.info(f"Init ModifiedModbusHub {self._config_name}, Type: {self._config_type}")
 
         if self._config_type == "serial":
             # serial configuration
@@ -304,26 +314,32 @@ class ModifiedModbusHub(IDeviceEventConsumer,IModifiedModbusHub):
             self._config_stopbits = client_config[CONF_STOPBITS]
             self._config_bytesize = client_config[CONF_BYTESIZE]
             self._config_parity = client_config[CONF_PARITY]
-        else:
-            # network configuration
+        elif (self._config_type == "tcp"):
             self._config_host = client_config[CONF_HOST]
-            self._config_delay = client_config[CONF_DELAY]
-            if self._config_delay > 0:
-                _LOGGER.warning(
-                    "Parameter delay is accepted but not used in this version"
+        else:
+            # network configuration                       
+            _LOGGER.warning(
+                    "Wrong _config_type configuration!!!!!!!!!!!!"
                 )
 
     @property
     def ConfigName(self):
         return self._config_name    
-        
+
     def setup(self):
         """Set up pymodbus client."""
-        if self._config_type == "serial":            
-            self._client = ModifiedModbus(self._config_port,self._config_baudrate)
+        if self._config_type == "serial":
+            serial = SerialPort(self._config_port,self._config_baudrate)
+            self._client = ModifiedModbus(serial)
+            self._modbusCache = ModbusCache(self._client)
+            self._client.AddConsumer(self)
+        elif self._config_type == "tcp":
+            serial = SocketClient(self._config_host,self._config_port)
+            self._client = ModifiedModbus(serial)
             self._modbusCache = ModbusCache(self._client)
             self._client.AddConsumer(self)
         else:
+            self._client = None
             assert False
 
         # Connect device

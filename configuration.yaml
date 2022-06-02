@@ -24,15 +24,15 @@ system_health:
 tag:
 timer:
 usb:
-updater:
 webhook:
 zeroconf:
 zone:
 
 logger:
-  default: debug
+  default: info
   logs:
-    modified_modbus: info
+    custom_components.modified_modbus: info
+
 homeassistant:
   time_zone: Europe/Prague
   customize:
@@ -48,6 +48,9 @@ homeassistant:
       friendly_name: Tlacitko koupelna
     binary_sensor.binary_sensor_wc:
       friendly_name: Tlacitko wc
+
+system_log:
+  max_entries: 1000
 
 template:
   - sensor:
@@ -97,19 +100,19 @@ input_select:
   floor_pump_mode:
     name: Režim čerpadla
     options:
-      - On
-      - Off
+      - "On"
+      - "Off"
       - Auto
   heater_pump_mode:
     name: Režim čerpadla
     options:
-      - On
-      - Off
+      - "On"
+      - "Off"
       - Auto
 
 input_number:
   floor_servo_value:
-    name: Otevreni serva (%)
+    name: "Otevreni serva (%)"
     initial: 0
     min: 0
     max: 100
@@ -117,7 +120,7 @@ input_number:
     mode: box
     unit_of_measurement: "%"
   heater_servo_value:
-    name: Otevreni serva (%)
+    name: "Otevreni serva (%)"
     initial: 0
     min: 0
     max: 100
@@ -171,14 +174,59 @@ script: !include scripts.yaml
 scene: !include scenes.yaml
 
 modified_modbus:
-  name: default
-  type: serial
-  method: rtu
-  port: /dev/ttyUSB0
-  baudrate: 115200
-  stopbits: 1
-  bytesize: 8
-  parity: N
+  - name: default
+    type: serial
+    method: rtu
+    port: /dev/ttyUSB0
+    baudrate: 115200
+    stopbits: 1
+    bytesize: 8
+    parity: N
+  - name: SocketClient
+    type: tcp
+    port: 9234
+    host: 192.168.89.78
+
+binary_sensor 3:
+  - holdings:
+      - bit: 8
+        hub: SocketClient
+        name: binary_sensor3.2
+        offset: 28
+        slave: 3
+        value_off: 0
+        value_on: 1
+    platform: modified_modbus
+sensor  3:
+  - holdings:
+      - count: 25
+        holdings_type: string
+        hub: SocketClient
+        name: rfidreader_3
+        offset: 95
+        slave: 3
+    platform: modified_modbus
+switch 3:
+  - holdings:
+      - command_off: 3
+        command_on: 259
+        hub: SocketClient
+        name: switch.3.0
+        offset: 27
+        slave: 3
+        state_off: 3
+        state_on: 259
+    platform: modified_modbus
+  - holdings:
+      - command_off: 0
+        command_on: 1
+        hub: SocketClient
+        name: rfidreader_reset_3
+        offset: 94
+        slave: 3
+        state_off: 0
+        state_on: 1
+    platform: modified_modbus
 
 binary_sensor 4:
   - holdings:
@@ -447,47 +495,6 @@ switch 6:
         slave: 6
         state_off: 4
         state_on: 260
-    platform: modified_modbus
-
-binary_sensor 3:
-  - holdings:
-      - bit: 8
-        hub: default
-        name: binary_sensor3.2
-        offset: 28
-        slave: 3
-        value_off: 0
-        value_on: 1
-    platform: modified_modbus
-sensor  3:
-  - holdings:
-      - count: 25
-        holdings_type: string
-        hub: default
-        name: rfidreader_3
-        offset: 95
-        slave: 3
-    platform: modified_modbus
-switch 3:
-  - holdings:
-      - command_off: 3
-        command_on: 259
-        hub: default
-        name: switch.3.0
-        offset: 27
-        slave: 3
-        state_off: 3
-        state_on: 259
-    platform: modified_modbus
-  - holdings:
-      - command_off: 0
-        command_on: 1
-        hub: default
-        name: rfidreader_reset_3
-        offset: 94
-        slave: 3
-        state_off: 0
-        state_on: 1
     platform: modified_modbus
 
 binary_sensor 7:

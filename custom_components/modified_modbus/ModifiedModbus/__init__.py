@@ -11,6 +11,7 @@ import threading
 from .IDeviceEventConsumer import IDeviceEventConsumer
 from .ISerialReceiver import ISerialReceiver
 from .SerialPort import SerialPort
+from .SocketClient import SocketClient
 from .Helper import Helper
 import time
 
@@ -26,20 +27,20 @@ class ModifiedModbus(ISerialReceiver):
     classdocs
     '''
 
-    def __init__(self,port:str,speed:int):
+    def __init__(self,serial):
         '''
         Constructor
-        '''        
-        self.serial = SerialPort(port,speed)
+        '''
+        self.serial =  serial
         self.serial.SetReceiver(self)
         self.getholdingsBuffer = []
-        self.event = threading.Event()        
+        self.event = threading.Event()
         self.receiving = False
         self.buffer = []
         self.consumers = []
         self.lock = threading.Lock()
         self.locked = False
-    
+
     def Open(self):
         self.serial.Open()
         
@@ -140,7 +141,7 @@ class ModifiedModbus(ISerialReceiver):
                     valid = False;
             
         return completed, valid, func;        
-         
+
     def Send(self, data:bytes,timeoutMs:int = 100) -> bool:
         self.getholdingsBuffer.clear()        
         self.buffer.clear()
@@ -176,7 +177,7 @@ class ModifiedModbus(ISerialReceiver):
             while(attempt < 3):                
                 attempt += 1
                 bufferbytes = bytes(0)
-                errormsg = f"getHoldings slave:{slave},offset: {offset} count: {count}, attepmt:{attempt} \n"
+                errormsg = f"getHoldings type:{self.serial.GetName()}, slave:{slave},offset: {offset} count: {count}, attepmt:{attempt} \n"
                 data = []            
                 data.append(slave)
                 data.append(FUNC_GETHOLDINGS)
@@ -197,11 +198,11 @@ class ModifiedModbus(ISerialReceiver):
                 if (self.Send(data,timeoutMs)):        
                     #//check buffer
                     if (self.getholdingsBuffer[0]!=slave):
-                        errormsg += "wrong address Sended: %d, Received: %d".format(slave,self.getholdingsBuffer[0]);
+                        errormsg += f"wrong address Sended: {slave}, Received: {self.getholdingsBuffer[0]}";
                     elif (self.getholdingsBuffer[1]!=FUNC_GETHOLDINGS):
-                        errormsg += "Incorrect function. Request:%d, Response: %d".format(FUNC_GETHOLDINGS, self.getholdingsBuffer[1])
+                        errormsg += f"Incorrect function. Request:{FUNC_GETHOLDINGS}, Response: {self.getholdingsBuffer[1]}"
                     elif (self.getholdingsBuffer[2]!=count*2):
-                        errormsg += "Incorrect count of bytes request:%d, response:%d".format(count*2,self.getholdingsBuffer[2]);                        
+                        errormsg += f"Incorrect count of bytes request:{count*2}, response:{self.getholdingsBuffer[2]}"
                     elif (not self.checkFrameCrc(self.getholdingsBuffer)):
                         errormsg += "incorrect crc";
                                 #else:                        
