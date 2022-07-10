@@ -174,15 +174,15 @@ script: !include scripts.yaml
 scene: !include scenes.yaml
 
 modified_modbus:
+  # - name: default2
+  #   type: serial
+  #   method: rtu
+  #   port: /dev/ttyUSB0
+  #   baudrate: 115200
+  #   stopbits: 1
+  #   bytesize: 8
+  #   parity: N
   - name: default
-    type: serial
-    method: rtu
-    port: /dev/ttyUSB0
-    baudrate: 115200
-    stopbits: 1
-    bytesize: 8
-    parity: N
-  - name: SocketClient
     type: tcp
     port: 9234
     host: 192.168.89.78
@@ -190,7 +190,7 @@ modified_modbus:
 binary_sensor 3:
   - holdings:
       - bit: 8
-        hub: SocketClient
+        hub: default
         name: binary_sensor3.2
         offset: 28
         slave: 3
@@ -201,7 +201,7 @@ sensor  3:
   - holdings:
       - count: 25
         holdings_type: string
-        hub: SocketClient
+        hub: default
         name: rfidreader_3
         offset: 95
         slave: 3
@@ -210,7 +210,7 @@ switch 3:
   - holdings:
       - command_off: 3
         command_on: 259
-        hub: SocketClient
+        hub: default
         name: switch.3.0
         offset: 27
         slave: 3
@@ -220,7 +220,7 @@ switch 3:
   - holdings:
       - command_off: 0
         command_on: 1
-        hub: SocketClient
+        hub: default
         name: rfidreader_reset_3
         offset: 94
         slave: 3
