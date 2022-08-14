@@ -16,7 +16,7 @@ class ServoController(hass.Hass):
         self.__request_time = 0
         self.__open_switch = self.args["servo_open_switch"]
         self.__close_switch = self.args["servo_close_switch"]
-        self.listen_state(self.servo_value_callback, self.__servo_value, attribute = "state") 
+        self.listen_state(self.servo_value_callback, self.__servo_value, attribute = "state")
         self.__timer = None
         self.log(f"Initialized")
         self.__oldpercent = 0
@@ -29,9 +29,9 @@ class ServoController(hass.Hass):
             return
         newpercent = float(new)
         self.log(f"servo_value_callback: new percent value: {new}")
-        if (newpercent > 100): 
+        if (newpercent > 100):
             newpercent = 100
-        elif (newpercent < 0): 
+        elif (newpercent < 0):
             newpercent = 0
         #if (abs(self.__oldpercent-newpercent)>=1):
         self.__request_time = round(newpercent * SERVO_OPEN_TO_CLOSE_TIME / 100,0)
@@ -39,7 +39,7 @@ class ServoController(hass.Hass):
             self.__mode = ServoMode.Start
             self.__start_timer()
 
-        
+
     def __turn(self,switch, run):
         #self.log(f"servo:{switch}, run:{run}")
         if (run==True):
@@ -49,13 +49,13 @@ class ServoController(hass.Hass):
 
     def get_servo_time(self):
         return int(float(self.get_state(self.__actual_time, attribute="state")))
-    
+
     def set_servo_time(self,value):
         return self.set_state(self.__actual_time,state=value)
 
     def get_servo_value(self):
         return int(float(self.get_state(self.__servo_value, attribute="state")))
-    
+
     def set_servo_value(self,value):
         return self.set_state(self.__servo_value,state=value)
 
@@ -81,7 +81,7 @@ class ServoController(hass.Hass):
                 self.__timer = None
             if (self.__mode == ServoMode.Reset):
                 self.__mode = ServoMode.Stop
-                self.set_servo_value(self.get_servo_value()) 
+                self.set_servo_value(self.get_servo_value())
             else:
                 self.__mode = ServoMode.Stop
         elif (self.__request_time > servo_time):

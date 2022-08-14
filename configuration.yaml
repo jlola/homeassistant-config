@@ -1,68 +1,23 @@
-# Configure a default setup of Home Assistant (frontend, api, etc)
-#default_config:
-
-history:
-recorder:
-cloud:
-counter:
-dhcp:
-energy:
-frontend:
-input_boolean:
-input_datetime:
-input_text:
-logbook:
-map:
-media_source:
-mobile_app:
-my:
-network:
-person:
-ssdp:
-sun:
-system_health:
-tag:
-timer:
-usb:
-webhook:
-zeroconf:
-zone:
-
-logger:
-  default: info
-  logs:
-    custom_components.modified_modbus: info
-
-homeassistant:
-  time_zone: Europe/Prague
-  customize:
-    switch.switch_wc:
-      friendly_name: Vetrak wc
-    switch.switch_bathroom:
-      friendly_name: Vetrak koupelna
-    sensor.temp_bathroom:
-      friendly_name: Teplota koupelna
-    sensor.temp_wc:
-      friendly_name: Teplota wc
-    binary_sensor.binary_sensor_bathroom:
-      friendly_name: Tlacitko koupelna
-    binary_sensor.binary_sensor_wc:
-      friendly_name: Tlacitko wc
-
 system_log:
   max_entries: 1000
 
 template:
   - sensor:
-      - name: "Floor setpoint"
+      - name: "floor_set_point"
         unit_of_measurement: "°C"
-        state: "{{  state_attr('climate.Floor','temperature') }}"
+        state: "{{  state_attr('climate.climate_floor_circle','temperature') }}"
+  - binary_sensor:
+      - name: binary_sensor_5_2_waterheater_thermostat_negative
+        state: "{{is_state('binary_sensor.binary_sensor_5_2_waterheater_thermostat', 'off')}}"
+        device_class: heat
+      - name: binary_sensor_5_1_thermostat_negative
+        state: "{{is_state('binary_sensor.binary_sensor_5_1_thermostat', 'off')}}"
 
 climate:
   - platform: smart_thermostat
-    name: Floor
-    heater: input_number.floor_servo_value
-    target_sensor: input_number.temp_floor_circuit
+    name: climate_floor_circle
+    heater: input_number.servo_value_floor_circle
+    target_sensor: sensor.temp_floor_circle
     min_temp: 15
     max_temp: 45
     ac_mode: False
@@ -78,9 +33,9 @@ climate:
     difference: 100
     noiseband: 0.5
   - platform: smart_thermostat
-    name: Heater
-    heater: input_number.heater_servo_value
-    target_sensor: input_number.temp_heater_circuit
+    name: climate_radiator_circle
+    heater: input_number.servo_value_radiator_circle
+    target_sensor: sensor.temp_radiator_circle
     min_temp: 15
     max_temp: 60
     ac_mode: False
@@ -97,21 +52,27 @@ climate:
     noiseband: 0.5
 
 input_select:
-  floor_pump_mode:
+  pump_mode_floor_circle:
     name: Režim čerpadla
     options:
       - "On"
       - "Off"
       - Auto
-  heater_pump_mode:
+  pump_mode_radiator_circle:
     name: Režim čerpadla
     options:
       - "On"
       - "Off"
+      - Auto
+  water_heater_mode:
+    name: Režim boileru
+    options:
+      - Electric
+      - Boiler
       - Auto
 
 input_number:
-  floor_servo_value:
+  servo_value_floor_circle:
     name: "Otevreni serva (%)"
     initial: 0
     min: 0
@@ -119,7 +80,7 @@ input_number:
     step: 1
     mode: box
     unit_of_measurement: "%"
-  heater_servo_value:
+  servo_value_radiator_circle:
     name: "Otevreni serva (%)"
     initial: 0
     min: 0
@@ -127,15 +88,15 @@ input_number:
     step: 1
     mode: box
     unit_of_measurement: "%"
-  heater_servo_time:
-    name: Heater servo time
+  servo_time_radiator_circle:
+    name: "Radiator servo time"
     initial: 0
     min: -130
     max: 130
     step: 1
     mode: box
     unit_of_measurement: "s"
-  floor_servo_time:
+  servo_time_floor_circle:
     name: Floor servo time
     initial: 0
     min: -130
@@ -143,7 +104,7 @@ input_number:
     step: 1
     mode: box
     unit_of_measurement: "s"
-  setpoint_circle_floor:
+  setpoint_floor_circle:
     name: Set point circle floor
     initial: 30
     min: 20
@@ -151,7 +112,7 @@ input_number:
     step: 0.2
     mode: box
     unit_of_measurement: "°C"
-  setpoint_circle_radiator:
+  setpoint_radiator_circle:
     name: Set point circle radiator
     initial: 30
     min: 20
@@ -159,14 +120,42 @@ input_number:
     step: 0.2
     mode: box
     unit_of_measurement: "°C"
-  pump_t_drum_min:
+  min_temp_boiler_pump_floor_circle:
     name: Minimalni teplota kotle
     max: 100
     min: 0
-  pump_t_tank_min:
+    unit_of_measurement: "°C"
+    mode: box
+  min_temp_boiler_pump_radiator_circle:
+    name: Minimalni teplota kotle
+    max: 100
+    min: 0
+    unit_of_measurement: "°C"
+    mode: box
+  min_temp_tank_pump_floor_circle:
     name: Minimalni teplota nadrze
     max: 100
     min: 0
+    unit_of_measurement: "°C"
+    mode: box
+  min_temp_tank_pump_radiator_circle:
+    name: Minimalni teplota nadrze
+    max: 100
+    min: 0
+    unit_of_measurement: "°C"
+    mode: box
+  min_temp_tank_water_heater:
+    name: Minimalni teplota nadrze
+    max: 100
+    min: 0
+    unit_of_measurement: "°C"
+    mode: box
+  min_temp_boiler_water_heater:
+    name: Minimalni teplota kotle
+    max: 100
+    min: 0
+    unit_of_measurement: "°C"
+    mode: box
 
 group: !include groups.yaml
 automation: !include automations.yaml
@@ -191,7 +180,7 @@ binary_sensor 3:
   - holdings:
       - bit: 8
         hub: default
-        name: binary_sensor3.2
+        name: binary_sensor_3_2
         offset: 28
         slave: 3
         value_off: 0
@@ -211,7 +200,7 @@ switch 3:
       - command_off: 3
         command_on: 259
         hub: default
-        name: switch.3.0
+        name: switch_3_0
         offset: 27
         slave: 3
         state_off: 3
@@ -231,7 +220,7 @@ switch 3:
 binary_sensor 4:
   - holdings:
       - hub: default
-        name: binary_sensor4.1
+        name: binary_sensor_4_1
         offset: 23
         slave: 4
         value_off: 513
@@ -240,7 +229,7 @@ binary_sensor 4:
     platform: modified_modbus
   - holdings:
       - hub: default
-        name: binary_sensor_bathroom
+        name: binary_sensor_bathroom #4.2
         offset: 24
         slave: 4
         value_off: 1538
@@ -249,7 +238,7 @@ binary_sensor 4:
     platform: modified_modbus
   - holdings:
       - hub: default
-        name: binary_sensor4.3
+        name: binary_sensor_4_3
         offset: 25
         slave: 4
         value_off: 515
@@ -281,7 +270,7 @@ switch 4:
 binary_sensor 5:
   - holdings:
       - hub: default
-        name: thermostat #binary_sensor5.1
+        name: binary_sensor_5_1_thermostat
         offset: 23
         slave: 5
         value_off: 513
@@ -290,7 +279,7 @@ binary_sensor 5:
     platform: modified_modbus
   - holdings:
       - hub: default
-        name: binary_sensor5.2
+        name: binary_sensor_5_2_waterheater_thermostat
         offset: 24
         slave: 5
         value_off: 514
@@ -299,7 +288,7 @@ binary_sensor 5:
     platform: modified_modbus
   - holdings:
       - hub: default
-        name: binary_sensor5.3
+        name: binary_sensor_5_3
         offset: 25
         slave: 5
         value_off: 515
@@ -308,7 +297,7 @@ binary_sensor 5:
     platform: modified_modbus
   - holdings:
       - hub: default
-        name: binary_sensor5.4
+        name: binary_sensor_5_4
         offset: 26
         slave: 5
         value_off: 516
@@ -317,7 +306,7 @@ binary_sensor 5:
     platform: modified_modbus
   - holdings:
       - hub: default
-        name: binary_sensor5.5
+        name: binary_sensor_5_5
         offset: 27
         slave: 5
         value_off: 517
@@ -326,7 +315,7 @@ binary_sensor 5:
     platform: modified_modbus
   - holdings:
       - hub: default
-        name: binary_sensor5.6
+        name: binary_sensor_5_6
         offset: 28
         slave: 5
         value_off: 518
@@ -336,11 +325,65 @@ binary_sensor 5:
 
 sensor  5:
   - holdings:
+      - OwId: 28ff63ad64150155
+        device_class: temperature
+        holdings_type: ds18b20
+        hub: default
+        name: temp_radiator_circle
+        slave: 5
+        unit_of_measurement: "°C"
+    platform: modified_modbus
+  - holdings:
+      - OwId: 28ffbdd06415019c
+        device_class: temperature
+        holdings_type: ds18b20
+        hub: default
+        name: temp_floor_circle
+        slave: 5
+        unit_of_measurement: "°C"
+    platform: modified_modbus
+  - holdings:
       - OwId: 28cf74b4010000e3
         device_class: temperature
         holdings_type: ds18b20
         hub: default
-        name: ds18b20_28cf74b4010000e3
+        name: temp_floor_livingrom
+        slave: 5
+        unit_of_measurement: "°C"
+    platform: modified_modbus
+  - holdings:
+      - OwId: 282b29e5050000a6
+        device_class: temperature
+        holdings_type: ds18b20
+        hub: default
+        name: temp_tank_middle
+        slave: 5
+        unit_of_measurement: "°C"
+    platform: modified_modbus
+  - holdings:
+      - OwId: 28ff88d2641501cd
+        device_class: temperature
+        holdings_type: ds18b20
+        hub: default
+        name: temp_tank_bottom
+        slave: 5
+        unit_of_measurement: "°C"
+    platform: modified_modbus
+  - holdings:
+      - OwId: 28ff7dae64150103
+        device_class: temperature
+        holdings_type: ds18b20
+        hub: default
+        name: temp_tank_top
+        slave: 5
+        unit_of_measurement: "°C"
+    platform: modified_modbus
+  - holdings:
+      - OwId: 28a8b2f30100007d
+        device_class: temperature
+        holdings_type: ds18b20
+        hub: default
+        name: temp_boiler
         slave: 5
         unit_of_measurement: "°C"
     platform: modified_modbus
@@ -350,7 +393,7 @@ switch 5:
       - command_off: 7
         command_on: 263
         hub: default
-        name: floor_servo_open
+        name: switch_5_7_pump_floor_circle
         offset: 29
         slave: 5
         state_off: 7
@@ -360,7 +403,7 @@ switch 5:
       - command_off: 8
         command_on: 264
         hub: default
-        name: floor_servo_close
+        name: switch_5_8_pump_radiator_circle
         offset: 30
         slave: 5
         state_off: 8
@@ -370,7 +413,7 @@ switch 5:
       - command_off: 9
         command_on: 265
         hub: default
-        name: heater_servo_open
+        name: switch_5_9_pump_waterheater
         offset: 31
         slave: 5
         state_off: 9
@@ -380,7 +423,7 @@ switch 5:
       - command_off: 10
         command_on: 266
         hub: default
-        name: heater_servo_close
+        name: switch_5_10_servo_open_floor_circle
         offset: 32
         slave: 5
         state_off: 10
@@ -390,7 +433,7 @@ switch 5:
       - command_off: 11
         command_on: 267
         hub: default
-        name: floor_pump
+        name: switch_5_11_servo_close_floor_circle
         offset: 33
         slave: 5
         state_off: 11
@@ -400,7 +443,7 @@ switch 5:
       - command_off: 12
         command_on: 268
         hub: default
-        name: heater_pump
+        name: switch_5_12_servo_open_radiator_circle
         offset: 34
         slave: 5
         state_off: 12
@@ -410,7 +453,7 @@ switch 5:
       - command_off: 13
         command_on: 269
         hub: default
-        name: switch.5.13
+        name: switch_5_13_servo_close_radiator_circle
         offset: 35
         slave: 5
         state_off: 13
@@ -420,7 +463,7 @@ switch 5:
       - command_off: 14
         command_on: 270
         hub: default
-        name: switch.5.14
+        name: switch_5_14_waterheater_mode
         offset: 36
         slave: 5
         state_off: 14
@@ -430,7 +473,7 @@ switch 5:
       - command_off: 15
         command_on: 271
         hub: default
-        name: switch.5.15
+        name: switch_5_15_servo_waterheater
         offset: 37
         slave: 5
         state_off: 15
@@ -440,7 +483,7 @@ switch 5:
 binary_sensor 6:
   - holdings:
       - hub: default
-        name: binary_sensor6.1
+        name: binary_sensor_6_1
         offset: 23
         slave: 6
         value_off: 513
@@ -449,7 +492,7 @@ binary_sensor 6:
     platform: modified_modbus
   - holdings:
       - hub: default
-        name: binary_sensor6.2
+        name: binary_sensor_6_2
         offset: 24
         slave: 6
         value_off: 1538
@@ -501,7 +544,7 @@ binary_sensor 7:
   - holdings:
       - bit: 8
         hub: default
-        name: binary_sensor7.1
+        name: binary_sensor_7_1
         offset: 23
         slave: 7
         value_off: 0
@@ -510,7 +553,7 @@ binary_sensor 7:
   - holdings:
       - bit: 8
         hub: default
-        name: binary_sensor7.2
+        name: binary_sensor_7_2
         offset: 24
         slave: 7
         value_off: 0
@@ -519,7 +562,7 @@ binary_sensor 7:
   - holdings:
       - bit: 8
         hub: default
-        name: binary_sensor7.3
+        name: binary_sensor_7_3
         offset: 25
         slave: 7
         value_off: 0
@@ -528,7 +571,7 @@ binary_sensor 7:
   - holdings:
       - bit: 8
         hub: default
-        name: binary_sensor7.4
+        name: binary_sensor_7_4
         offset: 26
         slave: 7
         value_off: 0
@@ -537,7 +580,7 @@ binary_sensor 7:
   - holdings:
       - bit: 8
         hub: default
-        name: binary_sensor7.5
+        name: binary_sensor_7_5
         offset: 27
         slave: 7
         value_off: 0
@@ -546,7 +589,7 @@ binary_sensor 7:
   - holdings:
       - bit: 8
         hub: default
-        name: binary_sensor7.6
+        name: binary_sensor_7_6
         offset: 28
         slave: 7
         value_off: 0
@@ -557,7 +600,7 @@ switch 7:
       - command_off: 7
         command_on: 263
         hub: default
-        name: switch.7.7
+        name: switch_7_7
         offset: 29
         slave: 7
         state_off: 7
@@ -567,7 +610,7 @@ switch 7:
       - command_off: 8
         command_on: 264
         hub: default
-        name: switch.7.8
+        name: switch_7_8
         offset: 30
         slave: 7
         state_off: 8
@@ -577,7 +620,7 @@ switch 7:
       - command_off: 9
         command_on: 265
         hub: default
-        name: switch.7.9
+        name: switch_7_9
         offset: 31
         slave: 7
         state_off: 9
@@ -587,7 +630,7 @@ switch 7:
       - command_off: 10
         command_on: 266
         hub: default
-        name: switch.7.10
+        name: switch_7_10
         offset: 32
         slave: 7
         state_off: 10
@@ -597,7 +640,7 @@ switch 7:
       - command_off: 11
         command_on: 267
         hub: default
-        name: switch.7.11
+        name: switch_7_11
         offset: 33
         slave: 7
         state_off: 11
@@ -607,7 +650,7 @@ switch 7:
       - command_off: 12
         command_on: 268
         hub: default
-        name: switch.7.12
+        name: switch_7_12
         offset: 34
         slave: 7
         state_off: 12
@@ -617,7 +660,7 @@ switch 7:
       - command_off: 13
         command_on: 269
         hub: default
-        name: switch.7.13
+        name: switch_7_13
         offset: 35
         slave: 7
         state_off: 13
@@ -627,7 +670,7 @@ switch 7:
       - command_off: 14
         command_on: 270
         hub: default
-        name: switch.7.14
+        name: switch_7_14
         offset: 36
         slave: 7
         state_off: 14
@@ -637,7 +680,7 @@ switch 7:
       - command_off: 15
         command_on: 271
         hub: default
-        name: switch.7.15
+        name: switch_7_15
         offset: 37
         slave: 7
         state_off: 15
