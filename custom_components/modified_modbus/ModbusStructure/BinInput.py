@@ -73,7 +73,7 @@ class BinInput(object):
             inputyaml = {
                 "platform" : "modified_modbus",                 
                 "holdings" : [
-                     { "name" : f"binary_sensor{self.slave}.{self.PinNumber}",
+                     { "name" : f"binary_sensor_{self.slave}_{self.PinNumber}",
                        "hub" : self._hub.ConfigName,
                        "slave" : self.slave,
                        "offset" : self.Offset,

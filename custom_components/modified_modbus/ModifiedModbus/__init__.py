@@ -7,6 +7,7 @@ from builtins import bool
 from ctypes import *
 from sys import byteorder
 import threading
+import logging
 
 from .IDeviceEventConsumer import IDeviceEventConsumer
 from .ISerialReceiver import ISerialReceiver
@@ -14,7 +15,7 @@ from .SerialPort import SerialPort
 from .SocketClient import SocketClient
 from .Helper import Helper
 import time
-
+logger = logging.getLogger(__name__)
 
 FUNC_GETHOLDINGS = 0x03
 FUNC_SETHOLDING = 0x06
@@ -54,9 +55,9 @@ class ModifiedModbus(ISerialReceiver):
         self.receiving = True;               
 
         #strdata = StringBuilder::join(data," ");
-        #logger.Trace("Received: %s",strdata.c_str());
-        #bts = bytes(data)
-        #print(f"Received OnData: {bts.hex()}")
+        
+        bts = bytes(data)
+        logger.info(f"Received OnData: {bts.hex()}");        
 
         for i in data:    
             self.buffer.append(i);
@@ -169,10 +170,11 @@ class ModifiedModbus(ISerialReceiver):
         errormsg = ""
         
         while(self.receiving):
-            time.sleep(0.001)#1ms         
+            time.sleep(0.001)#1ms                 
         self.lock.acquire()
         self.locked = True                               
         attempt = 0
+        
         try:                    
             while(attempt < 3):                
                 attempt += 1
@@ -192,8 +194,8 @@ class ModifiedModbus(ISerialReceiver):
                 
                 errormsg += f"sended: {data.hex()}\n"
                             
-                #logger.Trace("getHoldings: %d, offest: %d, count: %d, timeoutMs: %d",
-                #            address, offset, count, timeoutMs);
+                logger.info("getHoldings: slave: %d, offest: %d, count: %d, timeoutMs: %d",
+                            slave, offset, count, timeoutMs)
                 #auto start = DateTime::Now();
                 if (self.Send(data,timeoutMs)):        
                     #//check buffer
@@ -223,8 +225,8 @@ class ModifiedModbus(ISerialReceiver):
                 
                 errormsg += f" attempt: {attempt}"
                 #print(errormsg)
-                #logger.Error("Error getHoldings: %d, offest: %d, count: %d, timeoutMs: %d, error: %s",
-                #        address, offset, count, timeoutMs, errormsg.c_str());                
+                logger.error("Error getHoldings: %d, offest: %d, count: %d, timeoutMs: %d, error: %s",
+                        slave, offset, count, timeoutMs, errormsg)
                 time.sleep(0.05)
             
         except Exception as inst:
@@ -233,7 +235,8 @@ class ModifiedModbus(ISerialReceiver):
         finally:
             self.locked = False
             self.lock.release()
-        
+
+        time.sleep(1)
         raise Exception(errormsg);
     
     def setHolding(self,slave,offset, val):
@@ -264,7 +267,7 @@ class ModifiedModbus(ISerialReceiver):
                 data = self.AppendCRC(data)
                 print("sended: ",data.hex())                            
         
-                #logger.Trace("SetHolding: %d, offset: %d, value: %d, timeout: %d",address, offset, val, timeoutMs);
+                logger.info("SetHolding: %d, offset: %d, value: %d, timeout: %d",slave, offset, val, timeoutMs);
         
                 if (self.Send(data,timeoutMs)):    
                     respAddress = self.getholdingsBuffer[0];
@@ -288,7 +291,7 @@ class ModifiedModbus(ISerialReceiver):
             self.lock.release()
             
 
-        
+        time.sleep(1)
         #logger.Error("Error setHolding: %d, offset: %d, value: %d, timeoutMs: %d error: %s",
         #address, offset, val, timeoutMs, errormsg.c_str());
         #print("Error setHolding: %d, offset: %d, value: %d, timeoutMs: %d error: %s")        

@@ -1,0 +1,276 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "core.config_entries",
+  "data": {
+    "entries": [
+      {
+        "entry_id": "fb92a6fe12dc11eb8f497780613272f0",
+        "version": 1,
+        "domain": "met",
+        "title": "Home",
+        "data": {
+          "track_home": true
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "onboarding",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "fc2ea8ae12dc11eba1cd171d3db553b7",
+        "version": 1,
+        "domain": "rpi_power",
+        "title": "Raspberry Pi Power Supply Checker",
+        "data": {},
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "onboarding",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "337aa867130c11eba65ed9598df7943a",
+        "version": 1,
+        "domain": "nodered",
+        "title": "Node-RED",
+        "data": {},
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "d7d52d9913d711ebb5aab56a25f632af",
+        "version": 1,
+        "domain": "cast",
+        "title": "Google Cast",
+        "data": {
+          "user_id": "cc2b3fbce2c64e30a475368087036a4c"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "zeroconf",
+        "unique_id": "cast",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "aab46b3213d811ebbb1527a61cb15489",
+        "version": 1,
+        "domain": "samsungtv",
+        "title": "Ignored",
+        "data": {
+          "id": "0bebc200-00c8-1000-9438-5085694bcbc1",
+          "manufacturer": "Samsung Electronics",
+          "model": "UE55F6400"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "192.168.89.17",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "18d000bf83d9b0c2f4253bb82e2fc828",
+        "version": 1,
+        "domain": "samsungtv",
+        "title": "Ignored",
+        "data": {
+          "id": "0bebc200-00c8-1000-9438-5085694bcbc1",
+          "manufacturer": "Samsung Electronics",
+          "model": "UE55F6400"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "192.168.89.20",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "910337c048662abab5e35f51f9693c83",
+        "version": 1,
+        "domain": "samsungtv",
+        "title": "Ignored",
+        "data": {
+          "id": "0bebc200-00c8-1000-9438-5085694bcbc1",
+          "manufacturer": "Samsung Electronics",
+          "model": "UE55F6400"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "192.168.89.10",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "93eb3f551830d0c89f1f4458ff908446",
+        "version": 1,
+        "domain": "samsungtv",
+        "title": "Ignored",
+        "data": {},
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "192.168.89.61",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "710d3f8941231afa2bcd4cd4ab26492a",
+        "version": 1,
+        "domain": "samsungtv",
+        "title": "Ignored",
+        "data": {
+          "id": "0bebc200-00c8-1000-9438-5085694bcbc1",
+          "manufacturer": "Samsung Electronics",
+          "model": "UE55F6400"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "192.168.89.13",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
+        "version": 1,
+        "domain": "hassio",
+        "title": "Supervisor",
+        "data": {},
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "system",
+        "unique_id": "hassio",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "4d49387687ef02d6c8435116df6b80d4",
+        "version": 2,
+        "domain": "samsungtv",
+        "title": "UE55F6400",
+        "data": {
+          "host": "192.168.89.114",
+          "model": "UE55F6400"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "0bebc200-00c8-1000-9438-5085694bcbc1",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "1a5340ae2ae3f05ae7291f2cf903165e",
+        "version": 1,
+        "domain": "spotify",
+        "title": "Spotify",
+        "data": {},
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "46278f782caf8ed75d2abc95ec154a2f",
+        "version": 1,
+        "domain": "dlna_dmr",
+        "title": "IR11x 002261804010",
+        "data": {
+          "url": "http://192.168.89.118:8080/dd.xml"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "uuid:3DCC7100-F76C-11DD-87AF-002261804010",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "9604e86ee6da040225f27652f3d1fbb6",
+        "version": 1,
+        "domain": "mobile_app",
+        "title": "Redmi 4X",
+        "data": {
+          "app_id": "io.homeassistant.companion.android",
+          "app_name": "Home Assistant",
+          "app_version": "2021.12.3-full (1854)",
+          "device_name": "Redmi 4X",
+          "manufacturer": "Xiaomi",
+          "model": "Redmi 4X",
+          "os_name": "Android",
+          "os_version": "30",
+          "supports_encryption": false,
+          "app_data": {
+            "push_url": "https://mobile-apps.home-assistant.io/api/sendPush/android/v1",
+            "push_token": "dWhCWmJVQsa0FcjA2nH0J5:APA91bFfQUmC7wYZsn20p50f1co1wtG73V4YkKCg1kdShXNYXEcSz2_L46y61ULmBLmSv1vJOiG9yfHmL3liDE7R5sTmad6rdBvkYLBquUVqLNTZMwRMBrFdQg-VlSC1DdkVcnuFnb8c"
+          },
+          "device_id": "d04f688c2ae277d7",
+          "webhook_id": "d3b15e301fad395b93c7bae877a63fb645fb4c79ea619c84c80c3fc3f8036e87",
+          "user_id": "b09f7b37fe70417390c67b7d02d9e0bc"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "registration",
+        "unique_id": "io.homeassistant.companion.android-d04f688c2ae277d7",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "6ff8b5986be6b002e1d80ebb39c1982c",
+        "version": 1,
+        "domain": "sun",
+        "title": "Sun",
+        "data": {},
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "import",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "73f8ee18dc303030036979b44e0e3383",
+        "version": 1,
+        "domain": "dlna_dms",
+        "title": "PD: pc:",
+        "data": {
+          "url": "http://192.168.89.21:2869/upnphost/udhisapi.dll?content=uuid:a40fb177-b1b5-4657-b30f-836d2177bb3a",
+          "device_id": "uuid:a40fb177-b1b5-4657-b30f-836d2177bb3a::urn:schemas-upnp-org:device:MediaServer:1",
+          "source_id": "pd_pc"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ssdp",
+        "unique_id": "uuid:a40fb177-b1b5-4657-b30f-836d2177bb3a::urn:schemas-upnp-org:device:MediaServer:1",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "e4541f5efdbec22d6362b2ca81006247",
+        "version": 1,
+        "domain": "raspberry_pi",
+        "title": "Raspberry Pi",
+        "data": {},
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "system",
+        "unique_id": null,
+        "disabled_by": null
+      }
+    ]
+  }
+}

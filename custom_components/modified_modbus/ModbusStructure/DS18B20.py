@@ -6,7 +6,9 @@ Created on Sep 24, 2020
 from pickletools import uint2
 from ..ModifiedModbus.Helper import Helper
 from ..const import CONF_HOLDINGS_TYPE,CONF_DS18B20,CONF_OWID,CONF_HOLDINGS
+import logging
 
+_LOGGER = logging.getLogger(__name__)
 
 OFFSET_ID12 = 0
 OFFSET_ID34 = 1
@@ -24,9 +26,12 @@ class OneWireHeader(object):
         self._detectedDS18B20 = 0
         self._offset = offset
         self._slave = slave
+        #_LOGGER.info(f"Scan | OneWireHeader {self._detectedDS18B20} count detected")
     
     def Parse(self,data:list):
         self._detectedDS18B20 = data[self._offset + OW_COUNT_DEVICES_OFFSET]            
+        #_LOGGER.info(f"Scan | ParseOneWireHeader OwHeaderOffset: {self._offset}")
+        #_LOGGER.info(f"Scan | ParseOneWireHeader {self._offset + OW_COUNT_DEVICES_OFFSET}:{self._detectedDS18B20} count detected")
         
     @property
     def CountDevices(self):
@@ -101,7 +106,7 @@ class DS18B20(object):
             "platform" : "modified_modbus",                 
             CONF_HOLDINGS : [
                  { 
-                   "name" : f"{self.slave}.ds18b20_{self.OwId}",
+                   "name" : f"{self.slave}_s18b20_{self.OwId}",
                    "hub" : self._hub.ConfigName,
                    "slave" : self.slave,
                    CONF_HOLDINGS_TYPE : CONF_DS18B20,                       

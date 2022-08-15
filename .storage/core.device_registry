@@ -1,0 +1,406 @@
+{
+  "version": 1,
+  "minor_version": 3,
+  "key": "core.device_registry",
+  "data": {
+    "devices": [
+      {
+        "config_entries": [
+          "d7d52d9913d711ebb5aab56a25f632af"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "cast",
+            "de4959e455ba7933106df635571ea598"
+          ]
+        ],
+        "manufacturer": "None",
+        "model": "Chromecast",
+        "name": "Obývací pokoj",
+        "sw_version": null,
+        "hw_version": null,
+        "entry_type": null,
+        "id": "d84edb3713d711ebb794f9c93bdd5f3d",
+        "via_device_id": null,
+        "area_id": null,
+        "name_by_user": null,
+        "disabled_by": null,
+        "configuration_url": null
+      },
+      {
+        "config_entries": [
+          "fb92a6fe12dc11eb8f497780613272f0"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "met"
+          ]
+        ],
+        "manufacturer": "Met.no",
+        "model": "Forecast",
+        "name": "Forecast",
+        "sw_version": null,
+        "hw_version": null,
+        "entry_type": "service",
+        "id": "15592919cb2d5992ed3d98a45e819008",
+        "via_device_id": null,
+        "area_id": null,
+        "name_by_user": null,
+        "disabled_by": null,
+        "configuration_url": "https://www.met.no/en"
+      },
+      {
+        "config_entries": [
+          "af202d4e30dfcd4462768fceb9bb8c8a"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "hassio",
+            "core_ssh"
+          ]
+        ],
+        "manufacturer": "Official add-ons",
+        "model": "Home Assistant Add-on",
+        "name": "Terminal & SSH",
+        "sw_version": "9.6.0",
+        "hw_version": null,
+        "entry_type": "service",
+        "id": "ee7d520eb53c14625da9eeb196b18b15",
+        "via_device_id": null,
+        "area_id": null,
+        "name_by_user": null,
+        "disabled_by": null,
+        "configuration_url": "homeassistant://hassio/addon/core_ssh"
+      },
+      {
+        "config_entries": [
+          "af202d4e30dfcd4462768fceb9bb8c8a"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "hassio",
+            "a0d7b954_appdaemon"
+          ]
+        ],
+        "manufacturer": "Home Assistant Community Add-ons",
+        "model": "Home Assistant Add-on",
+        "name": "AppDaemon",
+        "sw_version": "0.9.2",
+        "hw_version": null,
+        "entry_type": "service",
+        "id": "e13646fd49c37960c9274d2e7586f640",
+        "via_device_id": null,
+        "area_id": null,
+        "name_by_user": null,
+        "disabled_by": null,
+        "configuration_url": "homeassistant://hassio/addon/a0d7b954_appdaemon"
+      },
+      {
+        "config_entries": [
+          "af202d4e30dfcd4462768fceb9bb8c8a"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "hassio",
+            "a0d7b954_nodered"
+          ]
+        ],
+        "manufacturer": "Home Assistant Community Add-ons",
+        "model": "Home Assistant Add-on",
+        "name": "Node-RED",
+        "sw_version": "13.3.1",
+        "hw_version": null,
+        "entry_type": "service",
+        "id": "ad1e3d753773c6695cb38e6b580467b7",
+        "via_device_id": null,
+        "area_id": null,
+        "name_by_user": null,
+        "disabled_by": null,
+        "configuration_url": "homeassistant://hassio/addon/a0d7b954_nodered"
+      },
+      {
+        "config_entries": [
+          "af202d4e30dfcd4462768fceb9bb8c8a"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "hassio",
+            "a0d7b954_portainer"
+          ]
+        ],
+        "manufacturer": "Home Assistant Community Add-ons",
+        "model": "Home Assistant Add-on",
+        "name": "Portainer",
+        "sw_version": "2.0.0",
+        "hw_version": null,
+        "entry_type": "service",
+        "id": "c94a1ebc18be0d16a69cdd0fe02f5c5c",
+        "via_device_id": null,
+        "area_id": null,
+        "name_by_user": null,
+        "disabled_by": null,
+        "configuration_url": "homeassistant://hassio/addon/a0d7b954_portainer"
+      },
+      {
+        "config_entries": [
+          "af202d4e30dfcd4462768fceb9bb8c8a"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "hassio",
+            "OS"
+          ]
+        ],
+        "manufacturer": "Home Assistant",
+        "model": "Home Assistant Operating System",
+        "name": "Home Assistant Operating System",
+        "sw_version": "8.4",
+        "hw_version": null,
+        "entry_type": "service",
+        "id": "5b944c59cf6a97a894c77fa03f554081",
+        "via_device_id": null,
+        "area_id": null,
+        "name_by_user": null,
+        "disabled_by": null,
+        "configuration_url": null
+      },
+      {
+        "config_entries": [
+          "af202d4e30dfcd4462768fceb9bb8c8a"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "hassio",
+            "a0d7b954_vscode"
+          ]
+        ],
+        "manufacturer": "Home Assistant Community Add-ons",
+        "model": "Home Assistant Add-on",
+        "name": "Studio Code Server",
+        "sw_version": "5.2.1",
+        "hw_version": null,
+        "entry_type": "service",
+        "id": "edcbc18c0fd54d9c9270a022041449cc",
+        "via_device_id": null,
+        "area_id": null,
+        "name_by_user": null,
+        "disabled_by": null,
+        "configuration_url": "homeassistant://hassio/addon/a0d7b954_vscode"
+      },
+      {
+        "config_entries": [
+          "af202d4e30dfcd4462768fceb9bb8c8a"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "hassio",
+            "core_git_pull"
+          ]
+        ],
+        "manufacturer": "Official add-ons",
+        "model": "Home Assistant Add-on",
+        "name": "Git pull",
+        "sw_version": "7.13.1",
+        "hw_version": null,
+        "entry_type": "service",
+        "id": "8058a11068599b6c769ffbae55d178f7",
+        "via_device_id": null,
+        "area_id": null,
+        "name_by_user": null,
+        "disabled_by": null,
+        "configuration_url": "homeassistant://hassio/addon/core_git_pull"
+      },
+      {
+        "config_entries": [
+          "9604e86ee6da040225f27652f3d1fbb6"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "mobile_app",
+            "d04f688c2ae277d7"
+          ]
+        ],
+        "manufacturer": "Xiaomi",
+        "model": "Redmi 4X",
+        "name": "Redmi 4X",
+        "sw_version": "30",
+        "hw_version": null,
+        "entry_type": null,
+        "id": "eb8b46001b9624570f949486b9d4af67",
+        "via_device_id": null,
+        "area_id": null,
+        "name_by_user": null,
+        "disabled_by": null,
+        "configuration_url": null
+      },
+      {
+        "config_entries": [
+          "d7d52d9913d711ebb5aab56a25f632af"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "cast",
+            "da0f7991d9eceea93a01b4eb0ab67574"
+          ]
+        ],
+        "manufacturer": "Google Inc.",
+        "model": "Chromecast",
+        "name": "Obývací pokoj",
+        "sw_version": null,
+        "hw_version": null,
+        "entry_type": null,
+        "id": "1d544d8563da94f23bc2f96fd055463e",
+        "via_device_id": null,
+        "area_id": null,
+        "name_by_user": null,
+        "disabled_by": null,
+        "configuration_url": null
+      },
+      {
+        "config_entries": [
+          "af202d4e30dfcd4462768fceb9bb8c8a"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "hassio",
+            "core"
+          ]
+        ],
+        "manufacturer": "Home Assistant",
+        "model": "Home Assistant Core",
+        "name": "Home Assistant Core",
+        "sw_version": "2022.8.4",
+        "hw_version": null,
+        "entry_type": "service",
+        "id": "e71991ef8d463a60d7c3da264a05d339",
+        "via_device_id": null,
+        "area_id": null,
+        "name_by_user": null,
+        "disabled_by": null,
+        "configuration_url": null
+      },
+      {
+        "config_entries": [
+          "af202d4e30dfcd4462768fceb9bb8c8a"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "hassio",
+            "supervisor"
+          ]
+        ],
+        "manufacturer": "Home Assistant",
+        "model": "Home Assistant Supervisor",
+        "name": "Home Assistant Supervisor",
+        "sw_version": "2022.08.3",
+        "hw_version": null,
+        "entry_type": "service",
+        "id": "a281875082ef6f452913467abf78a03a",
+        "via_device_id": null,
+        "area_id": null,
+        "name_by_user": null,
+        "disabled_by": null,
+        "configuration_url": null
+      }
+    ],
+    "deleted_devices": [
+      {
+        "config_entries": [
+          "af202d4e30dfcd4462768fceb9bb8c8a"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "hassio",
+            "core_configurator"
+          ]
+        ],
+        "id": "b5fd14fc658813c8aa30e47ca8842869",
+        "orphaned_timestamp": null
+      },
+      {
+        "config_entries": [
+          "af202d4e30dfcd4462768fceb9bb8c8a"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "hassio",
+            "a0d7b954_grafana"
+          ]
+        ],
+        "id": "a31d4c925730a8ee5827e00dcfcec1a8",
+        "orphaned_timestamp": null
+      },
+      {
+        "config_entries": [
+          "af202d4e30dfcd4462768fceb9bb8c8a"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "hassio",
+            "a0d7b954_chrony"
+          ]
+        ],
+        "id": "484f577954406630830f5307e00c1cb9",
+        "orphaned_timestamp": null
+      },
+      {
+        "config_entries": [
+          "af202d4e30dfcd4462768fceb9bb8c8a"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "hassio",
+            "a0d7b954_influxdb"
+          ]
+        ],
+        "id": "0792459059b711f267b1c288eafbc9a3",
+        "orphaned_timestamp": null
+      },
+      {
+        "config_entries": [
+          "af202d4e30dfcd4462768fceb9bb8c8a"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "hassio",
+            "core_dnsmasq"
+          ]
+        ],
+        "id": "921584a144e0e9bdd714d18352b9eaa8",
+        "orphaned_timestamp": null
+      },
+      {
+        "config_entries": [
+          "af202d4e30dfcd4462768fceb9bb8c8a"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "hassio",
+            "1f3d020e_hassos_ssh_configurator_addon"
+          ]
+        ],
+        "id": "6fd13a52420fd5540ec6bd63955fda8d",
+        "orphaned_timestamp": null
+      }
+    ]
+  }
+}

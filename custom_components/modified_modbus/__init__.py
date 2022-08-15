@@ -218,12 +218,14 @@ def setup(hass, config):
 
     return True
 
+DEFAULT_EXPIRE_SECONDS = 5
+
 class SlaveCache():        
     def __init__(self,slave):
         self.refreshTime:datetime = None
         self.holdings = []
         self.slave = slave
-        self.cacheExpiredInSeconds = 5
+        self.cacheExpiredInSeconds = DEFAULT_EXPIRE_SECONDS
     
     def NeedRefresh(self) -> bool:        
         now = datetime.now()
@@ -237,6 +239,10 @@ class SlaveCache():
     
     def ResetCache(self):
         self.refreshTime = None 
+
+    def SetNextReadWithoutData(self, seconds):
+        self.refreshTime = datetime.now()
+        self.cacheExpiredInSeconds = seconds
     
     def GetHoldings(self,offset,count):
         if (len(self.holdings)<=0):
@@ -255,6 +261,7 @@ class SlaveCache():
     def SetUpdatedData(self,data):
         self.holdings = data
         self.refreshTime = datetime.now()
+        self.cacheExpiredInSeconds = DEFAULT_EXPIRE_SECONDS
         
 class ModbusCache():
     DEVICEBASE =                    0
@@ -276,12 +283,18 @@ class ModbusCache():
     
     def getHoldings(self,slave,offset,count):
         cache = self.getSlaveCache(slave)
-        if (cache.NeedRefresh()):            
-            lastIndex = self._serial.getHoldings(slave, LAST_INDEX, 1)            
-            holdings = self._serial.getHoldings(slave, 0, lastIndex[0], 150)
-            cache.SetUpdatedData(holdings)
+        if (cache.NeedRefresh()):
+            try:
+                lastIndex = self._serial.getHoldings(slave, LAST_INDEX, 1)
+                holdings = self._serial.getHoldings(slave, 0, lastIndex[0], 150)
+                cache.SetUpdatedData(holdings)
+            except Exception as inst:
+                cache.SetNextReadWithoutData(30)
+                raise inst
         
         cachedHoldings = cache.GetHoldings(offset,count)
+        if (len(cachedHoldings)==0):
+            raise Exception("cache is small")
         return cachedHoldings
         
     
@@ -373,9 +386,9 @@ class ModifiedModbusHub(IDeviceEventConsumer,IModifiedModbusHub):
     
     def readHoldings(self,slave:int,offset:int,count:int, timeout:int):
         with self._lock:
-#             _LOGGER.debug(f"readHoldings slave:{slave},offset:{offset},count:{count}")
+            _LOGGER.debug(f"readHoldings slave:{slave},offset:{offset},count:{count}")
             holdings = self._modbusCache.getHoldings(slave, offset, count)      
-#             _LOGGER.debug(f"readHoldings finished slave:{slave},offset:{offset},count:{count}")  
+            _LOGGER.debug(f"readHoldings finished slave:{slave},offset:{offset},count:{count}")  
             return holdings        
     
     def writeHolding(self,slave:int,offset:int,value:int):
@@ -387,9 +400,9 @@ class ModifiedModbusHub(IDeviceEventConsumer,IModifiedModbusHub):
     
     def resetChangeFlag(self,slave:int):
         with self._lock:
-#             _LOGGER.debug(f"writeHolding reset change flag: slave:{slave},offset:{CHANGE_FLAG}")
+            _LOGGER.debug(f"writeHolding reset change flag: slave:{slave},offset:{CHANGE_FLAG}")
             self._client.setHolding(slave,CHANGE_FLAG,1)
-#             _LOGGER.debug(f"writeHolding reset change finished flag: slave:{slave},offset:{CHANGE_FLAG}")
+            _LOGGER.debug(f"writeHolding reset change finished flag: slave:{slave},offset:{CHANGE_FLAG}")
 
     def connect(self):
         """Connect client."""

@@ -1,0 +1,17 @@
+{
+    "version": 1,
+    "key": "zone",
+    "data": {
+        "items": [
+            {
+                "name": "doma",
+                "icon": "mdi:map-marker",
+                "latitude": 49.4230631,
+                "longitude": 16.3537057,
+                "passive": false,
+                "radius": 100.0,
+                "id": "doma"
+            }
+        ]
+    }
+}

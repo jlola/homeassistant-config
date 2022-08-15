@@ -1,0 +1,13 @@
+{
+    "version": 1,
+    "key": "lovelace_resources",
+    "data": {
+        "items": [
+            {
+                "url": "http://192.168.89.11:1880/endpoint/ui/#!/0?socketid=p55eJg2tLIgVZ2r5AAAA",
+                "type": "module",
+                "id": "7a5784efc1484c909b769fb8b6e18d50"
+            }
+        ]
+    }
+}

@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "input_number",
+  "data": {
+    "items": [
+      {
+        "min": 0.0,
+        "max": 100.0,
+        "name": "T kotle",
+        "unit_of_measurement": "°C",
+        "step": 0.5,
+        "mode": "slider",
+        "id": "tkotle"
+      },
+      {
+        "min": 0.0,
+        "max": 100.0,
+        "name": "T nadrze horni",
+        "unit_of_measurement": "°C",
+        "step": 0.5,
+        "mode": "slider",
+        "id": "t_nadrze_horni"
+      },
+      {
+        "min": 0.0,
+        "max": 100.0,
+        "name": "T okruh podlaha",
+        "step": 1.0,
+        "mode": "slider",
+        "id": "t_okruh_podlahovka",
+        "unit_of_measurement": "°C"
+      },
+      {
+        "min": 0.0,
+        "max": 100.0,
+        "name": "T okruh radiator",
+        "step": 1.0,
+        "mode": "slider",
+        "id": "t_okruh_radiator",
+        "unit_of_measurement": "°C"
+      }
+    ]
+  }
+}

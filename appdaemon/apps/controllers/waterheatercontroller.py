@@ -18,21 +18,21 @@ KEY_SERVO_WATERHEATER = "servo_water_heater"
 #   switch_water_heater_mode: switch.switch_5_14_waterheater_mode
 #   temp_tank: sensor.temp_tank_top
 #   temp_boiler: sensor.temp_boiler
-#   water_heater_thermostat: binary_sensor_5_2_waterheater_thermostat
+#   water_heater_thermostat: binary_sensor.binary_sensor_5_2_waterheater_thermostat
 #   min_temp_tank: input_number.min_temp_tank_water_heater
 #   min_temp_boiler: input_number.min_temp_boiler_water_heater
 #   servo_water_heater: switch.switch_5_15_servo_waterheater
 
 class WaterHeaterController(hass.Hass):
     def initialize(self):
-        #self.listen_state(self.callback, self.args[KEY_SWITCH_BOILER], attribute = "state")
+        self.listen_state(self.callback, self.args[KEY_SWITCH_BOILER], attribute = "state")
         self.listen_state(self.callback, self.args[KEY_TEMP_TANK], attribute = "state")
         self.listen_state(self.callback, self.args[KEY_TEMP_BOILER], attribute = "state")
         self.listen_state(self.callback, self.args[KEY_MODE], attribute = "state")
         self.listen_state(self.callback, self.args[KEY_WATERHEATER_THEROMOSTAT], attribute = "state")
         self.listen_state(self.callback, self.args[KEY_MIN_TEMP_TANK], attribute = "state")
         self.listen_state(self.callback, self.args[KEY_MIN_TEMP_BOILER], attribute = "state")
-        #self.listen_state(self.callback, self.args[KEY_SERVO_WATERHEATER], attribute = "state")
+        self.listen_state(self.callback, self.args[KEY_SERVO_WATERHEATER], attribute = "state")
 
     def CalculateOutput(self):
         __switch_boiler = self.get_state(self.args[KEY_SWITCH_BOILER], attribute="state")
@@ -54,6 +54,7 @@ class WaterHeaterController(hass.Hass):
                 self.__set_heat_by_boiler(False)
 
     def callback(self, entity, attribute, old, new, kwargs):
+        self.log(f"callback {entity}")
         self.CalculateOutput()
 
     def __set_heat_by_boiler(self,boiler):

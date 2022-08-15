@@ -1,5 +1,4 @@
 deps/
-.storage/
 __pycache__/
 *.db
 *.log
@@ -7,3 +6,5 @@ compile/
 tts/
 /.metadata/
 scan/
+*.log.*
+*.db.*

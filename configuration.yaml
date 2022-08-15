@@ -1,5 +1,59 @@
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
 system_log:
   max_entries: 1000
+
+#logger:
+#  default: info
+
+homeassistant:
+  time_zone: Europe/Prague
+  customize:
+    switch.switch_wc:
+      friendly_name: "Vetrak wc"
+    switch.switch_5_10_servo_open_floor_circle:
+      friendly_name: "Servo podlahy otevírá"
+    switch.switch_5_11_servo_close_floor_circle:
+      friendly_name: "Servo podlahy zavírá"
+    switch.switch_5_12_servo_open_radiator_circle:
+      friendly_name: "Servo radiátorů otevírá"
+    switch.switch_5_13_servo_close_radiator_circle:
+      friendly_name: "Servo radiátorů zavírá"
+    binary_sensor.binary_sensor_5_1_thermostat_negative:
+      friendly_name: "Termostat kuchyň"
+    switch.switch_5_7_pump_floor_circle:
+      friendly_name: "Čerpadlo podlaha"
+    switch.switch_5_8_pump_radiator_circle:
+      friendly_name: "Čerpadlo radiátory"
+    sensor.temp_floor_circle:
+      friendly_name: "Teplota podlahový okruh"
+    sensor.temp_radiator_circle:
+      friendly_name: "Teplota radiátorový okruh"
+    sensor.temp_tank_top:
+      friendly_name: "Teplota nádrže horní"
+    sensor.temp_boiler:
+      friendly_name: "Teplota kotle"
+    input_number.servo_time_floor_circle:
+      friendly_name: "Čas otevření serva (s)"
+    climate.climate_floor_circle:
+      friendly_name: "PID regulátor podlahy"
+    climate.climate_radiator_circle:
+      friendly_name: "PID regulátor radiátorů"
+    input_number.servo_time_radiator_circle:
+      friendly_name: "Čas otevření serva (s)"
+    binary_sensor.binary_sensor_5_2_waterheater_thermostat_negative:
+      friendly_name: "Termostat boiler"
+    switch.switch_5_9_pump_waterheater:
+      friendly_name: "Čerpadlo boiler"
+    switch.switch_5_15_servo_waterheater:
+      friendly_name: "Servo boiler"
+    switch.switch_5_14_waterheater_mode:
+      friendly_name: "Ohřev TUV kotlem"
+    input_number.min_temp_boiler_water_heater:
+      friendly_name: "Minimální teplota kotle"
+    input_number.min_temp_tank_water_heater:
+      friendly_name: "Minimální teplota nádrže"
 
 template:
   - sensor:
@@ -59,13 +113,13 @@ input_select:
       - "Off"
       - Auto
   pump_mode_radiator_circle:
-    name: Režim čerpadla
+    name: "Režim čerpadla"
     options:
       - "On"
       - "Off"
       - Auto
   water_heater_mode:
-    name: Režim boileru
+    name: "Režim boileru"
     options:
       - Electric
       - Boiler
@@ -73,7 +127,7 @@ input_select:
 
 input_number:
   servo_value_floor_circle:
-    name: "Otevreni serva (%)"
+    name: "Otevření serva podlahy"
     initial: 0
     min: 0
     max: 100
@@ -81,7 +135,7 @@ input_number:
     mode: box
     unit_of_measurement: "%"
   servo_value_radiator_circle:
-    name: "Otevreni serva (%)"
+    name: "Otevření serva radiátorů"
     initial: 0
     min: 0
     max: 100
@@ -89,7 +143,7 @@ input_number:
     mode: box
     unit_of_measurement: "%"
   servo_time_radiator_circle:
-    name: "Radiator servo time"
+    #name: "Radiator servo time"
     initial: 0
     min: -130
     max: 130
@@ -97,7 +151,7 @@ input_number:
     mode: box
     unit_of_measurement: "s"
   servo_time_floor_circle:
-    name: Floor servo time
+    #name: Floor servo time
     initial: 0
     min: -130
     max: 130
@@ -105,7 +159,7 @@ input_number:
     mode: box
     unit_of_measurement: "s"
   setpoint_floor_circle:
-    name: Set point circle floor
+    #name: Set point circle floor
     initial: 30
     min: 20
     max: 100
@@ -113,7 +167,7 @@ input_number:
     mode: box
     unit_of_measurement: "°C"
   setpoint_radiator_circle:
-    name: Set point circle radiator
+    #name: Set point circle radiator
     initial: 30
     min: 20
     max: 100
@@ -121,37 +175,37 @@ input_number:
     mode: box
     unit_of_measurement: "°C"
   min_temp_boiler_pump_floor_circle:
-    name: Minimalni teplota kotle
+    #name: Minimalni teplota kotle
     max: 100
     min: 0
     unit_of_measurement: "°C"
     mode: box
   min_temp_boiler_pump_radiator_circle:
-    name: Minimalni teplota kotle
+    #name: Minimalni teplota kotle
     max: 100
     min: 0
     unit_of_measurement: "°C"
     mode: box
   min_temp_tank_pump_floor_circle:
-    name: Minimalni teplota nadrze
+    #name: Minimalni teplota nadrze
     max: 100
     min: 0
     unit_of_measurement: "°C"
     mode: box
   min_temp_tank_pump_radiator_circle:
-    name: Minimalni teplota nadrze
+    #name: Minimalni teplota nadrze
     max: 100
     min: 0
     unit_of_measurement: "°C"
     mode: box
   min_temp_tank_water_heater:
-    name: Minimalni teplota nadrze
+    #name: Minimalni teplota nadrze
     max: 100
     min: 0
     unit_of_measurement: "°C"
     mode: box
   min_temp_boiler_water_heater:
-    name: Minimalni teplota kotle
+    #name: Minimalni teplota kotle
     max: 100
     min: 0
     unit_of_measurement: "°C"

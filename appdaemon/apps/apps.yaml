@@ -56,7 +56,7 @@ waterheater_controller:
   switch_water_heater_mode: switch.switch_5_14_waterheater_mode
   temp_tank: sensor.temp_tank_top
   temp_boiler: sensor.temp_boiler
-  water_heater_thermostat: binary_sensor_5_2_waterheater_thermostat
+  water_heater_thermostat: binary_sensor.binary_sensor_5_2_waterheater_thermostat
   min_temp_tank: input_number.min_temp_tank_water_heater
   min_temp_boiler: input_number.min_temp_boiler_water_heater
   servo_water_heater: switch.switch_5_15_servo_waterheater

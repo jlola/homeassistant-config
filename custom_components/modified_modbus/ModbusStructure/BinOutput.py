@@ -25,14 +25,14 @@ class BinOutput(object):
         self._quality:bool = False            
         self._valueOn = 0
         self._valueOff = 0
-        self._name = f"switch.{self._slave}.{self._pinNumber}"
+        self._name = f"switch_{self._slave}_{self._pinNumber}"
     
     def Parse(self,holdings):
         data = holdings[self._offset]        
         self._pinNumber = 0xFF & data
         self._valueOn = data | 0x0100
         self._valueOff = data & 0xFEFF
-        self._name = f"switch.{self._slave}.{self._pinNumber}"
+        self._name = f"switch_{self._slave}_{self._pinNumber}"
         
     def SetValues(self,valueOn,valueOff, name):
         self._valueOn = valueOn

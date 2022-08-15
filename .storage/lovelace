@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace",
+  "data": {
+    "config": {
+      "title": "Home",
+      "views": [
+        {
+          "path": "default_view",
+          "title": "Home",
+          "visible": [
+            {
+              "user": "b09f7b37fe70417390c67b7d02d9e0bc"
+            }
+          ],
+          "badges": [
+            {
+              "entity": "binary_sensor.rpi_power_status"
+            },
+            {
+              "entity": "binary_sensor.binary_sensor_4_1"
+            },
+            {
+              "entity": "binary_sensor.binary_sensor_bathroom"
+            },
+            {
+              "entity": "binary_sensor.binary_sensor_4_3"
+            },
+            {
+              "entity": "binary_sensor.binary_sensor_6_1"
+            },
+            {
+              "entity": "binary_sensor.binary_sensor_6_2"
+            },
+            {
+              "entity": "binary_sensor.binary_sensor_wc"
+            },
+            {
+              "entity": "person.josef_lola"
+            },
+            {
+              "entity": "sensor.temp_bathroom"
+            },
+            {
+              "entity": "sensor.temp_wc"
+            },
+            {
+              "entity": "sun.sun"
+            }
+          ],
+          "cards": [
+            {
+              "type": "media-control",
+              "entity": "media_player.obyvaci_pokoj"
+            },
+            {
+              "type": "weather-forecast",
+              "entity": "weather.home"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

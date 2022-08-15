@@ -1,0 +1,380 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.lovelace_dum",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "title": "Okruhy topení",
+          "path": "lovelace",
+          "badges": [],
+          "cards": [
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "climate.climate_floor_circle"
+                    },
+                    {
+                      "entity": "input_number.servo_value_floor_circle"
+                    },
+                    {
+                      "entity": "input_number.servo_time_floor_circle"
+                    },
+                    {
+                      "entity": "switch.switch_5_10_servo_open_floor_circle"
+                    },
+                    {
+                      "entity": "switch.switch_5_11_servo_close_floor_circle"
+                    },
+                    {
+                      "entity": "sensor.temp_floor_circle"
+                    }
+                  ],
+                  "state_color": true,
+                  "title": "PID Podlahové topení",
+                  "show_header_toggle": false
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "input_select.pump_mode_floor_circle"
+                    },
+                    {
+                      "entity": "binary_sensor.binary_sensor_5_1_thermostat_negative"
+                    },
+                    {
+                      "entity": "switch.switch_5_7_pump_floor_circle"
+                    },
+                    {
+                      "entity": "input_number.min_temp_boiler_pump_floor_circle"
+                    },
+                    {
+                      "entity": "sensor.temp_boiler"
+                    },
+                    {
+                      "entity": "input_number.min_temp_tank_pump_floor_circle"
+                    },
+                    {
+                      "entity": "sensor.temp_tank_top"
+                    }
+                  ],
+                  "title": "Cerpadlo podlahove topeni",
+                  "state_color": true
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "climate.climate_radiator_circle"
+                    },
+                    {
+                      "entity": "input_number.servo_value_radiator_circle"
+                    },
+                    {
+                      "entity": "input_number.servo_time_radiator_circle"
+                    },
+                    {
+                      "entity": "switch.switch_5_12_servo_open_radiator_circle"
+                    },
+                    {
+                      "entity": "switch.switch_5_13_servo_close_radiator_circle"
+                    },
+                    {
+                      "entity": "sensor.temp_radiator_circle"
+                    }
+                  ],
+                  "title": "PID Radiatory",
+                  "state_color": true,
+                  "show_header_toggle": false
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "input_select.pump_mode_radiator_circle"
+                    },
+                    {
+                      "entity": "binary_sensor.binary_sensor_5_1_thermostat_negative"
+                    },
+                    {
+                      "entity": "switch.switch_5_8_pump_radiator_circle"
+                    },
+                    {
+                      "entity": "input_number.min_temp_boiler_pump_radiator_circle"
+                    },
+                    {
+                      "entity": "sensor.temp_boiler"
+                    },
+                    {
+                      "entity": "input_number.min_temp_tank_pump_radiator_circle"
+                    },
+                    {
+                      "entity": "sensor.temp_tank_top"
+                    }
+                  ],
+                  "title": "Cerpadlo radiatory",
+                  "state_color": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Vetraky",
+          "path": "vetraky",
+          "panel": false,
+          "badges": [],
+          "cards": [
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "tap_action": {
+                    "action": "toggle"
+                  },
+                  "entity": "switch.switch_bathroom",
+                  "icon": "mdi:fan",
+                  "show_state": true
+                },
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "tap_action": {
+                    "action": "toggle"
+                  },
+                  "entity": "switch.switch_wc",
+                  "icon": "mdi:fan",
+                  "show_state": true
+                }
+              ]
+            },
+            {
+              "type": "history-graph",
+              "entities": [
+                {
+                  "entity": "sensor.temp_bathroom"
+                },
+                {
+                  "entity": "sensor.temp_wc"
+                }
+              ],
+              "hours_to_show": 48,
+              "refresh_interval": 0
+            }
+          ]
+        },
+        {
+          "title": "Bazen",
+          "path": "bazen",
+          "panel": true,
+          "badges": [],
+          "cards": []
+        },
+        {
+          "theme": "Backend-selected",
+          "title": "Ohřev TUV",
+          "path": "ohrev-tuv",
+          "badges": [],
+          "cards": [
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "input_select.water_heater_mode"
+                },
+                {
+                  "entity": "switch.switch_5_14_waterheater_mode"
+                },
+                {
+                  "entity": "input_number.min_temp_boiler_water_heater"
+                },
+                {
+                  "entity": "sensor.temp_boiler"
+                },
+                {
+                  "entity": "input_number.min_temp_tank_water_heater"
+                },
+                {
+                  "entity": "sensor.temp_tank_top"
+                },
+                {
+                  "entity": "switch.switch_5_15_servo_waterheater"
+                },
+                {
+                  "entity": "switch.switch_5_9_pump_waterheater"
+                },
+                {
+                  "entity": "binary_sensor.binary_sensor_5_2_waterheater_thermostat_negative"
+                }
+              ],
+              "title": "Ohrev TUV"
+            }
+          ]
+        },
+        {
+          "theme": "Backend-selected",
+          "title": "Diagnostika modulů",
+          "path": "diagnostika-modulu",
+          "badges": [],
+          "cards": [
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "binary_sensor.binary_sensor_5_1_thermostat"
+                },
+                {
+                  "entity": "binary_sensor.binary_sensor_5_2_waterheater_thermostat"
+                },
+                {
+                  "entity": "binary_sensor.binary_sensor_5_3"
+                },
+                {
+                  "entity": "binary_sensor.binary_sensor_5_4"
+                },
+                {
+                  "entity": "binary_sensor.binary_sensor_5_5"
+                },
+                {
+                  "entity": "binary_sensor.binary_sensor_5_6"
+                },
+                {
+                  "entity": "switch.switch_5_7_pump_floor_circle"
+                },
+                {
+                  "entity": "switch.switch_5_8_pump_radiator_circle"
+                },
+                {
+                  "entity": "switch.switch_5_9_pump_waterheater"
+                },
+                {
+                  "entity": "switch.switch_5_10_servo_open_floor_circle"
+                },
+                {
+                  "entity": "switch.switch_5_11_servo_close_floor_circle"
+                },
+                {
+                  "entity": "switch.switch_5_12_servo_open_radiator_circle"
+                },
+                {
+                  "entity": "switch.switch_5_13_servo_close_radiator_circle"
+                },
+                {
+                  "entity": "switch.switch_5_14_waterheater_mode"
+                },
+                {
+                  "entity": "switch.switch_5_15_servo_waterheater"
+                },
+                {
+                  "entity": "sensor.temp_tank_top"
+                },
+                {
+                  "entity": "sensor.temp_tank_middle"
+                },
+                {
+                  "entity": "sensor.temp_tank_bottom"
+                },
+                {
+                  "entity": "sensor.temp_boiler"
+                },
+                {
+                  "entity": "sensor.temp_floor_circle"
+                },
+                {
+                  "entity": "sensor.temp_radiator_circle"
+                },
+                {
+                  "entity": "sensor.temp_floor_livingrom"
+                }
+              ],
+              "title": "board 5"
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "sensor.rfidreader_3"
+                },
+                {
+                  "entity": "switch.rfidreader_reset_3"
+                },
+                {
+                  "entity": "switch.switch_3_0"
+                }
+              ],
+              "show_header_toggle": false,
+              "title": "board 3"
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "binary_sensor.binary_sensor_7_1"
+                },
+                {
+                  "entity": "binary_sensor.binary_sensor_7_2"
+                },
+                {
+                  "entity": "binary_sensor.binary_sensor_7_3"
+                },
+                {
+                  "entity": "binary_sensor.binary_sensor_7_4"
+                },
+                {
+                  "entity": "binary_sensor.binary_sensor_7_5"
+                },
+                {
+                  "entity": "binary_sensor.binary_sensor_7_6"
+                },
+                {
+                  "entity": "switch.switch_7_7"
+                },
+                {
+                  "entity": "switch.switch_7_8"
+                },
+                {
+                  "entity": "switch.switch_7_9"
+                },
+                {
+                  "entity": "switch.switch_7_10"
+                },
+                {
+                  "entity": "switch.switch_7_11"
+                },
+                {
+                  "entity": "switch.switch_7_12"
+                },
+                {
+                  "entity": "switch.switch_7_13"
+                },
+                {
+                  "entity": "switch.switch_7_14"
+                },
+                {
+                  "entity": "switch.switch_7_15"
+                }
+              ],
+              "title": "board 7"
+            }
+          ]
+        }
+      ],
+      "title": "Dům"
+    }
+  }
+}

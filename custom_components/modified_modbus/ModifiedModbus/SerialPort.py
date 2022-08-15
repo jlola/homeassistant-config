@@ -44,7 +44,6 @@ class SerialPort(object):
             return
         self.state = State.CLOSE
         self.serial.close()
-               
         
     def SetReceiver(self, receiver: ISerialReceiver):
         self.receiver = receiver
