@@ -175,25 +175,25 @@ input_number:
     mode: box
     unit_of_measurement: "°C"
   min_temp_boiler_pump_floor_circle:
-    #name: Minimalni teplota kotle
+    name: "Minimální teplota kotle"
     max: 100
     min: 0
     unit_of_measurement: "°C"
     mode: box
   min_temp_boiler_pump_radiator_circle:
-    #name: Minimalni teplota kotle
+    name: "Minimální teplota kotle"
     max: 100
     min: 0
     unit_of_measurement: "°C"
     mode: box
   min_temp_tank_pump_floor_circle:
-    #name: Minimalni teplota nadrze
+    name: "Minimální teplota nádrže"
     max: 100
     min: 0
     unit_of_measurement: "°C"
     mode: box
   min_temp_tank_pump_radiator_circle:
-    #name: Minimalni teplota nadrze
+    name: "Minimální teplota nádrže"
     max: 100
     min: 0
     unit_of_measurement: "°C"
