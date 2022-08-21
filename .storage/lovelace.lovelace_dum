@@ -315,6 +315,9 @@
                 },
                 {
                   "entity": "switch.switch_3_0"
+                },
+                {
+                  "entity": "binary_sensor.binary_sensor_3_2"
                 }
               ],
               "show_header_toggle": false,
@@ -370,6 +373,48 @@
                 }
               ],
               "title": "board 7"
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "binary_sensor.binary_sensor_4_1"
+                },
+                {
+                  "entity": "binary_sensor.binary_sensor_bathroom"
+                },
+                {
+                  "entity": "binary_sensor.binary_sensor_4_3"
+                },
+                {
+                  "entity": "sensor.temp_bathroom"
+                },
+                {
+                  "entity": "switch.switch_bathroom"
+                }
+              ],
+              "title": "modul 4"
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "binary_sensor.binary_sensor_6_1"
+                },
+                {
+                  "entity": "binary_sensor.binary_sensor_6_2"
+                },
+                {
+                  "entity": "binary_sensor.binary_sensor_wc"
+                },
+                {
+                  "entity": "sensor.temp_wc"
+                },
+                {
+                  "entity": "switch.switch_wc"
+                }
+              ],
+              "title": "modul 6"
             }
           ]
         }

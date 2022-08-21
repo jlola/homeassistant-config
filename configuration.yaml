@@ -32,6 +32,10 @@ homeassistant:
       friendly_name: "Teplota radiátorový okruh"
     sensor.temp_tank_top:
       friendly_name: "Teplota nádrže horní"
+    sensor.temp_tank_middle:
+      friendly_name: "Teplota nádrže střed"
+    sensor.temp_tank_bottom:
+      friendly_name: "Teplota nádrže dolní"
     sensor.temp_boiler:
       friendly_name: "Teplota kotle"
     input_number.servo_time_floor_circle:

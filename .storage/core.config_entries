@@ -270,6 +270,32 @@
         "source": "system",
         "unique_id": null,
         "disabled_by": null
+      },
+      {
+        "entry_id": "60ede7c153334c9e397a4795a5555d1d",
+        "version": 1,
+        "domain": "bluetooth",
+        "title": "Bluetooth",
+        "data": {},
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "cf4e1402a6076dcc22f92642d17cd0c5",
+        "version": 1,
+        "domain": "dlna_dmr",
+        "title": "[TV]Samsung LED55",
+        "data": {},
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "uuid:0bebc201-00c8-1000-9f61-5085694bcbc1",
+        "disabled_by": null
       }
     ]
   }
