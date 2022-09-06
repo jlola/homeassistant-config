@@ -14,11 +14,12 @@
               "type": "vertical-stack",
               "cards": [
                 {
+                  "type": "thermostat",
+                  "entity": "climate.climate_floor_circle"
+                },
+                {
                   "type": "entities",
                   "entities": [
-                    {
-                      "entity": "climate.climate_floor_circle"
-                    },
                     {
                       "entity": "input_number.servo_value_floor_circle"
                     },
@@ -73,11 +74,12 @@
               "type": "vertical-stack",
               "cards": [
                 {
+                  "type": "thermostat",
+                  "entity": "climate.climate_radiator_circle"
+                },
+                {
                   "type": "entities",
                   "entities": [
-                    {
-                      "entity": "climate.climate_radiator_circle"
-                    },
                     {
                       "entity": "input_number.servo_value_radiator_circle"
                     },
@@ -239,7 +241,7 @@
                   "entity": "binary_sensor.binary_sensor_5_1_thermostat"
                 },
                 {
-                  "entity": "binary_sensor.binary_sensor_5_2_waterheater_thermostat"
+                  "entity": "binary_sensor.binary_sensor_5_2_hdo"
                 },
                 {
                   "entity": "binary_sensor.binary_sensor_5_3"
@@ -415,11 +417,15 @@
                 }
               ],
               "title": "modul 6"
+            },
+            {
+              "type": "entity",
+              "entity": "sensor.cpu_temperature"
             }
           ]
         }
       ],
-      "title": "Dům"
+      "title": "Dům nastaveni"
     }
   }
 }

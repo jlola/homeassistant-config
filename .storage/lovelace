@@ -51,12 +51,19 @@
           ],
           "cards": [
             {
-              "type": "media-control",
-              "entity": "media_player.obyvaci_pokoj"
-            },
-            {
               "type": "weather-forecast",
               "entity": "weather.home"
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "sensor.processor_temperature"
+                },
+                {
+                  "entity": "sensor.processor_use"
+                }
+              ]
             }
           ]
         }

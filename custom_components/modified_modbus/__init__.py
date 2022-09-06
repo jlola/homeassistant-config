@@ -239,10 +239,12 @@ class SlaveCache():
     
     def ResetCache(self):
         self.refreshTime = None 
+        self.holdings = []
 
     def SetNextReadWithoutData(self, seconds):
         self.refreshTime = datetime.now()
         self.cacheExpiredInSeconds = seconds
+        self.ResetCache()
     
     def GetHoldings(self,offset,count):
         if (len(self.holdings)<=0):
@@ -294,7 +296,7 @@ class ModbusCache():
         
         cachedHoldings = cache.GetHoldings(offset,count)
         if (len(cachedHoldings)==0):
-            raise Exception("cache is small")
+            raise Exception(f"slave: {slave}, offset: {offset}, count: {count}, no cached values")
         return cachedHoldings
         
     

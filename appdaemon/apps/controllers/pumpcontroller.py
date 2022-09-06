@@ -97,9 +97,9 @@ class PumpController(hass.Hass):
     def CalculateOutput(self):
         self.log(f"CalculateOutput: {self.get_mode()}")
         if (self.get_mode()==MODE_ON):
-            self.__set_pump(True)
+            self.__turn_pump_on()
         elif (self.get_mode()==MODE_OFF):
-            self.__set_pump(False)
+            self.__turn_pump_off()
         elif (self.get_mode()==MODE_AUTO):
             self.__auto_output()
 

@@ -1,16 +1,25 @@
 {
-    "version": 1,
-    "key": "auth_provider.homeassistant",
-    "data": {
-        "users": [
-            {
-                "username": "jlola",
-                "password": "JDJiJDEyJGJWVHlJekVGWlhVZ2tidW5hNE11VS56Z2F5UzF2bXFPUzc5ZkoxS2dvaXZZYkxUZk15WW1x"
-            },
-            {
-                "username": "daduska",
-                "password": "JDJiJDEyJEMwNzdrVnMuZDJ0aEVHL0NDTGZxTi5xdnlvOGdoc0dNMHVXLlkxY3BRbFk4U2htaW5hVzdL"
-            }
-        ]
-    }
+  "version": 1,
+  "minor_version": 1,
+  "key": "auth_provider.homeassistant",
+  "data": {
+    "users": [
+      {
+        "username": "jlola",
+        "password": "JDJiJDEyJGJWVHlJekVGWlhVZ2tidW5hNE11VS56Z2F5UzF2bXFPUzc5ZkoxS2dvaXZZYkxUZk15WW1x"
+      },
+      {
+        "username": "daduska",
+        "password": "JDJiJDEyJEMwNzdrVnMuZDJ0aEVHL0NDTGZxTi5xdnlvOGdoc0dNMHVXLlkxY3BRbFk4U2htaW5hVzdL"
+      },
+      {
+        "username": "honzik",
+        "password": "JDJiJDEyJHIwV29KajV6eDJ3Q2U3UUQxVjVPZU9KangvVWI2LnpGelMwVXhuZnJYRERZRzNzOGxrZXhD"
+      },
+      {
+        "username": "dagmarka",
+        "password": "JDJiJDEyJGNHelFSQ2xWVllpbFhObjZaNkhQMHVuYkJHdEFoSWEyVnBEU2Jnajd0UDFnUmY4UU9BRWhH"
+      }
+    ]
+  }
 }

@@ -4,8 +4,8 @@ default_config:
 system_log:
   max_entries: 1000
 
-#logger:
-#  default: info
+logger:
+  default: info
 
 homeassistant:
   time_zone: Europe/Prague
@@ -46,8 +46,6 @@ homeassistant:
       friendly_name: "PID regulátor radiátorů"
     input_number.servo_time_radiator_circle:
       friendly_name: "Čas otevření serva (s)"
-    binary_sensor.binary_sensor_5_2_waterheater_thermostat_negative:
-      friendly_name: "Termostat boiler"
     switch.switch_5_9_pump_waterheater:
       friendly_name: "Čerpadlo boiler"
     switch.switch_5_15_servo_waterheater:
@@ -58,6 +56,8 @@ homeassistant:
       friendly_name: "Minimální teplota kotle"
     input_number.min_temp_tank_water_heater:
       friendly_name: "Minimální teplota nádrže"
+    switch.switch_5_2_HDO:
+      friendly_name: "HDO"
 
 template:
   - sensor:
@@ -65,11 +65,49 @@ template:
         unit_of_measurement: "°C"
         state: "{{  state_attr('climate.climate_floor_circle','temperature') }}"
   - binary_sensor:
-      - name: binary_sensor_5_2_waterheater_thermostat_negative
-        state: "{{is_state('binary_sensor.binary_sensor_5_2_waterheater_thermostat', 'off')}}"
-        device_class: heat
       - name: binary_sensor_5_1_thermostat_negative
         state: "{{is_state('binary_sensor.binary_sensor_5_1_thermostat', 'off')}}"
+
+sensor:
+  - platform: command_line
+    name: CPU Temperature
+    command: "cat /sys/class/thermal/thermal_zone0/temp"
+    unit_of_measurement: "°C"
+    value_template: "{{ value | multiply(0.001) }}"
+  - platform: systemmonitor
+    resources:
+      - type: disk_use_percent
+        arg: /config
+      - type: disk_use
+      - type: disk_free
+      - type: memory_use_percent
+      - type: memory_use
+      - type: memory_free
+      - type: swap_use_percent
+      - type: swap_use
+      - type: swap_free
+      - type: load_1m
+      - type: load_5m
+      - type: load_15m
+      - type: network_in
+        arg: eth0
+      - type: network_out
+        arg: eth0
+      - type: throughput_network_in
+        arg: eth0
+      - type: throughput_network_out
+        arg: eth0
+      - type: packets_in
+        arg: eth0
+      - type: packets_out
+        arg: eth0
+      - type: ipv4_address
+        arg: eth0
+      - type: ipv6_address
+        arg: eth0
+      - type: processor_use
+      - type: processor_temperature
+      - type: last_boot
 
 climate:
   - platform: smart_thermostat
@@ -79,7 +117,7 @@ climate:
     min_temp: 15
     max_temp: 45
     ac_mode: False
-    target_temp: 17
+    target_temp: 40
     keep_alive:
       seconds: 5
     initial_hvac_mode: "heat"
@@ -233,7 +271,6 @@ modified_modbus:
     type: tcp
     port: 9234
     host: 192.168.89.78
-
 binary_sensor 3:
   - holdings:
       - bit: 8
@@ -337,7 +374,7 @@ binary_sensor 5:
     platform: modified_modbus
   - holdings:
       - hub: default
-        name: binary_sensor_5_2_waterheater_thermostat
+        name: binary_sensor_5_2_HDO
         offset: 24
         slave: 5
         value_off: 514
@@ -537,7 +574,6 @@ switch 5:
         state_off: 15
         state_on: 271
     platform: modified_modbus
-
 binary_sensor 6:
   - holdings:
       - hub: default

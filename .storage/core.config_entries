@@ -46,21 +46,6 @@
         "disabled_by": null
       },
       {
-        "entry_id": "d7d52d9913d711ebb5aab56a25f632af",
-        "version": 1,
-        "domain": "cast",
-        "title": "Google Cast",
-        "data": {
-          "user_id": "cc2b3fbce2c64e30a475368087036a4c"
-        },
-        "options": {},
-        "pref_disable_new_entities": false,
-        "pref_disable_polling": false,
-        "source": "zeroconf",
-        "unique_id": "cast",
-        "disabled_by": null
-      },
-      {
         "entry_id": "aab46b3213d811ebbb1527a61cb15489",
         "version": 1,
         "domain": "samsungtv",
@@ -289,12 +274,62 @@
         "version": 1,
         "domain": "dlna_dmr",
         "title": "[TV]Samsung LED55",
-        "data": {},
+        "data": {
+          "url": "http://192.168.89.114:7676/smp_16_"
+        },
         "options": {},
         "pref_disable_new_entities": false,
         "pref_disable_polling": false,
         "source": "ignore",
         "unique_id": "uuid:0bebc201-00c8-1000-9f61-5085694bcbc1",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "943fab86cceb08589a8545a9841bb0ae",
+        "version": 1,
+        "domain": "upnp",
+        "title": "Archer C24 AC750 Dual Band Wi-Fi Router",
+        "data": {
+          "mac_address": "90:9a:4a:83:f3:ff",
+          "location": "http://192.168.89.57:1900/igd.xml"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "uuid:upnp-InternetGatewayDevice-3933E32A5A56::urn:schemas-upnp-org:device:InternetGatewayDevice:1",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "b35159b22489fd483c4186978d412f92",
+        "version": 2,
+        "domain": "samsungtv",
+        "title": "[TV]Samsung LED48 (UE48H5500)",
+        "data": {
+          "host": "192.168.89.155",
+          "mac": "54:88:0e:63:c1:af",
+          "model": "UE48H5500",
+          "ssdp_rendering_control_location": "http://192.168.89.155:7676/smp_19_",
+          "ssdp_main_tv_agent_location": "http://192.168.89.155:7676/smp_2_"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "05f5e101-0064-1000-bc6f-c4576e9e0bac",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "a667e544eeb4d56e1cd29d01d2dbfe72",
+        "version": 1,
+        "domain": "cast",
+        "title": "Google Cast",
+        "data": {},
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "cast",
         "disabled_by": null
       }
     ]

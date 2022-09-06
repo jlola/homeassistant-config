@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.lovelace_home",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "theme": "Backend-selected",
+          "title": "Home",
+          "badges": [],
+          "cards": [
+            {
+              "type": "entity",
+              "entity": "binary_sensor.binary_sensor_5_1_thermostat_negative"
+            },
+            {
+              "type": "entity",
+              "entity": "binary_sensor.binary_sensor_5_2_hdo",
+              "name": "HDO"
+            },
+            {
+              "hours_to_show": 24,
+              "graph": "line",
+              "type": "sensor",
+              "entity": "sensor.temp_boiler",
+              "detail": 2,
+              "unit": "°C"
+            },
+            {
+              "hours_to_show": 24,
+              "graph": "line",
+              "type": "sensor",
+              "entity": "sensor.temp_tank_top",
+              "detail": 1,
+              "unit": "°C"
+            },
+            {
+              "hours_to_show": 24,
+              "graph": "line",
+              "type": "sensor",
+              "entity": "sensor.temp_tank_bottom",
+              "detail": 1
+            },
+            {
+              "hours_to_show": 24,
+              "graph": "line",
+              "type": "sensor",
+              "entity": "sensor.temp_tank_middle",
+              "detail": 1
+            }
+          ]
+        }
+      ],
+      "title": "Home"
+    }
+  }
+}

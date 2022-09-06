@@ -194,8 +194,8 @@ class ModifiedModbus(ISerialReceiver):
                 
                 errormsg += f"sended: {data.hex()}\n"
                             
-                logger.info("getHoldings: slave: %d, offest: %d, count: %d, timeoutMs: %d",
-                            slave, offset, count, timeoutMs)
+                logger.info(f"getHoldings: slave: {slave}, offest: {offset}, count: {count}, timeoutMs: {timeoutMs}")
+                logger.info(f"SendedData: {data.hex()}")
                 #auto start = DateTime::Now();
                 if (self.Send(data,timeoutMs)):        
                     #//check buffer
@@ -265,10 +265,9 @@ class ModifiedModbus(ISerialReceiver):
                 data.append(valuebytes[1])
                 
                 data = self.AppendCRC(data)
-                print("sended: ",data.hex())                            
-        
+                        
                 logger.info("SetHolding: %d, offset: %d, value: %d, timeout: %d",slave, offset, val, timeoutMs);
-        
+                logger.info(f"SendedData: {data.hex()}")
                 if (self.Send(data,timeoutMs)):    
                     respAddress = self.getholdingsBuffer[0];
                     if (respAddress == slave):            

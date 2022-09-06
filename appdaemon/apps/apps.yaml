@@ -2,6 +2,7 @@
 # hello_world:
 #   module: hello
 #   class: HelloWorld
+
 bathroom_fun:
   module: funcontroller
   class: FunController

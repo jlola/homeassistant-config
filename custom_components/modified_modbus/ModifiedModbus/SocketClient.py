@@ -117,7 +117,7 @@ class SocketClient(object):
         # This will work because we do not delete/resize the vector while this method
         # is called
         try:
-            self.socket.settimeout(30.0)
+            self.socket.settimeout(5.0)
             if self.socket is not None:      
                 data = self.socket.recv(1024);
             else:
@@ -125,7 +125,7 @@ class SocketClient(object):
         except Exception as e:
             data = bytes()
             self.connected = False
-            _LOGGER.info("Timeout 30s")
+            _LOGGER.info(f"Socket error 5s {e}")
                 
         # std::cout << *str << " and size of string =" << str->size() << "\r\n";
         if (self.socket is not None and len(data)>0 and self.receiver is not None):
