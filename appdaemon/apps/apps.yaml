@@ -3,11 +3,18 @@
 #   module: hello
 #   class: HelloWorld
 
+wc_fun:
+  module: funcontroller
+  class: FunController
+  fan_button: binary_sensor.binary_sensor_wc
+  fan_switch: switch.switch_wc
+
 bathroom_fun:
   module: funcontroller
   class: FunController
   fan_button: binary_sensor.binary_sensor_bathroom
   fan_switch: switch.switch_bathroom
+
 floor_servo:
   module: servocontroller
   class: ServoController
@@ -54,10 +61,11 @@ waterheater_controller:
   module: waterheatercontroller
   class: WaterHeaterController
   water_heater_mode: input_select.water_heater_mode
-  switch_water_heater_mode: switch.switch_5_14_waterheater_mode
+  switch_electric_heat_disconnect: switch.switch_5_14_electric_heat_off
   temp_tank: sensor.temp_tank_top
   temp_boiler: sensor.temp_boiler
-  water_heater_thermostat: binary_sensor.binary_sensor_5_2_waterheater_thermostat
   min_temp_tank: input_number.min_temp_tank_water_heater
   min_temp_boiler: input_number.min_temp_boiler_water_heater
   servo_water_heater: switch.switch_5_15_servo_waterheater
+  climate_thermostat: climate.climate_waterheater
+  pump_water_heater: switch.switch_5_9_pump_waterheater

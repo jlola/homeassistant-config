@@ -1,8 +1,24 @@
 {
-    "version": 1,
-    "key": "energy",
-    "data": {
-        "energy_sources": [],
-        "device_consumption": []
-    }
+  "version": 1,
+  "minor_version": 1,
+  "key": "energy",
+  "data": {
+    "energy_sources": [
+      {
+        "type": "grid",
+        "flow_from": [
+          {
+            "stat_energy_from": "sensor.energy",
+            "stat_cost": null,
+            "entity_energy_from": "sensor.energy",
+            "entity_energy_price": null,
+            "number_energy_price": 8.0
+          }
+        ],
+        "flow_to": [],
+        "cost_adjustment_day": 0.0
+      }
+    ],
+    "device_consumption": []
+  }
 }

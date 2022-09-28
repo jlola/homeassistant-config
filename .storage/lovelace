@@ -62,8 +62,66 @@
                 },
                 {
                   "entity": "sensor.processor_use"
+                },
+                {
+                  "entity": "sensor.disk_free"
+                },
+                {
+                  "entity": "sensor.memory_free"
+                },
+                {
+                  "entity": "sensor.last_boot"
                 }
               ]
+            },
+            {
+              "hours_to_show": 24,
+              "graph": "line",
+              "type": "sensor",
+              "entity": "sensor.3_temperature_outside",
+              "detail": 1
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "sensor.waterheater_actualpower"
+                },
+                {
+                  "entity": "sensor.waterheater_power"
+                },
+                {
+                  "entity": "binary_sensor.binary_sensor_3_2_waterheater_ison"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "theme": "Backend-selected",
+          "title": "Regulace",
+          "path": "regulace",
+          "type": "panel",
+          "badges": [],
+          "cards": [
+            {
+              "type": "history-graph",
+              "entities": [
+                {
+                  "entity": "climate.climate_floor_circle"
+                },
+                {
+                  "entity": "climate.climate_radiator_circle"
+                },
+                {
+                  "entity": "input_number.servo_time_floor_circle"
+                },
+                {
+                  "entity": "input_number.servo_time_radiator_circle"
+                }
+              ],
+              "title": "Regulace",
+              "hours_to_show": 1
             }
           ]
         }

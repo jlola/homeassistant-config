@@ -3,96 +3,205 @@ import logging
 from time import time
 from collections import deque, namedtuple
 
+_LOGGER = logging.getLogger(__name__)
+
 
 # Based on Arduino PID Library
 # See https://github.com/br3ttb/Arduino-PID-Library
-class PIDArduino(object):
-    """A proportional-integral-derivative controller.
+class PID:
+    error: float
 
-    Args:
-        sampletime (float): The interval between calc() calls.
-        kp (float): Proportional coefficient.
-        ki (float): Integral coefficient.
-        kd (float): Derivative coefficient.
-        out_min (float): Lower output limit.
-        out_max (float): Upper output limit.
-        time (function): A function which returns the current time in seconds.
-    """
-
-    def __init__(self, sampletime, kp, ki, kd, out_min=float('-inf'),
-                 out_max=float('inf'), time=time):
+    def __init__(self, kp, ki, kd, ke=0, out_min=float('-inf'), out_max=float('+inf'), sampling_period=0,
+                 cold_tolerance=0.3, hot_tolerance=0.3):
+        """A proportional-integral-derivative controller.
+            :param kp: Proportional coefficient.
+            :type kp: float
+            :param ki: Integral coefficient.
+            :type ki: float
+            :param kd: Derivative coefficient.
+            :type kd: float
+            :param ke: Outdoor temperature compensation coefficient.
+            :type ke: float
+            :param out_min: Lower output limit.
+            :type out_min: float
+            :param out_max: Upper output limit.
+            :type out_max: float
+            :param sampling_period: time period between two PID calculations in seconds
+            :type sampling_period: float
+            :param cold_tolerance: time period between two PID calculations in seconds
+            :type cold_tolerance: float
+            :param hot_tolerance: time period between two PID calculations in seconds
+            :type hot_tolerance: float
+        """
         if kp is None:
             raise ValueError('kp must be specified')
         if ki is None:
             raise ValueError('ki must be specified')
         if kd is None:
             raise ValueError('kd must be specified')
-        if sampletime <= 0:
-            raise ValueError('sampletime must be greater than 0')
         if out_min >= out_max:
             raise ValueError('out_min must be less than out_max')
 
-        self._logger = logging.getLogger(type(self).__name__)
         self._Kp = kp
-        self._Ki = ki * sampletime
-        self._Kd = kd / sampletime
-        self._sampletime = sampletime * 1000
+        self._Ki = ki
+        self._Kd = kd
+        self._Ke = ke
         self._out_min = out_min
         self._out_max = out_max
-        self._integral = 0
-        self._last_input = 0
+        self._integral = 0.0
+        self._last_set_point = 0
+        self._set_point = 0
+        self._input = None
+        self._input_time = None
+        self._last_input = None
+        self._last_input_time = None
+        self.error = 0
+        self._input_diff = 0
+        self.dext = 0
+        self.dt = 0
         self._last_output = 0
-        self._last_calc_timestamp = 0
-        self._time = time
+        self.output = 0
+        self.P = 0
+        self.I = 0
+        self.D = 0
+        self.E = 0
+        self._mode = 'AUTO'
+        self.sampling_period = sampling_period
+        self._cold_tolerance = cold_tolerance
+        self._hot_tolerance = hot_tolerance
 
-    def calc(self, input_val, setpoint):
+    @property
+    def mode(self):
+        return self._mode
+
+    @mode.setter
+    def mode(self, mode):
+        assert mode.upper() in ['AUTO', 'OFF']
+        self._mode = mode.upper()
+
+    @property
+    def integral(self):
+        return self._integral
+
+    @integral.setter
+    def integral(self, i):
+        assert isinstance(i, float), "Integral should be a float"
+        self._integral = i
+        self.I = i
+
+    def set_pid_param(self, kp=None, ki=None, kd=None, ke=None):
+        """Set PID parameters."""
+        if kp is not None and isinstance(kp, (int, float)):
+            self._Kp = kp
+        if ki is not None and isinstance(ki, (int, float)):
+            self._Ki = ki
+        if kd is not None and isinstance(kd, (int, float)):
+            self._Kd = kd
+        if ke is not None and isinstance(ke, (int, float)):
+            self._Ke = ke
+
+    def clear_samples(self):
+        """Clear the samples values and timestamp to restart PID from clean state after
+        a switch off of the thermostat"""
+        self._input = None
+        self._input_time = None
+        self._last_input = None
+        self._last_input_time = None
+        
+    def calc(self, input_val, set_point, input_time=None, last_input_time=None, ext_temp=None):
         """Adjusts and holds the given setpoint.
 
         Args:
             input_val (float): The input value.
-            setpoint (float): The target value.
+            set_point (float): The target value.
+            input_time (float): The timestamp in seconds of the input value to compute dt
+            last_input_time (float): The timestamp in seconds of the previous input value to
+            compute dt
+            ext_temp (float): The outdoor temperature value.
 
         Returns:
             A value between `out_min` and `out_max`.
         """
-        now = self._time() * 1000
+        if self.sampling_period != 0 and self._last_input_time is not None and \
+                time() - self._input_time < self.sampling_period:
+            return self.output, False  # If last sample is too young, keep last output value
 
-        if (now - self._last_calc_timestamp) < self._sampletime:
-            return self._last_output
+        self._last_input = self._input
+        if self.sampling_period == 0:
+            self._last_input_time = last_input_time
+        else:
+            self._last_input_time = self._input_time
+        self._last_output = self.output
+
+        # Refresh with actual values
+        self._input = input_val
+        if self.sampling_period == 0:
+            self._input_time = input_time
+        else:
+            self._input_time = time()
+        self._last_set_point = self._set_point
+        self._set_point = set_point
+
+        if self.mode == 'OFF':  # If PID is off, simply switch between min and max output
+            if input_val <= set_point - self._cold_tolerance:
+                self.output = self._out_max
+                _LOGGER.debug("PID is off and input lower than set point: heater ON")
+                return self.output, True
+            elif input_val >= set_point + self._hot_tolerance:
+                self.output = self._out_min
+                _LOGGER.debug("PID is off and input higher than set point: heater OFF")
+                return self.output, True
+            else:
+                return self.output, False
 
         # Compute all the working error variables
-        error = setpoint - input_val
-        input_diff = input_val - self._last_input
+        self.error = set_point - input_val
+        if self._last_input is not None:
+            self._input_diff = self._input - self._last_input
+        else:
+            self._input_diff = 0
+        if self._last_input_time is not None:
+            self.dt = self._input_time - self._last_input_time
+        else:
+            self.dt = 0
+        if ext_temp is not None:
+            self.dext = set_point - ext_temp
+        else:
+            self.dext = 0
 
-        # In order to prevent windup, only integrate if the process is not saturated
-        if self._last_output < self._out_max and self._last_output > self._out_min:
-            self._integral += self._Ki * error
-            self._integral = min(self._integral, self._out_max)
-            self._integral = max(self._integral, self._out_min)
+        # In order to prevent windup, only integrate if the process is not saturated and set point
+        # is stable
+        if self._out_min < self._last_output < self._out_max and \
+                self._last_set_point == self._set_point:
+            self._integral += self._Ki * self.error * self.dt
+            self._integral = max(min(self._integral, self._out_max), self._out_min)
 
-        p = self._Kp * error
-        i = self._integral
-        d = -(self._Kd * input_diff)
+        self.P = self._Kp * self.error
+        self.I = self._integral
+        if self.dt != 0:
+            self.D = -(self._Kd * self._input_diff) / self.dt
+        else:
+            self.D = 0.0
+        # Compensate losses due to external temperature
+        self.E = self._Ke * self.dext
 
         # Compute PID Output
-        self._last_output = p + i + d
-        self._last_output = min(self._last_output, self._out_max)
-        self._last_output = max(self._last_output, self._out_min)
+        output = self.P + self.I + self.D + self.E
+        self.output = max(min(output, self._out_max), self._out_min)
 
         # Log some debug info
-        self._logger.debug('P: {0}'.format(p))
-        self._logger.debug('I: {0}'.format(i))
-        self._logger.debug('D: {0}'.format(d))
-        self._logger.debug('output: {0}'.format(self._last_output))
+        _LOGGER.debug('P: %.2f', self.P)
+        _LOGGER.debug('I: %.2f', self.I)
+        _LOGGER.debug('D: %.2f', self.D)
+        _LOGGER.debug('E: %.2f', self.E)
+        _LOGGER.debug('output: %.2f', self.output)
 
-        # Remember some variables for next time
-        self._last_input = input_val
-        self._last_calc_timestamp = now
-        return self._last_output
+        return self.output, True
+
 
 # Based on a fork of Arduino PID AutoTune Library
 # See https://github.com/t0mpr1c3/Arduino-PID-AutoTune-Library
-class PIDAutotune(object):
+class PIDAutotune:
     """Determines viable parameters for a PID controller.
 
     Args:
@@ -127,24 +236,21 @@ class PIDAutotune(object):
         "brewing": [2.5, 6, 380]
     }
 
-    def __init__(self, setpoint, out_step=10, sampletime=5, lookback=60,
-                 out_min=float('-inf'), out_max=float('inf'), noiseband=0.5, time=time):
-        if setpoint is None:
-            raise ValueError('setpoint must be specified')
+    def __init__(self, out_step=10, lookback=60,
+                 out_min=float('-inf'), out_max=float('inf'), noiseband=0.5, time_func=time):
         if out_step < 1:
             raise ValueError('out_step must be greater or equal to 1')
-        if sampletime < 1:
-            raise ValueError('sampletime must be greater or equal to 1')
-        if lookback < sampletime:
-            raise ValueError('lookback must be greater or equal to sampletime')
         if out_min >= out_max:
             raise ValueError('out_min must be less than out_max')
 
-        self._time = time
-        self._logger = logging.getLogger(type(self).__name__)
-        self._inputs = deque(maxlen=round(lookback / sampletime))
-        self._sampletime = sampletime * 1000
-        self._setpoint = setpoint
+        self._time = time_func
+        self._sampletime = None
+        self._last_sample_time = None
+        self._sample_time_calc = []
+        self._lookback = lookback
+        self._inputs = deque(maxlen=10)
+        self._inputs_timestamps = deque(maxlen=10)
+        self._setpoint = None
         self._outputstep = out_step
         self._noiseband = noiseband
         self._out_min = out_min
@@ -176,6 +282,35 @@ class PIDAutotune(object):
         """Get a list of all available tuning rules."""
         return self._tuning_rules.keys()
 
+    @property
+    def set_point(self):
+        """Get the reference set point"""
+        return self._setpoint
+
+    @property
+    def sample_time(self):
+        """Get the sample time considered"""
+        return self._sampletime
+
+    @property
+    def peak_count(self):
+        """Get the number of peaks found"""
+        return self._peak_count
+
+    @property
+    def buffer_full(self):
+        """Get the filling percentage of the buffer"""
+        if self._inputs is None or float(self._inputs.maxlen) == 0:
+            return 0
+        return len(self._inputs) / float(self._inputs.maxlen)
+
+    @property
+    def buffer_length(self):
+        """Get the total length of buffer"""
+        if self._inputs is None:
+            return 0
+        return self._inputs.maxlen
+
     def get_pid_parameters(self, tuning_rule='ziegler-nichols'):
         """Get PID parameters.
 
@@ -189,37 +324,49 @@ class PIDAutotune(object):
         kd = kp * (self._Pu / divisors[2])
         return PIDAutotune.PIDParams(kp, ki, kd)
 
-    def run(self, input_val):
+    def run(self, input_val, set_point, now=None):
         """To autotune a system, this method must be called periodically.
 
         Args:
             input_val (float): The input value.
+            set_point (float): The target value to be considered.
 
         Returns:
             `true` if tuning is finished, otherwise `false`.
         """
-        now = self._time() * 1000
+        if now is None:
+            now = self._time()
+        if self._sampletime is None:
+            # sample time is not defined, use first 5 temperature samples to measure it.
+            if self._last_sample_time is None:
+                self._last_sample_time = now
+                return False
+            self._sample_time_calc.append(now - self._last_sample_time)
+            self._last_sample_time = now
+            if len(self._sample_time_calc) < self._inputs.maxlen:
+                return False
+            self._sampletime = sum(self._sample_time_calc[5::]) / len(self._sample_time_calc[5::])
+            self._setpoint = set_point
+            self._inputs = deque(maxlen=round(self._lookback / self._sampletime))
+            self._inputs_timestamps = deque(maxlen=round(self._lookback / self._sampletime))
 
-        if (self._state == PIDAutotune.STATE_OFF
-                or self._state == PIDAutotune.STATE_SUCCEEDED
-                or self._state == PIDAutotune.STATE_FAILED):
+        if self._state in [PIDAutotune.STATE_OFF, PIDAutotune.STATE_SUCCEEDED,
+                           PIDAutotune.STATE_FAILED]:
             self._initTuner(input_val, now)
-        elif (now - self._last_run_timestamp) < self._sampletime:
+        elif (now - self._last_run_timestamp) < self._sampletime - 0.90:  # keep a 10% margin
             return False
-
-        self._last_run_timestamp = now
 
         # check input and change relay state if necessary
         if (self._state == PIDAutotune.STATE_RELAY_STEP_UP
                 and input_val > self._setpoint + self._noiseband):
             self._state = PIDAutotune.STATE_RELAY_STEP_DOWN
-            self._logger.debug('switched state: {0}'.format(self._state))
-            self._logger.debug('input: {0}'.format(input_val))
+            _LOGGER.debug('switched state: %s', self._state)
+            _LOGGER.debug('input: %.1f', input_val)
         elif (self._state == PIDAutotune.STATE_RELAY_STEP_DOWN
                 and input_val < self._setpoint - self._noiseband):
             self._state = PIDAutotune.STATE_RELAY_STEP_UP
-            self._logger.debug('switched state: {0}'.format(self._state))
-            self._logger.debug('input: {0}'.format(input_val))
+            _LOGGER.debug('switched state: %s', self._state)
+            _LOGGER.debug('input: %.1f', input_val)
 
         # set output
         if (self._state == PIDAutotune.STATE_RELAY_STEP_UP):
@@ -240,77 +387,16 @@ class PIDAutotune(object):
             is_min = is_min and (input_val <= val)
 
         self._inputs.append(input_val)
+        self._inputs_timestamps.append(now)
+        self._last_run_timestamp = now
 
         # we don't want to trust the maxes or mins until the input array is full
         if len(self._inputs) < self._inputs.maxlen:
             return False
 
+        return self.analysis()
         # increment peak count and record peak time for maxima and minima
-        inflection = False
 
-        # peak types:
-        # -1: minimum
-        # +1: maximum
-        if is_max:
-            if self._peak_type == -1:
-                inflection = True
-            self._peak_type = 1
-        elif is_min:
-            if self._peak_type == 1:
-                inflection = True
-            self._peak_type = -1
-
-        # update peak times and values
-        if inflection:
-            self._peak_count += 1
-            self._peaks.append(input_val)
-            self._peak_timestamps.append(now)
-            self._logger.debug('found peak: {0}'.format(input_val))
-            self._logger.debug('peak count: {0}'.format(self._peak_count))
-
-        # check for convergence of induced oscillation
-        # convergence of amplitude assessed on last 4 peaks (1.5 cycles)
-        self._induced_amplitude = 0
-
-        if inflection and (self._peak_count > 4):
-            abs_max = self._peaks[-2]
-            abs_min = self._peaks[-2]
-            for i in range(0, len(self._peaks) - 2):
-                self._induced_amplitude += abs(self._peaks[i] - self._peaks[i+1])
-                abs_max = max(self._peaks[i], abs_max)
-                abs_min = min(self._peaks[i], abs_min)
-
-            self._induced_amplitude /= 6.0
-
-            # check convergence criterion for amplitude of induced oscillation
-            amplitude_dev = ((0.5 * (abs_max - abs_min) - self._induced_amplitude)
-                             / self._induced_amplitude)
-
-            self._logger.debug('amplitude: {0}'.format(self._induced_amplitude))
-            self._logger.debug('amplitude deviation: {0}'.format(amplitude_dev))
-
-            if amplitude_dev < PIDAutotune.PEAK_AMPLITUDE_TOLERANCE:
-                self._state = PIDAutotune.STATE_SUCCEEDED
-
-        # if the autotune has not already converged
-        # terminate after 10 cycles
-        if self._peak_count >= 20:
-            self._output = 0
-            self._state = PIDAutotune.STATE_FAILED
-            return True
-
-        if self._state == PIDAutotune.STATE_SUCCEEDED:
-            self._output = 0
-
-            # calculate ultimate gain
-            self._Ku = 4.0 * self._outputstep / (self._induced_amplitude * math.pi)
-
-            # calculate ultimate period in seconds
-            period1 = self._peak_timestamps[3] - self._peak_timestamps[1]
-            period2 = self._peak_timestamps[4] - self._peak_timestamps[2]
-            self._Pu = 0.5 * (period1 + period2) / 1000.0
-            return True
-        return False
 
     def _initTuner(self, inputValue, timestamp):
         self._peak_type = 0
@@ -322,5 +408,84 @@ class PIDAutotune(object):
         self._inputs.clear()
         self._peaks.clear()
         self._peak_timestamps.clear()
-        self._peak_timestamps.append(timestamp)
+        # self._peak_timestamps.append(timestamp)
         self._state = PIDAutotune.STATE_RELAY_STEP_UP
+
+    def analysis(self):
+        for index in range(self._inputs.maxlen):
+            input_val = self._inputs[index]
+            now = self._inputs_timestamps[index]
+            # identify peaks
+            is_max = True
+            is_min = True
+
+            for val in self._inputs:
+                is_max = is_max and (input_val >= val)
+                is_min = is_min and (input_val <= val)
+
+            # increment peak count and record peak time for maxima and minima
+            inflection = False
+
+            # peak types:
+            # -1: minimum
+            # +1: maximum
+            if is_max:
+                if self._peak_type == -1:
+                    inflection = True
+                self._peak_type = 1
+            elif is_min:
+                if self._peak_type == 1:
+                    inflection = True
+                self._peak_type = -1
+
+            # update peak times and values
+            if inflection:
+                self._peak_count += 1
+                self._peaks.append(input_val)
+                self._peak_timestamps.append(now)
+                _LOGGER.debug('found peak: %.1f', input_val)
+                _LOGGER.debug('peak count: %i', self._peak_count)
+
+            # check for convergence of induced oscillation
+            # convergence of amplitude assessed on last 4 peaks (1.5 cycles)
+            self._induced_amplitude = 0
+
+            if inflection and (self._peak_count > 4):
+                abs_max = self._peaks[-2]
+                abs_min = self._peaks[-2]
+                for i in range(0, len(self._peaks) - 2):
+                    self._induced_amplitude += abs(self._peaks[i] - self._peaks[i+1])
+                    abs_max = max(self._peaks[i], abs_max)
+                    abs_min = min(self._peaks[i], abs_min)
+
+                self._induced_amplitude /= 6.0
+
+                # check convergence criterion for amplitude of induced oscillation
+                amplitude_dev = ((0.5 * (abs_max - abs_min) - self._induced_amplitude)
+                                 / self._induced_amplitude)
+
+                _LOGGER.debug('amplitude: %.2f', self._induced_amplitude)
+                _LOGGER.debug('amplitude deviation: %.2f', amplitude_dev)
+
+                if amplitude_dev < PIDAutotune.PEAK_AMPLITUDE_TOLERANCE:
+                    self._state = PIDAutotune.STATE_SUCCEEDED
+
+            # if the autotune has not already converged
+            # terminate after 10 cycles
+            if self._peak_count >= 20:
+                self._output = 0
+                self._state = PIDAutotune.STATE_FAILED
+                return True
+
+            if self._state == PIDAutotune.STATE_SUCCEEDED:
+                self._output = 0
+
+                # calculate ultimate gain
+                self._Ku = 4.0 * self._outputstep / (self._induced_amplitude * math.pi)
+
+                # calculate ultimate period in seconds
+                period1 = self._peak_timestamps[3] - self._peak_timestamps[1]
+                period2 = self._peak_timestamps[4] - self._peak_timestamps[2]
+                self._Pu = 0.5 * (period1 + period2)
+                return True
+            return False

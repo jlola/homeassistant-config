@@ -10,6 +10,10 @@ logger:
 homeassistant:
   time_zone: Europe/Prague
   customize:
+    sensor.3_temperature_outside:
+      friendly_name: "Venkovní teplota"
+    sensor.3_temperature_waterheater:
+      friendly_name: "Teplota boileru"
     switch.switch_wc:
       friendly_name: "Vetrak wc"
     switch.switch_5_10_servo_open_floor_circle:
@@ -39,28 +43,38 @@ homeassistant:
     sensor.temp_boiler:
       friendly_name: "Teplota kotle"
     input_number.servo_time_floor_circle:
-      friendly_name: "Čas otevření serva (s)"
+      friendly_name: "Čas otevření serva podlahy (s)"
     climate.climate_floor_circle:
       friendly_name: "PID regulátor podlahy"
     climate.climate_radiator_circle:
       friendly_name: "PID regulátor radiátorů"
     input_number.servo_time_radiator_circle:
-      friendly_name: "Čas otevření serva (s)"
+      friendly_name: "Čas otevření serva radiátory (s)"
     switch.switch_5_9_pump_waterheater:
       friendly_name: "Čerpadlo boiler"
     switch.switch_5_15_servo_waterheater:
       friendly_name: "Servo boiler"
-    switch.switch_5_14_waterheater_mode:
-      friendly_name: "Ohřev TUV kotlem"
+    switch.switch_5_14_electric_heat_off:
+      friendly_name: "Odpojení spiraly boileru"
     input_number.min_temp_boiler_water_heater:
       friendly_name: "Minimální teplota kotle"
     input_number.min_temp_tank_water_heater:
       friendly_name: "Minimální teplota nádrže"
     switch.switch_5_2_HDO:
       friendly_name: "HDO"
+    sensor.waterheater_actualpower:
+      friendly_name: "Bojler aktuální příkon"
 
 template:
   - sensor:
+      - name: "waterheater_actualpower"
+        state: >
+          {% if is_state('binary_sensor.binary_sensor_3_2_waterheater_ison', 'on') %}
+            0
+          {% else %}
+            2000
+          {% endif %}
+        unit_of_measurement: W
       - name: "floor_set_point"
         unit_of_measurement: "°C"
         state: "{{  state_attr('climate.climate_floor_circle','temperature') }}"
@@ -68,16 +82,29 @@ template:
       - name: binary_sensor_5_1_thermostat_negative
         state: "{{is_state('binary_sensor.binary_sensor_5_1_thermostat', 'off')}}"
 
+utility_meter:
+  energy:
+    source: sensor.waterheater_power
+    cycle: hourly
+
 sensor:
+  - platform: integration
+    source: sensor.waterheater_actualpower
+    name: waterheater_power
+    unit_prefix: k
+    unit_time: h
+    method: trapezoidal
+    round: 2
+    unique_id: waterheater_power3
   - platform: command_line
     name: CPU Temperature
     command: "cat /sys/class/thermal/thermal_zone0/temp"
     unit_of_measurement: "°C"
     value_template: "{{ value | multiply(0.001) }}"
+  # Example configuration.yaml entry with all entry types (delete/comment out as necessary)
   - platform: systemmonitor
     resources:
       - type: disk_use_percent
-        arg: /config
       - type: disk_use
       - type: disk_free
       - type: memory_use_percent
@@ -108,8 +135,24 @@ sensor:
       - type: processor_use
       - type: processor_temperature
       - type: last_boot
-
 climate:
+  - platform: generic_thermostat
+    name: climate_waterheater
+    heater: switch.switch_5_15_servo_waterheater
+    target_sensor: sensor.3_temperature_waterheater
+    min_temp: 40
+    max_temp: 60
+    ac_mode: false
+    target_temp: 45
+    cold_tolerance: 0.3
+    hot_tolerance: 0
+    min_cycle_duration:
+      seconds: 20
+    keep_alive:
+      minutes: 3
+    initial_hvac_mode: "off"
+    away_temp: 16
+    precision: 0.1
   - platform: smart_thermostat
     name: climate_floor_circle
     heater: input_number.servo_value_floor_circle
@@ -117,14 +160,14 @@ climate:
     min_temp: 15
     max_temp: 45
     ac_mode: False
-    target_temp: 40
+    target_temp: 30
     keep_alive:
-      seconds: 5
+      seconds: 10
     initial_hvac_mode: "heat"
     away_temp: 16
-    kp: 5
-    ki: 3
-    kd: 2
+    kp: 0.1
+    ki: 0.02
+    kd: 1
     pwm: 0
     difference: 100
     noiseband: 0.5
@@ -137,12 +180,12 @@ climate:
     ac_mode: False
     target_temp: 40
     keep_alive:
-      seconds: 5
+      seconds: 10
     initial_hvac_mode: "heat"
     away_temp: 16
-    kp: 5
-    ki: 3
-    kd: 2
+    kp: 0.1
+    ki: 0.02
+    kd: 1
     pwm: 0
     difference: 100
     noiseband: 0.5
@@ -169,7 +212,7 @@ input_select:
 
 input_number:
   servo_value_floor_circle:
-    name: "Otevření serva podlahy"
+    name: "Otevření serva podlahy (%)"
     initial: 0
     min: 0
     max: 100
@@ -177,7 +220,7 @@ input_number:
     mode: box
     unit_of_measurement: "%"
   servo_value_radiator_circle:
-    name: "Otevření serva radiátorů"
+    name: "Otevření serva radiátorů (%)"
     initial: 0
     min: 0
     max: 100
@@ -275,13 +318,31 @@ binary_sensor 3:
   - holdings:
       - bit: 8
         hub: default
-        name: binary_sensor_3_2
+        name: binary_sensor_3_2_waterheater_ison
         offset: 28
         slave: 3
         value_off: 0
         value_on: 1
     platform: modified_modbus
 sensor  3:
+  - holdings:
+      - OwId: 284487f30100007f
+        device_class: temperature
+        holdings_type: ds18b20
+        hub: default
+        name: 3_temperature_waterheater
+        slave: 3
+        unit_of_measurement: "°C"
+    platform: modified_modbus
+  - holdings:
+      - OwId: 28ff33ac6415014f
+        device_class: temperature
+        holdings_type: ds18b20
+        hub: default
+        name: 3_temperature_outside
+        slave: 3
+        unit_of_measurement: "°C"
+    platform: modified_modbus
   - holdings:
       - count: 25
         holdings_type: string
@@ -558,7 +619,7 @@ switch 5:
       - command_off: 14
         command_on: 270
         hub: default
-        name: switch_5_14_waterheater_mode
+        name: switch_5_14_electric_heat_off
         offset: 36
         slave: 5
         state_off: 14

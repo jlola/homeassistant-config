@@ -114,16 +114,18 @@ class PumpController(hass.Hass):
         if (self.get_temp_tank() < self.get_min_temp_tank()):
                 self.__tank_is_warm = False
         self.log(f"__tank_is_warm: {self.__tank_is_warm}, thermostat: {self.get_thermostat()}")
-        if (self.get_thermostat()==True and (self.get_temp_drum()>=self.get_min_temp_drum() or self.__tank_is_warm)):
+        if (self.get_thermostat()==True and (self.get_temp_drum()>=self.get_min_temp_drum() or self.__tank_is_warm)):            
             self.__turn_pump_on()
-        else:
+        else:            
             self.__turn_pump_off()
 
     def __turn_pump_on(self):
+        self.log("trun pump on")
         self.__set_pump(True)
         self.trun_climate_on(True)
 
     def __turn_pump_off(self):
+        self.log("trun pump off")
         self.__set_pump(False)
         self.trun_climate_on(False)
         self.set_servo_value(0)

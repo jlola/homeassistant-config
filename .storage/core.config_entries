@@ -33,19 +33,6 @@
         "disabled_by": null
       },
       {
-        "entry_id": "337aa867130c11eba65ed9598df7943a",
-        "version": 1,
-        "domain": "nodered",
-        "title": "Node-RED",
-        "data": {},
-        "options": {},
-        "pref_disable_new_entities": false,
-        "pref_disable_polling": false,
-        "source": "user",
-        "unique_id": null,
-        "disabled_by": null
-      },
-      {
         "entry_id": "aab46b3213d811ebbb1527a61cb15489",
         "version": 1,
         "domain": "samsungtv",
@@ -184,36 +171,6 @@
         "disabled_by": null
       },
       {
-        "entry_id": "9604e86ee6da040225f27652f3d1fbb6",
-        "version": 1,
-        "domain": "mobile_app",
-        "title": "Redmi 4X",
-        "data": {
-          "app_id": "io.homeassistant.companion.android",
-          "app_name": "Home Assistant",
-          "app_version": "2021.12.3-full (1854)",
-          "device_name": "Redmi 4X",
-          "manufacturer": "Xiaomi",
-          "model": "Redmi 4X",
-          "os_name": "Android",
-          "os_version": "30",
-          "supports_encryption": false,
-          "app_data": {
-            "push_url": "https://mobile-apps.home-assistant.io/api/sendPush/android/v1",
-            "push_token": "dWhCWmJVQsa0FcjA2nH0J5:APA91bFfQUmC7wYZsn20p50f1co1wtG73V4YkKCg1kdShXNYXEcSz2_L46y61ULmBLmSv1vJOiG9yfHmL3liDE7R5sTmad6rdBvkYLBquUVqLNTZMwRMBrFdQg-VlSC1DdkVcnuFnb8c"
-          },
-          "device_id": "d04f688c2ae277d7",
-          "webhook_id": "d3b15e301fad395b93c7bae877a63fb645fb4c79ea619c84c80c3fc3f8036e87",
-          "user_id": "b09f7b37fe70417390c67b7d02d9e0bc"
-        },
-        "options": {},
-        "pref_disable_new_entities": false,
-        "pref_disable_polling": false,
-        "source": "registration",
-        "unique_id": "io.homeassistant.companion.android-d04f688c2ae277d7",
-        "disabled_by": null
-      },
-      {
         "entry_id": "6ff8b5986be6b002e1d80ebb39c1982c",
         "version": 1,
         "domain": "sun",
@@ -224,23 +181,6 @@
         "pref_disable_polling": false,
         "source": "import",
         "unique_id": null,
-        "disabled_by": null
-      },
-      {
-        "entry_id": "73f8ee18dc303030036979b44e0e3383",
-        "version": 1,
-        "domain": "dlna_dms",
-        "title": "PD: pc:",
-        "data": {
-          "url": "http://192.168.89.21:2869/upnphost/udhisapi.dll?content=uuid:a40fb177-b1b5-4657-b30f-836d2177bb3a",
-          "device_id": "uuid:a40fb177-b1b5-4657-b30f-836d2177bb3a::urn:schemas-upnp-org:device:MediaServer:1",
-          "source_id": "pd_pc"
-        },
-        "options": {},
-        "pref_disable_new_entities": false,
-        "pref_disable_polling": false,
-        "source": "ssdp",
-        "unique_id": "uuid:a40fb177-b1b5-4657-b30f-836d2177bb3a::urn:schemas-upnp-org:device:MediaServer:1",
         "disabled_by": null
       },
       {
@@ -260,13 +200,13 @@
         "entry_id": "60ede7c153334c9e397a4795a5555d1d",
         "version": 1,
         "domain": "bluetooth",
-        "title": "Bluetooth",
+        "title": "DC:A6:32:C1:6D:29",
         "data": {},
         "options": {},
         "pref_disable_new_entities": false,
         "pref_disable_polling": false,
         "source": "ignore",
-        "unique_id": null,
+        "unique_id": "DC:A6:32:C1:6D:29",
         "disabled_by": null
       },
       {
@@ -275,7 +215,7 @@
         "domain": "dlna_dmr",
         "title": "[TV]Samsung LED55",
         "data": {
-          "url": "http://192.168.89.114:7676/smp_16_"
+          "url": "http://192.168.89.114:7676/smp_14_"
         },
         "options": {},
         "pref_disable_new_entities": false,
@@ -291,7 +231,8 @@
         "title": "Archer C24 AC750 Dual Band Wi-Fi Router",
         "data": {
           "mac_address": "90:9a:4a:83:f3:ff",
-          "location": "http://192.168.89.57:1900/igd.xml"
+          "location": "http://192.168.89.57:1900/igd.xml",
+          "host": "192.168.89.57"
         },
         "options": {},
         "pref_disable_new_entities": false,

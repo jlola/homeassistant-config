@@ -71,8 +71,9 @@ class DS18B20(object):
         self.value = self.GetValue(data[self._offset+OFFSET_VALUE])
         
     def GetValue(self,val):
-        bts = self.int_to_bytes(val)
-        return int.from_bytes(bts, 'big', signed=True)
+        #bts = self.int_to_bytes(val)
+        #return int.from_bytes(bts, 'big', signed=True)
+        return val/100.0
         
     def int_to_bytes(self,x: int) -> bytes:
         return x.to_bytes((x.bit_length() + 7) // 8, 'big')
@@ -83,7 +84,7 @@ class DS18B20(object):
         
     @property
     def Value(self):
-        return self.value/100.0
+        return self.value
     
     @property
     def OwId(self):

@@ -113,7 +113,7 @@
         "manufacturer": "Home Assistant",
         "model": "Home Assistant Operating System",
         "name": "Home Assistant Operating System",
-        "sw_version": "8.5",
+        "sw_version": "9.0",
         "hw_version": null,
         "entry_type": "service",
         "id": "5b944c59cf6a97a894c77fa03f554081",
@@ -137,7 +137,7 @@
         "manufacturer": "Home Assistant Community Add-ons",
         "model": "Home Assistant Add-on",
         "name": "Studio Code Server",
-        "sw_version": "5.3.0",
+        "sw_version": "5.4.0",
         "hw_version": null,
         "entry_type": "service",
         "id": "edcbc18c0fd54d9c9270a022041449cc",
@@ -173,30 +173,6 @@
       },
       {
         "config_entries": [
-          "9604e86ee6da040225f27652f3d1fbb6"
-        ],
-        "connections": [],
-        "identifiers": [
-          [
-            "mobile_app",
-            "d04f688c2ae277d7"
-          ]
-        ],
-        "manufacturer": "Xiaomi",
-        "model": "Redmi 4X",
-        "name": "Redmi 4X",
-        "sw_version": "30",
-        "hw_version": null,
-        "entry_type": null,
-        "id": "eb8b46001b9624570f949486b9d4af67",
-        "via_device_id": null,
-        "area_id": null,
-        "name_by_user": null,
-        "disabled_by": null,
-        "configuration_url": null
-      },
-      {
-        "config_entries": [
           "af202d4e30dfcd4462768fceb9bb8c8a"
         ],
         "connections": [],
@@ -209,7 +185,7 @@
         "manufacturer": "Home Assistant",
         "model": "Home Assistant Core",
         "name": "Home Assistant Core",
-        "sw_version": "2022.8.7",
+        "sw_version": "2022.9.7",
         "hw_version": null,
         "entry_type": "service",
         "id": "e71991ef8d463a60d7c3da264a05d339",
@@ -233,7 +209,7 @@
         "manufacturer": "Home Assistant",
         "model": "Home Assistant Supervisor",
         "name": "Home Assistant Supervisor",
-        "sw_version": "2022.08.5",
+        "sw_version": "2022.09.1",
         "hw_version": null,
         "entry_type": "service",
         "id": "a281875082ef6f452913467abf78a03a",
@@ -368,6 +344,18 @@
         ],
         "id": "ad1e3d753773c6695cb38e6b580467b7",
         "orphaned_timestamp": null
+      },
+      {
+        "config_entries": [],
+        "connections": [],
+        "identifiers": [
+          [
+            "mobile_app",
+            "d04f688c2ae277d7"
+          ]
+        ],
+        "id": "eb8b46001b9624570f949486b9d4af67",
+        "orphaned_timestamp": 1663186747.374579
       }
     ]
   }

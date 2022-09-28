@@ -133,6 +133,48 @@
           ]
         },
         {
+          "theme": "Backend-selected",
+          "title": "Ohřev TUV",
+          "path": "ohrev-tuv",
+          "badges": [],
+          "cards": [
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "input_select.water_heater_mode"
+                },
+                {
+                  "entity": "switch.switch_5_14_electric_heat_off"
+                },
+                {
+                  "entity": "input_number.min_temp_boiler_water_heater"
+                },
+                {
+                  "entity": "sensor.temp_boiler"
+                },
+                {
+                  "entity": "input_number.min_temp_tank_water_heater"
+                },
+                {
+                  "entity": "sensor.temp_tank_top"
+                },
+                {
+                  "entity": "switch.switch_5_15_servo_waterheater"
+                },
+                {
+                  "entity": "switch.switch_5_9_pump_waterheater"
+                },
+                {
+                  "entity": "climate.climate_waterheater"
+                }
+              ],
+              "title": "Ohrev TUV",
+              "show_header_toggle": false
+            }
+          ]
+        },
+        {
           "title": "Vetraky",
           "path": "vetraky",
           "panel": false,
@@ -189,47 +231,6 @@
         },
         {
           "theme": "Backend-selected",
-          "title": "Ohřev TUV",
-          "path": "ohrev-tuv",
-          "badges": [],
-          "cards": [
-            {
-              "type": "entities",
-              "entities": [
-                {
-                  "entity": "input_select.water_heater_mode"
-                },
-                {
-                  "entity": "switch.switch_5_14_waterheater_mode"
-                },
-                {
-                  "entity": "input_number.min_temp_boiler_water_heater"
-                },
-                {
-                  "entity": "sensor.temp_boiler"
-                },
-                {
-                  "entity": "input_number.min_temp_tank_water_heater"
-                },
-                {
-                  "entity": "sensor.temp_tank_top"
-                },
-                {
-                  "entity": "switch.switch_5_15_servo_waterheater"
-                },
-                {
-                  "entity": "switch.switch_5_9_pump_waterheater"
-                },
-                {
-                  "entity": "binary_sensor.binary_sensor_5_2_waterheater_thermostat_negative"
-                }
-              ],
-              "title": "Ohrev TUV"
-            }
-          ]
-        },
-        {
-          "theme": "Backend-selected",
           "title": "Diagnostika modulů",
           "path": "diagnostika-modulu",
           "badges": [],
@@ -277,7 +278,7 @@
                   "entity": "switch.switch_5_13_servo_close_radiator_circle"
                 },
                 {
-                  "entity": "switch.switch_5_14_waterheater_mode"
+                  "entity": "switch.switch_5_14_electric_heat_off"
                 },
                 {
                   "entity": "switch.switch_5_15_servo_waterheater"
@@ -319,7 +320,13 @@
                   "entity": "switch.switch_3_0"
                 },
                 {
-                  "entity": "binary_sensor.binary_sensor_3_2"
+                  "entity": "binary_sensor.binary_sensor_3_2_waterheater_ison"
+                },
+                {
+                  "entity": "sensor.3_temperature_waterheater"
+                },
+                {
+                  "entity": "sensor.3_temperature_outside"
                 }
               ],
               "show_header_toggle": false,
@@ -417,10 +424,6 @@
                 }
               ],
               "title": "modul 6"
-            },
-            {
-              "type": "entity",
-              "entity": "sensor.cpu_temperature"
             }
           ]
         }
