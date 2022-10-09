@@ -21,6 +21,14 @@
         "mode": "storage",
         "url_path": "lovelace-home",
         "id": "lovelace_home"
+      },
+      {
+        "show_in_sidebar": true,
+        "title": "Diagnostika",
+        "require_admin": true,
+        "mode": "storage",
+        "url_path": "lovelace-diagnostika",
+        "id": "lovelace_diagnostika"
       }
     ]
   }

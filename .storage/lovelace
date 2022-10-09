@@ -55,26 +55,6 @@
               "entity": "weather.home"
             },
             {
-              "type": "entities",
-              "entities": [
-                {
-                  "entity": "sensor.processor_temperature"
-                },
-                {
-                  "entity": "sensor.processor_use"
-                },
-                {
-                  "entity": "sensor.disk_free"
-                },
-                {
-                  "entity": "sensor.memory_free"
-                },
-                {
-                  "entity": "sensor.last_boot"
-                }
-              ]
-            },
-            {
               "hours_to_show": 24,
               "graph": "line",
               "type": "sensor",
@@ -92,8 +72,12 @@
                 },
                 {
                   "entity": "binary_sensor.binary_sensor_3_2_waterheater_ison"
+                },
+                {
+                  "entity": "input_text.appdaemon_time"
                 }
-              ]
+              ],
+              "title": "Bojler"
             }
           ]
         },

@@ -63,11 +63,20 @@ homeassistant:
     switch.switch_5_2_HDO:
       friendly_name: "HDO"
     sensor.waterheater_actualpower:
-      friendly_name: "Bojler aktuální příkon"
+      friendly_name: "Bojler aktualni príkon"
+    binary_sensor.binary_sensor_3_2_waterheater_ison:
+      friendly_name: "Spirala bojleru vypnuta"
 
 template:
   - sensor:
+      - name: "ups_current"
+        state: "{{ state_attr('sensor.waveshare_ups_hat','current') }}"
+        unit_of_measurement: mA
+      - name: "ups_psu_voltage"
+        state: "{{ state_attr('sensor.waveshare_ups_hat','psu_voltage') }}"
+        unit_of_measurement: V
       - name: "waterheater_actualpower"
+        device_class: energy
         state: >
           {% if is_state('binary_sensor.binary_sensor_3_2_waterheater_ison', 'on') %}
             0
@@ -79,6 +88,8 @@ template:
         unit_of_measurement: "°C"
         state: "{{  state_attr('climate.climate_floor_circle','temperature') }}"
   - binary_sensor:
+      - name: "ups_low_battery"
+        state: "{{ state_attr('sensor.waveshare_ups_hat','low_battery') }}"
       - name: binary_sensor_5_1_thermostat_negative
         state: "{{is_state('binary_sensor.binary_sensor_5_1_thermostat', 'off')}}"
 
@@ -87,13 +98,17 @@ utility_meter:
     source: sensor.waterheater_power
     cycle: hourly
 
+binary_sensor:
+  - platform: waveshare_ups_hat
+
 sensor:
+  - platform: waveshare_ups_hat
   - platform: integration
     source: sensor.waterheater_actualpower
     name: waterheater_power
     unit_prefix: k
     unit_time: h
-    method: trapezoidal
+    method: left
     round: 2
     unique_id: waterheater_power3
   - platform: command_line
@@ -209,6 +224,11 @@ input_select:
       - Electric
       - Boiler
       - Auto
+
+input_text:
+  appdaemon_time:
+    name: "Aktualni cas appdaemon"
+    initial: "Nefunkcni!!"
 
 input_number:
   servo_value_floor_circle:

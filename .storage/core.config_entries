@@ -132,7 +132,7 @@
         "domain": "samsungtv",
         "title": "UE55F6400",
         "data": {
-          "host": "192.168.89.114",
+          "host": "192.168.89.16",
           "model": "UE55F6400"
         },
         "options": {},
@@ -215,7 +215,7 @@
         "domain": "dlna_dmr",
         "title": "[TV]Samsung LED55",
         "data": {
-          "url": "http://192.168.89.114:7676/smp_14_"
+          "url": "http://192.168.89.16:7676/smp_16_"
         },
         "options": {},
         "pref_disable_new_entities": false,
@@ -250,7 +250,7 @@
           "host": "192.168.89.155",
           "mac": "54:88:0e:63:c1:af",
           "model": "UE48H5500",
-          "ssdp_rendering_control_location": "http://192.168.89.155:7676/smp_19_",
+          "ssdp_rendering_control_location": "http://192.168.89.155:7676/smp_15_",
           "ssdp_main_tv_agent_location": "http://192.168.89.155:7676/smp_2_"
         },
         "options": {},

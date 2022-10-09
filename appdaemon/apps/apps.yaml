@@ -69,3 +69,8 @@ waterheater_controller:
   servo_water_heater: switch.switch_5_15_servo_waterheater
   climate_thermostat: climate.climate_waterheater
   pump_water_heater: switch.switch_5_9_pump_waterheater
+
+watchdog_controller:
+  module: watchdogcontroller
+  class: WatchDogController
+  appdaemon_time: input_text.appdaemon_time
