@@ -120,7 +120,7 @@
         "model": "Home Assistant Operating System",
         "name_by_user": null,
         "name": "Home Assistant Operating System",
-        "sw_version": "9.0",
+        "sw_version": "9.2",
         "via_device_id": null
       },
       {
@@ -192,7 +192,7 @@
         "model": "Home Assistant Core",
         "name_by_user": null,
         "name": "Home Assistant Core",
-        "sw_version": "2022.10.1",
+        "sw_version": "2022.10.5",
         "via_device_id": null
       },
       {
@@ -216,7 +216,7 @@
         "model": "Home Assistant Supervisor",
         "name_by_user": null,
         "name": "Home Assistant Supervisor",
-        "sw_version": "2022.09.1",
+        "sw_version": "2022.10.0",
         "via_device_id": null
       },
       {
@@ -265,6 +265,54 @@
         "name_by_user": null,
         "name": "HassOS I2C Configurator",
         "sw_version": "0.13a",
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "0d746ff6b2300da552ab87d790f46333"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "1765ed13ce759732d17a7d909088c70d",
+        "identifiers": [
+          [
+            "mobile_app",
+            "d04f688c2ae277d7"
+          ]
+        ],
+        "manufacturer": "Xiaomi",
+        "model": "Redmi 4X",
+        "name_by_user": null,
+        "name": "Redmi 4X",
+        "sw_version": "30",
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "af202d4e30dfcd4462768fceb9bb8c8a"
+        ],
+        "configuration_url": "homeassistant://hassio/addon/a0d7b954_logviewer",
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": "service",
+        "hw_version": null,
+        "id": "2193f80feab5bcdd93c1229111900dca",
+        "identifiers": [
+          [
+            "hassio",
+            "a0d7b954_logviewer"
+          ]
+        ],
+        "manufacturer": "Home Assistant Community Add-ons",
+        "model": "Home Assistant Add-on",
+        "name_by_user": null,
+        "name": "Log Viewer",
+        "sw_version": "0.14.0",
         "via_device_id": null
       }
     ],
@@ -366,18 +414,6 @@
         ],
         "id": "ad1e3d753773c6695cb38e6b580467b7",
         "orphaned_timestamp": null
-      },
-      {
-        "config_entries": [],
-        "connections": [],
-        "identifiers": [
-          [
-            "mobile_app",
-            "d04f688c2ae277d7"
-          ]
-        ],
-        "id": "eb8b46001b9624570f949486b9d4af67",
-        "orphaned_timestamp": 1663186747.374579
       }
     ]
   }

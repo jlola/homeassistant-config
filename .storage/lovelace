@@ -60,24 +60,6 @@
               "type": "sensor",
               "entity": "sensor.3_temperature_outside",
               "detail": 1
-            },
-            {
-              "type": "entities",
-              "entities": [
-                {
-                  "entity": "sensor.waterheater_actualpower"
-                },
-                {
-                  "entity": "sensor.waterheater_power"
-                },
-                {
-                  "entity": "binary_sensor.binary_sensor_3_2_waterheater_ison"
-                },
-                {
-                  "entity": "input_text.appdaemon_time"
-                }
-              ],
-              "title": "Bojler"
             }
           ]
         },

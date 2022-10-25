@@ -74,3 +74,4 @@ watchdog_controller:
   module: watchdogcontroller
   class: WatchDogController
   appdaemon_time: input_text.appdaemon_time
+  ups_online: binary_sensor.waveshare_ups_hat_online

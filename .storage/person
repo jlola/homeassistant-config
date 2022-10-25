@@ -7,7 +7,9 @@
       {
         "name": "Josef Lola",
         "user_id": "b09f7b37fe70417390c67b7d02d9e0bc",
-        "device_trackers": [],
+        "device_trackers": [
+          "device_tracker.redmi_4x"
+        ],
         "id": "josef_lola",
         "picture": null
       }

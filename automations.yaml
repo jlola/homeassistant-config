@@ -1,1 +1,19 @@
-[]
+- id: '1666283701554'
+  alias: shutdown
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_text.appdaemon_time
+  condition:
+  - condition: state
+    entity_id: input_text.appdaemon_time
+    state: Shutdown
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 0
+  action:
+  - service: hassio.host_shutdown
+    data: {}
+  mode: single

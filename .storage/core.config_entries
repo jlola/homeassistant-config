@@ -132,7 +132,7 @@
         "domain": "samsungtv",
         "title": "UE55F6400",
         "data": {
-          "host": "192.168.89.16",
+          "host": "192.168.89.28",
           "model": "UE55F6400"
         },
         "options": {},
@@ -215,7 +215,7 @@
         "domain": "dlna_dmr",
         "title": "[TV]Samsung LED55",
         "data": {
-          "url": "http://192.168.89.16:7676/smp_16_"
+          "url": "http://192.168.89.28:7676/smp_15_"
         },
         "options": {},
         "pref_disable_new_entities": false,
@@ -271,6 +271,37 @@
         "pref_disable_polling": false,
         "source": "ignore",
         "unique_id": "cast",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "0d746ff6b2300da552ab87d790f46333",
+        "version": 1,
+        "domain": "mobile_app",
+        "title": "Redmi 4X",
+        "data": {
+          "app_id": "io.homeassistant.companion.android",
+          "app_name": "Home Assistant",
+          "app_version": "2022.10.2-full (2770)",
+          "device_name": "Redmi 4X",
+          "manufacturer": "Xiaomi",
+          "model": "Redmi 4X",
+          "os_name": "Android",
+          "os_version": "30",
+          "supports_encryption": false,
+          "app_data": {
+            "push_websocket_channel": true,
+            "push_url": "https://mobile-apps.home-assistant.io/api/sendPush/android/v1",
+            "push_token": "ejTd7WU3T0GbvLM0T6yYmE:APA91bHtORSBG8qD_Es49pzgTWHu34l5VpXCa3r0ijV756tCw1i9s1RwQgXeOMc_8RBScoiMpF_ua7i8fLxzHZjrHKjrpzbFY67Gj_9_CqZbXo1o6BldY7i2R2pbtgCik0kUSUD-k9K6"
+          },
+          "device_id": "d04f688c2ae277d7",
+          "webhook_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566",
+          "user_id": "b09f7b37fe70417390c67b7d02d9e0bc"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "registration",
+        "unique_id": "io.homeassistant.companion.android-d04f688c2ae277d7",
         "disabled_by": null
       }
     ]
