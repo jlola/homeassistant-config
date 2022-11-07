@@ -6,127 +6,139 @@
     "config": {
       "views": [
         {
+          "theme": "Backend-selected",
           "title": "Okruhy topení",
           "path": "lovelace",
+          "type": "sidebar",
           "badges": [],
           "cards": [
             {
               "type": "vertical-stack",
               "cards": [
                 {
-                  "type": "thermostat",
-                  "entity": "climate.climate_floor_circle"
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "entities",
+                      "entities": [
+                        {
+                          "entity": "input_select.pump_mode_floor_circle"
+                        },
+                        {
+                          "entity": "binary_sensor.binary_sensor_5_1_thermostat_negative"
+                        },
+                        {
+                          "entity": "switch.switch_5_7_pump_floor_circle"
+                        },
+                        {
+                          "entity": "input_number.min_temp_boiler_pump_floor_circle"
+                        },
+                        {
+                          "entity": "sensor.temp_boiler"
+                        },
+                        {
+                          "entity": "input_number.min_temp_tank_pump_floor_circle"
+                        },
+                        {
+                          "entity": "sensor.temp_tank_top"
+                        }
+                      ],
+                      "title": "Cerpadlo podlahove topeni",
+                      "state_color": true
+                    },
+                    {
+                      "type": "entities",
+                      "entities": [
+                        {
+                          "entity": "input_select.pump_mode_radiator_circle"
+                        },
+                        {
+                          "entity": "binary_sensor.binary_sensor_5_1_thermostat_negative"
+                        },
+                        {
+                          "entity": "switch.switch_5_8_pump_radiator_circle"
+                        },
+                        {
+                          "entity": "input_number.min_temp_boiler_pump_radiator_circle"
+                        },
+                        {
+                          "entity": "sensor.temp_boiler"
+                        },
+                        {
+                          "entity": "input_number.min_temp_tank_pump_radiator_circle"
+                        },
+                        {
+                          "entity": "sensor.temp_tank_top"
+                        }
+                      ],
+                      "title": "Cerpadlo radiatory",
+                      "state_color": true
+                    }
+                  ]
                 },
                 {
-                  "type": "entities",
-                  "entities": [
+                  "type": "horizontal-stack",
+                  "cards": [
                     {
-                      "entity": "input_number.servo_value_floor_circle"
+                      "type": "thermostat",
+                      "entity": "climate.climate_floor_circle"
                     },
                     {
-                      "entity": "input_number.servo_time_floor_circle"
-                    },
-                    {
-                      "entity": "switch.switch_5_10_servo_open_floor_circle"
-                    },
-                    {
-                      "entity": "switch.switch_5_11_servo_close_floor_circle"
-                    },
-                    {
-                      "entity": "sensor.temp_floor_circle"
+                      "type": "entities",
+                      "entities": [
+                        {
+                          "entity": "input_number.servo_value_floor_circle"
+                        },
+                        {
+                          "entity": "input_number.servo_time_floor_circle"
+                        },
+                        {
+                          "entity": "switch.switch_5_10_servo_open_floor_circle"
+                        },
+                        {
+                          "entity": "switch.switch_5_11_servo_close_floor_circle"
+                        },
+                        {
+                          "entity": "sensor.temp_floor_circle"
+                        }
+                      ],
+                      "state_color": true,
+                      "title": "PID Podlahové topení",
+                      "show_header_toggle": false
                     }
-                  ],
-                  "state_color": true,
-                  "title": "PID Podlahové topení",
-                  "show_header_toggle": false
+                  ]
                 },
                 {
-                  "type": "entities",
-                  "entities": [
+                  "type": "horizontal-stack",
+                  "cards": [
                     {
-                      "entity": "input_select.pump_mode_floor_circle"
+                      "type": "thermostat",
+                      "entity": "climate.climate_radiator_circle"
                     },
                     {
-                      "entity": "binary_sensor.binary_sensor_5_1_thermostat_negative"
-                    },
-                    {
-                      "entity": "switch.switch_5_7_pump_floor_circle"
-                    },
-                    {
-                      "entity": "input_number.min_temp_boiler_pump_floor_circle"
-                    },
-                    {
-                      "entity": "sensor.temp_boiler"
-                    },
-                    {
-                      "entity": "input_number.min_temp_tank_pump_floor_circle"
-                    },
-                    {
-                      "entity": "sensor.temp_tank_top"
+                      "type": "entities",
+                      "entities": [
+                        {
+                          "entity": "input_number.servo_value_radiator_circle"
+                        },
+                        {
+                          "entity": "input_number.servo_time_radiator_circle"
+                        },
+                        {
+                          "entity": "switch.switch_5_12_servo_open_radiator_circle"
+                        },
+                        {
+                          "entity": "switch.switch_5_13_servo_close_radiator_circle"
+                        },
+                        {
+                          "entity": "sensor.temp_radiator_circle"
+                        }
+                      ],
+                      "title": "PID Radiatory",
+                      "state_color": true,
+                      "show_header_toggle": false
                     }
-                  ],
-                  "title": "Cerpadlo podlahove topeni",
-                  "state_color": true
-                }
-              ]
-            },
-            {
-              "type": "vertical-stack",
-              "cards": [
-                {
-                  "type": "thermostat",
-                  "entity": "climate.climate_radiator_circle"
-                },
-                {
-                  "type": "entities",
-                  "entities": [
-                    {
-                      "entity": "input_number.servo_value_radiator_circle"
-                    },
-                    {
-                      "entity": "input_number.servo_time_radiator_circle"
-                    },
-                    {
-                      "entity": "switch.switch_5_12_servo_open_radiator_circle"
-                    },
-                    {
-                      "entity": "switch.switch_5_13_servo_close_radiator_circle"
-                    },
-                    {
-                      "entity": "sensor.temp_radiator_circle"
-                    }
-                  ],
-                  "title": "PID Radiatory",
-                  "state_color": true,
-                  "show_header_toggle": false
-                },
-                {
-                  "type": "entities",
-                  "entities": [
-                    {
-                      "entity": "input_select.pump_mode_radiator_circle"
-                    },
-                    {
-                      "entity": "binary_sensor.binary_sensor_5_1_thermostat_negative"
-                    },
-                    {
-                      "entity": "switch.switch_5_8_pump_radiator_circle"
-                    },
-                    {
-                      "entity": "input_number.min_temp_boiler_pump_radiator_circle"
-                    },
-                    {
-                      "entity": "sensor.temp_boiler"
-                    },
-                    {
-                      "entity": "input_number.min_temp_tank_pump_radiator_circle"
-                    },
-                    {
-                      "entity": "sensor.temp_tank_top"
-                    }
-                  ],
-                  "title": "Cerpadlo radiatory",
-                  "state_color": true
+                  ]
                 }
               ]
             }
@@ -183,9 +195,24 @@
                 },
                 {
                   "entity": "binary_sensor.binary_sensor_3_2_waterheater_ison"
+                },
+                {
+                  "entity": "sensor.3_temperature_waterheater"
                 }
               ],
               "title": "Ohrev TUV elektrinou"
+            },
+            {
+              "type": "history-graph",
+              "entities": [
+                {
+                  "entity": "sensor.3_temperature_waterheater"
+                },
+                {
+                  "entity": "sensor.waterheater_actualpower"
+                }
+              ],
+              "title": "Teplota boileru"
             }
           ]
         },

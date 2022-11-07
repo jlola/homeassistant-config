@@ -3604,7 +3604,7 @@
         "name": null,
         "options": {},
         "original_device_class": "battery",
-        "original_icon": "mdi:battery-20",
+        "original_icon": "mdi:battery-30",
         "original_name": "Redmi 4X Battery Level",
         "platform": "mobile_app",
         "supported_features": 0,

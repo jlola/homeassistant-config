@@ -7,6 +7,7 @@ from pickletools import uint2
 from ..ModifiedModbus.Helper import Helper
 from ..const import CONF_HOLDINGS_TYPE,CONF_DS18B20,CONF_OWID,CONF_HOLDINGS
 import logging
+import numpy as np
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -71,13 +72,9 @@ class DS18B20(object):
         self.value = self.GetValue(data[self._offset+OFFSET_VALUE])
         
     def GetValue(self,val):
-        #bts = self.int_to_bytes(val)
-        #return int.from_bytes(bts, 'big', signed=True)
+        val = np.int16(val)
         return val/100.0
-        
-    def int_to_bytes(self,x: int) -> bytes:
-        return x.to_bytes((x.bit_length() + 7) // 8, 'big')
-        
+
     @property
     def OneWireHeaderOffset(self):
         return self.owHeaderOffset

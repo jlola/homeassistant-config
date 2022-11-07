@@ -215,7 +215,7 @@
         "domain": "dlna_dmr",
         "title": "[TV]Samsung LED55",
         "data": {
-          "url": "http://192.168.89.28:7676/smp_15_"
+          "url": "http://192.168.89.28:7676/smp_14_"
         },
         "options": {},
         "pref_disable_new_entities": false,

@@ -5,7 +5,8 @@ class ServoMode(Enum):
     Stop = 0
     Start = 1
     Reset = 2
-SERVO_OPEN_TO_CLOSE_TIME = 120 #seconds
+SERVO_OPEN_TO_CLOSE_TIME = 100 #seconds
+SERVO_RESET_TIME = 140 #seconds
 MAX_EQUAL_COUNTER = 2
 
 class ServoController(hass.Hass):
@@ -62,7 +63,7 @@ class ServoController(hass.Hass):
     def reset(self):
         self.log(f"Reseting...")
         self.__mode = ServoMode.Reset
-        self.set_servo_time(SERVO_OPEN_TO_CLOSE_TIME+10)
+        self.set_servo_time(SERVO_RESET_TIME + 10)
         self.__request_time = 0
         self.__start_timer()
 

@@ -84,6 +84,12 @@
                 },
                 {
                   "entity": "input_number.servo_time_radiator_circle"
+                },
+                {
+                  "entity": "input_number.servo_value_floor_circle"
+                },
+                {
+                  "entity": "input_number.servo_value_radiator_circle"
                 }
               ],
               "title": "Regulace",

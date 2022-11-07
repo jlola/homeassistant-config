@@ -158,7 +158,7 @@ climate:
     min_temp: 40
     max_temp: 60
     ac_mode: false
-    target_temp: 45
+    target_temp: 50
     cold_tolerance: 0.3
     hot_tolerance: 0
     min_cycle_duration:

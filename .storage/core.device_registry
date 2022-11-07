@@ -120,7 +120,7 @@
         "model": "Home Assistant Operating System",
         "name_by_user": null,
         "name": "Home Assistant Operating System",
-        "sw_version": "9.2",
+        "sw_version": "9.3",
         "via_device_id": null
       },
       {
@@ -192,7 +192,7 @@
         "model": "Home Assistant Core",
         "name_by_user": null,
         "name": "Home Assistant Core",
-        "sw_version": "2022.10.5",
+        "sw_version": "2022.11.1",
         "via_device_id": null
       },
       {
@@ -216,7 +216,7 @@
         "model": "Home Assistant Supervisor",
         "name_by_user": null,
         "name": "Home Assistant Supervisor",
-        "sw_version": "2022.10.0",
+        "sw_version": "2022.10.2",
         "via_device_id": null
       },
       {
