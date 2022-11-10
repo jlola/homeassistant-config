@@ -72,7 +72,7 @@
         "model": "Home Assistant Add-on",
         "name_by_user": null,
         "name": "AppDaemon",
-        "sw_version": "0.9.3",
+        "sw_version": "0.10.0",
         "via_device_id": null
       },
       {
@@ -144,7 +144,7 @@
         "model": "Home Assistant Add-on",
         "name_by_user": null,
         "name": "Studio Code Server",
-        "sw_version": "5.4.0",
+        "sw_version": "5.4.1",
         "via_device_id": null
       },
       {
@@ -192,7 +192,7 @@
         "model": "Home Assistant Core",
         "name_by_user": null,
         "name": "Home Assistant Core",
-        "sw_version": "2022.11.1",
+        "sw_version": "2022.11.2",
         "via_device_id": null
       },
       {

@@ -232,7 +232,8 @@
         "data": {
           "mac_address": "90:9a:4a:83:f3:ff",
           "location": "http://192.168.89.57:1900/igd.xml",
-          "host": "192.168.89.57"
+          "host": "192.168.89.57",
+          "st": "urn:schemas-upnp-org:device:InternetGatewayDevice:1"
         },
         "options": {},
         "pref_disable_new_entities": false,

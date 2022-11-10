@@ -4,6 +4,7 @@ import hassapi as hass
 MODE_ON = "On"
 MODE_OFF = "Off"
 MODE_AUTO = "Auto"
+MODE_MANUAL = "Manual"
 #input
 BINSENSOR_ON = "on"
 BINSENSOR_OFF = "off"
@@ -102,6 +103,7 @@ class PumpController(hass.Hass):
             self.__turn_pump_off()
         elif (self.get_mode()==MODE_AUTO):
             self.__auto_output()
+
 
     def __auto_output(self):
         self.log(f"auto_output")

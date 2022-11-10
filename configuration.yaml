@@ -212,12 +212,14 @@ input_select:
       - "On"
       - "Off"
       - Auto
+      - Manual
   pump_mode_radiator_circle:
     name: "Režim čerpadla"
     options:
       - "On"
       - "Off"
       - Auto
+      - Manual
   water_heater_mode:
     name: "Režim boileru"
     options:

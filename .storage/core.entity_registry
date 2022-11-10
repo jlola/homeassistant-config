@@ -1399,7 +1399,8 @@
           "options": [
             "On",
             "Off",
-            "Auto"
+            "Auto",
+            "Manual"
           ]
         },
         "config_entry_id": null,
@@ -1428,7 +1429,8 @@
           "options": [
             "On",
             "Off",
-            "Auto"
+            "Auto",
+            "Manual"
           ]
         },
         "config_entry_id": null,
@@ -3604,7 +3606,7 @@
         "name": null,
         "options": {},
         "original_device_class": "battery",
-        "original_icon": "mdi:battery-30",
+        "original_icon": "mdi:battery-60",
         "original_name": "Redmi 4X Battery Level",
         "platform": "mobile_app",
         "supported_features": 0,
