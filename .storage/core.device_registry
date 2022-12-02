@@ -72,7 +72,7 @@
         "model": "Home Assistant Add-on",
         "name_by_user": null,
         "name": "AppDaemon",
-        "sw_version": "0.10.0",
+        "sw_version": "0.10.1",
         "via_device_id": null
       },
       {
@@ -192,7 +192,7 @@
         "model": "Home Assistant Core",
         "name_by_user": null,
         "name": "Home Assistant Core",
-        "sw_version": "2022.11.2",
+        "sw_version": "2022.11.5",
         "via_device_id": null
       },
       {
@@ -216,7 +216,7 @@
         "model": "Home Assistant Supervisor",
         "name_by_user": null,
         "name": "Home Assistant Supervisor",
-        "sw_version": "2022.10.2",
+        "sw_version": "2022.11.2",
         "via_device_id": null
       },
       {
@@ -294,25 +294,49 @@
       {
         "area_id": null,
         "config_entries": [
-          "af202d4e30dfcd4462768fceb9bb8c8a"
+          "baccb4bfb11813a130b4f5666fb90b63"
         ],
-        "configuration_url": "homeassistant://hassio/addon/a0d7b954_logviewer",
+        "configuration_url": null,
         "connections": [],
         "disabled_by": null,
         "entry_type": "service",
         "hw_version": null,
-        "id": "2193f80feab5bcdd93c1229111900dca",
+        "id": "51bc73f4b6bd6cf4fe304812337a7170",
+        "identifiers": [
+          [
+            "filesize",
+            "baccb4bfb11813a130b4f5666fb90b63"
+          ]
+        ],
+        "manufacturer": null,
+        "model": null,
+        "name_by_user": null,
+        "name": "home-assistant_v2.db",
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "af202d4e30dfcd4462768fceb9bb8c8a"
+        ],
+        "configuration_url": "homeassistant://hassio/addon/a0d7b954_sqlite-web",
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": "service",
+        "hw_version": null,
+        "id": "cf6a04605f77476aa98e50a94a3f8542",
         "identifiers": [
           [
             "hassio",
-            "a0d7b954_logviewer"
+            "a0d7b954_sqlite-web"
           ]
         ],
         "manufacturer": "Home Assistant Community Add-ons",
         "model": "Home Assistant Add-on",
         "name_by_user": null,
-        "name": "Log Viewer",
-        "sw_version": "0.14.0",
+        "name": "SQLite Web",
+        "sw_version": "3.6.1",
         "via_device_id": null
       }
     ],
@@ -413,6 +437,20 @@
           ]
         ],
         "id": "ad1e3d753773c6695cb38e6b580467b7",
+        "orphaned_timestamp": null
+      },
+      {
+        "config_entries": [
+          "af202d4e30dfcd4462768fceb9bb8c8a"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "hassio",
+            "a0d7b954_logviewer"
+          ]
+        ],
+        "id": "2193f80feab5bcdd93c1229111900dca",
         "orphaned_timestamp": null
       }
     ]

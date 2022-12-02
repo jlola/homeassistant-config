@@ -215,7 +215,7 @@
         "domain": "dlna_dmr",
         "title": "[TV]Samsung LED55",
         "data": {
-          "url": "http://192.168.89.28:7676/smp_14_"
+          "url": "http://192.168.89.28:7676/smp_16_"
         },
         "options": {},
         "pref_disable_new_entities": false,
@@ -282,7 +282,7 @@
         "data": {
           "app_id": "io.homeassistant.companion.android",
           "app_name": "Home Assistant",
-          "app_version": "2022.10.2-full (2770)",
+          "app_version": "2022.11.0-full (2948)",
           "device_name": "Redmi 4X",
           "manufacturer": "Xiaomi",
           "model": "Redmi 4X",
@@ -303,6 +303,39 @@
         "pref_disable_polling": false,
         "source": "registration",
         "unique_id": "io.homeassistant.companion.android-d04f688c2ae277d7",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "5ce68a55c1a19c1f895a585911eb468f",
+        "version": 2,
+        "domain": "samsungtv",
+        "title": "Samsung 7 Series (55) (UE55RU7402UXXH)",
+        "data": {
+          "host": "192.168.89.68",
+          "mac": "d0:d0:03:0f:66:0c",
+          "model": "UE55RU7402UXXH",
+          "ssdp_rendering_control_location": "http://192.168.89.68:9197/dmr"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "021e793f-191f-4afa-9a7f-f4993d8cceec",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "baccb4bfb11813a130b4f5666fb90b63",
+        "version": 1,
+        "domain": "filesize",
+        "title": "home-assistant_v2.db",
+        "data": {
+          "file_path": "/config/home-assistant_v2.db"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": "/config/home-assistant_v2.db",
         "disabled_by": null
       }
     ]

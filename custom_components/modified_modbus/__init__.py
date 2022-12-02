@@ -388,9 +388,9 @@ class ModifiedModbusHub(IDeviceEventConsumer,IModifiedModbusHub):
     
     def readHoldings(self,slave:int,offset:int,count:int, timeout:int):
         with self._lock:
-            _LOGGER.debug(f"readHoldings slave:{slave},offset:{offset},count:{count}")
+            #_LOGGER.debug(f"readHoldings slave:{slave},offset:{offset},count:{count}")
             holdings = self._modbusCache.getHoldings(slave, offset, count)      
-            _LOGGER.debug(f"readHoldings finished slave:{slave},offset:{offset},count:{count}")  
+            #_LOGGER.debug(f"readHoldings finished slave:{slave},offset:{offset},count:{count}")  
             return holdings        
     
     def writeHolding(self,slave:int,offset:int,value:int):
@@ -402,9 +402,9 @@ class ModifiedModbusHub(IDeviceEventConsumer,IModifiedModbusHub):
     
     def resetChangeFlag(self,slave:int):
         with self._lock:
-            _LOGGER.debug(f"writeHolding reset change flag: slave:{slave},offset:{CHANGE_FLAG}")
+            #_LOGGER.info(f"writeHolding reset change flag: slave:{slave},offset:{CHANGE_FLAG}")
             self._client.setHolding(slave,CHANGE_FLAG,1)
-            _LOGGER.debug(f"writeHolding reset change finished flag: slave:{slave},offset:{CHANGE_FLAG}")
+            #_LOGGER.info(f"writeHolding reset change finished flag: slave:{slave},offset:{CHANGE_FLAG}")
 
     def connect(self):
         """Connect client."""

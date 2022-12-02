@@ -52,28 +52,23 @@ class WaterHeaterController(hass.Hass):
 
     def CalculateOutput(self):
         __switch_boiler = self.get_state(self.args[KEY_ELECTRIC_HEAT_DISCONNECT], attribute="state")
-        __temp_tank = self.get_state(self.args[KEY_TEMP_TANK], attribute="state")
-        __temp_boiler = self.get_state(self.args[KEY_TEMP_BOILER], attribute="state")
+        __temp_tank = float(self.get_state(self.args[KEY_TEMP_TANK], attribute="state"))
+        __temp_boiler = float(self.get_state(self.args[KEY_TEMP_BOILER], attribute="state"))
         __modeRequest = self.get_state(self.args[KEY_MODE], attribute="state")
-        #__actualMode = self.get_state(self.args[KEY_ACTUAL_MODE], attribute="state")        
-        __min_temp_tank = self.get_state(self.args[KEY_MIN_TEMP_TANK], attribute="state")
-        __min_temp_boiler = self.get_state(self.args[KEY_MIN_TEMP_BOILER], attribute="state")
+        __min_temp_tank = float(self.get_state(self.args[KEY_MIN_TEMP_TANK], attribute="state"))
+        __min_temp_boiler = float(self.get_state(self.args[KEY_MIN_TEMP_BOILER], attribute="state"))
         __servo_waterheater = self.get_state(self.args[KEY_SERVO_WATERHEATER], attribute="state")        
         if (__modeRequest == MODE_ELECTRIC):
             self.__electric_heat_disconnect(False)
             self.turn_climate_on(False)
-            __actualMode = MODE_ELECTRIC
         elif (__modeRequest == MODE_BOILER):
             self.__electric_heat_disconnect(True)
             self.turn_climate_on(True)
-            __actualMode = MODE_BOILER
         elif (__modeRequest == MODE_AUTO):
-            if ((__temp_tank > __min_temp_tank or __temp_boiler > __min_temp_boiler)):
-                __actualMode = MODE_BOILER                
+            if (__temp_tank > __min_temp_tank or __temp_boiler > __min_temp_boiler):
                 self.__electric_heat_disconnect(True)
                 self.turn_climate_on(True)
-            else:
-                __actualMode = MODE_ELECTRIC
+            elif ((__temp_tank < (__min_temp_tank - 5.0)) or (__temp_boiler < (__min_temp_boiler - 5.0))):
                 self.__electric_heat_disconnect(False)
                 self.turn_climate_on(False)
 

@@ -4,10 +4,22 @@ default_config:
 system_log:
   max_entries: 1000
 
+recorder:
+  purge_keep_days: 3
+  commit_interval: 60
+  exclude:
+    entities:
+      - input_text.appdaemon_time
+      - binary_sensor.appdaemon_4_running
+      - sensor.appdaemon_4_version
+
 logger:
   default: info
 
 homeassistant:
+  allowlist_external_dirs:
+    - /config
+
   time_zone: Europe/Prague
   customize:
     sensor.3_temperature_outside:
@@ -204,6 +216,7 @@ climate:
     pwm: 0
     difference: 100
     noiseband: 0.5
+    sampling_period: 5
 
 input_select:
   pump_mode_floor_circle:
@@ -336,6 +349,7 @@ modified_modbus:
     type: tcp
     port: 9234
     host: 192.168.89.78
+
 binary_sensor 3:
   - holdings:
       - bit: 8
@@ -704,7 +718,6 @@ sensor  6:
         offset: 0
         count: 4
     platform: modified_modbus
-
 switch 6:
   - holdings:
       - command_off: 4

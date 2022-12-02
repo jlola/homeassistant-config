@@ -7,12 +7,12 @@
       {
         "extended_dict": {
           "last_step": "condition/0/entity_id/0",
-          "run_id": "5b57afcbcd321a03181be3aadf4353f3",
+          "run_id": "3d786411e220bc979f930c920ee3c566",
           "state": "stopped",
           "script_execution": "failed_conditions",
           "timestamp": {
-            "start": "2022-11-10T12:57:39.042432+00:00",
-            "finish": "2022-11-10T12:57:39.042975+00:00"
+            "start": "2022-12-02T07:19:47.045068+00:00",
+            "finish": "2022-12-02T07:19:47.045760+00:00"
           },
           "domain": "automation",
           "item_id": "1666283701554",
@@ -21,7 +21,7 @@
             "trigger/0": [
               {
                 "path": "trigger/0",
-                "timestamp": "2022-11-10T12:57:39.042635+00:00",
+                "timestamp": "2022-12-02T07:19:47.045344+00:00",
                 "changed_variables": {
                   "this": {
                     "entity_id": "automation.shutdown",
@@ -33,10 +33,10 @@
                       "id": "1666283701554",
                       "friendly_name": "shutdown"
                     },
-                    "last_changed": "2022-11-10T04:51:03.126156+00:00",
-                    "last_updated": "2022-11-10T04:51:03.126156+00:00",
+                    "last_changed": "2022-12-01T18:19:50.634663+00:00",
+                    "last_updated": "2022-12-01T18:19:50.634663+00:00",
                     "context": {
-                      "id": "01GHFY13TP8WK6J46EQJWSFV86",
+                      "id": "01GK7EN4ZAQKBY54CTRW1TZXT0",
                       "parent_id": null,
                       "user_id": null
                     }
@@ -49,7 +49,7 @@
                     "entity_id": "input_text.appdaemon_time",
                     "from_state": {
                       "entity_id": "input_text.appdaemon_time",
-                      "state": "2022-11-10 13:57:29.020468",
+                      "state": "2022-12-02 08:19:37.034386",
                       "attributes": {
                         "editable": false,
                         "min": 0,
@@ -58,17 +58,17 @@
                         "mode": "text",
                         "friendly_name": "Aktualni cas appdaemon"
                       },
-                      "last_changed": "2022-11-10T12:57:29.048309+00:00",
-                      "last_updated": "2022-11-10T12:57:29.048309+00:00",
+                      "last_changed": "2022-12-02T07:19:37.078472+00:00",
+                      "last_updated": "2022-12-02T07:19:37.078472+00:00",
                       "context": {
-                        "id": "01GHGSVSPRZYCY19KVTXEW53AE",
+                        "id": "01GK8V8YVP8WZA7MBGV64C5ZRK",
                         "parent_id": null,
                         "user_id": "8ce8a24b5286443b9b989b180b6c3645"
                       }
                     },
                     "to_state": {
                       "entity_id": "input_text.appdaemon_time",
-                      "state": "2022-11-10 13:57:39.018814",
+                      "state": "2022-12-02 08:19:47.014443",
                       "attributes": {
                         "editable": false,
                         "min": 0,
@@ -77,10 +77,10 @@
                         "mode": "text",
                         "friendly_name": "Aktualni cas appdaemon"
                       },
-                      "last_changed": "2022-11-10T12:57:39.038158+00:00",
-                      "last_updated": "2022-11-10T12:57:39.038158+00:00",
+                      "last_changed": "2022-12-02T07:19:47.039886+00:00",
+                      "last_updated": "2022-12-02T07:19:47.039886+00:00",
                       "context": {
-                        "id": "01GHGSW3EY433S1C2W40B1FNY9",
+                        "id": "01GK8V98JZM9HFXT0JZ5E8XWYJ",
                         "parent_id": null,
                         "user_id": "8ce8a24b5286443b9b989b180b6c3645"
                       }
@@ -95,7 +95,7 @@
             "condition/0": [
               {
                 "path": "condition/0",
-                "timestamp": "2022-11-10T12:57:39.042746+00:00",
+                "timestamp": "2022-12-02T07:19:47.045503+00:00",
                 "result": {
                   "result": false
                 }
@@ -104,10 +104,10 @@
             "condition/0/entity_id/0": [
               {
                 "path": "condition/0/entity_id/0",
-                "timestamp": "2022-11-10T12:57:39.042820+00:00",
+                "timestamp": "2022-12-02T07:19:47.045580+00:00",
                 "result": {
                   "result": false,
-                  "state": "2022-11-10 13:57:39.018814",
+                  "state": "2022-12-02 08:19:47.014443",
                   "wanted_state": "Shutdown"
                 }
               }
@@ -147,19 +147,19 @@
           },
           "blueprint_inputs": null,
           "context": {
-            "id": "01GHGSW3F29YC16VRANVHWECXB",
-            "parent_id": "01GHGSW3EY433S1C2W40B1FNY9",
+            "id": "01GK8V98K4KMQNNB1860RZ0N9C",
+            "parent_id": "01GK8V98JZM9HFXT0JZ5E8XWYJ",
             "user_id": null
           }
         },
         "short_dict": {
           "last_step": "condition/0/entity_id/0",
-          "run_id": "5b57afcbcd321a03181be3aadf4353f3",
+          "run_id": "3d786411e220bc979f930c920ee3c566",
           "state": "stopped",
           "script_execution": "failed_conditions",
           "timestamp": {
-            "start": "2022-11-10T12:57:39.042432+00:00",
-            "finish": "2022-11-10T12:57:39.042975+00:00"
+            "start": "2022-12-02T07:19:47.045068+00:00",
+            "finish": "2022-12-02T07:19:47.045760+00:00"
           },
           "domain": "automation",
           "item_id": "1666283701554",
@@ -169,12 +169,12 @@
       {
         "extended_dict": {
           "last_step": "condition/0/entity_id/0",
-          "run_id": "8c160bb6c8a0eb8c81bb7874fc6172c4",
+          "run_id": "7ca1b27d199e61ae588dcf71c084cbf6",
           "state": "stopped",
           "script_execution": "failed_conditions",
           "timestamp": {
-            "start": "2022-11-10T12:57:49.046893+00:00",
-            "finish": "2022-11-10T12:57:49.047390+00:00"
+            "start": "2022-12-02T07:19:57.063751+00:00",
+            "finish": "2022-12-02T07:19:57.064482+00:00"
           },
           "domain": "automation",
           "item_id": "1666283701554",
@@ -183,7 +183,7 @@
             "trigger/0": [
               {
                 "path": "trigger/0",
-                "timestamp": "2022-11-10T12:57:49.047082+00:00",
+                "timestamp": "2022-12-02T07:19:57.064050+00:00",
                 "changed_variables": {
                   "this": {
                     "entity_id": "automation.shutdown",
@@ -195,10 +195,10 @@
                       "id": "1666283701554",
                       "friendly_name": "shutdown"
                     },
-                    "last_changed": "2022-11-10T04:51:03.126156+00:00",
-                    "last_updated": "2022-11-10T04:51:03.126156+00:00",
+                    "last_changed": "2022-12-01T18:19:50.634663+00:00",
+                    "last_updated": "2022-12-01T18:19:50.634663+00:00",
                     "context": {
-                      "id": "01GHFY13TP8WK6J46EQJWSFV86",
+                      "id": "01GK7EN4ZAQKBY54CTRW1TZXT0",
                       "parent_id": null,
                       "user_id": null
                     }
@@ -211,7 +211,7 @@
                     "entity_id": "input_text.appdaemon_time",
                     "from_state": {
                       "entity_id": "input_text.appdaemon_time",
-                      "state": "2022-11-10 13:57:39.018814",
+                      "state": "2022-12-02 08:19:47.014443",
                       "attributes": {
                         "editable": false,
                         "min": 0,
@@ -220,17 +220,17 @@
                         "mode": "text",
                         "friendly_name": "Aktualni cas appdaemon"
                       },
-                      "last_changed": "2022-11-10T12:57:39.038158+00:00",
-                      "last_updated": "2022-11-10T12:57:39.038158+00:00",
+                      "last_changed": "2022-12-02T07:19:47.039886+00:00",
+                      "last_updated": "2022-12-02T07:19:47.039886+00:00",
                       "context": {
-                        "id": "01GHGSW3EY433S1C2W40B1FNY9",
+                        "id": "01GK8V98JZM9HFXT0JZ5E8XWYJ",
                         "parent_id": null,
                         "user_id": "8ce8a24b5286443b9b989b180b6c3645"
                       }
                     },
                     "to_state": {
                       "entity_id": "input_text.appdaemon_time",
-                      "state": "2022-11-10 13:57:49.022485",
+                      "state": "2022-12-02 08:19:57.015552",
                       "attributes": {
                         "editable": false,
                         "min": 0,
@@ -239,10 +239,10 @@
                         "mode": "text",
                         "friendly_name": "Aktualni cas appdaemon"
                       },
-                      "last_changed": "2022-11-10T12:57:49.042886+00:00",
-                      "last_updated": "2022-11-10T12:57:49.042886+00:00",
+                      "last_changed": "2022-12-02T07:19:57.054306+00:00",
+                      "last_updated": "2022-12-02T07:19:57.054306+00:00",
                       "context": {
-                        "id": "01GHGSWD7JHKJY03XJW2WNKD74",
+                        "id": "01GK8V9JBYJ0ZQMA88D3YRD0AV",
                         "parent_id": null,
                         "user_id": "8ce8a24b5286443b9b989b180b6c3645"
                       }
@@ -257,7 +257,7 @@
             "condition/0": [
               {
                 "path": "condition/0",
-                "timestamp": "2022-11-10T12:57:49.047172+00:00",
+                "timestamp": "2022-12-02T07:19:57.064238+00:00",
                 "result": {
                   "result": false
                 }
@@ -266,10 +266,10 @@
             "condition/0/entity_id/0": [
               {
                 "path": "condition/0/entity_id/0",
-                "timestamp": "2022-11-10T12:57:49.047250+00:00",
+                "timestamp": "2022-12-02T07:19:57.064317+00:00",
                 "result": {
                   "result": false,
-                  "state": "2022-11-10 13:57:49.022485",
+                  "state": "2022-12-02 08:19:57.015552",
                   "wanted_state": "Shutdown"
                 }
               }
@@ -309,19 +309,19 @@
           },
           "blueprint_inputs": null,
           "context": {
-            "id": "01GHGSWD7PFQTYCGV8XV4S6DWJ",
-            "parent_id": "01GHGSWD7JHKJY03XJW2WNKD74",
+            "id": "01GK8V9JC7PA9BE6ZBQ241JDD6",
+            "parent_id": "01GK8V9JBYJ0ZQMA88D3YRD0AV",
             "user_id": null
           }
         },
         "short_dict": {
           "last_step": "condition/0/entity_id/0",
-          "run_id": "8c160bb6c8a0eb8c81bb7874fc6172c4",
+          "run_id": "7ca1b27d199e61ae588dcf71c084cbf6",
           "state": "stopped",
           "script_execution": "failed_conditions",
           "timestamp": {
-            "start": "2022-11-10T12:57:49.046893+00:00",
-            "finish": "2022-11-10T12:57:49.047390+00:00"
+            "start": "2022-12-02T07:19:57.063751+00:00",
+            "finish": "2022-12-02T07:19:57.064482+00:00"
           },
           "domain": "automation",
           "item_id": "1666283701554",
@@ -331,12 +331,12 @@
       {
         "extended_dict": {
           "last_step": "condition/0/entity_id/0",
-          "run_id": "b71000a2b91736d1b38d243383c815c7",
+          "run_id": "4671dbb5f7b55ca19e72521203727ecc",
           "state": "stopped",
           "script_execution": "failed_conditions",
           "timestamp": {
-            "start": "2022-11-10T12:57:59.041465+00:00",
-            "finish": "2022-11-10T12:57:59.041964+00:00"
+            "start": "2022-12-02T07:20:07.047222+00:00",
+            "finish": "2022-12-02T07:20:07.047878+00:00"
           },
           "domain": "automation",
           "item_id": "1666283701554",
@@ -345,7 +345,7 @@
             "trigger/0": [
               {
                 "path": "trigger/0",
-                "timestamp": "2022-11-10T12:57:59.041623+00:00",
+                "timestamp": "2022-12-02T07:20:07.047487+00:00",
                 "changed_variables": {
                   "this": {
                     "entity_id": "automation.shutdown",
@@ -357,10 +357,10 @@
                       "id": "1666283701554",
                       "friendly_name": "shutdown"
                     },
-                    "last_changed": "2022-11-10T04:51:03.126156+00:00",
-                    "last_updated": "2022-11-10T04:51:03.126156+00:00",
+                    "last_changed": "2022-12-01T18:19:50.634663+00:00",
+                    "last_updated": "2022-12-01T18:19:50.634663+00:00",
                     "context": {
-                      "id": "01GHFY13TP8WK6J46EQJWSFV86",
+                      "id": "01GK7EN4ZAQKBY54CTRW1TZXT0",
                       "parent_id": null,
                       "user_id": null
                     }
@@ -373,7 +373,7 @@
                     "entity_id": "input_text.appdaemon_time",
                     "from_state": {
                       "entity_id": "input_text.appdaemon_time",
-                      "state": "2022-11-10 13:57:49.022485",
+                      "state": "2022-12-02 08:19:57.015552",
                       "attributes": {
                         "editable": false,
                         "min": 0,
@@ -382,17 +382,17 @@
                         "mode": "text",
                         "friendly_name": "Aktualni cas appdaemon"
                       },
-                      "last_changed": "2022-11-10T12:57:49.042886+00:00",
-                      "last_updated": "2022-11-10T12:57:49.042886+00:00",
+                      "last_changed": "2022-12-02T07:19:57.054306+00:00",
+                      "last_updated": "2022-12-02T07:19:57.054306+00:00",
                       "context": {
-                        "id": "01GHGSWD7JHKJY03XJW2WNKD74",
+                        "id": "01GK8V9JBYJ0ZQMA88D3YRD0AV",
                         "parent_id": null,
                         "user_id": "8ce8a24b5286443b9b989b180b6c3645"
                       }
                     },
                     "to_state": {
                       "entity_id": "input_text.appdaemon_time",
-                      "state": "2022-11-10 13:57:59.017083",
+                      "state": "2022-12-02 08:20:07.019707",
                       "attributes": {
                         "editable": false,
                         "min": 0,
@@ -401,10 +401,10 @@
                         "mode": "text",
                         "friendly_name": "Aktualni cas appdaemon"
                       },
-                      "last_changed": "2022-11-10T12:57:59.037049+00:00",
-                      "last_updated": "2022-11-10T12:57:59.037049+00:00",
+                      "last_changed": "2022-12-02T07:20:07.043543+00:00",
+                      "last_updated": "2022-12-02T07:20:07.043543+00:00",
                       "context": {
-                        "id": "01GHGSWPZWD0E0WPZ0R6BWCX0X",
+                        "id": "01GK8V9W43W72J54C2MMYJMHBX",
                         "parent_id": null,
                         "user_id": "8ce8a24b5286443b9b989b180b6c3645"
                       }
@@ -419,7 +419,7 @@
             "condition/0": [
               {
                 "path": "condition/0",
-                "timestamp": "2022-11-10T12:57:59.041728+00:00",
+                "timestamp": "2022-12-02T07:20:07.047631+00:00",
                 "result": {
                   "result": false
                 }
@@ -428,10 +428,10 @@
             "condition/0/entity_id/0": [
               {
                 "path": "condition/0/entity_id/0",
-                "timestamp": "2022-11-10T12:57:59.041803+00:00",
+                "timestamp": "2022-12-02T07:20:07.047717+00:00",
                 "result": {
                   "result": false,
-                  "state": "2022-11-10 13:57:59.017083",
+                  "state": "2022-12-02 08:20:07.019707",
                   "wanted_state": "Shutdown"
                 }
               }
@@ -471,19 +471,19 @@
           },
           "blueprint_inputs": null,
           "context": {
-            "id": "01GHGSWQ0157G7YA9Q14BC2HG2",
-            "parent_id": "01GHGSWPZWD0E0WPZ0R6BWCX0X",
+            "id": "01GK8V9W471J6YC9EC402AS13V",
+            "parent_id": "01GK8V9W43W72J54C2MMYJMHBX",
             "user_id": null
           }
         },
         "short_dict": {
           "last_step": "condition/0/entity_id/0",
-          "run_id": "b71000a2b91736d1b38d243383c815c7",
+          "run_id": "4671dbb5f7b55ca19e72521203727ecc",
           "state": "stopped",
           "script_execution": "failed_conditions",
           "timestamp": {
-            "start": "2022-11-10T12:57:59.041465+00:00",
-            "finish": "2022-11-10T12:57:59.041964+00:00"
+            "start": "2022-12-02T07:20:07.047222+00:00",
+            "finish": "2022-12-02T07:20:07.047878+00:00"
           },
           "domain": "automation",
           "item_id": "1666283701554",
@@ -493,12 +493,12 @@
       {
         "extended_dict": {
           "last_step": "condition/0/entity_id/0",
-          "run_id": "59d6b1419a431a2c1b7ac8e45b293c66",
+          "run_id": "41eed49066a2a99585dc28b660c7cbbe",
           "state": "stopped",
           "script_execution": "failed_conditions",
           "timestamp": {
-            "start": "2022-11-10T12:58:09.040524+00:00",
-            "finish": "2022-11-10T12:58:09.043411+00:00"
+            "start": "2022-12-02T07:20:17.043731+00:00",
+            "finish": "2022-12-02T07:20:17.044282+00:00"
           },
           "domain": "automation",
           "item_id": "1666283701554",
@@ -507,7 +507,7 @@
             "trigger/0": [
               {
                 "path": "trigger/0",
-                "timestamp": "2022-11-10T12:58:09.042884+00:00",
+                "timestamp": "2022-12-02T07:20:17.043933+00:00",
                 "changed_variables": {
                   "this": {
                     "entity_id": "automation.shutdown",
@@ -519,10 +519,10 @@
                       "id": "1666283701554",
                       "friendly_name": "shutdown"
                     },
-                    "last_changed": "2022-11-10T04:51:03.126156+00:00",
-                    "last_updated": "2022-11-10T04:51:03.126156+00:00",
+                    "last_changed": "2022-12-01T18:19:50.634663+00:00",
+                    "last_updated": "2022-12-01T18:19:50.634663+00:00",
                     "context": {
-                      "id": "01GHFY13TP8WK6J46EQJWSFV86",
+                      "id": "01GK7EN4ZAQKBY54CTRW1TZXT0",
                       "parent_id": null,
                       "user_id": null
                     }
@@ -535,7 +535,7 @@
                     "entity_id": "input_text.appdaemon_time",
                     "from_state": {
                       "entity_id": "input_text.appdaemon_time",
-                      "state": "2022-11-10 13:57:59.017083",
+                      "state": "2022-12-02 08:20:07.019707",
                       "attributes": {
                         "editable": false,
                         "min": 0,
@@ -544,17 +544,17 @@
                         "mode": "text",
                         "friendly_name": "Aktualni cas appdaemon"
                       },
-                      "last_changed": "2022-11-10T12:57:59.037049+00:00",
-                      "last_updated": "2022-11-10T12:57:59.037049+00:00",
+                      "last_changed": "2022-12-02T07:20:07.043543+00:00",
+                      "last_updated": "2022-12-02T07:20:07.043543+00:00",
                       "context": {
-                        "id": "01GHGSWPZWD0E0WPZ0R6BWCX0X",
+                        "id": "01GK8V9W43W72J54C2MMYJMHBX",
                         "parent_id": null,
                         "user_id": "8ce8a24b5286443b9b989b180b6c3645"
                       }
                     },
                     "to_state": {
                       "entity_id": "input_text.appdaemon_time",
-                      "state": "2022-11-10 13:58:09.012827",
+                      "state": "2022-12-02 08:20:17.021364",
                       "attributes": {
                         "editable": false,
                         "min": 0,
@@ -563,10 +563,10 @@
                         "mode": "text",
                         "friendly_name": "Aktualni cas appdaemon"
                       },
-                      "last_changed": "2022-11-10T12:58:09.035724+00:00",
-                      "last_updated": "2022-11-10T12:58:09.035724+00:00",
+                      "last_changed": "2022-12-02T07:20:17.040325+00:00",
+                      "last_updated": "2022-12-02T07:20:17.040325+00:00",
                       "context": {
-                        "id": "01GHGSX0RB45MJGNS44J2C4W24",
+                        "id": "01GK8VA5WGNZESAZHJ99T1JHFC",
                         "parent_id": null,
                         "user_id": "8ce8a24b5286443b9b989b180b6c3645"
                       }
@@ -581,7 +581,7 @@
             "condition/0": [
               {
                 "path": "condition/0",
-                "timestamp": "2022-11-10T12:58:09.043103+00:00",
+                "timestamp": "2022-12-02T07:20:17.044045+00:00",
                 "result": {
                   "result": false
                 }
@@ -590,10 +590,10 @@
             "condition/0/entity_id/0": [
               {
                 "path": "condition/0/entity_id/0",
-                "timestamp": "2022-11-10T12:58:09.043212+00:00",
+                "timestamp": "2022-12-02T07:20:17.044116+00:00",
                 "result": {
                   "result": false,
-                  "state": "2022-11-10 13:58:09.012827",
+                  "state": "2022-12-02 08:20:17.021364",
                   "wanted_state": "Shutdown"
                 }
               }
@@ -633,19 +633,19 @@
           },
           "blueprint_inputs": null,
           "context": {
-            "id": "01GHGSX0RGRQBPXJFJ085P11SK",
-            "parent_id": "01GHGSX0RB45MJGNS44J2C4W24",
+            "id": "01GK8VA5WK02CHVZXR6MBAJ9X3",
+            "parent_id": "01GK8VA5WGNZESAZHJ99T1JHFC",
             "user_id": null
           }
         },
         "short_dict": {
           "last_step": "condition/0/entity_id/0",
-          "run_id": "59d6b1419a431a2c1b7ac8e45b293c66",
+          "run_id": "41eed49066a2a99585dc28b660c7cbbe",
           "state": "stopped",
           "script_execution": "failed_conditions",
           "timestamp": {
-            "start": "2022-11-10T12:58:09.040524+00:00",
-            "finish": "2022-11-10T12:58:09.043411+00:00"
+            "start": "2022-12-02T07:20:17.043731+00:00",
+            "finish": "2022-12-02T07:20:17.044282+00:00"
           },
           "domain": "automation",
           "item_id": "1666283701554",
@@ -655,12 +655,12 @@
       {
         "extended_dict": {
           "last_step": "condition/0/entity_id/0",
-          "run_id": "32e66fe1f217c9a027da5e877f0e0701",
+          "run_id": "ddfc84deb65485328496ac2c9644b069",
           "state": "stopped",
           "script_execution": "failed_conditions",
           "timestamp": {
-            "start": "2022-11-10T12:58:19.062995+00:00",
-            "finish": "2022-11-10T12:58:19.063870+00:00"
+            "start": "2022-12-02T07:20:27.045658+00:00",
+            "finish": "2022-12-02T07:20:27.046152+00:00"
           },
           "domain": "automation",
           "item_id": "1666283701554",
@@ -669,7 +669,7 @@
             "trigger/0": [
               {
                 "path": "trigger/0",
-                "timestamp": "2022-11-10T12:58:19.063282+00:00",
+                "timestamp": "2022-12-02T07:20:27.045833+00:00",
                 "changed_variables": {
                   "this": {
                     "entity_id": "automation.shutdown",
@@ -681,10 +681,10 @@
                       "id": "1666283701554",
                       "friendly_name": "shutdown"
                     },
-                    "last_changed": "2022-11-10T04:51:03.126156+00:00",
-                    "last_updated": "2022-11-10T04:51:03.126156+00:00",
+                    "last_changed": "2022-12-01T18:19:50.634663+00:00",
+                    "last_updated": "2022-12-01T18:19:50.634663+00:00",
                     "context": {
-                      "id": "01GHFY13TP8WK6J46EQJWSFV86",
+                      "id": "01GK7EN4ZAQKBY54CTRW1TZXT0",
                       "parent_id": null,
                       "user_id": null
                     }
@@ -697,7 +697,7 @@
                     "entity_id": "input_text.appdaemon_time",
                     "from_state": {
                       "entity_id": "input_text.appdaemon_time",
-                      "state": "2022-11-10 13:58:09.012827",
+                      "state": "2022-12-02 08:20:17.021364",
                       "attributes": {
                         "editable": false,
                         "min": 0,
@@ -706,17 +706,17 @@
                         "mode": "text",
                         "friendly_name": "Aktualni cas appdaemon"
                       },
-                      "last_changed": "2022-11-10T12:58:09.035724+00:00",
-                      "last_updated": "2022-11-10T12:58:09.035724+00:00",
+                      "last_changed": "2022-12-02T07:20:17.040325+00:00",
+                      "last_updated": "2022-12-02T07:20:17.040325+00:00",
                       "context": {
-                        "id": "01GHGSX0RB45MJGNS44J2C4W24",
+                        "id": "01GK8VA5WGNZESAZHJ99T1JHFC",
                         "parent_id": null,
                         "user_id": "8ce8a24b5286443b9b989b180b6c3645"
                       }
                     },
                     "to_state": {
                       "entity_id": "input_text.appdaemon_time",
-                      "state": "2022-11-10 13:58:19.016142",
+                      "state": "2022-12-02 08:20:27.021629",
                       "attributes": {
                         "editable": false,
                         "min": 0,
@@ -725,10 +725,10 @@
                         "mode": "text",
                         "friendly_name": "Aktualni cas appdaemon"
                       },
-                      "last_changed": "2022-11-10T12:58:19.049664+00:00",
-                      "last_updated": "2022-11-10T12:58:19.049664+00:00",
+                      "last_changed": "2022-12-02T07:20:27.042340+00:00",
+                      "last_updated": "2022-12-02T07:20:27.042340+00:00",
                       "context": {
-                        "id": "01GHGSXAH9923A91V9JMDBQM2M",
+                        "id": "01GK8VAFN2A8C11V02R8453N1X",
                         "parent_id": null,
                         "user_id": "8ce8a24b5286443b9b989b180b6c3645"
                       }
@@ -743,7 +743,7 @@
             "condition/0": [
               {
                 "path": "condition/0",
-                "timestamp": "2022-11-10T12:58:19.063428+00:00",
+                "timestamp": "2022-12-02T07:20:27.045952+00:00",
                 "result": {
                   "result": false
                 }
@@ -752,10 +752,10 @@
             "condition/0/entity_id/0": [
               {
                 "path": "condition/0/entity_id/0",
-                "timestamp": "2022-11-10T12:58:19.063663+00:00",
+                "timestamp": "2022-12-02T07:20:27.046016+00:00",
                 "result": {
                   "result": false,
-                  "state": "2022-11-10 13:58:19.016142",
+                  "state": "2022-12-02 08:20:27.021629",
                   "wanted_state": "Shutdown"
                 }
               }
@@ -795,19 +795,19 @@
           },
           "blueprint_inputs": null,
           "context": {
-            "id": "01GHGSXAHPC31G91HK7YJ42SVA",
-            "parent_id": "01GHGSXAH9923A91V9JMDBQM2M",
+            "id": "01GK8VAFN54MKM05617KRY1KH6",
+            "parent_id": "01GK8VAFN2A8C11V02R8453N1X",
             "user_id": null
           }
         },
         "short_dict": {
           "last_step": "condition/0/entity_id/0",
-          "run_id": "32e66fe1f217c9a027da5e877f0e0701",
+          "run_id": "ddfc84deb65485328496ac2c9644b069",
           "state": "stopped",
           "script_execution": "failed_conditions",
           "timestamp": {
-            "start": "2022-11-10T12:58:19.062995+00:00",
-            "finish": "2022-11-10T12:58:19.063870+00:00"
+            "start": "2022-12-02T07:20:27.045658+00:00",
+            "finish": "2022-12-02T07:20:27.046152+00:00"
           },
           "domain": "automation",
           "item_id": "1666283701554",

@@ -84,6 +84,15 @@
                       "entity": "climate.climate_floor_circle"
                     },
                     {
+                      "type": "thermostat",
+                      "entity": "climate.climate_radiator_circle"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
                       "type": "entities",
                       "entities": [
                         {
@@ -103,17 +112,8 @@
                         }
                       ],
                       "state_color": true,
-                      "title": "PID Podlahové topení",
+                      "title": "Servo Podlahové topení",
                       "show_header_toggle": false
-                    }
-                  ]
-                },
-                {
-                  "type": "horizontal-stack",
-                  "cards": [
-                    {
-                      "type": "thermostat",
-                      "entity": "climate.climate_radiator_circle"
                     },
                     {
                       "type": "entities",
@@ -134,7 +134,7 @@
                           "entity": "sensor.temp_radiator_circle"
                         }
                       ],
-                      "title": "PID Radiatory",
+                      "title": "Servo Radiatory",
                       "state_color": true,
                       "show_header_toggle": false
                     }
@@ -210,6 +210,9 @@
                 },
                 {
                   "entity": "sensor.waterheater_actualpower"
+                },
+                {
+                  "entity": "switch.switch_5_14_electric_heat_off"
                 }
               ],
               "title": "Teplota boileru"

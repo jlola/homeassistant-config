@@ -67,6 +67,9 @@
                 },
                 {
                   "entity": "sensor.last_boot"
+                },
+                {
+                  "entity": "sensor.home_assistant_v2_db_size"
                 }
               ],
               "title": "RPI Diagnostic"

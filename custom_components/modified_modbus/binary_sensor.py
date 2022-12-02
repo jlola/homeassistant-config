@@ -96,7 +96,7 @@ class ModifiedModbusBinarySensor(BinarySensorEntity,IDeviceEventConsumer):
             
     def FireEvent(self,slave:int):
         if (slave == self._slave):
-            print(f"force refresh {slave}")
+            _LOGGER.info(f"binary_input| force refresh slave: {self._slave}")
             self.schedule_update_ha_state(force_refresh=True)
 
     @property

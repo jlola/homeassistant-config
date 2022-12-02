@@ -71,31 +71,29 @@ class ModifiedModbus(ISerialReceiver):
                     self.event.set()            
                 elif (func==FUNC_EVENT):            
                     if (not self.checkFrameCrc(self.buffer)):                
-                        #string strbuffer = StringBuilder::join(buffer," ");
-                        #logger.Error("Received wrong CRC data : %s",strbuffer.c_str());
-                        break;                
+                        #crcErrorbuf = bytes(self.buffer)
+                        #logger.error(f"Received wrong CRC data : {crcErrorbuf.hex()}")
+                        break
                     else:                
-                        #//fire event on consumers   
+                        #fire event on consumers
                         adr = self.buffer[0]
+                        logger.info(f"Fired F8 event on adress: {adr}")
                         for c in self.consumers:
                             th = threading.Thread(target=self.ThreadNotifyConsumer,args=(c,adr))
                             th.start()
                             
-                            
-                        self.buffer.clear()
-                                        
+                    self.buffer.clear()
                 else:            
-                    #string strbuffer = StringBuilder::join(buffer," ");
-                    #logger.Error("Completed lost data: %s",strbuffer.c_str());
+                    #lostdata = bytes(self.buffer)
+                    #logger.error(f"Completed lost data: {lostdata.hex()}")
                     self.buffer.clear();
-                    
             elif (not isvalid):        
-                #string strbuffer = StringBuilder::join(buffer," ");
-                #logger.Error("Invalid lost data: %s",strbuffer.c_str());
-                self.buffer.clear();
-                break;        
+                #notvaliddata = bytes(self.buffer)
+                #logger.error(f"Invalid lost data: {notvaliddata.hex()}")
+                self.buffer.clear()
+                break
         
-        self.receiving = False;
+        self.receiving = False
         
     def checkFrameCrc(self,p:bytes):
     #// Enable CRC clock
