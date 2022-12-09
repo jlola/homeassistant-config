@@ -213,6 +213,12 @@
                 },
                 {
                   "entity": "switch.switch_5_14_electric_heat_off"
+                },
+                {
+                  "entity": "sensor.temp_boiler"
+                },
+                {
+                  "entity": "climate.climate_waterheater"
                 }
               ],
               "title": "Teplota boileru"

@@ -5,9 +5,9 @@ class ServoMode(Enum):
     Stop = 0
     Start = 1
     Reset = 2
-SERVO_OPEN_TO_CLOSE_TIME = 100 #seconds
-SERVO_RESET_TIME = 140 #seconds
-MAX_EQUAL_COUNTER = 2
+SERVO_OPEN_TO_CLOSE_TIME = 120 #seconds
+SERVO_RESET_TIME = SERVO_OPEN_TO_CLOSE_TIME + 20 #seconds
+MAX_EQUAL_COUNTER = SERVO_RESET_TIME
 
 class ServoController(hass.Hass):
     def initialize(self):
@@ -63,7 +63,7 @@ class ServoController(hass.Hass):
     def reset(self):
         self.log(f"Reseting...")
         self.__mode = ServoMode.Reset
-        self.set_servo_time(SERVO_RESET_TIME + 10)
+        self.set_servo_time(SERVO_RESET_TIME)
         self.__request_time = 0
         self.__start_timer()
 
@@ -76,10 +76,16 @@ class ServoController(hass.Hass):
         self.log(f"servo_time:{servo_time}, request_time: {self.__request_time}")
         if (servo_time == self.__request_time):
             self.equalCounter = self.equalCounter + 1
-            self.__disable()
-            if (self.__timer != None and self.equalCounter==MAX_EQUAL_COUNTER):
+            #vypnu servo jen kdyz jsem uprostred rizeni
+            if (servo_time < SERVO_OPEN_TO_CLOSE_TIME and servo_time > 0):
+                self.__stop()
+            #casovac a rele vypnu az kdyz bude na 100 nebo 0 a utece dvojnasobny cas prechodu rele
+            #abych mel jistotu ze jsem na konci kdyz jsou cisla v krajnich mezich
+            if (self.__timer != None and self.equalCounter>=MAX_EQUAL_COUNTER):
                 self.cancel_timer(self.__timer)
                 self.__timer = None
+                self.__stop()
+            
             if (self.__mode == ServoMode.Reset):
                 self.__mode = ServoMode.Stop
                 self.set_servo_value(self.get_servo_value())
@@ -102,7 +108,7 @@ class ServoController(hass.Hass):
         self.__turn(self.__open_switch,False)
         self.__turn(self.__close_switch,True)
 
-    def __disable(self):
+    def __stop(self):
         self.__turn(self.__open_switch,False)
         self.__turn(self.__close_switch,False)
 

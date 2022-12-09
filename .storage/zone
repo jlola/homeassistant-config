@@ -7,8 +7,8 @@
       {
         "name": "doma",
         "icon": "mdi:map-marker",
-        "latitude": 49.42299213117155,
-        "longitude": 16.353814601898197,
+        "latitude": 49.422999982298876,
+        "longitude": 16.353754252195362,
         "passive": false,
         "radius": 100.0,
         "id": "doma"

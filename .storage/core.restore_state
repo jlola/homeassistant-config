@@ -13,16 +13,16 @@
           "user_id": "b09f7b37fe70417390c67b7d02d9e0bc",
           "friendly_name": "Josef Lola"
         },
-        "last_changed": "2022-12-02T07:20:59.356058+00:00",
-        "last_updated": "2022-12-02T07:21:10.704313+00:00",
+        "last_changed": "2022-12-09T09:00:39.247564+00:00",
+        "last_updated": "2022-12-09T09:01:16.037081+00:00",
         "context": {
-          "id": "01GK8VBT9G2HD2J9KGSXGF5EM0",
+          "id": "01GKV1W3W5E7N8QSRH4XXXKN4V",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -41,16 +41,16 @@
           "friendly_name": "Home Assistant Supervisor Update",
           "supported_features": 1
         },
-        "last_changed": "2022-12-02T07:21:07.401377+00:00",
-        "last_updated": "2022-12-02T07:21:07.401377+00:00",
+        "last_changed": "2022-12-09T09:00:48.093773+00:00",
+        "last_updated": "2022-12-09T09:00:48.093773+00:00",
         "context": {
-          "id": "01GK8VBQ29628GQHNJ4CSPYHNG",
+          "id": "01GKV1V8JXF610HS4BXR3FS1TF",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -58,9 +58,9 @@
         "state": "off",
         "attributes": {
           "auto_update": false,
-          "installed_version": "2022.11.5",
+          "installed_version": "2022.12.1",
           "in_progress": false,
-          "latest_version": "2022.11.5",
+          "latest_version": "2022.12.1",
           "release_summary": null,
           "release_url": "https://www.home-assistant.io/latest-release-notes/",
           "skipped_version": null,
@@ -69,16 +69,16 @@
           "friendly_name": "Home Assistant Core Update",
           "supported_features": 11
         },
-        "last_changed": "2022-12-02T07:21:07.402139+00:00",
-        "last_updated": "2022-12-02T07:21:07.402139+00:00",
+        "last_changed": "2022-12-09T09:00:48.094714+00:00",
+        "last_updated": "2022-12-09T09:00:48.094714+00:00",
         "context": {
-          "id": "01GK8VBQ2ATKNQR2VVTKATFZ12",
+          "id": "01GKV1V8JY0EMCHVYAGKGCA2HC",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -97,16 +97,16 @@
           "friendly_name": "Terminal & SSH Update",
           "supported_features": 25
         },
-        "last_changed": "2022-12-02T07:21:07.402571+00:00",
-        "last_updated": "2022-12-02T07:21:07.402571+00:00",
+        "last_changed": "2022-12-09T09:00:48.095200+00:00",
+        "last_updated": "2022-12-09T09:00:48.095200+00:00",
         "context": {
-          "id": "01GK8VBQ2AVFH69QZYCGY3RJQJ",
+          "id": "01GKV1V8JZX9MWGQ34K5M4KMDA",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -125,16 +125,16 @@
           "friendly_name": "AppDaemon Update",
           "supported_features": 25
         },
-        "last_changed": "2022-12-02T07:21:07.402919+00:00",
-        "last_updated": "2022-12-02T07:21:07.402919+00:00",
+        "last_changed": "2022-12-09T09:00:48.095601+00:00",
+        "last_updated": "2022-12-09T09:00:48.095601+00:00",
         "context": {
-          "id": "01GK8VBQ2AW67EQGRSMNBT69HS",
+          "id": "01GKV1V8JZR5CVGV1NFSMNEY4V",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -152,16 +152,16 @@
           "friendly_name": "Portainer Update",
           "supported_features": 25
         },
-        "last_changed": "2022-12-02T07:21:07.403242+00:00",
-        "last_updated": "2022-12-02T07:21:07.403242+00:00",
+        "last_changed": "2022-12-09T09:00:48.095941+00:00",
+        "last_updated": "2022-12-09T09:00:48.095941+00:00",
         "context": {
-          "id": "01GK8VBQ2BE3Z4FM21P3P6J413",
+          "id": "01GKV1V8JZ9WF6W5J10063NNWG",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -180,16 +180,16 @@
           "friendly_name": "Studio Code Server Update",
           "supported_features": 25
         },
-        "last_changed": "2022-12-02T07:21:07.403727+00:00",
-        "last_updated": "2022-12-02T07:21:07.403727+00:00",
+        "last_changed": "2022-12-09T09:00:48.096580+00:00",
+        "last_updated": "2022-12-09T09:00:48.096580+00:00",
         "context": {
-          "id": "01GK8VBQ2BT5TG85J7TH47SWDB",
+          "id": "01GKV1V8K0XNVCDT90BAF5Z4XF",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -208,16 +208,16 @@
           "friendly_name": "Git pull Update",
           "supported_features": 25
         },
-        "last_changed": "2022-12-02T07:21:07.404048+00:00",
-        "last_updated": "2022-12-02T07:21:07.404048+00:00",
+        "last_changed": "2022-12-09T09:00:48.097066+00:00",
+        "last_updated": "2022-12-09T09:00:48.097066+00:00",
         "context": {
-          "id": "01GK8VBQ2C17J9B76FT0DPGGDN",
+          "id": "01GKV1V8K1GS09WPHZNFG6JBYT",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -236,16 +236,16 @@
           "friendly_name": "HassOS SSH port 22222 Configurator Update",
           "supported_features": 25
         },
-        "last_changed": "2022-12-02T07:21:07.404393+00:00",
-        "last_updated": "2022-12-02T07:21:07.404393+00:00",
+        "last_changed": "2022-12-09T09:00:48.097442+00:00",
+        "last_updated": "2022-12-09T09:00:48.097442+00:00",
         "context": {
-          "id": "01GK8VBQ2C287CMWT8EEDMR4QA",
+          "id": "01GKV1V8K1BP1FQWKJEZC4PSGT",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -264,16 +264,16 @@
           "friendly_name": "HassOS I2C Configurator Update",
           "supported_features": 25
         },
-        "last_changed": "2022-12-02T07:21:07.404876+00:00",
-        "last_updated": "2022-12-02T07:21:07.404876+00:00",
+        "last_changed": "2022-12-09T09:00:48.097772+00:00",
+        "last_updated": "2022-12-09T09:00:48.097772+00:00",
         "context": {
-          "id": "01GK8VBQ2C7QV9Y555SV4KEFMS",
+          "id": "01GKV1V8K1G1SGCHYM8WX4RR8E",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -292,16 +292,16 @@
           "friendly_name": "SQLite Web Update",
           "supported_features": 25
         },
-        "last_changed": "2022-12-02T07:21:07.408924+00:00",
-        "last_updated": "2022-12-02T07:21:07.408924+00:00",
+        "last_changed": "2022-12-09T09:00:48.098094+00:00",
+        "last_updated": "2022-12-09T09:00:48.098094+00:00",
         "context": {
-          "id": "01GK8VBQ2GMSF09K2WGT3479T0",
+          "id": "01GKV1V8K2FMGDT9PA2EP2TKVH",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -320,21 +320,21 @@
           "friendly_name": "Home Assistant Operating System Update",
           "supported_features": 3
         },
-        "last_changed": "2022-12-02T07:21:07.409729+00:00",
-        "last_updated": "2022-12-02T07:21:07.409729+00:00",
+        "last_changed": "2022-12-09T09:00:48.098732+00:00",
+        "last_updated": "2022-12-09T09:00:48.098732+00:00",
         "context": {
-          "id": "01GK8VBQ2HACY1Z1GX7Z3FN7XD",
+          "id": "01GKV1V8K2CG5RH8E5X1H7SBYX",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.waterheater_power",
-        "state": "247.02",
+        "state": "275.30",
         "attributes": {
           "state_class": "total",
           "source": "sensor.waterheater_actualpower",
@@ -342,56 +342,56 @@
           "icon": "mdi:chart-histogram",
           "friendly_name": "waterheater_power"
         },
-        "last_changed": "2022-12-02T12:19:50.957856+00:00",
-        "last_updated": "2022-12-02T12:19:50.957856+00:00",
+        "last_changed": "2022-12-09T09:01:12.848682+00:00",
+        "last_updated": "2022-12-09T09:01:12.848682+00:00",
         "context": {
-          "id": "01GK9CEPHDZ0P69KQR1XFK814R",
+          "id": "01GKV1W0RG72D4YKY51RW27ZSA",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.3_temperature_waterheater",
-        "state": "56.56",
+        "state": "58.56",
         "attributes": {
           "unit_of_measurement": "°C",
           "device_class": "temperature",
           "friendly_name": "Teplota boileru"
         },
-        "last_changed": "2022-12-02T13:05:10.039334+00:00",
-        "last_updated": "2022-12-02T13:05:10.039334+00:00",
+        "last_changed": "2022-12-09T09:01:12.849277+00:00",
+        "last_updated": "2022-12-09T09:01:12.849277+00:00",
         "context": {
-          "id": "01GK9F1NWQA37PD6EYY57TM00F",
+          "id": "01GKV1W0RHF3TND62YYYYR79RJ",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.3_temperature_outside",
-        "state": "1.93",
+        "state": "1.43",
         "attributes": {
           "unit_of_measurement": "°C",
           "device_class": "temperature",
           "friendly_name": "Venkovní teplota"
         },
-        "last_changed": "2022-12-02T13:06:10.044967+00:00",
-        "last_updated": "2022-12-02T13:06:10.044967+00:00",
+        "last_changed": "2022-12-09T09:01:12.849527+00:00",
+        "last_updated": "2022-12-09T09:01:12.849527+00:00",
         "context": {
-          "id": "01GK9F3GFWNP8FNNF3ZCR239MD",
+          "id": "01GKV1W0RH629BV9KVTZ5WXWEX",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -400,196 +400,196 @@
         "attributes": {
           "friendly_name": "rfidreader_3"
         },
-        "last_changed": "2022-12-02T07:21:08.069716+00:00",
-        "last_updated": "2022-12-02T07:21:08.069716+00:00",
+        "last_changed": "2022-12-09T09:01:12.849738+00:00",
+        "last_updated": "2022-12-09T09:01:12.849738+00:00",
         "context": {
-          "id": "01GK8VBQQ5AX49SST01R8SATYN",
+          "id": "01GKV1W0RHWK0MJKWP31NR1GVN",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.temp_bathroom",
-        "state": "22.12",
+        "state": "21.43",
         "attributes": {
           "unit_of_measurement": "°C",
           "device_class": "temperature",
           "friendly_name": "temp_bathroom"
         },
-        "last_changed": "2022-12-02T12:57:40.030357+00:00",
-        "last_updated": "2022-12-02T12:57:40.030357+00:00",
+        "last_changed": "2022-12-09T09:01:12.849954+00:00",
+        "last_updated": "2022-12-09T09:01:12.849954+00:00",
         "context": {
-          "id": "01GK9EKYDYPCYK7QPWV3RAFP0K",
+          "id": "01GKV1W0RHB1AXR67K2YQQNW0Z",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.temp_radiator_circle",
-        "state": "39.56",
+        "state": "24.75",
         "attributes": {
           "unit_of_measurement": "°C",
           "device_class": "temperature",
           "friendly_name": "Teplota radiátorový okruh"
         },
-        "last_changed": "2022-12-02T13:04:40.048207+00:00",
-        "last_updated": "2022-12-02T13:04:40.048207+00:00",
+        "last_changed": "2022-12-09T09:01:12.850170+00:00",
+        "last_updated": "2022-12-09T09:01:12.850170+00:00",
         "context": {
-          "id": "01GK9F0RKGBZKYQJSX06X44N9M",
+          "id": "01GKV1W0RJ5CJV1GP5JZDHE028",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.temp_floor_circle",
-        "state": "29.87",
+        "state": "25.81",
         "attributes": {
           "unit_of_measurement": "°C",
           "device_class": "temperature",
           "friendly_name": "Teplota podlahový okruh"
         },
-        "last_changed": "2022-12-02T13:06:10.057330+00:00",
-        "last_updated": "2022-12-02T13:06:10.057330+00:00",
+        "last_changed": "2022-12-09T09:01:12.850380+00:00",
+        "last_updated": "2022-12-09T09:01:12.850380+00:00",
         "context": {
-          "id": "01GK9F3GG9020M1X924000B4QN",
+          "id": "01GKV1W0RJJKTREZJC4K4DG42Q",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.temp_floor_livingrom",
-        "state": "23.31",
+        "state": "22.37",
         "attributes": {
           "unit_of_measurement": "°C",
           "device_class": "temperature",
           "friendly_name": "temp_floor_livingrom"
         },
-        "last_changed": "2022-12-02T13:00:40.051168+00:00",
-        "last_updated": "2022-12-02T13:00:40.051168+00:00",
+        "last_changed": "2022-12-09T09:01:12.850582+00:00",
+        "last_updated": "2022-12-09T09:01:12.850582+00:00",
         "context": {
-          "id": "01GK9ESE7K9DACVRXRPKCVH394",
+          "id": "01GKV1W0RJBMK6F0CE89JHV913",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.temp_tank_middle",
-        "state": "40.18",
+        "state": "72.06",
         "attributes": {
           "unit_of_measurement": "°C",
           "device_class": "temperature",
           "friendly_name": "Teplota nádrže střed"
         },
-        "last_changed": "2022-12-02T13:06:10.092587+00:00",
-        "last_updated": "2022-12-02T13:06:10.092587+00:00",
+        "last_changed": "2022-12-09T09:01:12.850787+00:00",
+        "last_updated": "2022-12-09T09:01:12.850787+00:00",
         "context": {
-          "id": "01GK9F3GHC1GS1QAYHEV67F655",
+          "id": "01GKV1W0RJ9RQ5WNZ1JD9CQPBJ",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.temp_tank_bottom",
-        "state": "29.43",
+        "state": "58.93",
         "attributes": {
           "unit_of_measurement": "°C",
           "device_class": "temperature",
           "friendly_name": "Teplota nádrže dolní"
         },
-        "last_changed": "2022-12-02T13:01:40.078167+00:00",
-        "last_updated": "2022-12-02T13:01:40.078167+00:00",
+        "last_changed": "2022-12-09T09:01:12.850994+00:00",
+        "last_updated": "2022-12-09T09:01:12.850994+00:00",
         "context": {
-          "id": "01GK9EV8VE8J1E2DAQ5BSBRM4T",
+          "id": "01GKV1W0RJTKFB72ATZWYDHY41",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.temp_tank_top",
-        "state": "64.68",
+        "state": "74.56",
         "attributes": {
           "unit_of_measurement": "°C",
           "device_class": "temperature",
           "friendly_name": "Teplota nádrže horní"
         },
-        "last_changed": "2022-12-02T13:06:10.099124+00:00",
-        "last_updated": "2022-12-02T13:06:10.099124+00:00",
+        "last_changed": "2022-12-09T09:01:12.851270+00:00",
+        "last_updated": "2022-12-09T09:01:12.851270+00:00",
         "context": {
-          "id": "01GK9F3GHKW58RXH8NP4WGY1SV",
+          "id": "01GKV1W0RKGR583TG0M2THTNGS",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.temp_boiler",
-        "state": "46.87",
+        "state": "49.0",
         "attributes": {
           "unit_of_measurement": "°C",
           "device_class": "temperature",
           "friendly_name": "Teplota kotle"
         },
-        "last_changed": "2022-12-02T13:06:10.105258+00:00",
-        "last_updated": "2022-12-02T13:06:10.105258+00:00",
+        "last_changed": "2022-12-09T09:01:12.851501+00:00",
+        "last_updated": "2022-12-09T09:01:12.851501+00:00",
         "context": {
-          "id": "01GK9F3GHSMMFZ7SJAHV247FN0",
+          "id": "01GKV1W0RKGBWHG883AVKR4SK8",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.temp_wc",
-        "state": "21.68",
+        "state": "21.37",
         "attributes": {
           "unit_of_measurement": "°C",
           "device_class": "temperature",
           "friendly_name": "temp_wc"
         },
-        "last_changed": "2022-12-02T13:04:40.082417+00:00",
-        "last_updated": "2022-12-02T13:04:40.082417+00:00",
+        "last_changed": "2022-12-09T09:01:12.851706+00:00",
+        "last_updated": "2022-12-09T09:01:12.851706+00:00",
         "context": {
-          "id": "01GK9F0RMJYTB3K8Y39ZZP7032",
+          "id": "01GKV1W0RKN7M608Q2WBFRSEGN",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -599,296 +599,16 @@
           "unit_of_measurement": "",
           "friendly_name": "test_string"
         },
-        "last_changed": "2022-12-02T07:21:08.071626+00:00",
-        "last_updated": "2022-12-02T07:21:08.071626+00:00",
+        "last_changed": "2022-12-09T09:01:12.851919+00:00",
+        "last_updated": "2022-12-09T09:01:12.851919+00:00",
         "context": {
-          "id": "01GK8VBQQ77YKZ712CCE110Z19",
+          "id": "01GKV1W0RK1YBQFBMX0H9NEWN2",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
-    },
-    {
-      "state": {
-        "entity_id": "input_number.servo_value_floor_circle",
-        "state": "55.0",
-        "attributes": {},
-        "last_changed": "2022-12-02T13:06:10.600019+00:00",
-        "last_updated": "2022-12-02T13:06:10.600019+00:00",
-        "context": {
-          "id": "01GK9F3H18SB811QT6K0ETW2G9",
-          "parent_id": null,
-          "user_id": null
-        }
-      },
-      "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
-    },
-    {
-      "state": {
-        "entity_id": "input_number.servo_value_radiator_circle",
-        "state": "47.4",
-        "attributes": {},
-        "last_changed": "2022-12-02T13:06:10.551288+00:00",
-        "last_updated": "2022-12-02T13:06:10.551288+00:00",
-        "context": {
-          "id": "01GK9F3GZQFW35EMPV3JD9Q0H9",
-          "parent_id": null,
-          "user_id": null
-        }
-      },
-      "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
-    },
-    {
-      "state": {
-        "entity_id": "input_number.servo_time_radiator_circle",
-        "state": "47",
-        "attributes": {
-          "initial": 0.0,
-          "editable": false,
-          "min": -130.0,
-          "max": 130.0,
-          "step": 1.0,
-          "mode": "box",
-          "unit_of_measurement": "s",
-          "friendly_name": "Čas otevření serva radiátory (s)"
-        },
-        "last_changed": "2022-12-02T13:05:22.466602+00:00",
-        "last_updated": "2022-12-02T13:05:22.466602+00:00",
-        "context": {
-          "id": "01GK9F2212WY4F54QASM1M2J4E",
-          "parent_id": null,
-          "user_id": "8ce8a24b5286443b9b989b180b6c3645"
-        }
-      },
-      "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
-    },
-    {
-      "state": {
-        "entity_id": "input_number.servo_time_floor_circle",
-        "state": "54",
-        "attributes": {
-          "initial": 0.0,
-          "editable": false,
-          "min": -130.0,
-          "max": 130.0,
-          "step": 1.0,
-          "mode": "box",
-          "unit_of_measurement": "s",
-          "friendly_name": "Čas otevření serva podlahy (s)"
-        },
-        "last_changed": "2022-12-02T12:59:40.527612+00:00",
-        "last_updated": "2022-12-02T12:59:40.527612+00:00",
-        "context": {
-          "id": "01GK9EQM3FY00PHG4FXFDGE28Q",
-          "parent_id": null,
-          "user_id": "8ce8a24b5286443b9b989b180b6c3645"
-        }
-      },
-      "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
-    },
-    {
-      "state": {
-        "entity_id": "input_number.setpoint_floor_circle",
-        "state": "30.0",
-        "attributes": {
-          "initial": 30.0,
-          "editable": false,
-          "min": 20.0,
-          "max": 100.0,
-          "step": 0.2,
-          "mode": "box",
-          "unit_of_measurement": "°C"
-        },
-        "last_changed": "2022-12-02T07:21:08.978267+00:00",
-        "last_updated": "2022-12-02T07:21:08.978267+00:00",
-        "context": {
-          "id": "01GK8VBRKJCG5EYBYT68WNN4CR",
-          "parent_id": null,
-          "user_id": null
-        }
-      },
-      "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
-    },
-    {
-      "state": {
-        "entity_id": "input_number.setpoint_radiator_circle",
-        "state": "30.0",
-        "attributes": {
-          "initial": 30.0,
-          "editable": false,
-          "min": 20.0,
-          "max": 100.0,
-          "step": 0.2,
-          "mode": "box",
-          "unit_of_measurement": "°C"
-        },
-        "last_changed": "2022-12-02T07:21:08.978484+00:00",
-        "last_updated": "2022-12-02T07:21:08.978484+00:00",
-        "context": {
-          "id": "01GK8VBRKJ51E97GSGCEQJQH66",
-          "parent_id": null,
-          "user_id": null
-        }
-      },
-      "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
-    },
-    {
-      "state": {
-        "entity_id": "input_number.min_temp_boiler_pump_floor_circle",
-        "state": "63.0",
-        "attributes": {
-          "initial": null,
-          "editable": false,
-          "min": 0.0,
-          "max": 100.0,
-          "step": 1.0,
-          "mode": "box",
-          "unit_of_measurement": "°C",
-          "friendly_name": "Minimální teplota kotle"
-        },
-        "last_changed": "2022-12-02T07:21:08.978766+00:00",
-        "last_updated": "2022-12-02T07:21:08.978766+00:00",
-        "context": {
-          "id": "01GK8VBRKJ1FDV36Y98ZXAFC14",
-          "parent_id": null,
-          "user_id": null
-        }
-      },
-      "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
-    },
-    {
-      "state": {
-        "entity_id": "input_number.min_temp_boiler_pump_radiator_circle",
-        "state": "63.0",
-        "attributes": {
-          "initial": null,
-          "editable": false,
-          "min": 0.0,
-          "max": 100.0,
-          "step": 1.0,
-          "mode": "box",
-          "unit_of_measurement": "°C",
-          "friendly_name": "Minimální teplota kotle"
-        },
-        "last_changed": "2022-12-02T07:21:08.979130+00:00",
-        "last_updated": "2022-12-02T07:21:08.979130+00:00",
-        "context": {
-          "id": "01GK8VBRKKAY0MSW1SZRK6BTA6",
-          "parent_id": null,
-          "user_id": null
-        }
-      },
-      "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
-    },
-    {
-      "state": {
-        "entity_id": "input_number.min_temp_tank_pump_floor_circle",
-        "state": "28.0",
-        "attributes": {
-          "initial": null,
-          "editable": false,
-          "min": 0.0,
-          "max": 100.0,
-          "step": 1.0,
-          "mode": "box",
-          "unit_of_measurement": "°C",
-          "friendly_name": "Minimální teplota nádrže"
-        },
-        "last_changed": "2022-12-02T07:21:08.979358+00:00",
-        "last_updated": "2022-12-02T07:21:08.979358+00:00",
-        "context": {
-          "id": "01GK8VBRKKKFZ3C9FDM7ATBCW8",
-          "parent_id": null,
-          "user_id": null
-        }
-      },
-      "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
-    },
-    {
-      "state": {
-        "entity_id": "input_number.min_temp_tank_pump_radiator_circle",
-        "state": "28.0",
-        "attributes": {
-          "initial": null,
-          "editable": false,
-          "min": 0.0,
-          "max": 100.0,
-          "step": 1.0,
-          "mode": "box",
-          "unit_of_measurement": "°C",
-          "friendly_name": "Minimální teplota nádrže"
-        },
-        "last_changed": "2022-12-02T07:21:08.979581+00:00",
-        "last_updated": "2022-12-02T07:21:08.979581+00:00",
-        "context": {
-          "id": "01GK8VBRKKGP5TZJVKW1SXGYGC",
-          "parent_id": null,
-          "user_id": null
-        }
-      },
-      "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
-    },
-    {
-      "state": {
-        "entity_id": "input_number.min_temp_tank_water_heater",
-        "state": "90.0",
-        "attributes": {
-          "initial": null,
-          "editable": false,
-          "min": 0.0,
-          "max": 100.0,
-          "step": 1.0,
-          "mode": "box",
-          "unit_of_measurement": "°C",
-          "friendly_name": "Minimální teplota nádrže"
-        },
-        "last_changed": "2022-12-02T07:21:08.979824+00:00",
-        "last_updated": "2022-12-02T07:21:08.979824+00:00",
-        "context": {
-          "id": "01GK8VBRKKGJ0JPDDGSHDG8G95",
-          "parent_id": null,
-          "user_id": null
-        }
-      },
-      "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
-    },
-    {
-      "state": {
-        "entity_id": "input_number.min_temp_boiler_water_heater",
-        "state": "65.0",
-        "attributes": {
-          "initial": null,
-          "editable": false,
-          "min": 0.0,
-          "max": 100.0,
-          "step": 1.0,
-          "mode": "box",
-          "unit_of_measurement": "°C",
-          "friendly_name": "Minimální teplota kotle"
-        },
-        "last_changed": "2022-12-02T07:21:08.980060+00:00",
-        "last_updated": "2022-12-02T07:21:08.980060+00:00",
-        "context": {
-          "id": "01GK8VBRKM32XJR6BFGESMTQ8Q",
-          "parent_id": null,
-          "user_id": null
-        }
-      },
-      "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -904,16 +624,16 @@
           "editable": false,
           "friendly_name": "Režim čerpadla"
         },
-        "last_changed": "2022-12-02T07:21:08.982467+00:00",
-        "last_updated": "2022-12-02T07:21:08.982467+00:00",
+        "last_changed": "2022-12-09T09:01:13.781810+00:00",
+        "last_updated": "2022-12-09T09:01:13.781810+00:00",
         "context": {
-          "id": "01GK8VBRKPQSCZTECS6YA78FFB",
+          "id": "01GKV1W1NN297CB7FT8N343VGQ",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -929,16 +649,16 @@
           "editable": false,
           "friendly_name": "Režim čerpadla"
         },
-        "last_changed": "2022-12-02T07:21:08.982886+00:00",
-        "last_updated": "2022-12-02T07:21:08.982886+00:00",
+        "last_changed": "2022-12-09T09:01:13.782284+00:00",
+        "last_updated": "2022-12-09T09:01:13.782284+00:00",
         "context": {
-          "id": "01GK8VBRKPYWP3K06EW70P0G3E",
+          "id": "01GKV1W1NPA7SPTNEPYRFAQM42",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -953,21 +673,21 @@
           "editable": false,
           "friendly_name": "Režim boileru"
         },
-        "last_changed": "2022-12-02T07:21:08.983114+00:00",
-        "last_updated": "2022-12-02T07:21:08.983114+00:00",
+        "last_changed": "2022-12-09T09:01:13.782595+00:00",
+        "last_updated": "2022-12-09T09:01:13.782595+00:00",
         "context": {
-          "id": "01GK8VBRKQCCJQ7C5F0F2BVWRA",
+          "id": "01GKV1W1NPN32RNDJH5YPAYMTF",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
         "entity_id": "input_text.appdaemon_time",
-        "state": "2022-12-02 14:06:06.020571",
+        "state": "Nefunkcni!!",
         "attributes": {
           "editable": false,
           "min": 0,
@@ -976,16 +696,314 @@
           "mode": "text",
           "friendly_name": "Aktualni cas appdaemon"
         },
-        "last_changed": "2022-12-02T13:06:06.039028+00:00",
-        "last_updated": "2022-12-02T13:06:06.039028+00:00",
+        "last_changed": "2022-12-09T09:01:13.786031+00:00",
+        "last_updated": "2022-12-09T09:01:13.786031+00:00",
         "context": {
-          "id": "01GK9F3CJPK7MGV44K4NJJ08CA",
+          "id": "01GKV1W1NTCEYY3J8JBQJJ3XZG",
           "parent_id": null,
-          "user_id": "8ce8a24b5286443b9b989b180b6c3645"
+          "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "input_number.servo_value_floor_circle",
+        "state": "0.0",
+        "attributes": {
+          "initial": 0.0,
+          "editable": false,
+          "min": 0.0,
+          "max": 100.0,
+          "step": 1.0,
+          "mode": "box",
+          "unit_of_measurement": "%",
+          "friendly_name": "Otevření serva podlahy (%)"
+        },
+        "last_changed": "2022-12-09T09:01:13.797566+00:00",
+        "last_updated": "2022-12-09T09:01:13.797566+00:00",
+        "context": {
+          "id": "01GKV1W1P514AGSETDG25BMHT3",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "input_number.servo_value_radiator_circle",
+        "state": "0.0",
+        "attributes": {
+          "initial": 0.0,
+          "editable": false,
+          "min": 0.0,
+          "max": 100.0,
+          "step": 1.0,
+          "mode": "box",
+          "unit_of_measurement": "%",
+          "friendly_name": "Otevření serva radiátorů (%)"
+        },
+        "last_changed": "2022-12-09T09:01:13.797952+00:00",
+        "last_updated": "2022-12-09T09:01:13.797952+00:00",
+        "context": {
+          "id": "01GKV1W1P5TJ5CZ3MHQEBPWWF2",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "input_number.servo_time_radiator_circle",
+        "state": "0.0",
+        "attributes": {
+          "initial": 0.0,
+          "editable": false,
+          "min": -130.0,
+          "max": 130.0,
+          "step": 1.0,
+          "mode": "box",
+          "unit_of_measurement": "s",
+          "friendly_name": "Čas otevření serva radiátory (s)"
+        },
+        "last_changed": "2022-12-09T09:01:13.798216+00:00",
+        "last_updated": "2022-12-09T09:01:13.798216+00:00",
+        "context": {
+          "id": "01GKV1W1P6K136WRPCY3JKJW86",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "input_number.servo_time_floor_circle",
+        "state": "0.0",
+        "attributes": {
+          "initial": 0.0,
+          "editable": false,
+          "min": -130.0,
+          "max": 130.0,
+          "step": 1.0,
+          "mode": "box",
+          "unit_of_measurement": "s",
+          "friendly_name": "Čas otevření serva podlahy (s)"
+        },
+        "last_changed": "2022-12-09T09:01:13.798586+00:00",
+        "last_updated": "2022-12-09T09:01:13.798586+00:00",
+        "context": {
+          "id": "01GKV1W1P63A713819VDWZ22AH",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "input_number.setpoint_floor_circle",
+        "state": "30.0",
+        "attributes": {
+          "initial": 30.0,
+          "editable": false,
+          "min": 20.0,
+          "max": 100.0,
+          "step": 0.2,
+          "mode": "box",
+          "unit_of_measurement": "°C"
+        },
+        "last_changed": "2022-12-09T09:01:13.798804+00:00",
+        "last_updated": "2022-12-09T09:01:13.798804+00:00",
+        "context": {
+          "id": "01GKV1W1P6W50Y3CY5N561BSAF",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "input_number.setpoint_radiator_circle",
+        "state": "30.0",
+        "attributes": {
+          "initial": 30.0,
+          "editable": false,
+          "min": 20.0,
+          "max": 100.0,
+          "step": 0.2,
+          "mode": "box",
+          "unit_of_measurement": "°C"
+        },
+        "last_changed": "2022-12-09T09:01:13.799015+00:00",
+        "last_updated": "2022-12-09T09:01:13.799015+00:00",
+        "context": {
+          "id": "01GKV1W1P76Q1BHSPNJE53AHSR",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "input_number.min_temp_boiler_pump_floor_circle",
+        "state": "63.0",
+        "attributes": {
+          "initial": null,
+          "editable": false,
+          "min": 0.0,
+          "max": 100.0,
+          "step": 1.0,
+          "mode": "box",
+          "unit_of_measurement": "°C",
+          "friendly_name": "Minimální teplota kotle"
+        },
+        "last_changed": "2022-12-09T09:01:13.799347+00:00",
+        "last_updated": "2022-12-09T09:01:13.799347+00:00",
+        "context": {
+          "id": "01GKV1W1P77K14RA4FS5S0R9Z0",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "input_number.min_temp_boiler_pump_radiator_circle",
+        "state": "63.0",
+        "attributes": {
+          "initial": null,
+          "editable": false,
+          "min": 0.0,
+          "max": 100.0,
+          "step": 1.0,
+          "mode": "box",
+          "unit_of_measurement": "°C",
+          "friendly_name": "Minimální teplota kotle"
+        },
+        "last_changed": "2022-12-09T09:01:13.800084+00:00",
+        "last_updated": "2022-12-09T09:01:13.800084+00:00",
+        "context": {
+          "id": "01GKV1W1P8G3VS8WWEQEMRXY2Q",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "input_number.min_temp_tank_pump_floor_circle",
+        "state": "28.0",
+        "attributes": {
+          "initial": null,
+          "editable": false,
+          "min": 0.0,
+          "max": 100.0,
+          "step": 1.0,
+          "mode": "box",
+          "unit_of_measurement": "°C",
+          "friendly_name": "Minimální teplota nádrže"
+        },
+        "last_changed": "2022-12-09T09:01:13.800402+00:00",
+        "last_updated": "2022-12-09T09:01:13.800402+00:00",
+        "context": {
+          "id": "01GKV1W1P8C3HADCHECDD1E022",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "input_number.min_temp_tank_pump_radiator_circle",
+        "state": "28.0",
+        "attributes": {
+          "initial": null,
+          "editable": false,
+          "min": 0.0,
+          "max": 100.0,
+          "step": 1.0,
+          "mode": "box",
+          "unit_of_measurement": "°C",
+          "friendly_name": "Minimální teplota nádrže"
+        },
+        "last_changed": "2022-12-09T09:01:13.800650+00:00",
+        "last_updated": "2022-12-09T09:01:13.800650+00:00",
+        "context": {
+          "id": "01GKV1W1P829F6MMVD3H8A462Z",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "input_number.min_temp_tank_water_heater",
+        "state": "90.0",
+        "attributes": {
+          "initial": null,
+          "editable": false,
+          "min": 0.0,
+          "max": 100.0,
+          "step": 1.0,
+          "mode": "box",
+          "unit_of_measurement": "°C",
+          "friendly_name": "Minimální teplota nádrže"
+        },
+        "last_changed": "2022-12-09T09:01:13.800898+00:00",
+        "last_updated": "2022-12-09T09:01:13.800898+00:00",
+        "context": {
+          "id": "01GKV1W1P8QWVDF57XPPZ0J8JH",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "input_number.min_temp_boiler_water_heater",
+        "state": "65.0",
+        "attributes": {
+          "initial": null,
+          "editable": false,
+          "min": 0.0,
+          "max": 100.0,
+          "step": 1.0,
+          "mode": "box",
+          "unit_of_measurement": "°C",
+          "friendly_name": "Minimální teplota kotle"
+        },
+        "last_changed": "2022-12-09T09:01:13.801138+00:00",
+        "last_updated": "2022-12-09T09:01:13.801138+00:00",
+        "context": {
+          "id": "01GKV1W1P97C134DT785FFSBHX",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -994,16 +1012,16 @@
         "attributes": {
           "friendly_name": "switch_3_0"
         },
-        "last_changed": "2022-12-02T07:21:09.011369+00:00",
-        "last_updated": "2022-12-02T07:21:09.011369+00:00",
+        "last_changed": "2022-12-09T09:01:13.823331+00:00",
+        "last_updated": "2022-12-09T09:01:13.823331+00:00",
         "context": {
-          "id": "01GK8VBRMKAFDX51SGXVK7HNNG",
+          "id": "01GKV1W1PZPVHAG0KSN82TZTJT",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -1012,16 +1030,16 @@
         "attributes": {
           "friendly_name": "rfidreader_reset_3"
         },
-        "last_changed": "2022-12-02T07:21:09.011681+00:00",
-        "last_updated": "2022-12-02T07:21:09.011681+00:00",
+        "last_changed": "2022-12-09T09:01:13.823721+00:00",
+        "last_updated": "2022-12-09T09:01:13.823721+00:00",
         "context": {
-          "id": "01GK8VBRMKD84PEHA60TJMK9HV",
+          "id": "01GKV1W1PZE41X9SM88R8SEWES",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -1030,52 +1048,52 @@
         "attributes": {
           "friendly_name": "switch_bathroom"
         },
-        "last_changed": "2022-12-02T07:21:09.012371+00:00",
-        "last_updated": "2022-12-02T07:21:09.012371+00:00",
+        "last_changed": "2022-12-09T09:01:13.823988+00:00",
+        "last_updated": "2022-12-09T09:01:13.823988+00:00",
         "context": {
-          "id": "01GK8VBRMMT7DNZEPWDC1YYHEA",
+          "id": "01GKV1W1PZ54WA4WMVMK6KNDG7",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
         "entity_id": "switch.switch_5_7_pump_floor_circle",
-        "state": "on",
+        "state": "off",
         "attributes": {
           "friendly_name": "Čerpadlo podlaha"
         },
-        "last_changed": "2022-12-02T08:38:47.120427+00:00",
-        "last_updated": "2022-12-02T08:38:47.120427+00:00",
+        "last_changed": "2022-12-09T09:01:13.824248+00:00",
+        "last_updated": "2022-12-09T09:01:13.824248+00:00",
         "context": {
-          "id": "01GK8ZSXFNQ7KRSD1N74ZWYYEF",
+          "id": "01GKV1W1Q02J0A2S9T5J83Y8WJ",
           "parent_id": null,
-          "user_id": "8ce8a24b5286443b9b989b180b6c3645"
+          "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
         "entity_id": "switch.switch_5_8_pump_radiator_circle",
-        "state": "on",
+        "state": "off",
         "attributes": {
           "friendly_name": "Čerpadlo radiátory"
         },
-        "last_changed": "2022-12-02T08:38:47.189964+00:00",
-        "last_updated": "2022-12-02T08:38:47.189964+00:00",
+        "last_changed": "2022-12-09T09:01:13.824505+00:00",
+        "last_updated": "2022-12-09T09:01:13.824505+00:00",
         "context": {
-          "id": "01GK8ZSXHK75F48VQBP8MBT0W7",
+          "id": "01GKV1W1Q0ZE6EGE6AGEYPXVSE",
           "parent_id": null,
-          "user_id": "8ce8a24b5286443b9b989b180b6c3645"
+          "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -1084,16 +1102,16 @@
         "attributes": {
           "friendly_name": "Čerpadlo boiler"
         },
-        "last_changed": "2022-12-02T07:21:09.013312+00:00",
-        "last_updated": "2022-12-02T07:21:09.013312+00:00",
+        "last_changed": "2022-12-09T09:01:13.824767+00:00",
+        "last_updated": "2022-12-09T09:01:13.824767+00:00",
         "context": {
-          "id": "01GK8VBRMNKNAD922G11K61WQF",
+          "id": "01GKV1W1Q0QV8TSFKR9HAE31EV",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -1102,16 +1120,16 @@
         "attributes": {
           "friendly_name": "Servo podlahy otevírá"
         },
-        "last_changed": "2022-12-02T12:59:41.130964+00:00",
-        "last_updated": "2022-12-02T12:59:41.130964+00:00",
+        "last_changed": "2022-12-09T09:01:13.825021+00:00",
+        "last_updated": "2022-12-09T09:01:13.825021+00:00",
         "context": {
-          "id": "01GK9EQMKXQC1YF6M0BEE4N0K6",
+          "id": "01GKV1W1Q1BM6Z56T087F9WBHK",
           "parent_id": null,
-          "user_id": "8ce8a24b5286443b9b989b180b6c3645"
+          "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -1120,16 +1138,16 @@
         "attributes": {
           "friendly_name": "Servo podlahy zavírá"
         },
-        "last_changed": "2022-12-02T12:40:41.153905+00:00",
-        "last_updated": "2022-12-02T12:40:41.153905+00:00",
+        "last_changed": "2022-12-09T09:01:13.825268+00:00",
+        "last_updated": "2022-12-09T09:01:13.825268+00:00",
         "context": {
-          "id": "01GK9DMVBK21K1YKVQTKZ07HVZ",
+          "id": "01GKV1W1Q1CZMGMBA6SGAXVDBM",
           "parent_id": null,
-          "user_id": "8ce8a24b5286443b9b989b180b6c3645"
+          "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -1138,16 +1156,16 @@
         "attributes": {
           "friendly_name": "Servo radiátorů otevírá"
         },
-        "last_changed": "2022-12-02T13:05:23.118399+00:00",
-        "last_updated": "2022-12-02T13:05:23.118399+00:00",
+        "last_changed": "2022-12-09T09:01:13.825587+00:00",
+        "last_updated": "2022-12-09T09:01:13.825587+00:00",
         "context": {
-          "id": "01GK9F22K74J2MPV4XHN1NJS95",
+          "id": "01GKV1W1Q1XNRG61ZVE8BXS0BY",
           "parent_id": null,
-          "user_id": "8ce8a24b5286443b9b989b180b6c3645"
+          "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -1156,16 +1174,16 @@
         "attributes": {
           "friendly_name": "Servo radiátorů zavírá"
         },
-        "last_changed": "2022-12-02T12:47:03.162223+00:00",
-        "last_updated": "2022-12-02T12:47:03.162223+00:00",
+        "last_changed": "2022-12-09T09:01:13.825866+00:00",
+        "last_updated": "2022-12-09T09:01:13.825866+00:00",
         "context": {
-          "id": "01GK9E0GCZADF3M64PGG6TEH5X",
+          "id": "01GKV1W1Q1JB5PPPDJYAGWAVJB",
           "parent_id": null,
-          "user_id": "8ce8a24b5286443b9b989b180b6c3645"
+          "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -1174,16 +1192,16 @@
         "attributes": {
           "friendly_name": "Odpojení spiraly boileru"
         },
-        "last_changed": "2022-12-02T07:21:09.014339+00:00",
-        "last_updated": "2022-12-02T07:21:09.014339+00:00",
+        "last_changed": "2022-12-09T09:01:13.826122+00:00",
+        "last_updated": "2022-12-09T09:01:13.826122+00:00",
         "context": {
-          "id": "01GK8VBRMP7P8VSMXRDGGH15WW",
+          "id": "01GKV1W1Q2M5A51ECBVSAWGJ5R",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -1192,16 +1210,16 @@
         "attributes": {
           "friendly_name": "Servo boiler"
         },
-        "last_changed": "2022-12-02T07:21:09.014531+00:00",
-        "last_updated": "2022-12-02T07:21:09.014531+00:00",
+        "last_changed": "2022-12-09T09:01:13.833793+00:00",
+        "last_updated": "2022-12-09T09:01:13.833793+00:00",
         "context": {
-          "id": "01GK8VBRMPGS362XHC989RAAAJ",
+          "id": "01GKV1W1Q9TAZCTW67DEQEDBZ9",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -1210,16 +1228,16 @@
         "attributes": {
           "friendly_name": "Vetrak wc"
         },
-        "last_changed": "2022-12-02T07:21:09.014856+00:00",
-        "last_updated": "2022-12-02T07:21:09.014856+00:00",
+        "last_changed": "2022-12-09T09:01:13.834172+00:00",
+        "last_updated": "2022-12-09T09:01:13.834172+00:00",
         "context": {
-          "id": "01GK8VBRMP0C75R369MW4KW83T",
+          "id": "01GKV1W1QANNCHHHQ435GCG3KJ",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -1228,16 +1246,16 @@
         "attributes": {
           "friendly_name": "switch_7_7"
         },
-        "last_changed": "2022-12-02T07:21:09.015079+00:00",
-        "last_updated": "2022-12-02T07:21:09.015079+00:00",
+        "last_changed": "2022-12-09T09:01:13.834407+00:00",
+        "last_updated": "2022-12-09T09:01:13.834407+00:00",
         "context": {
-          "id": "01GK8VBRMQB9MCN1ER4DRRCV27",
+          "id": "01GKV1W1QAR159KQCK1TAP4DGY",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -1246,16 +1264,16 @@
         "attributes": {
           "friendly_name": "switch_7_8"
         },
-        "last_changed": "2022-12-02T07:21:09.020659+00:00",
-        "last_updated": "2022-12-02T07:21:09.020659+00:00",
+        "last_changed": "2022-12-09T09:01:13.834624+00:00",
+        "last_updated": "2022-12-09T09:01:13.834624+00:00",
         "context": {
-          "id": "01GK8VBRMW7BJHKHH36BMP4SWM",
+          "id": "01GKV1W1QAMMA0Q60CKQACD9KG",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -1264,16 +1282,16 @@
         "attributes": {
           "friendly_name": "switch_7_9"
         },
-        "last_changed": "2022-12-02T07:21:09.021051+00:00",
-        "last_updated": "2022-12-02T07:21:09.021051+00:00",
+        "last_changed": "2022-12-09T09:01:13.834831+00:00",
+        "last_updated": "2022-12-09T09:01:13.834831+00:00",
         "context": {
-          "id": "01GK8VBRMXZN2SH5BYBDRB6XQS",
+          "id": "01GKV1W1QAV4ARWD56RH56JRXB",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -1282,16 +1300,16 @@
         "attributes": {
           "friendly_name": "switch_7_10"
         },
-        "last_changed": "2022-12-02T07:21:09.021258+00:00",
-        "last_updated": "2022-12-02T07:21:09.021258+00:00",
+        "last_changed": "2022-12-09T09:01:13.835043+00:00",
+        "last_updated": "2022-12-09T09:01:13.835043+00:00",
         "context": {
-          "id": "01GK8VBRMXP41JG5Y59V4VBWCG",
+          "id": "01GKV1W1QBDPZV7D013S6BT60N",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -1300,16 +1318,16 @@
         "attributes": {
           "friendly_name": "switch_7_11"
         },
-        "last_changed": "2022-12-02T07:21:09.021551+00:00",
-        "last_updated": "2022-12-02T07:21:09.021551+00:00",
+        "last_changed": "2022-12-09T09:01:13.835421+00:00",
+        "last_updated": "2022-12-09T09:01:13.835421+00:00",
         "context": {
-          "id": "01GK8VBRMXSZMZ66Y8JJSPHYQR",
+          "id": "01GKV1W1QB4947607N6N471FGC",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -1318,16 +1336,16 @@
         "attributes": {
           "friendly_name": "switch_7_12"
         },
-        "last_changed": "2022-12-02T07:21:09.026882+00:00",
-        "last_updated": "2022-12-02T07:21:09.026882+00:00",
+        "last_changed": "2022-12-09T09:01:13.835654+00:00",
+        "last_updated": "2022-12-09T09:01:13.835654+00:00",
         "context": {
-          "id": "01GK8VBRN2Z13AKASBX0W0Q137",
+          "id": "01GKV1W1QBHN6E784FF38E1YH9",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -1336,16 +1354,16 @@
         "attributes": {
           "friendly_name": "switch_7_13"
         },
-        "last_changed": "2022-12-02T07:21:09.027219+00:00",
-        "last_updated": "2022-12-02T07:21:09.027219+00:00",
+        "last_changed": "2022-12-09T09:01:13.835861+00:00",
+        "last_updated": "2022-12-09T09:01:13.835861+00:00",
         "context": {
-          "id": "01GK8VBRN3GVDRPJZA2KYQH3ZF",
+          "id": "01GKV1W1QBNVKJSP1N89QNRPZR",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -1354,16 +1372,16 @@
         "attributes": {
           "friendly_name": "switch_7_14"
         },
-        "last_changed": "2022-12-02T07:21:09.027428+00:00",
-        "last_updated": "2022-12-02T07:21:09.027428+00:00",
+        "last_changed": "2022-12-09T09:01:13.836172+00:00",
+        "last_updated": "2022-12-09T09:01:13.836172+00:00",
         "context": {
-          "id": "01GK8VBRN35VKY17F0WZET3AR2",
+          "id": "01GKV1W1QCD6BVC7BEKMDGTY2R",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -1372,16 +1390,16 @@
         "attributes": {
           "friendly_name": "switch_7_15"
         },
-        "last_changed": "2022-12-02T07:21:09.027627+00:00",
-        "last_updated": "2022-12-02T07:21:09.027627+00:00",
+        "last_changed": "2022-12-09T09:01:13.836392+00:00",
+        "last_updated": "2022-12-09T09:01:13.836392+00:00",
         "context": {
-          "id": "01GK8VBRN3QGECF2XE46V1AXSP",
+          "id": "01GKV1W1QCN1SGEBSWMRZST0SA",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -1391,16 +1409,16 @@
           "editable": true,
           "friendly_name": "ups_online_tester"
         },
-        "last_changed": "2022-12-02T07:21:09.545462+00:00",
-        "last_updated": "2022-12-02T07:21:09.545462+00:00",
+        "last_changed": "2022-12-09T09:01:14.114798+00:00",
+        "last_updated": "2022-12-09T09:01:14.114798+00:00",
         "context": {
-          "id": "01GK8VBS59W2283GNX7WV5ED33",
+          "id": "01GKV1W202M85VK1RZ16TNYXWM",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -1418,23 +1436,23 @@
             "none",
             "away"
           ],
-          "current_temperature": 56.6,
+          "current_temperature": 58.6,
           "temperature": 50.0,
           "hvac_action": "off",
           "preset_mode": "none",
           "friendly_name": "climate_waterheater",
           "supported_features": 17
         },
-        "last_changed": "2022-12-02T07:21:09.547637+00:00",
-        "last_updated": "2022-12-02T13:03:40.040527+00:00",
+        "last_changed": "2022-12-09T09:01:14.118166+00:00",
+        "last_updated": "2022-12-09T09:01:16.030867+00:00",
         "context": {
-          "id": "01GK9EYY08FRXJVNG7R2E4F5WP",
+          "id": "01GKV1W3VYRZ08DKV5P92QPRPF",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -1451,7 +1469,7 @@
             "none",
             "away"
           ],
-          "current_temperature": 29.9,
+          "current_temperature": null,
           "temperature": 30.0,
           "hvac_action": "idle",
           "preset_mode": "none",
@@ -1462,17 +1480,17 @@
           "home_temp": null,
           "sleep_temp": null,
           "activity_temp": null,
-          "control_output": 55.0,
+          "control_output": 0,
           "Kp": 4.0,
           "Ki": 0.005,
           "Kd": 0.0,
           "Ke": 0.0,
           "pid_mode": "auto",
-          "pid_p": 0.5,
-          "pid_i": 54.5,
-          "pid_d": -0.0,
-          "pid_e": 0.0,
-          "pid_dt": 900.3130967617035,
+          "pid_p": 0,
+          "pid_i": 43.6,
+          "pid_d": 0,
+          "pid_e": 0,
+          "pid_dt": 0,
           "autotune_status": "off",
           "autotune_sample_time": 0.0,
           "autotune_tuning_rule": "none",
@@ -1483,16 +1501,16 @@
           "friendly_name": "PID regulátor podlahy",
           "supported_features": 17
         },
-        "last_changed": "2022-12-02T08:38:47.072778+00:00",
-        "last_updated": "2022-12-02T13:06:10.600769+00:00",
+        "last_changed": "2022-12-09T09:01:14.119557+00:00",
+        "last_updated": "2022-12-09T09:01:14.119557+00:00",
         "context": {
-          "id": "01GK9F3H1228BC220QJV9M5QHQ",
+          "id": "01GKV1W207KTV4DNGK9AQAVKJ6",
           "parent_id": null,
-          "user_id": "8ce8a24b5286443b9b989b180b6c3645"
+          "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -1509,7 +1527,7 @@
             "none",
             "away"
           ],
-          "current_temperature": 39.6,
+          "current_temperature": null,
           "temperature": 40.0,
           "hvac_action": "idle",
           "preset_mode": "none",
@@ -1520,17 +1538,17 @@
           "home_temp": null,
           "sleep_temp": null,
           "activity_temp": null,
-          "control_output": 47.4,
-          "Kp": 2.0,
-          "Ki": 0.04,
+          "control_output": 0,
+          "Kp": 1.0,
+          "Ki": 0.03,
           "Kd": 0.0,
           "Ke": 0.0,
           "pid_mode": "auto",
-          "pid_p": 0.9,
-          "pid_i": 46.5,
-          "pid_d": -0.0,
-          "pid_e": 0.0,
-          "pid_dt": 8.194457292556763,
+          "pid_p": 0,
+          "pid_i": 49.2,
+          "pid_d": 0,
+          "pid_e": 0,
+          "pid_dt": 0,
           "autotune_status": "off",
           "autotune_sample_time": 0.0,
           "autotune_tuning_rule": "none",
@@ -1541,16 +1559,16 @@
           "friendly_name": "PID regulátor radiátorů",
           "supported_features": 17
         },
-        "last_changed": "2022-12-02T08:38:47.096967+00:00",
-        "last_updated": "2022-12-02T13:06:10.552021+00:00",
+        "last_changed": "2022-12-09T09:01:14.121562+00:00",
+        "last_updated": "2022-12-09T09:01:14.121562+00:00",
         "context": {
-          "id": "01GK9F3GZJBHVHAK4MKBK2KV64",
+          "id": "01GKV1W209884CMFZEXX495FPX",
           "parent_id": null,
-          "user_id": "8ce8a24b5286443b9b989b180b6c3645"
+          "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -1560,19 +1578,19 @@
           "state_class": "total_increasing",
           "source": "sensor.waterheater_power",
           "status": "collecting",
-          "last_period": "0.49",
+          "last_period": "0.24",
           "meter_period": "hourly",
           "cron pattern": "0 * * * *",
-          "last_reset": "2022-12-02T13:00:00.009342+00:00",
+          "last_reset": "2022-12-09T09:00:00.299672+00:00",
           "unit_of_measurement": "kWh",
           "device_class": "energy",
           "icon": "mdi:counter",
           "friendly_name": "energy"
         },
-        "last_changed": "2022-12-02T13:00:00.009704+00:00",
-        "last_updated": "2022-12-02T13:00:00.009704+00:00",
+        "last_changed": "2022-12-09T09:01:14.208643+00:00",
+        "last_updated": "2022-12-09T09:01:14.208643+00:00",
         "context": {
-          "id": "01GK9ER749Z2C0VA9YKCDWB3GT",
+          "id": "01GKV1W2309JS80QVY7WYVKNAP",
           "parent_id": null,
           "user_id": null
         }
@@ -1580,33 +1598,33 @@
       "extra_data": {
         "native_value": 0,
         "native_unit_of_measurement": "kWh",
-        "last_period": "0.49",
-        "last_reset": "2022-12-02T13:00:00.009342+00:00",
+        "last_period": "0.24",
+        "last_reset": "2022-12-09T09:00:00.299672+00:00",
         "status": "collecting"
       },
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
         "entity_id": "automation.shutdown",
         "state": "on",
         "attributes": {
-          "last_triggered": "2022-10-20T16:42:15.090493+00:00",
+          "last_triggered": "2022-12-03T12:27:07.084758+00:00",
           "mode": "single",
           "current": 0,
           "id": "1666283701554",
           "friendly_name": "shutdown"
         },
-        "last_changed": "2022-12-02T07:21:09.664452+00:00",
-        "last_updated": "2022-12-02T07:21:09.664452+00:00",
+        "last_changed": "2022-12-09T09:01:14.224757+00:00",
+        "last_updated": "2022-12-09T09:01:14.224757+00:00",
         "context": {
-          "id": "01GK8VBS90CRY3BHCP1FCM9NQT",
+          "id": "01GKV1W23GX07YSY46CEM9PGE3",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -1615,59 +1633,59 @@
         "attributes": {
           "friendly_name": "ups_low_battery"
         },
-        "last_changed": "2022-12-02T07:21:10.717456+00:00",
-        "last_updated": "2022-12-02T07:21:10.717456+00:00",
+        "last_changed": "2022-12-09T09:01:16.045722+00:00",
+        "last_updated": "2022-12-09T09:01:16.045722+00:00",
         "context": {
-          "id": "01GK8VBT9X13MH0R084MP5Z6XJ",
+          "id": "01GKV1W3WDQPA451CY5YCKZXYD",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
         "entity_id": "binary_sensor.binary_sensor_5_1_thermostat_negative",
-        "state": "on",
+        "state": "off",
         "attributes": {
           "friendly_name": "Termostat kuchyň"
         },
-        "last_changed": "2022-12-02T08:38:46.884457+00:00",
-        "last_updated": "2022-12-02T08:38:46.884457+00:00",
+        "last_changed": "2022-12-09T09:01:16.046622+00:00",
+        "last_updated": "2022-12-09T09:01:16.046622+00:00",
         "context": {
-          "id": "01GK8ZSXB0TVQPXGP3WGS1Z1KB",
+          "id": "01GKV1W3WEEMM77MNCF8QQCC1S",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.redmi_4x_battery_level",
-        "state": "73",
+        "state": "29",
         "attributes": {
           "state_class": "measurement",
           "unit_of_measurement": "%",
           "device_class": "battery",
-          "icon": "mdi:battery-70",
+          "icon": "mdi:battery-20",
           "friendly_name": "Redmi 4X Battery Level"
         },
-        "last_changed": "2022-12-02T12:43:20.624098+00:00",
-        "last_updated": "2022-12-02T12:43:20.624098+00:00",
+        "last_changed": "2022-12-09T09:01:14.345907+00:00",
+        "last_updated": "2022-12-09T09:01:14.345907+00:00",
         "context": {
-          "id": "01GK9DSQ5GS0N2MVZS0122QAR8",
+          "id": "01GKV1W279ERQ1S0WMG3T2QE1F",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": {
-        "native_value": 73,
+        "native_value": 29,
         "native_unit_of_measurement": "%"
       },
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -1677,10 +1695,10 @@
           "icon": "mdi:battery-minus",
           "friendly_name": "Redmi 4X Battery State"
         },
-        "last_changed": "2022-12-02T07:21:09.990140+00:00",
-        "last_updated": "2022-12-02T07:21:09.990140+00:00",
+        "last_changed": "2022-12-09T09:01:14.346360+00:00",
+        "last_updated": "2022-12-09T09:01:14.346360+00:00",
         "context": {
-          "id": "01GK8VBSK6A11W42RF9E7HFN41",
+          "id": "01GKV1W27AMSSDFD2Z5YCYWGA8",
           "parent_id": null,
           "user_id": null
         }
@@ -1689,7 +1707,7 @@
         "native_value": "discharging",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -1699,10 +1717,10 @@
           "icon": "mdi:battery",
           "friendly_name": "Redmi 4X Charger Type"
         },
-        "last_changed": "2022-12-02T07:21:09.990794+00:00",
-        "last_updated": "2022-12-02T07:21:09.990794+00:00",
+        "last_changed": "2022-12-09T09:01:14.346882+00:00",
+        "last_updated": "2022-12-09T09:01:14.346882+00:00",
         "context": {
-          "id": "01GK8VBSK6MWYJ8ZX59C4MY1F0",
+          "id": "01GKV1W27AQT44MECNDM8CKAVG",
           "parent_id": null,
           "user_id": null
         }
@@ -1711,7 +1729,7 @@
         "native_value": "none",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -1721,10 +1739,10 @@
           "icon": "mdi:battery-heart-variant",
           "friendly_name": "Redmi 4X Battery Health"
         },
-        "last_changed": "2022-12-02T07:21:09.991159+00:00",
-        "last_updated": "2022-12-02T07:21:09.991159+00:00",
+        "last_changed": "2022-12-09T09:01:14.347370+00:00",
+        "last_updated": "2022-12-09T09:01:14.347370+00:00",
         "context": {
-          "id": "01GK8VBSK7XW46EYQH7344C0MN",
+          "id": "01GKV1W27BBYE2NGRPZ07DKF7C",
           "parent_id": null,
           "user_id": null
         }
@@ -1733,12 +1751,12 @@
         "native_value": "good",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.redmi_4x_battery_temperature",
-        "state": "33.0",
+        "state": "27.5",
         "attributes": {
           "state_class": "measurement",
           "unit_of_measurement": "°C",
@@ -1746,46 +1764,46 @@
           "icon": "mdi:battery",
           "friendly_name": "Redmi 4X Battery Temperature"
         },
-        "last_changed": "2022-12-02T12:43:20.625538+00:00",
-        "last_updated": "2022-12-02T12:43:20.625538+00:00",
+        "last_changed": "2022-12-09T09:01:14.347783+00:00",
+        "last_updated": "2022-12-09T09:01:14.347783+00:00",
         "context": {
-          "id": "01GK9DSQ5HZ0SXQRR6EGT8R98G",
+          "id": "01GKV1W27B8KTRB4E70D0CZBC3",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": {
-        "native_value": 33.0,
+        "native_value": 27.5,
         "native_unit_of_measurement": "°C"
       },
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
         "entity_id": "sensor.redmi_4x_battery_power",
-        "state": "-0.69",
+        "state": "-1.04",
         "attributes": {
           "state_class": "measurement",
-          "current": -0.173186,
-          "voltage": 4.005,
+          "current": -0.28076,
+          "voltage": 3.703,
           "unit_of_measurement": "W",
           "device_class": "power",
           "icon": "mdi:battery-minus",
           "friendly_name": "Redmi 4X Battery Power"
         },
-        "last_changed": "2022-12-02T12:43:20.626472+00:00",
-        "last_updated": "2022-12-02T12:43:20.626472+00:00",
+        "last_changed": "2022-12-09T09:01:14.348110+00:00",
+        "last_updated": "2022-12-09T09:01:14.348110+00:00",
         "context": {
-          "id": "01GK9DSQ5JNEZBGK6EN1RSB0GY",
+          "id": "01GKV1W27CGT5N340MZAJKYE1E",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": {
-        "native_value": -0.69,
+        "native_value": -1.04,
         "native_unit_of_measurement": "W"
       },
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -1796,16 +1814,16 @@
           "icon": "mdi:power-plug-off",
           "friendly_name": "Redmi 4X Is Charging"
         },
-        "last_changed": "2022-12-02T07:21:09.992230+00:00",
-        "last_updated": "2022-12-02T07:21:09.992230+00:00",
+        "last_changed": "2022-12-09T09:01:14.348547+00:00",
+        "last_updated": "2022-12-09T09:01:14.348547+00:00",
         "context": {
-          "id": "01GK8VBSK8PMPCAY9HAK09J9AF",
+          "id": "01GKV1W27CAH3F0G01E1C4XWKP",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     },
     {
       "state": {
@@ -1815,16 +1833,16 @@
           "source_type": "gps",
           "friendly_name": "Redmi 4X"
         },
-        "last_changed": "2022-12-02T07:21:09.999710+00:00",
-        "last_updated": "2022-12-02T07:21:09.999710+00:00",
+        "last_changed": "2022-12-09T09:01:14.364069+00:00",
+        "last_updated": "2022-12-09T09:01:14.364069+00:00",
         "context": {
-          "id": "01GK8VBSKFZGRV2E974R6H1F0C",
+          "id": "01GKV1W27W5Q8Q8J3BAZJN0RVD",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2022-12-02T13:06:10.732179+00:00"
+      "last_seen": "2022-12-09T09:01:16.050090+00:00"
     }
   ]
 }

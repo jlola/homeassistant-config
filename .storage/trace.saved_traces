@@ -7,12 +7,12 @@
       {
         "extended_dict": {
           "last_step": "condition/0/entity_id/0",
-          "run_id": "3d786411e220bc979f930c920ee3c566",
+          "run_id": "fdcbe4af9ce48298ed54c8eddf85b5fa",
           "state": "stopped",
           "script_execution": "failed_conditions",
           "timestamp": {
-            "start": "2022-12-02T07:19:47.045068+00:00",
-            "finish": "2022-12-02T07:19:47.045760+00:00"
+            "start": "2022-12-09T08:59:26.040827+00:00",
+            "finish": "2022-12-09T08:59:26.041316+00:00"
           },
           "domain": "automation",
           "item_id": "1666283701554",
@@ -21,22 +21,22 @@
             "trigger/0": [
               {
                 "path": "trigger/0",
-                "timestamp": "2022-12-02T07:19:47.045344+00:00",
+                "timestamp": "2022-12-09T08:59:26.040986+00:00",
                 "changed_variables": {
                   "this": {
                     "entity_id": "automation.shutdown",
                     "state": "on",
                     "attributes": {
-                      "last_triggered": "2022-10-20T16:42:15.090493+00:00",
+                      "last_triggered": "2022-12-03T12:27:07.084758+00:00",
                       "mode": "single",
                       "current": 0,
                       "id": "1666283701554",
                       "friendly_name": "shutdown"
                     },
-                    "last_changed": "2022-12-01T18:19:50.634663+00:00",
-                    "last_updated": "2022-12-01T18:19:50.634663+00:00",
+                    "last_changed": "2022-12-08T06:15:38.907611+00:00",
+                    "last_updated": "2022-12-08T06:15:38.907611+00:00",
                     "context": {
-                      "id": "01GK7EN4ZAQKBY54CTRW1TZXT0",
+                      "id": "01GKR604MVVKTP6ZVH2THCDJAT",
                       "parent_id": null,
                       "user_id": null
                     }
@@ -49,7 +49,7 @@
                     "entity_id": "input_text.appdaemon_time",
                     "from_state": {
                       "entity_id": "input_text.appdaemon_time",
-                      "state": "2022-12-02 08:19:37.034386",
+                      "state": "2022-12-09 09:59:16.024559",
                       "attributes": {
                         "editable": false,
                         "min": 0,
@@ -58,17 +58,17 @@
                         "mode": "text",
                         "friendly_name": "Aktualni cas appdaemon"
                       },
-                      "last_changed": "2022-12-02T07:19:37.078472+00:00",
-                      "last_updated": "2022-12-02T07:19:37.078472+00:00",
+                      "last_changed": "2022-12-09T08:59:16.043736+00:00",
+                      "last_updated": "2022-12-09T08:59:16.043736+00:00",
                       "context": {
-                        "id": "01GK8V8YVP8WZA7MBGV64C5ZRK",
+                        "id": "01GKV1REPBEB25CXTDMX6N2FP7",
                         "parent_id": null,
                         "user_id": "8ce8a24b5286443b9b989b180b6c3645"
                       }
                     },
                     "to_state": {
                       "entity_id": "input_text.appdaemon_time",
-                      "state": "2022-12-02 08:19:47.014443",
+                      "state": "2022-12-09 09:59:26.018474",
                       "attributes": {
                         "editable": false,
                         "min": 0,
@@ -77,10 +77,10 @@
                         "mode": "text",
                         "friendly_name": "Aktualni cas appdaemon"
                       },
-                      "last_changed": "2022-12-02T07:19:47.039886+00:00",
-                      "last_updated": "2022-12-02T07:19:47.039886+00:00",
+                      "last_changed": "2022-12-09T08:59:26.037470+00:00",
+                      "last_updated": "2022-12-09T08:59:26.037470+00:00",
                       "context": {
-                        "id": "01GK8V98JZM9HFXT0JZ5E8XWYJ",
+                        "id": "01GKV1RREN0EMQ80DHMKA448PJ",
                         "parent_id": null,
                         "user_id": "8ce8a24b5286443b9b989b180b6c3645"
                       }
@@ -95,7 +95,7 @@
             "condition/0": [
               {
                 "path": "condition/0",
-                "timestamp": "2022-12-02T07:19:47.045503+00:00",
+                "timestamp": "2022-12-09T08:59:26.041091+00:00",
                 "result": {
                   "result": false
                 }
@@ -104,10 +104,10 @@
             "condition/0/entity_id/0": [
               {
                 "path": "condition/0/entity_id/0",
-                "timestamp": "2022-12-02T07:19:47.045580+00:00",
+                "timestamp": "2022-12-09T08:59:26.041158+00:00",
                 "result": {
                   "result": false,
-                  "state": "2022-12-02 08:19:47.014443",
+                  "state": "2022-12-09 09:59:26.018474",
                   "wanted_state": "Shutdown"
                 }
               }
@@ -147,19 +147,19 @@
           },
           "blueprint_inputs": null,
           "context": {
-            "id": "01GK8V98K4KMQNNB1860RZ0N9C",
-            "parent_id": "01GK8V98JZM9HFXT0JZ5E8XWYJ",
+            "id": "01GKV1RRERYWNK12VW1EPAY4QT",
+            "parent_id": "01GKV1RREN0EMQ80DHMKA448PJ",
             "user_id": null
           }
         },
         "short_dict": {
           "last_step": "condition/0/entity_id/0",
-          "run_id": "3d786411e220bc979f930c920ee3c566",
+          "run_id": "fdcbe4af9ce48298ed54c8eddf85b5fa",
           "state": "stopped",
           "script_execution": "failed_conditions",
           "timestamp": {
-            "start": "2022-12-02T07:19:47.045068+00:00",
-            "finish": "2022-12-02T07:19:47.045760+00:00"
+            "start": "2022-12-09T08:59:26.040827+00:00",
+            "finish": "2022-12-09T08:59:26.041316+00:00"
           },
           "domain": "automation",
           "item_id": "1666283701554",
@@ -169,12 +169,12 @@
       {
         "extended_dict": {
           "last_step": "condition/0/entity_id/0",
-          "run_id": "7ca1b27d199e61ae588dcf71c084cbf6",
+          "run_id": "d6ad6b27046441b00818d2c2d0f78bdd",
           "state": "stopped",
           "script_execution": "failed_conditions",
           "timestamp": {
-            "start": "2022-12-02T07:19:57.063751+00:00",
-            "finish": "2022-12-02T07:19:57.064482+00:00"
+            "start": "2022-12-09T08:59:36.039727+00:00",
+            "finish": "2022-12-09T08:59:36.040217+00:00"
           },
           "domain": "automation",
           "item_id": "1666283701554",
@@ -183,22 +183,22 @@
             "trigger/0": [
               {
                 "path": "trigger/0",
-                "timestamp": "2022-12-02T07:19:57.064050+00:00",
+                "timestamp": "2022-12-09T08:59:36.039888+00:00",
                 "changed_variables": {
                   "this": {
                     "entity_id": "automation.shutdown",
                     "state": "on",
                     "attributes": {
-                      "last_triggered": "2022-10-20T16:42:15.090493+00:00",
+                      "last_triggered": "2022-12-03T12:27:07.084758+00:00",
                       "mode": "single",
                       "current": 0,
                       "id": "1666283701554",
                       "friendly_name": "shutdown"
                     },
-                    "last_changed": "2022-12-01T18:19:50.634663+00:00",
-                    "last_updated": "2022-12-01T18:19:50.634663+00:00",
+                    "last_changed": "2022-12-08T06:15:38.907611+00:00",
+                    "last_updated": "2022-12-08T06:15:38.907611+00:00",
                     "context": {
-                      "id": "01GK7EN4ZAQKBY54CTRW1TZXT0",
+                      "id": "01GKR604MVVKTP6ZVH2THCDJAT",
                       "parent_id": null,
                       "user_id": null
                     }
@@ -211,7 +211,7 @@
                     "entity_id": "input_text.appdaemon_time",
                     "from_state": {
                       "entity_id": "input_text.appdaemon_time",
-                      "state": "2022-12-02 08:19:47.014443",
+                      "state": "2022-12-09 09:59:26.018474",
                       "attributes": {
                         "editable": false,
                         "min": 0,
@@ -220,17 +220,17 @@
                         "mode": "text",
                         "friendly_name": "Aktualni cas appdaemon"
                       },
-                      "last_changed": "2022-12-02T07:19:47.039886+00:00",
-                      "last_updated": "2022-12-02T07:19:47.039886+00:00",
+                      "last_changed": "2022-12-09T08:59:26.037470+00:00",
+                      "last_updated": "2022-12-09T08:59:26.037470+00:00",
                       "context": {
-                        "id": "01GK8V98JZM9HFXT0JZ5E8XWYJ",
+                        "id": "01GKV1RREN0EMQ80DHMKA448PJ",
                         "parent_id": null,
                         "user_id": "8ce8a24b5286443b9b989b180b6c3645"
                       }
                     },
                     "to_state": {
                       "entity_id": "input_text.appdaemon_time",
-                      "state": "2022-12-02 08:19:57.015552",
+                      "state": "2022-12-09 09:59:36.014758",
                       "attributes": {
                         "editable": false,
                         "min": 0,
@@ -239,10 +239,10 @@
                         "mode": "text",
                         "friendly_name": "Aktualni cas appdaemon"
                       },
-                      "last_changed": "2022-12-02T07:19:57.054306+00:00",
-                      "last_updated": "2022-12-02T07:19:57.054306+00:00",
+                      "last_changed": "2022-12-09T08:59:36.036291+00:00",
+                      "last_updated": "2022-12-09T08:59:36.036291+00:00",
                       "context": {
-                        "id": "01GK8V9JBYJ0ZQMA88D3YRD0AV",
+                        "id": "01GKV1S274VAH0J5BZ0ZDXJ0AT",
                         "parent_id": null,
                         "user_id": "8ce8a24b5286443b9b989b180b6c3645"
                       }
@@ -257,7 +257,7 @@
             "condition/0": [
               {
                 "path": "condition/0",
-                "timestamp": "2022-12-02T07:19:57.064238+00:00",
+                "timestamp": "2022-12-09T08:59:36.039999+00:00",
                 "result": {
                   "result": false
                 }
@@ -266,10 +266,10 @@
             "condition/0/entity_id/0": [
               {
                 "path": "condition/0/entity_id/0",
-                "timestamp": "2022-12-02T07:19:57.064317+00:00",
+                "timestamp": "2022-12-09T08:59:36.040072+00:00",
                 "result": {
                   "result": false,
-                  "state": "2022-12-02 08:19:57.015552",
+                  "state": "2022-12-09 09:59:36.014758",
                   "wanted_state": "Shutdown"
                 }
               }
@@ -309,19 +309,19 @@
           },
           "blueprint_inputs": null,
           "context": {
-            "id": "01GK8V9JC7PA9BE6ZBQ241JDD6",
-            "parent_id": "01GK8V9JBYJ0ZQMA88D3YRD0AV",
+            "id": "01GKV1S2779YMETWXHRP79PBER",
+            "parent_id": "01GKV1S274VAH0J5BZ0ZDXJ0AT",
             "user_id": null
           }
         },
         "short_dict": {
           "last_step": "condition/0/entity_id/0",
-          "run_id": "7ca1b27d199e61ae588dcf71c084cbf6",
+          "run_id": "d6ad6b27046441b00818d2c2d0f78bdd",
           "state": "stopped",
           "script_execution": "failed_conditions",
           "timestamp": {
-            "start": "2022-12-02T07:19:57.063751+00:00",
-            "finish": "2022-12-02T07:19:57.064482+00:00"
+            "start": "2022-12-09T08:59:36.039727+00:00",
+            "finish": "2022-12-09T08:59:36.040217+00:00"
           },
           "domain": "automation",
           "item_id": "1666283701554",
@@ -331,12 +331,12 @@
       {
         "extended_dict": {
           "last_step": "condition/0/entity_id/0",
-          "run_id": "4671dbb5f7b55ca19e72521203727ecc",
+          "run_id": "ffdc8325ba03082ba359457dcfba9ff1",
           "state": "stopped",
           "script_execution": "failed_conditions",
           "timestamp": {
-            "start": "2022-12-02T07:20:07.047222+00:00",
-            "finish": "2022-12-02T07:20:07.047878+00:00"
+            "start": "2022-12-09T08:59:46.047293+00:00",
+            "finish": "2022-12-09T08:59:46.048412+00:00"
           },
           "domain": "automation",
           "item_id": "1666283701554",
@@ -345,22 +345,22 @@
             "trigger/0": [
               {
                 "path": "trigger/0",
-                "timestamp": "2022-12-02T07:20:07.047487+00:00",
+                "timestamp": "2022-12-09T08:59:46.047864+00:00",
                 "changed_variables": {
                   "this": {
                     "entity_id": "automation.shutdown",
                     "state": "on",
                     "attributes": {
-                      "last_triggered": "2022-10-20T16:42:15.090493+00:00",
+                      "last_triggered": "2022-12-03T12:27:07.084758+00:00",
                       "mode": "single",
                       "current": 0,
                       "id": "1666283701554",
                       "friendly_name": "shutdown"
                     },
-                    "last_changed": "2022-12-01T18:19:50.634663+00:00",
-                    "last_updated": "2022-12-01T18:19:50.634663+00:00",
+                    "last_changed": "2022-12-08T06:15:38.907611+00:00",
+                    "last_updated": "2022-12-08T06:15:38.907611+00:00",
                     "context": {
-                      "id": "01GK7EN4ZAQKBY54CTRW1TZXT0",
+                      "id": "01GKR604MVVKTP6ZVH2THCDJAT",
                       "parent_id": null,
                       "user_id": null
                     }
@@ -373,7 +373,7 @@
                     "entity_id": "input_text.appdaemon_time",
                     "from_state": {
                       "entity_id": "input_text.appdaemon_time",
-                      "state": "2022-12-02 08:19:57.015552",
+                      "state": "2022-12-09 09:59:36.014758",
                       "attributes": {
                         "editable": false,
                         "min": 0,
@@ -382,17 +382,17 @@
                         "mode": "text",
                         "friendly_name": "Aktualni cas appdaemon"
                       },
-                      "last_changed": "2022-12-02T07:19:57.054306+00:00",
-                      "last_updated": "2022-12-02T07:19:57.054306+00:00",
+                      "last_changed": "2022-12-09T08:59:36.036291+00:00",
+                      "last_updated": "2022-12-09T08:59:36.036291+00:00",
                       "context": {
-                        "id": "01GK8V9JBYJ0ZQMA88D3YRD0AV",
+                        "id": "01GKV1S274VAH0J5BZ0ZDXJ0AT",
                         "parent_id": null,
                         "user_id": "8ce8a24b5286443b9b989b180b6c3645"
                       }
                     },
                     "to_state": {
                       "entity_id": "input_text.appdaemon_time",
-                      "state": "2022-12-02 08:20:07.019707",
+                      "state": "2022-12-09 09:59:46.019272",
                       "attributes": {
                         "editable": false,
                         "min": 0,
@@ -401,10 +401,10 @@
                         "mode": "text",
                         "friendly_name": "Aktualni cas appdaemon"
                       },
-                      "last_changed": "2022-12-02T07:20:07.043543+00:00",
-                      "last_updated": "2022-12-02T07:20:07.043543+00:00",
+                      "last_changed": "2022-12-09T08:59:46.041404+00:00",
+                      "last_updated": "2022-12-09T08:59:46.041404+00:00",
                       "context": {
-                        "id": "01GK8V9W43W72J54C2MMYJMHBX",
+                        "id": "01GKV1SBZS5RT2QZEP8KS2N2S6",
                         "parent_id": null,
                         "user_id": "8ce8a24b5286443b9b989b180b6c3645"
                       }
@@ -419,7 +419,7 @@
             "condition/0": [
               {
                 "path": "condition/0",
-                "timestamp": "2022-12-02T07:20:07.047631+00:00",
+                "timestamp": "2022-12-09T08:59:46.048093+00:00",
                 "result": {
                   "result": false
                 }
@@ -428,10 +428,10 @@
             "condition/0/entity_id/0": [
               {
                 "path": "condition/0/entity_id/0",
-                "timestamp": "2022-12-02T07:20:07.047717+00:00",
+                "timestamp": "2022-12-09T08:59:46.048198+00:00",
                 "result": {
                   "result": false,
-                  "state": "2022-12-02 08:20:07.019707",
+                  "state": "2022-12-09 09:59:46.019272",
                   "wanted_state": "Shutdown"
                 }
               }
@@ -471,19 +471,19 @@
           },
           "blueprint_inputs": null,
           "context": {
-            "id": "01GK8V9W471J6YC9EC402AS13V",
-            "parent_id": "01GK8V9W43W72J54C2MMYJMHBX",
+            "id": "01GKV1SBZXDGWY5X3D3MPCFRGC",
+            "parent_id": "01GKV1SBZS5RT2QZEP8KS2N2S6",
             "user_id": null
           }
         },
         "short_dict": {
           "last_step": "condition/0/entity_id/0",
-          "run_id": "4671dbb5f7b55ca19e72521203727ecc",
+          "run_id": "ffdc8325ba03082ba359457dcfba9ff1",
           "state": "stopped",
           "script_execution": "failed_conditions",
           "timestamp": {
-            "start": "2022-12-02T07:20:07.047222+00:00",
-            "finish": "2022-12-02T07:20:07.047878+00:00"
+            "start": "2022-12-09T08:59:46.047293+00:00",
+            "finish": "2022-12-09T08:59:46.048412+00:00"
           },
           "domain": "automation",
           "item_id": "1666283701554",
@@ -493,12 +493,12 @@
       {
         "extended_dict": {
           "last_step": "condition/0/entity_id/0",
-          "run_id": "41eed49066a2a99585dc28b660c7cbbe",
+          "run_id": "810ffc564d003c9f7524e6bdb5e8d682",
           "state": "stopped",
           "script_execution": "failed_conditions",
           "timestamp": {
-            "start": "2022-12-02T07:20:17.043731+00:00",
-            "finish": "2022-12-02T07:20:17.044282+00:00"
+            "start": "2022-12-09T08:59:56.045748+00:00",
+            "finish": "2022-12-09T08:59:56.047445+00:00"
           },
           "domain": "automation",
           "item_id": "1666283701554",
@@ -507,22 +507,22 @@
             "trigger/0": [
               {
                 "path": "trigger/0",
-                "timestamp": "2022-12-02T07:20:17.043933+00:00",
+                "timestamp": "2022-12-09T08:59:56.045928+00:00",
                 "changed_variables": {
                   "this": {
                     "entity_id": "automation.shutdown",
                     "state": "on",
                     "attributes": {
-                      "last_triggered": "2022-10-20T16:42:15.090493+00:00",
+                      "last_triggered": "2022-12-03T12:27:07.084758+00:00",
                       "mode": "single",
                       "current": 0,
                       "id": "1666283701554",
                       "friendly_name": "shutdown"
                     },
-                    "last_changed": "2022-12-01T18:19:50.634663+00:00",
-                    "last_updated": "2022-12-01T18:19:50.634663+00:00",
+                    "last_changed": "2022-12-08T06:15:38.907611+00:00",
+                    "last_updated": "2022-12-08T06:15:38.907611+00:00",
                     "context": {
-                      "id": "01GK7EN4ZAQKBY54CTRW1TZXT0",
+                      "id": "01GKR604MVVKTP6ZVH2THCDJAT",
                       "parent_id": null,
                       "user_id": null
                     }
@@ -535,7 +535,7 @@
                     "entity_id": "input_text.appdaemon_time",
                     "from_state": {
                       "entity_id": "input_text.appdaemon_time",
-                      "state": "2022-12-02 08:20:07.019707",
+                      "state": "2022-12-09 09:59:46.019272",
                       "attributes": {
                         "editable": false,
                         "min": 0,
@@ -544,17 +544,17 @@
                         "mode": "text",
                         "friendly_name": "Aktualni cas appdaemon"
                       },
-                      "last_changed": "2022-12-02T07:20:07.043543+00:00",
-                      "last_updated": "2022-12-02T07:20:07.043543+00:00",
+                      "last_changed": "2022-12-09T08:59:46.041404+00:00",
+                      "last_updated": "2022-12-09T08:59:46.041404+00:00",
                       "context": {
-                        "id": "01GK8V9W43W72J54C2MMYJMHBX",
+                        "id": "01GKV1SBZS5RT2QZEP8KS2N2S6",
                         "parent_id": null,
                         "user_id": "8ce8a24b5286443b9b989b180b6c3645"
                       }
                     },
                     "to_state": {
                       "entity_id": "input_text.appdaemon_time",
-                      "state": "2022-12-02 08:20:17.021364",
+                      "state": "2022-12-09 09:59:56.021674",
                       "attributes": {
                         "editable": false,
                         "min": 0,
@@ -563,10 +563,10 @@
                         "mode": "text",
                         "friendly_name": "Aktualni cas appdaemon"
                       },
-                      "last_changed": "2022-12-02T07:20:17.040325+00:00",
-                      "last_updated": "2022-12-02T07:20:17.040325+00:00",
+                      "last_changed": "2022-12-09T08:59:56.042414+00:00",
+                      "last_updated": "2022-12-09T08:59:56.042414+00:00",
                       "context": {
-                        "id": "01GK8VA5WGNZESAZHJ99T1JHFC",
+                        "id": "01GKV1SNRACD3ZBTF017980SSP",
                         "parent_id": null,
                         "user_id": "8ce8a24b5286443b9b989b180b6c3645"
                       }
@@ -581,7 +581,7 @@
             "condition/0": [
               {
                 "path": "condition/0",
-                "timestamp": "2022-12-02T07:20:17.044045+00:00",
+                "timestamp": "2022-12-09T08:59:56.046030+00:00",
                 "result": {
                   "result": false
                 }
@@ -590,10 +590,10 @@
             "condition/0/entity_id/0": [
               {
                 "path": "condition/0/entity_id/0",
-                "timestamp": "2022-12-02T07:20:17.044116+00:00",
+                "timestamp": "2022-12-09T08:59:56.046097+00:00",
                 "result": {
                   "result": false,
-                  "state": "2022-12-02 08:20:17.021364",
+                  "state": "2022-12-09 09:59:56.021674",
                   "wanted_state": "Shutdown"
                 }
               }
@@ -633,19 +633,19 @@
           },
           "blueprint_inputs": null,
           "context": {
-            "id": "01GK8VA5WK02CHVZXR6MBAJ9X3",
-            "parent_id": "01GK8VA5WGNZESAZHJ99T1JHFC",
+            "id": "01GKV1SNRD5M7S4MXAMTE1A0ZX",
+            "parent_id": "01GKV1SNRACD3ZBTF017980SSP",
             "user_id": null
           }
         },
         "short_dict": {
           "last_step": "condition/0/entity_id/0",
-          "run_id": "41eed49066a2a99585dc28b660c7cbbe",
+          "run_id": "810ffc564d003c9f7524e6bdb5e8d682",
           "state": "stopped",
           "script_execution": "failed_conditions",
           "timestamp": {
-            "start": "2022-12-02T07:20:17.043731+00:00",
-            "finish": "2022-12-02T07:20:17.044282+00:00"
+            "start": "2022-12-09T08:59:56.045748+00:00",
+            "finish": "2022-12-09T08:59:56.047445+00:00"
           },
           "domain": "automation",
           "item_id": "1666283701554",
@@ -655,12 +655,12 @@
       {
         "extended_dict": {
           "last_step": "condition/0/entity_id/0",
-          "run_id": "ddfc84deb65485328496ac2c9644b069",
+          "run_id": "c62454bc469f8b6299b115ad48cb5abe",
           "state": "stopped",
           "script_execution": "failed_conditions",
           "timestamp": {
-            "start": "2022-12-02T07:20:27.045658+00:00",
-            "finish": "2022-12-02T07:20:27.046152+00:00"
+            "start": "2022-12-09T09:00:06.051354+00:00",
+            "finish": "2022-12-09T09:00:06.052025+00:00"
           },
           "domain": "automation",
           "item_id": "1666283701554",
@@ -669,22 +669,22 @@
             "trigger/0": [
               {
                 "path": "trigger/0",
-                "timestamp": "2022-12-02T07:20:27.045833+00:00",
+                "timestamp": "2022-12-09T09:00:06.051619+00:00",
                 "changed_variables": {
                   "this": {
                     "entity_id": "automation.shutdown",
                     "state": "on",
                     "attributes": {
-                      "last_triggered": "2022-10-20T16:42:15.090493+00:00",
+                      "last_triggered": "2022-12-03T12:27:07.084758+00:00",
                       "mode": "single",
                       "current": 0,
                       "id": "1666283701554",
                       "friendly_name": "shutdown"
                     },
-                    "last_changed": "2022-12-01T18:19:50.634663+00:00",
-                    "last_updated": "2022-12-01T18:19:50.634663+00:00",
+                    "last_changed": "2022-12-08T06:15:38.907611+00:00",
+                    "last_updated": "2022-12-08T06:15:38.907611+00:00",
                     "context": {
-                      "id": "01GK7EN4ZAQKBY54CTRW1TZXT0",
+                      "id": "01GKR604MVVKTP6ZVH2THCDJAT",
                       "parent_id": null,
                       "user_id": null
                     }
@@ -697,7 +697,7 @@
                     "entity_id": "input_text.appdaemon_time",
                     "from_state": {
                       "entity_id": "input_text.appdaemon_time",
-                      "state": "2022-12-02 08:20:17.021364",
+                      "state": "2022-12-09 09:59:56.021674",
                       "attributes": {
                         "editable": false,
                         "min": 0,
@@ -706,17 +706,17 @@
                         "mode": "text",
                         "friendly_name": "Aktualni cas appdaemon"
                       },
-                      "last_changed": "2022-12-02T07:20:17.040325+00:00",
-                      "last_updated": "2022-12-02T07:20:17.040325+00:00",
+                      "last_changed": "2022-12-09T08:59:56.042414+00:00",
+                      "last_updated": "2022-12-09T08:59:56.042414+00:00",
                       "context": {
-                        "id": "01GK8VA5WGNZESAZHJ99T1JHFC",
+                        "id": "01GKV1SNRACD3ZBTF017980SSP",
                         "parent_id": null,
                         "user_id": "8ce8a24b5286443b9b989b180b6c3645"
                       }
                     },
                     "to_state": {
                       "entity_id": "input_text.appdaemon_time",
-                      "state": "2022-12-02 08:20:27.021629",
+                      "state": "2022-12-09 10:00:06.019342",
                       "attributes": {
                         "editable": false,
                         "min": 0,
@@ -725,10 +725,10 @@
                         "mode": "text",
                         "friendly_name": "Aktualni cas appdaemon"
                       },
-                      "last_changed": "2022-12-02T07:20:27.042340+00:00",
-                      "last_updated": "2022-12-02T07:20:27.042340+00:00",
+                      "last_changed": "2022-12-09T09:00:06.046989+00:00",
+                      "last_updated": "2022-12-09T09:00:06.046989+00:00",
                       "context": {
-                        "id": "01GK8VAFN2A8C11V02R8453N1X",
+                        "id": "01GKV1SZGYQPNQZS75198G5HQS",
                         "parent_id": null,
                         "user_id": "8ce8a24b5286443b9b989b180b6c3645"
                       }
@@ -743,7 +743,7 @@
             "condition/0": [
               {
                 "path": "condition/0",
-                "timestamp": "2022-12-02T07:20:27.045952+00:00",
+                "timestamp": "2022-12-09T09:00:06.051792+00:00",
                 "result": {
                   "result": false
                 }
@@ -752,10 +752,10 @@
             "condition/0/entity_id/0": [
               {
                 "path": "condition/0/entity_id/0",
-                "timestamp": "2022-12-02T07:20:27.046016+00:00",
+                "timestamp": "2022-12-09T09:00:06.051874+00:00",
                 "result": {
                   "result": false,
-                  "state": "2022-12-02 08:20:27.021629",
+                  "state": "2022-12-09 10:00:06.019342",
                   "wanted_state": "Shutdown"
                 }
               }
@@ -795,19 +795,19 @@
           },
           "blueprint_inputs": null,
           "context": {
-            "id": "01GK8VAFN54MKM05617KRY1KH6",
-            "parent_id": "01GK8VAFN2A8C11V02R8453N1X",
+            "id": "01GKV1SZH20B9S8YQRPWQ3J8T5",
+            "parent_id": "01GKV1SZGYQPNQZS75198G5HQS",
             "user_id": null
           }
         },
         "short_dict": {
           "last_step": "condition/0/entity_id/0",
-          "run_id": "ddfc84deb65485328496ac2c9644b069",
+          "run_id": "c62454bc469f8b6299b115ad48cb5abe",
           "state": "stopped",
           "script_execution": "failed_conditions",
           "timestamp": {
-            "start": "2022-12-02T07:20:27.045658+00:00",
-            "finish": "2022-12-02T07:20:27.046152+00:00"
+            "start": "2022-12-09T09:00:06.051354+00:00",
+            "finish": "2022-12-09T09:00:06.052025+00:00"
           },
           "domain": "automation",
           "item_id": "1666283701554",

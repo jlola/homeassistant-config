@@ -215,7 +215,7 @@
         "domain": "dlna_dmr",
         "title": "[TV]Samsung LED55",
         "data": {
-          "url": "http://192.168.89.28:7676/smp_16_"
+          "url": "http://192.168.89.28:7676/smp_14_"
         },
         "options": {},
         "pref_disable_new_entities": false,
@@ -231,8 +231,8 @@
         "title": "Archer C24 AC750 Dual Band Wi-Fi Router",
         "data": {
           "mac_address": "90:9a:4a:83:f3:ff",
-          "location": "http://192.168.89.57:1900/igd.xml",
-          "host": "192.168.89.57",
+          "location": "http://192.168.89.93:1900/igd.xml",
+          "host": "192.168.89.93",
           "st": "urn:schemas-upnp-org:device:InternetGatewayDevice:1"
         },
         "options": {},

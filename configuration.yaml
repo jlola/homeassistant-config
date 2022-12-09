@@ -19,8 +19,8 @@ logger:
 homeassistant:
   allowlist_external_dirs:
     - /config
-
   time_zone: Europe/Prague
+  country: CZ
   customize:
     sensor.3_temperature_outside:
       friendly_name: "Venkovní teplota"
