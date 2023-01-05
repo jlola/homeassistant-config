@@ -8,10 +8,22 @@ recorder:
   purge_keep_days: 3
   commit_interval: 60
   exclude:
+    domains:
+      - device_tracker
+      - media_player
+      - uptime
+      - time_date
+      - worldclock
     entities:
       - input_text.appdaemon_time
       - binary_sensor.appdaemon_4_running
       - sensor.appdaemon_4_version
+      - sensor.packets_in_eth0
+      - sensor.packets_out_eth0
+      - sensor.network_throughput_in_eth0
+      - sensor.network_in_eth0
+      - sensor.ups_current
+      - sensor.ups_psu_voltage
 
 logger:
   default: info
@@ -187,7 +199,7 @@ climate:
     min_temp: 15
     max_temp: 45
     ac_mode: False
-    target_temp: 30
+    target_temp: 35
     keep_alive:
       seconds: 10
     initial_hvac_mode: "heat"
@@ -205,7 +217,7 @@ climate:
     min_temp: 15
     max_temp: 60
     ac_mode: False
-    target_temp: 40
+    target_temp: 45
     keep_alive:
       seconds: 10
     initial_hvac_mode: "heat"
@@ -216,7 +228,7 @@ climate:
     pwm: 0
     difference: 100
     noiseband: 0.5
-    sampling_period: 5
+    sampling_period: 0.5
 
 input_select:
   pump_mode_floor_circle:

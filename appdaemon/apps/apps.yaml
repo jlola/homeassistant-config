@@ -2,6 +2,43 @@
 # hello_world:
 #   module: hello
 #   class: HelloWorld
+nspanel-1:
+  module: nspanel-lovelace-ui
+  class: NsPanelLovelaceUIManager
+  config:
+    panelRecvTopic: "tele/tasmota_nspanel_topic/RESULT"
+    panelSendTopic: "cmnd/tasmota_nspanel_topic/CustomSend"
+    model: eu
+    sleepBrightness:
+      - time: "7:00:00"
+        value: 0
+      - time: "23:00:00"
+        value: 0
+    locale: "cs_CZ"
+    screensaver:
+      entity: weather.home
+      doubleTapToUnlock: true
+      theme:
+        autoWeather: true
+      weatherOverrideForecast4:
+        entity: sensor.3_temperature_outside
+        name: "Aktualne"
+        icon: mdi:thermometer
+    cards:
+      - type: cardEntities
+        title: "Teplota nádrže"
+        entities:
+          - entity: sensor.tasmota_analog_temperature1
+          - entity: sensor.temp_tank_top
+          - entity: sensor.temp_tank_middle
+          - entity: sensor.temp_tank_bottom
+      - type: cardEntities
+        title: "Vetraky"
+        entities:
+          - entity: sensor.temp_bathroom
+          - entity: switch.switch_bathroom
+          - entity: sensor.temp_wc
+          - entity: switch.switch_wc
 
 wc_fun:
   module: funcontroller

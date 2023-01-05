@@ -27,7 +27,6 @@ CONF_COUNT = "count"
 CONF_PRECISION = "precision"
 CONF_OFFSET = "offset"
 CONF_COILS = "coils"
-CONF_OFFSET = "offset"
 CONF_BIT = "bit"
 CONF_OWID = "OwId"
 

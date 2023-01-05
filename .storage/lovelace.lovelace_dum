@@ -7,6 +7,41 @@
       "views": [
         {
           "theme": "Backend-selected",
+          "title": "Regulace",
+          "path": "vetraky",
+          "panel": false,
+          "type": "panel",
+          "badges": [],
+          "cards": [
+            {
+              "type": "history-graph",
+              "entities": [
+                {
+                  "entity": "climate.climate_floor_circle"
+                },
+                {
+                  "entity": "climate.climate_radiator_circle"
+                },
+                {
+                  "entity": "input_number.servo_time_floor_circle"
+                },
+                {
+                  "entity": "input_number.servo_time_radiator_circle"
+                },
+                {
+                  "entity": "input_number.servo_value_floor_circle"
+                },
+                {
+                  "entity": "input_number.servo_value_radiator_circle"
+                }
+              ],
+              "title": "Regulace",
+              "hours_to_show": 2
+            }
+          ]
+        },
+        {
+          "theme": "Backend-selected",
           "title": "Okruhy topení",
           "path": "lovelace",
           "type": "sidebar",
@@ -222,54 +257,6 @@
                 }
               ],
               "title": "Teplota boileru"
-            }
-          ]
-        },
-        {
-          "title": "Vetraky",
-          "path": "vetraky",
-          "panel": false,
-          "badges": [],
-          "cards": [
-            {
-              "type": "vertical-stack",
-              "cards": [
-                {
-                  "show_name": true,
-                  "show_icon": true,
-                  "type": "button",
-                  "tap_action": {
-                    "action": "toggle"
-                  },
-                  "entity": "switch.switch_bathroom",
-                  "icon": "mdi:fan",
-                  "show_state": true
-                },
-                {
-                  "show_name": true,
-                  "show_icon": true,
-                  "type": "button",
-                  "tap_action": {
-                    "action": "toggle"
-                  },
-                  "entity": "switch.switch_wc",
-                  "icon": "mdi:fan",
-                  "show_state": true
-                }
-              ]
-            },
-            {
-              "type": "history-graph",
-              "entities": [
-                {
-                  "entity": "sensor.temp_bathroom"
-                },
-                {
-                  "entity": "sensor.temp_wc"
-                }
-              ],
-              "hours_to_show": 48,
-              "refresh_interval": 0
             }
           ]
         }

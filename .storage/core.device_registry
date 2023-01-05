@@ -72,7 +72,7 @@
         "model": "Home Assistant Add-on",
         "name_by_user": null,
         "name": "AppDaemon",
-        "sw_version": "0.10.1",
+        "sw_version": "0.11.0",
         "via_device_id": null
       },
       {
@@ -120,7 +120,7 @@
         "model": "Home Assistant Operating System",
         "name_by_user": null,
         "name": "Home Assistant Operating System",
-        "sw_version": "9.3",
+        "sw_version": "9.4",
         "via_device_id": null
       },
       {
@@ -144,7 +144,7 @@
         "model": "Home Assistant Add-on",
         "name_by_user": null,
         "name": "Studio Code Server",
-        "sw_version": "5.4.1",
+        "sw_version": "5.5.1",
         "via_device_id": null
       },
       {
@@ -192,7 +192,7 @@
         "model": "Home Assistant Core",
         "name_by_user": null,
         "name": "Home Assistant Core",
-        "sw_version": "2022.12.1",
+        "sw_version": "2023.1.0",
         "via_device_id": null
       },
       {
@@ -216,7 +216,7 @@
         "model": "Home Assistant Supervisor",
         "name_by_user": null,
         "name": "Home Assistant Supervisor",
-        "sw_version": "2022.11.2",
+        "sw_version": "2022.12.1",
         "via_device_id": null
       },
       {
@@ -338,6 +338,78 @@
         "name": "SQLite Web",
         "sw_version": "3.6.1",
         "via_device_id": null
+      },
+      {
+        "area_id": "f749c88b12dc11ebbfcefd566cd89b9e",
+        "config_entries": [
+          "56500bb08793fa9189c8b8c25c91b3ae"
+        ],
+        "configuration_url": "homeassistant://hacs",
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": "service",
+        "hw_version": null,
+        "id": "b4144c69d5060ab89d2023420f0a6d3b",
+        "identifiers": [
+          [
+            "hacs",
+            "0717a0cd-745c-48fd-9b16-c8534c9704f9-bc944b0f-fd42-4a58-a072-ade38d1444cd"
+          ]
+        ],
+        "manufacturer": "hacs.xyz",
+        "model": "",
+        "name_by_user": null,
+        "name": "HACS",
+        "sw_version": "1.29.0",
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "af202d4e30dfcd4462768fceb9bb8c8a"
+        ],
+        "configuration_url": "homeassistant://hassio/addon/core_mosquitto",
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": "service",
+        "hw_version": null,
+        "id": "86529c6e977979f902e1fa5fb991b5c6",
+        "identifiers": [
+          [
+            "hassio",
+            "core_mosquitto"
+          ]
+        ],
+        "manufacturer": "Official add-ons",
+        "model": "Home Assistant Add-on",
+        "name_by_user": null,
+        "name": "Mosquitto broker",
+        "sw_version": "6.1.3",
+        "via_device_id": null
+      },
+      {
+        "area_id": "f749c88b12dc11ebbfcefd566cd89b9e",
+        "config_entries": [
+          "8287716edddc00cd39c2a39f7d8fdc82"
+        ],
+        "configuration_url": "http://192.168.89.54/",
+        "connections": [
+          [
+            "mac",
+            "0c:dc:7e:32:08:4c"
+          ]
+        ],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": null,
+        "id": "3518b9b88c7bd783cf843a0714d7d1f8",
+        "identifiers": [],
+        "manufacturer": "Tasmota",
+        "model": "NSPanel",
+        "name_by_user": null,
+        "name": "Tasmota",
+        "sw_version": "12.3.1.2",
+        "via_device_id": null
       }
     ],
     "deleted_devices": [
@@ -451,6 +523,20 @@
           ]
         ],
         "id": "2193f80feab5bcdd93c1229111900dca",
+        "orphaned_timestamp": null
+      },
+      {
+        "config_entries": [
+          "af202d4e30dfcd4462768fceb9bb8c8a"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "hassio",
+            "a0d7b954_sonweb"
+          ]
+        ],
+        "id": "bd516e8bbb14b14a968ac2a0dd38be9f",
         "orphaned_timestamp": null
       }
     ]

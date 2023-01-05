@@ -6,7 +6,8 @@
     "language": {
       "language": "en",
       "number_format": "language",
-      "time_format": "24"
+      "time_format": "24",
+      "first_weekday": "language"
     }
   }
 }

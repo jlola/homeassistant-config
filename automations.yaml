@@ -1,19 +1,12 @@
 - id: '1666283701554'
-  alias: shutdown
+  alias: purge db
   description: ''
   trigger:
-  - platform: state
-    entity_id:
-    - input_text.appdaemon_time
-  condition:
-  - condition: state
-    entity_id: input_text.appdaemon_time
-    state: Shutdown
-    for:
-      hours: 0
-      minutes: 0
-      seconds: 0
+  - platform: time
+    at: 04:00:00
+  condition: []
   action:
-  - service: hassio.host_shutdown
-    data: {}
+  - service: recorder.purge
+    data:
+      repack: true
   mode: single

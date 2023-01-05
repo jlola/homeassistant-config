@@ -7,7 +7,7 @@
       "views": [
         {
           "theme": "Backend-selected",
-          "title": "Home",
+          "title": "Teploty",
           "badges": [],
           "cards": [
             {
@@ -32,6 +32,9 @@
                 },
                 {
                   "entity": "sensor.temp_tank_bottom"
+                },
+                {
+                  "entity": "sensor.tasmota_analog_temperature1"
                 }
               ],
               "title": "Teplota nádrže"
@@ -55,6 +58,54 @@
               "type": "entity",
               "entity": "binary_sensor.binary_sensor_5_2_hdo",
               "name": "Nízký tarif"
+            }
+          ]
+        },
+        {
+          "theme": "Backend-selected",
+          "title": "Vetraky",
+          "path": "vetraky",
+          "badges": [],
+          "cards": [
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "tap_action": {
+                    "action": "toggle"
+                  },
+                  "entity": "switch.switch_bathroom",
+                  "icon": "mdi:fan",
+                  "show_state": true
+                },
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "tap_action": {
+                    "action": "toggle"
+                  },
+                  "entity": "switch.switch_wc",
+                  "icon": "mdi:fan",
+                  "show_state": true
+                }
+              ]
+            },
+            {
+              "type": "history-graph",
+              "entities": [
+                {
+                  "entity": "sensor.temp_bathroom"
+                },
+                {
+                  "entity": "sensor.temp_wc"
+                }
+              ],
+              "hours_to_show": 48,
+              "refresh_interval": 0
             }
           ]
         }

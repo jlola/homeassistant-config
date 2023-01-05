@@ -1,10 +1,11 @@
 {
   "version": 1,
-  "minor_version": 8,
+  "minor_version": 10,
   "key": "core.entity_registry",
   "data": {
     "entities": [
       {
+        "aliases": [],
         "area_id": "f749a3c612dc11eb96f5c948097b03f4",
         "capabilities": null,
         "config_entry_id": null,
@@ -24,10 +25,12 @@
         "original_name": "Josef Lola",
         "platform": "person",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "josef_lola",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "fb92a6fe12dc11eb8f497780613272f0",
@@ -47,10 +50,12 @@
         "original_name": "Home",
         "platform": "met",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "home",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "fb92a6fe12dc11eb8f497780613272f0",
@@ -70,10 +75,12 @@
         "original_name": "Home hourly",
         "platform": "met",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "home-hourly",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "fc2ea8ae12dc11eba1cd171d3db553b7",
@@ -93,10 +100,12 @@
         "original_name": "RPi Power status",
         "platform": "rpi_power",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "rpi_power",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": null,
@@ -116,10 +125,12 @@
         "original_name": "doma",
         "platform": "zone",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "doma",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -139,10 +150,12 @@
         "original_name": "Update available",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "core_ssh_update_available",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -162,10 +175,12 @@
         "original_name": "Update available",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "a0d7b954_appdaemon_update_available",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -185,10 +200,12 @@
         "original_name": "Update available",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "a0d7b954_portainer_update_available",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -208,10 +225,12 @@
         "original_name": "Update available",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "home_assistant_os_update_available",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -231,10 +250,12 @@
         "original_name": "Version",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "core_ssh_version",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -254,10 +275,12 @@
         "original_name": "Version",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "a0d7b954_appdaemon_version",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -277,10 +300,12 @@
         "original_name": "Version",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "a0d7b954_portainer_version",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -300,10 +325,12 @@
         "original_name": "Version",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "home_assistant_os_version",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -323,10 +350,12 @@
         "original_name": "Newest version",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "core_ssh_version_latest",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -346,10 +375,12 @@
         "original_name": "Newest version",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "a0d7b954_appdaemon_version_latest",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -369,10 +400,12 @@
         "original_name": "Newest version",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "a0d7b954_portainer_version_latest",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -392,10 +425,12 @@
         "original_name": "Newest version",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "home_assistant_os_version_latest",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": null,
@@ -415,10 +450,12 @@
         "original_name": "T okruh podlaha",
         "platform": "input_number",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "t_okruh_podlahovka",
         "unit_of_measurement": "°C"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": null,
@@ -438,10 +475,12 @@
         "original_name": "T okruh radiator",
         "platform": "input_number",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "t_okruh_radiator",
         "unit_of_measurement": "°C"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": null,
@@ -461,10 +500,12 @@
         "original_name": "T kotle",
         "platform": "input_number",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "tkotle",
         "unit_of_measurement": "°C"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": null,
@@ -484,10 +525,12 @@
         "original_name": "T nadrze horni",
         "platform": "input_number",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "t_nadrze_horni",
         "unit_of_measurement": "°C"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -507,10 +550,12 @@
         "original_name": "Update available",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "a0d7b954_vscode_update_available",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -530,10 +575,12 @@
         "original_name": "Version",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "a0d7b954_vscode_version",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -553,10 +600,12 @@
         "original_name": "Newest version",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "a0d7b954_vscode_version_latest",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {},
         "config_entry_id": null,
@@ -576,10 +625,12 @@
         "original_name": "Set point circle floor",
         "platform": "input_number",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "setpoint_circle_floor",
         "unit_of_measurement": "°C"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "options": [
@@ -605,10 +656,12 @@
         "original_name": "Režim čerpadla",
         "platform": "input_select",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "floor_pump_mode",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "options": [
@@ -634,10 +687,12 @@
         "original_name": "Režim čerpadla",
         "platform": "input_select",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "heater_pump_mode",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {},
         "config_entry_id": null,
@@ -657,10 +712,12 @@
         "original_name": "Heater servo time",
         "platform": "input_number",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "heater_servo_time",
         "unit_of_measurement": "s"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {},
         "config_entry_id": null,
@@ -680,10 +737,12 @@
         "original_name": "Set point circle radiator",
         "platform": "input_number",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "setpoint_circle_radiator",
         "unit_of_measurement": "°C"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {},
         "config_entry_id": null,
@@ -703,10 +762,12 @@
         "original_name": "Floor servo mode",
         "platform": "input_select",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "floor_servo_mode",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {},
         "config_entry_id": null,
@@ -726,10 +787,12 @@
         "original_name": "Heater servo mode",
         "platform": "input_select",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "heater_servo_mode",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -749,10 +812,12 @@
         "original_name": "Update available",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "core_git_pull_update_available",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -772,10 +837,12 @@
         "original_name": "Version",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "core_git_pull_version",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -795,10 +862,12 @@
         "original_name": "Newest version",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "core_git_pull_version_latest",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -818,10 +887,12 @@
         "original_name": "Running",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "core_ssh_state",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -841,10 +912,12 @@
         "original_name": "Running",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "a0d7b954_appdaemon_state",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -864,10 +937,12 @@
         "original_name": "Running",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "a0d7b954_portainer_state",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -887,10 +962,12 @@
         "original_name": "Running",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "a0d7b954_vscode_state",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -910,10 +987,12 @@
         "original_name": "Running",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "core_git_pull_state",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {},
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -933,10 +1012,12 @@
         "original_name": "Home Assistant Operating System: Running",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "home_assistant_os_state",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -958,10 +1039,12 @@
         "original_name": "CPU percent",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "core_ssh_cpu_percent",
         "unit_of_measurement": "%"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -983,10 +1066,12 @@
         "original_name": "Memory percent",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "core_ssh_memory_percent",
         "unit_of_measurement": "%"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -1008,10 +1093,12 @@
         "original_name": "CPU percent",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "a0d7b954_appdaemon_cpu_percent",
         "unit_of_measurement": "%"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -1033,10 +1120,12 @@
         "original_name": "Memory percent",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "a0d7b954_appdaemon_memory_percent",
         "unit_of_measurement": "%"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -1058,10 +1147,12 @@
         "original_name": "CPU percent",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "a0d7b954_portainer_cpu_percent",
         "unit_of_measurement": "%"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -1083,10 +1174,12 @@
         "original_name": "Memory percent",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "a0d7b954_portainer_memory_percent",
         "unit_of_measurement": "%"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -1108,10 +1201,12 @@
         "original_name": "CPU percent",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "a0d7b954_vscode_cpu_percent",
         "unit_of_measurement": "%"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -1133,10 +1228,12 @@
         "original_name": "Memory percent",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "a0d7b954_vscode_memory_percent",
         "unit_of_measurement": "%"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -1158,10 +1255,12 @@
         "original_name": "CPU percent",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "core_git_pull_cpu_percent",
         "unit_of_measurement": "%"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -1183,10 +1282,12 @@
         "original_name": "Memory percent",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "core_git_pull_memory_percent",
         "unit_of_measurement": "%"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -1206,10 +1307,12 @@
         "original_name": "Update",
         "platform": "hassio",
         "supported_features": 1,
+        "translation_key": null,
         "unique_id": "home_assistant_supervisor_version_latest",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -1229,10 +1332,12 @@
         "original_name": "Update",
         "platform": "hassio",
         "supported_features": 11,
+        "translation_key": null,
         "unique_id": "home_assistant_core_version_latest",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -1252,10 +1357,12 @@
         "original_name": "Update",
         "platform": "hassio",
         "supported_features": 25,
+        "translation_key": null,
         "unique_id": "core_ssh_version_latest",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -1275,10 +1382,12 @@
         "original_name": "Update",
         "platform": "hassio",
         "supported_features": 25,
+        "translation_key": null,
         "unique_id": "a0d7b954_appdaemon_version_latest",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -1298,10 +1407,12 @@
         "original_name": "Update",
         "platform": "hassio",
         "supported_features": 25,
+        "translation_key": null,
         "unique_id": "a0d7b954_portainer_version_latest",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -1321,10 +1432,12 @@
         "original_name": "Update",
         "platform": "hassio",
         "supported_features": 25,
+        "translation_key": null,
         "unique_id": "a0d7b954_vscode_version_latest",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -1344,10 +1457,12 @@
         "original_name": "Update",
         "platform": "hassio",
         "supported_features": 25,
+        "translation_key": null,
         "unique_id": "core_git_pull_version_latest",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -1367,10 +1482,12 @@
         "original_name": "Update",
         "platform": "hassio",
         "supported_features": 3,
+        "translation_key": null,
         "unique_id": "home_assistant_os_version_latest",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": null,
@@ -1390,10 +1507,12 @@
         "original_name": "Minimalni teplota nadrze",
         "platform": "input_number",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "pump_t_tank_min_heater",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "options": [
@@ -1420,10 +1539,12 @@
         "original_name": "Režim čerpadla",
         "platform": "input_select",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "pump_mode_floor_circle",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "options": [
@@ -1450,10 +1571,12 @@
         "original_name": "Režim čerpadla",
         "platform": "input_select",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "pump_mode_radiator_circle",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": null,
@@ -1473,10 +1596,12 @@
         "original_name": "Otevření serva podlahy (%)",
         "platform": "input_number",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "servo_value_floor_circle",
         "unit_of_measurement": "%"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": null,
@@ -1496,10 +1621,12 @@
         "original_name": "Otevření serva radiátorů (%)",
         "platform": "input_number",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "servo_value_radiator_circle",
         "unit_of_measurement": "%"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": null,
@@ -1519,10 +1646,12 @@
         "original_name": null,
         "platform": "input_number",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "servo_time_radiator_circle",
         "unit_of_measurement": "s"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": null,
@@ -1542,10 +1671,12 @@
         "original_name": null,
         "platform": "input_number",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "servo_time_floor_circle",
         "unit_of_measurement": "s"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": null,
@@ -1565,10 +1696,12 @@
         "original_name": null,
         "platform": "input_number",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "setpoint_floor_circle",
         "unit_of_measurement": "°C"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": null,
@@ -1588,10 +1721,12 @@
         "original_name": null,
         "platform": "input_number",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "setpoint_radiator_circle",
         "unit_of_measurement": "°C"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": null,
@@ -1611,10 +1746,12 @@
         "original_name": "Minimalni teplota kotle",
         "platform": "input_number",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "pump_temp_boiler_min_floor_circle",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": null,
@@ -1634,10 +1771,12 @@
         "original_name": "Minimalni teplota kotle",
         "platform": "input_number",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "pump_temp_boiler_min_radiator_circle",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": null,
@@ -1657,10 +1796,12 @@
         "original_name": "Minimalni teplota nadrze",
         "platform": "input_number",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "pump_temp_tank_min_floor_circle",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": null,
@@ -1680,10 +1821,12 @@
         "original_name": "Minimalni teplota nadrze",
         "platform": "input_number",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "pump_temp_tank_min_radiator_circle",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "options": [
@@ -1709,10 +1852,12 @@
         "original_name": "Režim boileru",
         "platform": "input_select",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "water_heater_mode",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": null,
@@ -1732,10 +1877,12 @@
         "original_name": "Minimální teplota kotle",
         "platform": "input_number",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "min_temp_boiler_pump_floor_circle",
         "unit_of_measurement": "°C"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": null,
@@ -1755,10 +1902,12 @@
         "original_name": "Minimální teplota kotle",
         "platform": "input_number",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "min_temp_boiler_pump_radiator_circle",
         "unit_of_measurement": "°C"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": null,
@@ -1778,10 +1927,12 @@
         "original_name": "Minimální teplota nádrže",
         "platform": "input_number",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "min_temp_tank_pump_floor_circle",
         "unit_of_measurement": "°C"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": null,
@@ -1801,10 +1952,12 @@
         "original_name": "Minimální teplota nádrže",
         "platform": "input_number",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "min_temp_tank_pump_radiator_circle",
         "unit_of_measurement": "°C"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": null,
@@ -1824,10 +1977,12 @@
         "original_name": null,
         "platform": "input_number",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "min_temp_tank_water_heater",
         "unit_of_measurement": "°C"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": null,
@@ -1847,10 +2002,12 @@
         "original_name": null,
         "platform": "input_number",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "min_temp_boiler_water_heater",
         "unit_of_measurement": "°C"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": null,
@@ -1870,10 +2027,12 @@
         "original_name": "Homeserver Uptime",
         "platform": "template",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "sensor.rpi_monitor_homeserver.uptime",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": null,
@@ -1893,10 +2052,12 @@
         "original_name": "Homeserver used ext space",
         "platform": "template",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "sensor.rpi_monitor_homeserver.mnt-extssd_space_prcnt",
         "unit_of_measurement": "%"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": null,
@@ -1916,10 +2077,12 @@
         "original_name": "Homeserver CPU 1min",
         "platform": "template",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "sensor.rpi_monitor_homeserver.cpu_1min",
         "unit_of_measurement": "%"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": null,
@@ -1939,10 +2102,12 @@
         "original_name": "Homeserver free memory",
         "platform": "template",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "sensor.rpi_monitor_homeserver.free_memory",
         "unit_of_measurement": "MB"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -1964,10 +2129,12 @@
         "original_name": "Disk use (percent) /config",
         "platform": "systemmonitor",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "disk_use_percent_config",
         "unit_of_measurement": "%"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -1984,15 +2151,17 @@
         "has_entity_name": false,
         "name": null,
         "options": {},
-        "original_device_class": null,
+        "original_device_class": "data_size",
         "original_icon": "mdi:harddisk",
         "original_name": "Disk use /",
         "platform": "systemmonitor",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "disk_use",
         "unit_of_measurement": "GiB"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -2009,15 +2178,17 @@
         "has_entity_name": false,
         "name": null,
         "options": {},
-        "original_device_class": null,
+        "original_device_class": "data_size",
         "original_icon": "mdi:harddisk",
         "original_name": "Disk free /",
         "platform": "systemmonitor",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "disk_free",
         "unit_of_measurement": "GiB"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -2039,10 +2210,12 @@
         "original_name": "Memory use (percent)",
         "platform": "systemmonitor",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "memory_use_percent",
         "unit_of_measurement": "%"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -2059,15 +2232,17 @@
         "has_entity_name": false,
         "name": null,
         "options": {},
-        "original_device_class": null,
+        "original_device_class": "data_size",
         "original_icon": "mdi:memory",
         "original_name": "Memory use",
         "platform": "systemmonitor",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "memory_use",
         "unit_of_measurement": "MiB"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -2084,15 +2259,17 @@
         "has_entity_name": false,
         "name": null,
         "options": {},
-        "original_device_class": null,
+        "original_device_class": "data_size",
         "original_icon": "mdi:memory",
         "original_name": "Memory free",
         "platform": "systemmonitor",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "memory_free",
         "unit_of_measurement": "MiB"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -2114,10 +2291,12 @@
         "original_name": "Swap use (percent)",
         "platform": "systemmonitor",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "swap_use_percent",
         "unit_of_measurement": "%"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -2134,15 +2313,17 @@
         "has_entity_name": false,
         "name": null,
         "options": {},
-        "original_device_class": null,
+        "original_device_class": "data_size",
         "original_icon": "mdi:harddisk",
         "original_name": "Swap use",
         "platform": "systemmonitor",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "swap_use",
         "unit_of_measurement": "MiB"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -2159,15 +2340,17 @@
         "has_entity_name": false,
         "name": null,
         "options": {},
-        "original_device_class": null,
+        "original_device_class": "data_size",
         "original_icon": "mdi:harddisk",
         "original_name": "Swap free",
         "platform": "systemmonitor",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "swap_free",
         "unit_of_measurement": "MiB"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -2189,10 +2372,12 @@
         "original_name": "Load (1m)",
         "platform": "systemmonitor",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "load_1m",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -2214,10 +2399,12 @@
         "original_name": "Load (5m)",
         "platform": "systemmonitor",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "load_5m",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -2239,10 +2426,12 @@
         "original_name": "Load (15m)",
         "platform": "systemmonitor",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "load_15m",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "total_increasing"
@@ -2259,15 +2448,17 @@
         "has_entity_name": false,
         "name": null,
         "options": {},
-        "original_device_class": null,
+        "original_device_class": "data_size",
         "original_icon": "mdi:server-network",
         "original_name": "Network in eth0",
         "platform": "systemmonitor",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "network_in_eth0",
         "unit_of_measurement": "MiB"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "total_increasing"
@@ -2284,15 +2475,17 @@
         "has_entity_name": false,
         "name": null,
         "options": {},
-        "original_device_class": null,
+        "original_device_class": "data_size",
         "original_icon": "mdi:server-network",
         "original_name": "Network out eth0",
         "platform": "systemmonitor",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "network_out_eth0",
         "unit_of_measurement": "MiB"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -2309,15 +2502,17 @@
         "has_entity_name": false,
         "name": null,
         "options": {},
-        "original_device_class": null,
-        "original_icon": "mdi:server-network",
+        "original_device_class": "data_rate",
+        "original_icon": null,
         "original_name": "Network throughput in eth0",
         "platform": "systemmonitor",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "throughput_network_in_eth0",
         "unit_of_measurement": "MB/s"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -2334,15 +2529,17 @@
         "has_entity_name": false,
         "name": null,
         "options": {},
-        "original_device_class": null,
-        "original_icon": "mdi:server-network",
+        "original_device_class": "data_rate",
+        "original_icon": null,
         "original_name": "Network throughput out eth0",
         "platform": "systemmonitor",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "throughput_network_out_eth0",
         "unit_of_measurement": "MB/s"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "total_increasing"
@@ -2364,10 +2561,12 @@
         "original_name": "Packets in eth0",
         "platform": "systemmonitor",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "packets_in_eth0",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "total_increasing"
@@ -2389,10 +2588,12 @@
         "original_name": "Packets out eth0",
         "platform": "systemmonitor",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "packets_out_eth0",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": null,
@@ -2412,10 +2613,12 @@
         "original_name": "IPv4 address eth0",
         "platform": "systemmonitor",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "ipv4_address_eth0",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": null,
@@ -2435,10 +2638,12 @@
         "original_name": "IPv6 address eth0",
         "platform": "systemmonitor",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "ipv6_address_eth0",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -2460,10 +2665,12 @@
         "original_name": "Processor use",
         "platform": "systemmonitor",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "processor_use",
         "unit_of_measurement": "%"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -2485,10 +2692,12 @@
         "original_name": "Processor temperature",
         "platform": "systemmonitor",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "processor_temperature",
         "unit_of_measurement": "°C"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": null,
@@ -2508,10 +2717,12 @@
         "original_name": "Last boot",
         "platform": "systemmonitor",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "last_boot",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "hvac_modes": [
@@ -2542,10 +2753,12 @@
         "original_name": "climate_floor_circle",
         "platform": "smart_thermostat",
         "supported_features": 17,
+        "translation_key": null,
         "unique_id": "smart_thermostat_climate_floor_circle_input_number_servo_value_floor_circle",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "hvac_modes": [
@@ -2576,10 +2789,12 @@
         "original_name": "climate_radiator_circle",
         "platform": "smart_thermostat",
         "supported_features": 17,
+        "translation_key": null,
         "unique_id": "smart_thermostat_climate_radiator_circle_input_number_servo_value_radiator_circle",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -2601,10 +2816,12 @@
         "original_name": "Disk use (percent) /",
         "platform": "systemmonitor",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "disk_use_percent",
         "unit_of_measurement": "%"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "total"
@@ -2626,10 +2843,12 @@
         "original_name": "waterheater_power",
         "platform": "integration",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "waterheater_power3",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "total"
@@ -2651,10 +2870,12 @@
         "original_name": null,
         "platform": "energy",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "sensor.energy_grid_cost",
         "unit_of_measurement": "EUR"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": null,
@@ -2674,10 +2895,12 @@
         "original_name": "Aktualni cas appdaemon",
         "platform": "input_text",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "appdaemon_time",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -2697,10 +2920,12 @@
         "original_name": "Update available",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "1f3d020e_hassos_ssh_configurator_addon_update_available",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -2720,10 +2945,12 @@
         "original_name": "Running",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "1f3d020e_hassos_ssh_configurator_addon_state",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -2743,10 +2970,12 @@
         "original_name": "Update",
         "platform": "hassio",
         "supported_features": 25,
+        "translation_key": null,
         "unique_id": "1f3d020e_hassos_ssh_configurator_addon_version_latest",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -2766,10 +2995,12 @@
         "original_name": "Version",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "1f3d020e_hassos_ssh_configurator_addon_version",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -2789,10 +3020,12 @@
         "original_name": "Newest version",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "1f3d020e_hassos_ssh_configurator_addon_version_latest",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -2814,10 +3047,12 @@
         "original_name": "CPU percent",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "1f3d020e_hassos_ssh_configurator_addon_cpu_percent",
         "unit_of_measurement": "%"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -2839,10 +3074,12 @@
         "original_name": "Memory percent",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "1f3d020e_hassos_ssh_configurator_addon_memory_percent",
         "unit_of_measurement": "%"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -2862,10 +3099,12 @@
         "original_name": "Update",
         "platform": "hassio",
         "supported_features": 25,
+        "translation_key": null,
         "unique_id": "1f3d020e_hassosi2cconfiguratoraddon_version_latest",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -2885,10 +3124,12 @@
         "original_name": "Update available",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "1f3d020e_hassosi2cconfiguratoraddon_update_available",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -2908,10 +3149,12 @@
         "original_name": "Running",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "1f3d020e_hassosi2cconfiguratoraddon_state",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -2931,10 +3174,12 @@
         "original_name": "Version",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "1f3d020e_hassosi2cconfiguratoraddon_version",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -2954,10 +3199,12 @@
         "original_name": "Newest version",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "1f3d020e_hassosi2cconfiguratoraddon_version_latest",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -2979,10 +3226,12 @@
         "original_name": "CPU percent",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "1f3d020e_hassosi2cconfiguratoraddon_cpu_percent",
         "unit_of_measurement": "%"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -3004,10 +3253,12 @@
         "original_name": "Memory percent",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "1f3d020e_hassosi2cconfiguratoraddon_memory_percent",
         "unit_of_measurement": "%"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -3027,10 +3278,12 @@
         "original_name": "Redmi 4X",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "d04f688c2ae277d7",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -3050,10 +3303,12 @@
         "original_name": "Redmi 4X Detected Activity",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_detected_activity",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -3075,10 +3330,12 @@
         "original_name": "Redmi 4X Sleep Confidence",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_sleep_confidence",
         "unit_of_measurement": "%"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -3098,10 +3355,12 @@
         "original_name": "Redmi 4X Sleep Segment",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_sleep_segment",
         "unit_of_measurement": "ms"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -3121,10 +3380,12 @@
         "original_name": "Redmi 4X Current Version",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_current_version",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "total_increasing"
@@ -3146,10 +3407,12 @@
         "original_name": "Redmi 4X App Rx GB",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_app_rx_gb",
         "unit_of_measurement": "GB"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "total_increasing"
@@ -3171,10 +3434,12 @@
         "original_name": "Redmi 4X App Tx GB",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_app_tx_gb",
         "unit_of_measurement": "GB"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -3196,10 +3461,12 @@
         "original_name": "Redmi 4X App Memory",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_app_memory",
         "unit_of_measurement": "GB"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -3219,10 +3486,12 @@
         "original_name": "Redmi 4X App Inactive",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_app_inactive",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -3242,10 +3511,12 @@
         "original_name": "Redmi 4X App Standby Bucket",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_app_standby_bucket",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -3265,10 +3536,12 @@
         "original_name": "Redmi 4X App Importance",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_app_importance",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -3288,10 +3561,12 @@
         "original_name": "Redmi 4X Ringer Mode",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_audio_sensor",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -3311,10 +3586,12 @@
         "original_name": "Redmi 4X Audio Mode",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_audio_mode",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -3334,10 +3611,12 @@
         "original_name": "Redmi 4X Headphones",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_headphone_state",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -3357,10 +3636,12 @@
         "original_name": "Redmi 4X Mic Muted",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_mic_muted",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -3380,10 +3661,12 @@
         "original_name": "Redmi 4X Speakerphone",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_speakerphone_state",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -3403,10 +3686,12 @@
         "original_name": "Redmi 4X Music Active",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_music_active",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -3426,10 +3711,12 @@
         "original_name": "Redmi 4X Volume Level Alarm",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_volume_alarm",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -3449,10 +3736,12 @@
         "original_name": "Redmi 4X Volume Level Call",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_volume_call",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -3472,10 +3761,12 @@
         "original_name": "Redmi 4X Volume Level Music",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_volume_music",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -3495,10 +3786,12 @@
         "original_name": "Redmi 4X Volume Level Ringer",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_volume_ring",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -3518,10 +3811,12 @@
         "original_name": "Redmi 4X Volume Level Notification",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_volume_notification",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -3541,10 +3836,12 @@
         "original_name": "Redmi 4X Volume Level System",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_volume_system",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -3564,10 +3861,12 @@
         "original_name": "Redmi 4X Volume Level DTMF",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_volume_dtmf",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -3587,10 +3886,12 @@
         "original_name": "Redmi 4X Volume Level Accessibility",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_volume_accessibility",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -3610,10 +3911,12 @@
         "original_name": "Redmi 4X Battery Level",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_battery_level",
         "unit_of_measurement": "%"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -3633,10 +3936,12 @@
         "original_name": "Redmi 4X Battery State",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_battery_state",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -3656,10 +3961,12 @@
         "original_name": "Redmi 4X Is Charging",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_is_charging",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -3679,10 +3986,12 @@
         "original_name": "Redmi 4X Charger Type",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_charger_type",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -3702,10 +4011,12 @@
         "original_name": "Redmi 4X Battery Health",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_battery_health",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -3725,10 +4036,12 @@
         "original_name": "Redmi 4X Battery Temperature",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_battery_temperature",
         "unit_of_measurement": "°C"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -3748,10 +4061,12 @@
         "original_name": "Redmi 4X Battery Power",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_battery_power",
         "unit_of_measurement": "W"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -3773,10 +4088,12 @@
         "original_name": "Redmi 4X Bluetooth Connection",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_bluetooth_connection",
         "unit_of_measurement": "connection(s)"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -3796,10 +4113,12 @@
         "original_name": "Redmi 4X Bluetooth State",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_bluetooth_state",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -3819,10 +4138,12 @@
         "original_name": "Redmi 4X BLE Transmitter",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_ble_emitter",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -3842,10 +4163,12 @@
         "original_name": "Redmi 4X Beacon Monitor",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_beacon_monitor",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -3865,10 +4188,12 @@
         "original_name": "Redmi 4X Do Not Disturb Sensor",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_dnd_sensor",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -3888,10 +4213,12 @@
         "original_name": "Redmi 4X Work Profile",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_is_work_profile",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -3911,10 +4238,12 @@
         "original_name": "Redmi 4X Geocoded Location",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_geocoded_location",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -3934,10 +4263,12 @@
         "original_name": "Redmi 4X Device Locked",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_device_locked",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -3957,10 +4288,12 @@
         "original_name": "Redmi 4X Device Secure",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_device_secure",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -3980,10 +4313,12 @@
         "original_name": "Redmi 4X Keyguard Locked",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_keyguard_locked",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -4003,10 +4338,12 @@
         "original_name": "Redmi 4X Keyguard Secure",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_keyguard_secure",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -4026,10 +4363,12 @@
         "original_name": "Redmi 4X Last Used App",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_last_used_app",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -4049,10 +4388,12 @@
         "original_name": "Redmi 4X Last Reboot",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_last_reboot",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -4072,10 +4413,12 @@
         "original_name": "Redmi 4X Last Update Trigger",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_last_update",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -4097,10 +4440,12 @@
         "original_name": "Redmi 4X Light Sensor",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_light_sensor",
         "unit_of_measurement": "lx"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -4120,10 +4465,12 @@
         "original_name": "Redmi 4X High Accuracy Mode",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_high_accuracy_mode",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -4143,10 +4490,12 @@
         "original_name": "Redmi 4X High Accuracy Update Interval",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_high_accuracy_update_interval",
         "unit_of_measurement": "seconds"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -4166,10 +4515,12 @@
         "original_name": "Redmi 4X Mobile Data",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_mobile_data",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -4189,10 +4540,12 @@
         "original_name": "Redmi 4X Mobile Data Roaming",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_mobile_data_roaming",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -4212,10 +4565,12 @@
         "original_name": "Redmi 4X WiFi Connection",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_wifi_connection",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -4235,10 +4590,12 @@
         "original_name": "Redmi 4X WiFi BSSID",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_wifi_bssid",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -4258,10 +4615,12 @@
         "original_name": "Redmi 4X WiFi IP Address",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_wifi_ip_address",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -4283,10 +4642,12 @@
         "original_name": "Redmi 4X WiFi Link Speed",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_wifi_link_speed",
         "unit_of_measurement": "Mbps"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -4306,10 +4667,12 @@
         "original_name": "Redmi 4X WiFi State",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_wifi_state",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -4331,10 +4694,12 @@
         "original_name": "Redmi 4X WiFi Frequency",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_wifi_frequency",
         "unit_of_measurement": "MHz"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -4356,10 +4721,12 @@
         "original_name": "Redmi 4X WiFi Signal Strength",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_wifi_signal_strength",
         "unit_of_measurement": "dBm"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -4379,10 +4746,12 @@
         "original_name": "Redmi 4X Public IP Address",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_public_ip_address",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -4402,10 +4771,12 @@
         "original_name": "Redmi 4X Network Type",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_network_type",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -4425,10 +4796,12 @@
         "original_name": "Redmi 4X Next Alarm",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_next_alarm",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -4448,10 +4821,12 @@
         "original_name": "Redmi 4X Last Notification",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_last_notification",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -4471,10 +4846,12 @@
         "original_name": "Redmi 4X Last Removed Notification",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_last_removed_notification",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -4496,10 +4873,12 @@
         "original_name": "Redmi 4X Active Notification Count",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_active_notification_count",
         "unit_of_measurement": "notifications"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -4519,10 +4898,12 @@
         "original_name": "Redmi 4X Media Session",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_media_session",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -4542,10 +4923,12 @@
         "original_name": "Redmi 4X Phone State",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_phone_state",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -4565,10 +4948,12 @@
         "original_name": "Redmi 4X SIM 1",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_sim_1",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -4588,10 +4973,12 @@
         "original_name": "Redmi 4X SIM 2",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_sim_2",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -4611,10 +4998,12 @@
         "original_name": "Redmi 4X Interactive",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_is_interactive",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -4634,10 +5023,12 @@
         "original_name": "Redmi 4X Doze Mode",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_is_idle",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -4657,10 +5048,12 @@
         "original_name": "Redmi 4X Power Save",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_power_save",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -4680,10 +5073,12 @@
         "original_name": "Redmi 4X Proximity Sensor",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_proximity_sensor",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "total_increasing"
@@ -4705,10 +5100,12 @@
         "original_name": "Redmi 4X Steps Sensor",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_steps_sensor",
         "unit_of_measurement": "steps"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -4730,10 +5127,12 @@
         "original_name": "Redmi 4X Internal Storage",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_storage_sensor",
         "unit_of_measurement": "%"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -4755,10 +5154,12 @@
         "original_name": "Redmi 4X External Storage",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_external_storage",
         "unit_of_measurement": "%"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -4778,10 +5179,12 @@
         "original_name": "Redmi 4X Current Time Zone",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_current_time_zone",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "total_increasing"
@@ -4803,10 +5206,12 @@
         "original_name": "Redmi 4X Mobile Rx GB",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_mobile_rx_gb",
         "unit_of_measurement": "GB"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "total_increasing"
@@ -4828,10 +5233,12 @@
         "original_name": "Redmi 4X Mobile Tx GB",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_mobile_tx_gb",
         "unit_of_measurement": "GB"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "total_increasing"
@@ -4853,10 +5260,12 @@
         "original_name": "Redmi 4X Total Rx GB",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_total_rx_gb",
         "unit_of_measurement": "GB"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "total_increasing"
@@ -4878,10 +5287,12 @@
         "original_name": "Redmi 4X Total Tx GB",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_total_tx_gb",
         "unit_of_measurement": "GB"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -4901,10 +5312,12 @@
         "original_name": "Redmi 4X Screen Brightness",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_screen_brightness",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": null,
@@ -4924,10 +5337,12 @@
         "original_name": "ups_online_tester",
         "platform": "input_boolean",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "ups_online_tester",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": null,
@@ -4944,13 +5359,15 @@
         "options": {},
         "original_device_class": null,
         "original_icon": null,
-        "original_name": "shutdown",
+        "original_name": "purge db",
         "platform": "automation",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "1666283701554",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "0d746ff6b2300da552ab87d790f46333",
@@ -4970,10 +5387,12 @@
         "original_name": "Redmi 4X Screen Off Timeout",
         "platform": "mobile_app",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566_screen_off_timeout",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -4990,15 +5409,17 @@
         "has_entity_name": true,
         "name": null,
         "options": {},
-        "original_device_class": null,
+        "original_device_class": "data_size",
         "original_icon": "mdi:file",
         "original_name": "Size",
         "platform": "filesize",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "baccb4bfb11813a130b4f5666fb90b63",
         "unit_of_measurement": "MB"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -5015,15 +5436,17 @@
         "has_entity_name": true,
         "name": null,
         "options": {},
-        "original_device_class": null,
+        "original_device_class": "data_size",
         "original_icon": "mdi:file",
         "original_name": "Size bytes",
         "platform": "filesize",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "baccb4bfb11813a130b4f5666fb90b63-bytes",
         "unit_of_measurement": "B"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -5045,10 +5468,12 @@
         "original_name": "Last Updated",
         "platform": "filesize",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "baccb4bfb11813a130b4f5666fb90b63-last_updated",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -5068,10 +5493,12 @@
         "original_name": "Running",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "a0d7b954_sqlite-web_state",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -5091,10 +5518,12 @@
         "original_name": "Version",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "a0d7b954_sqlite-web_version",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -5114,10 +5543,12 @@
         "original_name": "Newest version",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "a0d7b954_sqlite-web_version_latest",
         "unit_of_measurement": null
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -5139,10 +5570,12 @@
         "original_name": "CPU percent",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "a0d7b954_sqlite-web_cpu_percent",
         "unit_of_measurement": "%"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": {
           "state_class": "measurement"
@@ -5164,10 +5597,12 @@
         "original_name": "Memory percent",
         "platform": "hassio",
         "supported_features": 0,
+        "translation_key": null,
         "unique_id": "a0d7b954_sqlite-web_memory_percent",
         "unit_of_measurement": "%"
       },
       {
+        "aliases": [],
         "area_id": null,
         "capabilities": null,
         "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
@@ -5187,8 +5622,492 @@
         "original_name": "Update",
         "platform": "hassio",
         "supported_features": 25,
+        "translation_key": null,
         "unique_id": "a0d7b954_sqlite-web_version_latest",
         "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": "56500bb08793fa9189c8b8c25c91b3ae",
+        "device_class": null,
+        "device_id": "b4144c69d5060ab89d2023420f0a6d3b",
+        "disabled_by": null,
+        "entity_category": null,
+        "entity_id": "sensor.hacs",
+        "hidden_by": null,
+        "icon": null,
+        "id": "099565d6b37a1fb5254b11f139c9f0ea",
+        "has_entity_name": false,
+        "name": null,
+        "options": {},
+        "original_device_class": null,
+        "original_icon": "hacs:hacs",
+        "original_name": "hacs",
+        "platform": "hacs",
+        "supported_features": 0,
+        "translation_key": null,
+        "unique_id": "0717a0cd-745c-48fd-9b16-c8534c9704f9-bc944b0f-fd42-4a58-a072-ade38d1444cd",
+        "unit_of_measurement": "pending update(s)"
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
+        "device_class": null,
+        "device_id": "86529c6e977979f902e1fa5fb991b5c6",
+        "disabled_by": "integration",
+        "entity_category": null,
+        "entity_id": "binary_sensor.mosquitto_broker_running",
+        "hidden_by": null,
+        "icon": null,
+        "id": "f9a51569ffa5166717d722af2e8eb165",
+        "has_entity_name": true,
+        "name": null,
+        "options": {},
+        "original_device_class": "running",
+        "original_icon": null,
+        "original_name": "Running",
+        "platform": "hassio",
+        "supported_features": 0,
+        "translation_key": null,
+        "unique_id": "core_mosquitto_state",
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
+        "device_class": null,
+        "device_id": "86529c6e977979f902e1fa5fb991b5c6",
+        "disabled_by": "integration",
+        "entity_category": null,
+        "entity_id": "sensor.mosquitto_broker_version",
+        "hidden_by": null,
+        "icon": null,
+        "id": "579117dbb194e2844f0ca9f9bdbd50de",
+        "has_entity_name": true,
+        "name": null,
+        "options": {},
+        "original_device_class": null,
+        "original_icon": null,
+        "original_name": "Version",
+        "platform": "hassio",
+        "supported_features": 0,
+        "translation_key": null,
+        "unique_id": "core_mosquitto_version",
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
+        "device_class": null,
+        "device_id": "86529c6e977979f902e1fa5fb991b5c6",
+        "disabled_by": "integration",
+        "entity_category": null,
+        "entity_id": "sensor.mosquitto_broker_newest_version",
+        "hidden_by": null,
+        "icon": null,
+        "id": "f3cad2cefc4283b3e82a2026762c24f6",
+        "has_entity_name": true,
+        "name": null,
+        "options": {},
+        "original_device_class": null,
+        "original_icon": null,
+        "original_name": "Newest version",
+        "platform": "hassio",
+        "supported_features": 0,
+        "translation_key": null,
+        "unique_id": "core_mosquitto_version_latest",
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": {
+          "state_class": "measurement"
+        },
+        "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
+        "device_class": null,
+        "device_id": "86529c6e977979f902e1fa5fb991b5c6",
+        "disabled_by": "integration",
+        "entity_category": null,
+        "entity_id": "sensor.mosquitto_broker_cpu_percent",
+        "hidden_by": null,
+        "icon": null,
+        "id": "2ec24cc4247611f0b8a367adb3dfd9d6",
+        "has_entity_name": true,
+        "name": null,
+        "options": {},
+        "original_device_class": null,
+        "original_icon": "mdi:cpu-64-bit",
+        "original_name": "CPU percent",
+        "platform": "hassio",
+        "supported_features": 0,
+        "translation_key": null,
+        "unique_id": "core_mosquitto_cpu_percent",
+        "unit_of_measurement": "%"
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": {
+          "state_class": "measurement"
+        },
+        "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
+        "device_class": null,
+        "device_id": "86529c6e977979f902e1fa5fb991b5c6",
+        "disabled_by": "integration",
+        "entity_category": null,
+        "entity_id": "sensor.mosquitto_broker_memory_percent",
+        "hidden_by": null,
+        "icon": null,
+        "id": "782813154644e3e296c54193fa5751a1",
+        "has_entity_name": true,
+        "name": null,
+        "options": {},
+        "original_device_class": null,
+        "original_icon": "mdi:memory",
+        "original_name": "Memory percent",
+        "platform": "hassio",
+        "supported_features": 0,
+        "translation_key": null,
+        "unique_id": "core_mosquitto_memory_percent",
+        "unit_of_measurement": "%"
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
+        "device_class": null,
+        "device_id": "86529c6e977979f902e1fa5fb991b5c6",
+        "disabled_by": null,
+        "entity_category": "config",
+        "entity_id": "update.mosquitto_broker_update",
+        "hidden_by": null,
+        "icon": null,
+        "id": "15747d0d5a7492060a310b351d7aba0b",
+        "has_entity_name": true,
+        "name": null,
+        "options": {},
+        "original_device_class": null,
+        "original_icon": null,
+        "original_name": "Update",
+        "platform": "hassio",
+        "supported_features": 25,
+        "translation_key": null,
+        "unique_id": "core_mosquitto_version_latest",
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": "8287716edddc00cd39c2a39f7d8fdc82",
+        "device_class": null,
+        "device_id": "3518b9b88c7bd783cf843a0714d7d1f8",
+        "disabled_by": "integration",
+        "entity_category": "diagnostic",
+        "entity_id": "sensor.tasmota_ip",
+        "hidden_by": null,
+        "icon": null,
+        "id": "0a829883d1c7ac19394cbf3b8669b6d3",
+        "has_entity_name": false,
+        "name": null,
+        "options": {},
+        "original_device_class": null,
+        "original_icon": "mdi:ip-network",
+        "original_name": "Tasmota IP",
+        "platform": "tasmota",
+        "supported_features": 0,
+        "translation_key": null,
+        "unique_id": "0CDC7E32084C_status_sensor_status_sensor_status_ip",
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": "8287716edddc00cd39c2a39f7d8fdc82",
+        "device_class": null,
+        "device_id": "3518b9b88c7bd783cf843a0714d7d1f8",
+        "disabled_by": null,
+        "entity_category": "diagnostic",
+        "entity_id": "sensor.tasmota_last_restart_time",
+        "hidden_by": null,
+        "icon": null,
+        "id": "4aa84eee868dfa05f46e1c2b6e705e17",
+        "has_entity_name": false,
+        "name": null,
+        "options": {},
+        "original_device_class": "timestamp",
+        "original_icon": null,
+        "original_name": "Tasmota Last Restart Time",
+        "platform": "tasmota",
+        "supported_features": 0,
+        "translation_key": null,
+        "unique_id": "0CDC7E32084C_status_sensor_status_sensor_last_restart_time",
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": "8287716edddc00cd39c2a39f7d8fdc82",
+        "device_class": null,
+        "device_id": "3518b9b88c7bd783cf843a0714d7d1f8",
+        "disabled_by": null,
+        "entity_category": "diagnostic",
+        "entity_id": "sensor.tasmota_wifi_connect_count",
+        "hidden_by": null,
+        "icon": null,
+        "id": "dace6e56440cc858b97b5ddbc1c34c48",
+        "has_entity_name": false,
+        "name": null,
+        "options": {},
+        "original_device_class": null,
+        "original_icon": "mdi:counter",
+        "original_name": "Tasmota WiFi Connect Count",
+        "platform": "tasmota",
+        "supported_features": 0,
+        "translation_key": null,
+        "unique_id": "0CDC7E32084C_status_sensor_status_sensor_status_link_count",
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": "8287716edddc00cd39c2a39f7d8fdc82",
+        "device_class": null,
+        "device_id": "3518b9b88c7bd783cf843a0714d7d1f8",
+        "disabled_by": null,
+        "entity_category": "diagnostic",
+        "entity_id": "sensor.tasmota_mqtt_connect_count",
+        "hidden_by": null,
+        "icon": null,
+        "id": "ef7f783ff4b261d64265418d4ecb3c07",
+        "has_entity_name": false,
+        "name": null,
+        "options": {},
+        "original_device_class": null,
+        "original_icon": "mdi:counter",
+        "original_name": "Tasmota MQTT Connect Count",
+        "platform": "tasmota",
+        "supported_features": 0,
+        "translation_key": null,
+        "unique_id": "0CDC7E32084C_status_sensor_status_sensor_status_mqtt_count",
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": "8287716edddc00cd39c2a39f7d8fdc82",
+        "device_class": null,
+        "device_id": "3518b9b88c7bd783cf843a0714d7d1f8",
+        "disabled_by": null,
+        "entity_category": "diagnostic",
+        "entity_id": "sensor.tasmota_restart_reason",
+        "hidden_by": null,
+        "icon": null,
+        "id": "55791fca8915f5d9d954618b467e599b",
+        "has_entity_name": false,
+        "name": null,
+        "options": {},
+        "original_device_class": null,
+        "original_icon": "mdi:information-outline",
+        "original_name": "Tasmota Restart Reason",
+        "platform": "tasmota",
+        "supported_features": 0,
+        "translation_key": null,
+        "unique_id": "0CDC7E32084C_status_sensor_status_sensor_status_restart_reason",
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": {
+          "state_class": "measurement"
+        },
+        "config_entry_id": "8287716edddc00cd39c2a39f7d8fdc82",
+        "device_class": null,
+        "device_id": "3518b9b88c7bd783cf843a0714d7d1f8",
+        "disabled_by": "integration",
+        "entity_category": "diagnostic",
+        "entity_id": "sensor.tasmota_rssi",
+        "hidden_by": null,
+        "icon": null,
+        "id": "d5d325fdda6b23d652461bee977156f6",
+        "has_entity_name": false,
+        "name": null,
+        "options": {},
+        "original_device_class": null,
+        "original_icon": "mdi:access-point",
+        "original_name": "Tasmota RSSI",
+        "platform": "tasmota",
+        "supported_features": 0,
+        "translation_key": null,
+        "unique_id": "0CDC7E32084C_status_sensor_status_sensor_status_rssi",
+        "unit_of_measurement": "%"
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": {
+          "state_class": "measurement"
+        },
+        "config_entry_id": "8287716edddc00cd39c2a39f7d8fdc82",
+        "device_class": null,
+        "device_id": "3518b9b88c7bd783cf843a0714d7d1f8",
+        "disabled_by": "integration",
+        "entity_category": "diagnostic",
+        "entity_id": "sensor.tasmota_signal",
+        "hidden_by": null,
+        "icon": null,
+        "id": "a73d51ddb3ec69e5ad4fb9c0cbcafbf9",
+        "has_entity_name": false,
+        "name": null,
+        "options": {},
+        "original_device_class": "signal_strength",
+        "original_icon": null,
+        "original_name": "Tasmota Signal",
+        "platform": "tasmota",
+        "supported_features": 0,
+        "translation_key": null,
+        "unique_id": "0CDC7E32084C_status_sensor_status_sensor_status_signal",
+        "unit_of_measurement": "dBm"
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": "8287716edddc00cd39c2a39f7d8fdc82",
+        "device_class": null,
+        "device_id": "3518b9b88c7bd783cf843a0714d7d1f8",
+        "disabled_by": null,
+        "entity_category": "diagnostic",
+        "entity_id": "sensor.tasmota_ssid",
+        "hidden_by": null,
+        "icon": null,
+        "id": "b44c6c44eb3619e684d105e29c8f709b",
+        "has_entity_name": false,
+        "name": null,
+        "options": {},
+        "original_device_class": null,
+        "original_icon": "mdi:access-point-network",
+        "original_name": "Tasmota SSID",
+        "platform": "tasmota",
+        "supported_features": 0,
+        "translation_key": null,
+        "unique_id": "0CDC7E32084C_status_sensor_status_sensor_status_ssid",
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": "8287716edddc00cd39c2a39f7d8fdc82",
+        "device_class": null,
+        "device_id": "3518b9b88c7bd783cf843a0714d7d1f8",
+        "disabled_by": "integration",
+        "entity_category": "diagnostic",
+        "entity_id": "sensor.tasmota_firmware_version",
+        "hidden_by": null,
+        "icon": null,
+        "id": "7e7b59255680dc14c2840c18300281bd",
+        "has_entity_name": false,
+        "name": null,
+        "options": {},
+        "original_device_class": null,
+        "original_icon": null,
+        "original_name": "Tasmota Firmware Version",
+        "platform": "tasmota",
+        "supported_features": 0,
+        "translation_key": null,
+        "unique_id": "0CDC7E32084C_status_sensor_status_sensor_status_version",
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": "8287716edddc00cd39c2a39f7d8fdc82",
+        "device_class": null,
+        "device_id": "3518b9b88c7bd783cf843a0714d7d1f8",
+        "disabled_by": null,
+        "entity_category": null,
+        "entity_id": "switch.tasmota",
+        "hidden_by": null,
+        "icon": null,
+        "id": "a30951d93153488bf250ecaceb48413b",
+        "has_entity_name": false,
+        "name": null,
+        "options": {},
+        "original_device_class": null,
+        "original_icon": null,
+        "original_name": "Tasmota",
+        "platform": "tasmota",
+        "supported_features": 0,
+        "translation_key": null,
+        "unique_id": "0CDC7E32084C_switch_relay_0",
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": "8287716edddc00cd39c2a39f7d8fdc82",
+        "device_class": null,
+        "device_id": "3518b9b88c7bd783cf843a0714d7d1f8",
+        "disabled_by": null,
+        "entity_category": null,
+        "entity_id": "switch.tasmota_0cdc7e32084c_switch_relay_1",
+        "hidden_by": null,
+        "icon": null,
+        "id": "cf0c34243468026329ff8b91ff26eee1",
+        "has_entity_name": false,
+        "name": null,
+        "options": {},
+        "original_device_class": null,
+        "original_icon": null,
+        "original_name": "",
+        "platform": "tasmota",
+        "supported_features": 0,
+        "translation_key": null,
+        "unique_id": "0CDC7E32084C_switch_relay_1",
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": "8287716edddc00cd39c2a39f7d8fdc82",
+        "device_class": null,
+        "device_id": "3518b9b88c7bd783cf843a0714d7d1f8",
+        "disabled_by": null,
+        "entity_category": null,
+        "entity_id": "sensor.tasmota_analog_temperature1",
+        "hidden_by": null,
+        "icon": null,
+        "id": "76d3258a22e3e877dacb9556a04a76b0",
+        "has_entity_name": false,
+        "name": null,
+        "options": {},
+        "original_device_class": null,
+        "original_icon": null,
+        "original_name": "Tasmota ANALOG Temperature1",
+        "platform": "tasmota",
+        "supported_features": 0,
+        "translation_key": null,
+        "unique_id": "0CDC7E32084C_sensor_sensor_ANALOG_Temperature1",
+        "unit_of_measurement": " "
       }
     ]
   }

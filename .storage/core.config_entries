@@ -161,7 +161,8 @@
         "domain": "dlna_dmr",
         "title": "IR11x 002261804010",
         "data": {
-          "url": "http://192.168.89.118:8080/dd.xml"
+          "url": "http://192.168.89.118:8080/dd.xml",
+          "mac": "00:22:61:80:40:10"
         },
         "options": {},
         "pref_disable_new_entities": false,
@@ -215,7 +216,7 @@
         "domain": "dlna_dmr",
         "title": "[TV]Samsung LED55",
         "data": {
-          "url": "http://192.168.89.28:7676/smp_14_"
+          "url": "http://192.168.89.28:7676/smp_16_"
         },
         "options": {},
         "pref_disable_new_entities": false,
@@ -311,10 +312,10 @@
         "domain": "samsungtv",
         "title": "Samsung 7 Series (55) (UE55RU7402UXXH)",
         "data": {
-          "host": "192.168.89.68",
+          "host": "192.168.89.12",
           "mac": "d0:d0:03:0f:66:0c",
           "model": "UE55RU7402UXXH",
-          "ssdp_rendering_control_location": "http://192.168.89.68:9197/dmr"
+          "ssdp_rendering_control_location": "http://192.168.89.12:9197/dmr"
         },
         "options": {},
         "pref_disable_new_entities": false,
@@ -336,6 +337,65 @@
         "pref_disable_polling": false,
         "source": "user",
         "unique_id": "/config/home-assistant_v2.db",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "56500bb08793fa9189c8b8c25c91b3ae",
+        "version": 1,
+        "domain": "hacs",
+        "title": "",
+        "data": {
+          "token": "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"
+        },
+        "options": {
+          "sidepanel_title": "HACS",
+          "sidepanel_icon": "hacs:hacs",
+          "release_limit": 5,
+          "country": "ALL",
+          "appdaemon": true,
+          "netdaemon": true,
+          "debug": false,
+          "experimental": false
+        },
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "dd6afdd9be87a3985cf1a23051575f6a",
+        "version": 1,
+        "domain": "mqtt",
+        "title": "Mosquitto broker",
+        "data": {
+          "broker": "core-mosquitto",
+          "port": 1883,
+          "username": "homeassistant",
+          "password": "Pae7Un8ieNgoh0eechie9os0ahra8cohquiquei2Eeje9aek4oorixeeh4Dee3oo",
+          "discovery": true,
+          "discovery_prefix": "homeassistant"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "hassio",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "8287716edddc00cd39c2a39f7d8fdc82",
+        "version": 1,
+        "domain": "tasmota",
+        "title": "Tasmota",
+        "data": {
+          "discovery_prefix": "tasmota/discovery"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "mqtt",
+        "unique_id": "tasmota",
         "disabled_by": null
       }
     ]
