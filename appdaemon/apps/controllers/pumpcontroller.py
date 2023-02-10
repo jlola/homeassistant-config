@@ -40,6 +40,8 @@ class PumpController(hass.Hass):
         self.listen_state(self.thermostat_callback, self.__thermostat, attribute = "state")
         #priznak, ze je nadrz dostatecne natopena
         self.__tank_is_warm = True
+        self.pumpIsOn = True
+        self.__turn_pump_off()
         self.CalculateOutput()
 
     def trun_climate_on(self,on):
@@ -96,7 +98,7 @@ class PumpController(hass.Hass):
         self.CalculateOutput()
 
     def CalculateOutput(self):
-        self.log(f"CalculateOutput: {self.get_mode()}")
+        #self.log(f"CalculateOutput: {self.get_mode()}")
         if (self.get_mode()==MODE_ON):
             self.__turn_pump_on()
         elif (self.get_mode()==MODE_OFF):
@@ -106,16 +108,16 @@ class PumpController(hass.Hass):
 
 
     def __auto_output(self):
-        self.log(f"auto_output")
+        #self.log(f"auto_output")
         #priznak nahodim jakmile je natopeny kotel
         #shodim ho jakmile klesne teplota nadrze pod limit
-        self.log(f"get_temp_drum: {self.get_temp_drum()}, get_min_temp_drum: {self.get_min_temp_drum()}")
+        #self.log(f"get_temp_drum: {self.get_temp_drum()}, get_min_temp_drum: {self.get_min_temp_drum()}")
         if (self.get_temp_drum() >= self.get_min_temp_drum()):
                 self.__tank_is_warm = True
-        self.log(f"get_temp_tank: {self.get_temp_tank()}, get_min_temp_tank: {self.get_min_temp_tank()}")
+        #self.log(f"get_temp_tank: {self.get_temp_tank()}, get_min_temp_tank: {self.get_min_temp_tank()}")
         if (self.get_temp_tank() < self.get_min_temp_tank()):
                 self.__tank_is_warm = False
-        self.log(f"__tank_is_warm: {self.__tank_is_warm}, thermostat: {self.get_thermostat()}")
+        #self.log(f"__tank_is_warm: {self.__tank_is_warm}, thermostat: {self.get_thermostat()}")
         if (self.get_thermostat()==True and (self.get_temp_drum()>=self.get_min_temp_drum() or self.__tank_is_warm)):
             self.__turn_pump_on()
         else: 
@@ -123,15 +125,19 @@ class PumpController(hass.Hass):
                 self.__turn_pump_off()
 
     def __turn_pump_on(self):
-        self.log("trun pump on")
-        self.__set_pump(True)
-        self.trun_climate_on(True)
+        if (self.pumpIsOn == False):
+            self.log("trun pump on")
+            self.pumpIsOn = True
+            self.__set_pump(True)
+            self.trun_climate_on(True)
 
     def __turn_pump_off(self):
-        self.log("trun pump off")
-        self.__set_pump(False)
-        self.trun_climate_on(False)
-        self.set_servo_value(0)
+        if (self.pumpIsOn == True):
+            self.log("trun pump off")
+            self.pumpIsOn = False
+            self.__set_pump(False)
+            self.trun_climate_on(False)
+            self.set_servo_value(0)
 
     def __set_pump(self,run):
         #self.log(f"run:{run}")

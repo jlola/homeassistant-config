@@ -8,58 +8,42 @@
         {
           "theme": "Backend-selected",
           "title": "Teploty",
-          "badges": [],
-          "cards": [
+          "badges": [
             {
-              "type": "entity",
-              "entity": "binary_sensor.binary_sensor_5_1_thermostat_negative"
+              "entity": "binary_sensor.rpi_power_status"
             },
             {
-              "hours_to_show": 24,
-              "graph": "line",
-              "type": "sensor",
-              "entity": "sensor.3_temperature_outside",
-              "detail": 1
+              "entity": "binary_sensor.binary_sensor_4_1"
             },
             {
-              "type": "entities",
-              "entities": [
-                {
-                  "entity": "sensor.temp_tank_top"
-                },
-                {
-                  "entity": "sensor.temp_tank_middle"
-                },
-                {
-                  "entity": "sensor.temp_tank_bottom"
-                },
-                {
-                  "entity": "sensor.tasmota_analog_temperature1"
-                }
-              ],
-              "title": "Teplota nádrže"
+              "entity": "binary_sensor.binary_sensor_bathroom"
             },
             {
-              "hours_to_show": 5,
-              "graph": "line",
-              "type": "sensor",
-              "entity": "sensor.temp_boiler",
-              "detail": 2,
-              "unit": "°C"
+              "entity": "binary_sensor.binary_sensor_4_3"
             },
             {
-              "hours_to_show": 24,
-              "graph": "line",
-              "type": "sensor",
-              "entity": "sensor.3_temperature_waterheater",
-              "detail": 1
+              "entity": "binary_sensor.binary_sensor_6_1"
             },
             {
-              "type": "entity",
-              "entity": "binary_sensor.binary_sensor_5_2_hdo",
-              "name": "Nízký tarif"
+              "entity": "binary_sensor.binary_sensor_6_2"
+            },
+            {
+              "entity": "binary_sensor.binary_sensor_wc"
+            },
+            {
+              "entity": "person.josef_lola"
+            },
+            {
+              "entity": "sensor.temp_bathroom"
+            },
+            {
+              "entity": "sensor.temp_wc"
+            },
+            {
+              "entity": "sun.sun"
             }
-          ]
+          ],
+          "cards": []
         },
         {
           "theme": "Backend-selected",

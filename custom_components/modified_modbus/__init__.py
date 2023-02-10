@@ -372,10 +372,10 @@ class ModifiedModbusHub(IDeviceEventConsumer,IModifiedModbusHub):
     def ResetCache(self,slave:int):
         self._modbusCache.ForceRefresh(slave)
 
-    def FireEvent(self,slave:int):                
+    def FireEvent(self,slave:int):        
         self.resetChangeFlag(slave)
         self._modbusCache.ForceRefresh(slave) 
-        for c in self._consumers:            
+        for c in self._consumers:
             c.FireEvent(slave)
 
     def readHolding(self,slave:int,offset:int):

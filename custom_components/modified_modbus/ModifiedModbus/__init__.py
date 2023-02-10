@@ -49,7 +49,10 @@ class ModifiedModbus(ISerialReceiver):
         self.consumers.append(consumer)  
 
     def ThreadNotifyConsumer(self,c,adr):
-        c.FireEvent(adr)
+        try:
+            c.FireEvent(adr)
+        except Exception as inst:
+            logger.info(f"ThreadNotifyConsumer({adr}) exception: {inst.args}");
         
     def OnData(self, data:list):
         self.receiving = True;               

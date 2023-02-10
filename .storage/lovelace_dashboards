@@ -14,7 +14,7 @@
         "icon": "mdi:cog-outline"
       },
       {
-        "show_in_sidebar": true,
+        "show_in_sidebar": false,
         "icon": "mdi:home",
         "title": "Home",
         "require_admin": false,

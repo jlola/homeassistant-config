@@ -120,7 +120,7 @@
         "model": "Home Assistant Operating System",
         "name_by_user": null,
         "name": "Home Assistant Operating System",
-        "sw_version": "9.4",
+        "sw_version": "9.5",
         "via_device_id": null
       },
       {
@@ -144,7 +144,7 @@
         "model": "Home Assistant Add-on",
         "name_by_user": null,
         "name": "Studio Code Server",
-        "sw_version": "5.5.1",
+        "sw_version": "5.5.2",
         "via_device_id": null
       },
       {
@@ -192,7 +192,7 @@
         "model": "Home Assistant Core",
         "name_by_user": null,
         "name": "Home Assistant Core",
-        "sw_version": "2023.1.0",
+        "sw_version": "2023.2.3",
         "via_device_id": null
       },
       {
@@ -216,7 +216,7 @@
         "model": "Home Assistant Supervisor",
         "name_by_user": null,
         "name": "Home Assistant Supervisor",
-        "sw_version": "2022.12.1",
+        "sw_version": "2023.01.1",
         "via_device_id": null
       },
       {
@@ -336,7 +336,7 @@
         "model": "Home Assistant Add-on",
         "name_by_user": null,
         "name": "SQLite Web",
-        "sw_version": "3.6.1",
+        "sw_version": "3.7.0",
         "via_device_id": null
       },
       {
@@ -360,7 +360,7 @@
         "model": "",
         "name_by_user": null,
         "name": "HACS",
-        "sw_version": "1.29.0",
+        "sw_version": "1.30.1",
         "via_device_id": null
       },
       {
@@ -537,6 +537,20 @@
           ]
         ],
         "id": "bd516e8bbb14b14a968ac2a0dd38be9f",
+        "orphaned_timestamp": null
+      },
+      {
+        "config_entries": [
+          "af202d4e30dfcd4462768fceb9bb8c8a"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "hassio",
+            "c6a2317c_netdaemon3_1"
+          ]
+        ],
+        "id": "39a9e684ed1fdf3a963f24c3e1d5552e",
         "orphaned_timestamp": null
       }
     ]

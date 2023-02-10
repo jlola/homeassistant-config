@@ -12,47 +12,38 @@
           "visible": [
             {
               "user": "b09f7b37fe70417390c67b7d02d9e0bc"
+            },
+            {
+              "user": "4b6e53cc3b7449f98531ca2983b58da4"
+            },
+            {
+              "user": "53d2fac68c2e4ee49f4e51b31181b744"
+            },
+            {
+              "user": "cdc786aacdce49eeb86ae1d0343059af"
             }
           ],
-          "badges": [
-            {
-              "entity": "binary_sensor.rpi_power_status"
-            },
-            {
-              "entity": "binary_sensor.binary_sensor_4_1"
-            },
-            {
-              "entity": "binary_sensor.binary_sensor_bathroom"
-            },
-            {
-              "entity": "binary_sensor.binary_sensor_4_3"
-            },
-            {
-              "entity": "binary_sensor.binary_sensor_6_1"
-            },
-            {
-              "entity": "binary_sensor.binary_sensor_6_2"
-            },
-            {
-              "entity": "binary_sensor.binary_sensor_wc"
-            },
-            {
-              "entity": "person.josef_lola"
-            },
-            {
-              "entity": "sensor.temp_bathroom"
-            },
-            {
-              "entity": "sensor.temp_wc"
-            },
-            {
-              "entity": "sun.sun"
-            }
-          ],
+          "badges": [],
           "cards": [
             {
-              "type": "weather-forecast",
-              "entity": "weather.home"
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "binary_sensor.binary_sensor_5_1_thermostat_negative"
+                },
+                {
+                  "entity": "sensor.temp_kitchen"
+                },
+                {
+                  "entity": "sensor.temp_wc"
+                },
+                {
+                  "entity": "sensor.temp_bathroom"
+                },
+                {
+                  "entity": "sensor.temp_floor_livingrom"
+                }
+              ]
             },
             {
               "hours_to_show": 24,
@@ -60,6 +51,117 @@
               "type": "sensor",
               "entity": "sensor.3_temperature_outside",
               "detail": 1
+            },
+            {
+              "hours_to_show": 5,
+              "graph": "line",
+              "type": "sensor",
+              "entity": "sensor.temp_boiler",
+              "detail": 2,
+              "unit": "°C"
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "sensor.temp_tank_top"
+                },
+                {
+                  "entity": "sensor.temp_tank_middle"
+                },
+                {
+                  "entity": "sensor.temp_tank_bottom"
+                }
+              ],
+              "title": "Teplota nádrže"
+            },
+            {
+              "hours_to_show": 24,
+              "graph": "line",
+              "type": "sensor",
+              "entity": "sensor.3_temperature_waterheater",
+              "detail": 1
+            },
+            {
+              "type": "entity",
+              "entity": "binary_sensor.binary_sensor_5_2_hdo",
+              "name": "Nízký tarif"
+            },
+            {
+              "type": "weather-forecast",
+              "entity": "weather.home"
+            }
+          ]
+        },
+        {
+          "theme": "Backend-selected",
+          "title": "Teplota v dome",
+          "path": "teplota-prostoru",
+          "badges": [],
+          "cards": [
+            {
+              "type": "thermostat",
+              "entity": "climate.climate_kitchen",
+              "name": "Kuchyn"
+            },
+            {
+              "type": "entity",
+              "entity": "input_boolean.switch_heat"
+            },
+            {
+              "type": "history-graph",
+              "entities": [
+                {
+                  "entity": "climate.climate_kitchen"
+                }
+              ],
+              "title": "Kuchyn",
+              "hours_to_show": 5
+            }
+          ]
+        },
+        {
+          "theme": "Backend-selected",
+          "title": "Vetraky",
+          "path": "vetraky",
+          "visible": [
+            {
+              "user": "b09f7b37fe70417390c67b7d02d9e0bc"
+            }
+          ],
+          "badges": [],
+          "cards": [
+            {
+              "show_name": true,
+              "show_icon": true,
+              "type": "button",
+              "tap_action": {
+                "action": "toggle"
+              },
+              "entity": "switch.switch_wc",
+              "show_state": true,
+              "icon": "mdi:fan"
+            },
+            {
+              "show_name": true,
+              "show_icon": true,
+              "type": "button",
+              "tap_action": {
+                "action": "toggle"
+              },
+              "entity": "switch.switch_bathroom",
+              "icon": "mdi:fan"
+            },
+            {
+              "type": "history-graph",
+              "entities": [
+                {
+                  "entity": "sensor.temp_bathroom"
+                },
+                {
+                  "entity": "sensor.temp_wc"
+                }
+              ]
             }
           ]
         }

@@ -1,6 +1,11 @@
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
 system_log:
   max_entries: 1000
 
@@ -90,6 +95,8 @@ homeassistant:
       friendly_name: "Bojler aktualni príkon"
     binary_sensor.binary_sensor_3_2_waterheater_ison:
       friendly_name: "Spirala bojleru vypnuta"
+    sensor.temp_kitchen:
+      friendly_name: "Teplota v kuchyni"
 
 template:
   - sensor:
@@ -100,7 +107,7 @@ template:
         state: "{{ state_attr('sensor.waveshare_ups_hat','psu_voltage') }}"
         unit_of_measurement: V
       - name: "waterheater_actualpower"
-        device_class: energy
+        device_class: power
         state: >
           {% if is_state('binary_sensor.binary_sensor_3_2_waterheater_ison', 'on') %}
             0
@@ -176,6 +183,23 @@ sensor:
       - type: last_boot
 climate:
   - platform: generic_thermostat
+    name: climate_kitchen
+    heater: input_boolean.switch_heat
+    target_sensor: sensor.temp_kitchen
+    min_temp: 20
+    max_temp: 25
+    ac_mode: false
+    target_temp: 22.0
+    cold_tolerance: 0.0
+    hot_tolerance: 0.1
+    min_cycle_duration:
+      seconds: 20
+    keep_alive:
+      minutes: 3
+    initial_hvac_mode: "off"
+    away_temp: 19
+    precision: 0.1
+  - platform: generic_thermostat
     name: climate_waterheater
     heater: switch.switch_5_15_servo_waterheater
     target_sensor: sensor.3_temperature_waterheater
@@ -209,7 +233,8 @@ climate:
     kd: 1
     pwm: 0
     difference: 100
-    noiseband: 0.5
+    noiseband: 0.01
+    sampling_period: 1
   - platform: smart_thermostat
     name: climate_radiator_circle
     heater: input_number.servo_value_radiator_circle
@@ -227,9 +252,12 @@ climate:
     kd: 1
     pwm: 0
     difference: 100
-    noiseband: 0.5
-    sampling_period: 0.5
+    noiseband: 0.01
+    sampling_period: 1
 
+input_boolean:
+  switch_heat:
+    name: "Spinac topeni"
 input_select:
   pump_mode_floor_circle:
     name: Režim čerpadla
@@ -342,11 +370,6 @@ input_number:
     min: 0
     unit_of_measurement: "°C"
     mode: box
-
-group: !include groups.yaml
-automation: !include automations.yaml
-script: !include scripts.yaml
-scene: !include scenes.yaml
 
 modified_modbus:
   # - name: default2
@@ -528,6 +551,15 @@ binary_sensor 5:
     platform: modified_modbus
 
 sensor  5:
+  - holdings:
+      - OwId: 28ff76d0641501ce
+        device_class: temperature
+        holdings_type: ds18b20
+        hub: default
+        name: temp_kitchen
+        slave: 5
+        unit_of_measurement: "°C"
+    platform: modified_modbus
   - holdings:
       - OwId: 28ff63ad64150155
         device_class: temperature

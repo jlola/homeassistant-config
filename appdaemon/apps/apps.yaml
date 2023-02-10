@@ -1,8 +1,4 @@
----
-# hello_world:
-#   module: hello
-#   class: HelloWorld
-nspanel-1:
+nspanel:
   module: nspanel-lovelace-ui
   class: NsPanelLovelaceUIManager
   config:
@@ -16,29 +12,33 @@ nspanel-1:
         value: 0
     locale: "cs_CZ"
     screensaver:
-      entity: weather.home
-      doubleTapToUnlock: true
       theme:
         autoWeather: true
-      weatherOverrideForecast4:
-        entity: sensor.3_temperature_outside
-        name: "Aktualne"
-        icon: mdi:thermometer
+      doubleTapToUnlock: true
+      entities:
+        - entity: weather.home
+        - entity: weather.home
+          type: 0
+        - entity: weather.home
+          type: 1
+        - entity: weather.home
+          type: 2
+        - entity: weather.home
+          type: 3
+        - entity: sensor.3_temperature_outside
+          icon: mdi:home-thermometer-outline
+          name: "Aktuálně"
     cards:
+      - type: cardThermo
+        title: Kuchyň
+        entity: climate.climate_kitchen
       - type: cardEntities
         title: "Teplota nádrže"
         entities:
-          - entity: sensor.tasmota_analog_temperature1
+          - entity: sensor.temp_boiler
           - entity: sensor.temp_tank_top
           - entity: sensor.temp_tank_middle
           - entity: sensor.temp_tank_bottom
-      - type: cardEntities
-        title: "Vetraky"
-        entities:
-          - entity: sensor.temp_bathroom
-          - entity: switch.switch_bathroom
-          - entity: sensor.temp_wc
-          - entity: switch.switch_wc
 
 wc_fun:
   module: funcontroller
@@ -77,7 +77,7 @@ floor_pump_controller:
   temp_boiler: sensor.temp_boiler
   min_temp_tank: input_number.min_temp_tank_pump_floor_circle
   temp_tank: sensor.temp_tank_top
-  thermostat: binary_sensor.binary_sensor_5_1_thermostat_negative
+  thermostat: input_boolean.switch_heat #binary_sensor.binary_sensor_5_1_thermostat_negative
   climate: climate.climate_floor_circle
   servo_value: input_number.servo_value_floor_circle
 
@@ -90,7 +90,7 @@ heater_pump_controller:
   temp_boiler: sensor.temp_boiler
   min_temp_tank: input_number.min_temp_tank_pump_radiator_circle
   temp_tank: sensor.temp_tank_top
-  thermostat: binary_sensor.binary_sensor_5_1_thermostat_negative
+  thermostat: input_boolean.switch_heat #binary_sensor.binary_sensor_5_1_thermostat_negative
   climate: climate.climate_radiator_circle
   servo_value: input_number.servo_value_radiator_circle
 

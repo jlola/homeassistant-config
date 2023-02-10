@@ -3,11 +3,6 @@
   "minor_version": 1,
   "key": "input_boolean",
   "data": {
-    "items": [
-      {
-        "name": "ups_online_tester",
-        "id": "ups_online_tester"
-      }
-    ]
+    "items": []
   }
 }

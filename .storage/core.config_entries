@@ -132,7 +132,7 @@
         "domain": "samsungtv",
         "title": "UE55F6400",
         "data": {
-          "host": "192.168.89.28",
+          "host": "192.168.89.29",
           "model": "UE55F6400"
         },
         "options": {},
@@ -216,7 +216,8 @@
         "domain": "dlna_dmr",
         "title": "[TV]Samsung LED55",
         "data": {
-          "url": "http://192.168.89.28:7676/smp_16_"
+          "url": "http://192.168.89.29:7676/smp_15_",
+          "mac": "78:ab:bb:bd:7c:91"
         },
         "options": {},
         "pref_disable_new_entities": false,
@@ -231,7 +232,7 @@
         "domain": "upnp",
         "title": "Archer C24 AC750 Dual Band Wi-Fi Router",
         "data": {
-          "mac_address": "90:9a:4a:83:f3:ff",
+          "mac_address": null,
           "location": "http://192.168.89.93:1900/igd.xml",
           "host": "192.168.89.93",
           "st": "urn:schemas-upnp-org:device:InternetGatewayDevice:1"
@@ -249,11 +250,11 @@
         "domain": "samsungtv",
         "title": "[TV]Samsung LED48 (UE48H5500)",
         "data": {
-          "host": "192.168.89.155",
+          "host": "192.168.89.31",
           "mac": "54:88:0e:63:c1:af",
           "model": "UE48H5500",
-          "ssdp_rendering_control_location": "http://192.168.89.155:7676/smp_15_",
-          "ssdp_main_tv_agent_location": "http://192.168.89.155:7676/smp_2_"
+          "ssdp_rendering_control_location": "http://192.168.89.31:7676/smp_15_",
+          "ssdp_main_tv_agent_location": "http://192.168.89.31:7676/smp_2_"
         },
         "options": {},
         "pref_disable_new_entities": false,
@@ -312,7 +313,7 @@
         "domain": "samsungtv",
         "title": "Samsung 7 Series (55) (UE55RU7402UXXH)",
         "data": {
-          "host": "192.168.89.12",
+          "host": "192.168.89.22",
           "mac": "d0:d0:03:0f:66:0c",
           "model": "UE55RU7402UXXH",
           "ssdp_rendering_control_location": "http://192.168.89.12:9197/dmr"
@@ -345,7 +346,7 @@
         "domain": "hacs",
         "title": "",
         "data": {
-          "token": "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"
+          "token": "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"
         },
         "options": {
           "sidepanel_title": "HACS",
@@ -396,6 +397,40 @@
         "pref_disable_polling": false,
         "source": "mqtt",
         "unique_id": "tasmota",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "4bf71773ab9b17b3328c2e2333542bd0",
+        "version": 1,
+        "domain": "homekit_controller",
+        "title": "LG webOS TV 9314 (Television)",
+        "data": {
+          "AccessoryIP": "192.168.89.66",
+          "AccessoryPort": 44842
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "00:4b:76:d2:f9:54",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "714ffceb1dff857931fdf555dd7ce985",
+        "version": 1,
+        "domain": "dlna_dmr",
+        "title": "[TV] Samsung 7 Series (55)",
+        "data": {
+          "url": "http://192.168.89.12:9197/dmr",
+          "device_id": "uuid:f78cb781-815d-4667-bd55-3e84f6d13dfb",
+          "type": "urn:schemas-upnp-org:device:MediaRenderer:1",
+          "mac": "d0:d0:03:0f:66:0c"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "uuid:f78cb781-815d-4667-bd55-3e84f6d13dfb",
         "disabled_by": null
       }
     ]

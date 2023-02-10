@@ -33,6 +33,9 @@
                 },
                 {
                   "entity": "input_number.servo_value_radiator_circle"
+                },
+                {
+                  "entity": "sensor.temp_boiler"
                 }
               ],
               "title": "Regulace",

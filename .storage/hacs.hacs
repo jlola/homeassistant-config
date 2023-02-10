@@ -9,7 +9,10 @@
       "clayauld/lovelace-darksky-card",
       "natekspencer/hacs-litterrobot",
       "frenck/home-assistant-theme-outline",
-      "NemesisRE/lovelace-swipe-navigation"
+      "NemesisRE/lovelace-swipe-navigation",
+      "custom-components/sensor.untappd",
+      "gjohansson-ST/stl",
+      "jessevl/homeassistant-greenchoice"
     ],
     "renamed_repositories": {
       "78wesley/Darkish-Theme": "78wesley/Home-Assistant-Darkish-Theme",
