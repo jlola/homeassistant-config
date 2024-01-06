@@ -1,0 +1,120 @@
+nspanel:
+  module: nspanel-lovelace-ui
+  class: NsPanelLovelaceUIManager
+  config:
+    panelRecvTopic: "tele/tasmota_nspanel_topic/RESULT"
+    panelSendTopic: "cmnd/tasmota_nspanel_topic/CustomSend"
+    model: eu
+    sleepBrightness:
+      - time: "7:00:00"
+        value: 0
+      - time: "23:00:00"
+        value: 0
+    locale: "cs_CZ"
+    screensaver:
+      theme:
+        autoWeather: true
+      doubleTapToUnlock: true
+      entities:
+        - entity: weather.home
+        - entity: weather.home
+          type: 0
+        - entity: weather.home
+          type: 1
+        - entity: weather.home
+          type: 2
+        - entity: sensor.temp_kitchen
+          icon: mdi:home-temperature-outline
+        - entity: sensor.3_temperature_outside
+          icon: mdi:home-thermometer-outline
+          name: "Aktuálně"
+    cards:
+      - type: cardThermo
+        title: Kuchyň
+        entity: climate.climate_kitchen
+      - type: cardEntities
+        title: "Teplota nádrže"
+        entities:
+          - entity: sensor.temp_boiler
+          - entity: sensor.temp_tank_top
+          - entity: sensor.temp_tank_middle
+          - entity: sensor.temp_tank_bottom
+
+wc_fun:
+  module: funcontroller
+  class: FunController
+  fan_button: binary_sensor.binary_sensor_wc
+  fan_switch: switch.switch_wc
+
+bathroom_fun:
+  module: funcontroller
+  class: FunController
+  fan_button: binary_sensor.binary_sensor_bathroom
+  fan_switch: switch.switch_bathroom
+
+floor_servo:
+  module: servocontroller
+  class: ServoController
+  servo_value: input_number.servo_value_floor_circle
+  servo_time: input_number.servo_time_floor_circle
+  servo_open_switch: switch.switch_5_10_servo_open_floor_circle
+  servo_close_switch: switch.switch_5_11_servo_close_floor_circle
+
+heater_servo:
+  module: servocontroller
+  class: ServoController
+  servo_value: input_number.servo_value_radiator_circle
+  servo_time: input_number.servo_time_radiator_circle
+  servo_open_switch: switch.switch_5_12_servo_open_radiator_circle
+  servo_close_switch: switch.switch_5_13_servo_close_radiator_circle
+
+floor_pump_controller:
+  module: pumpcontroller
+  class: PumpController
+  pump_mode: input_select.pump_mode_floor_circle
+  pump_switch: switch.switch_5_7_pump_floor_circle
+  min_temp_boiler: input_number.min_temp_boiler_pump_floor_circle
+  temp_boiler: sensor.temp_boiler
+  min_temp_tank: input_number.min_temp_tank_pump_floor_circle
+  temp_tank: sensor.temp_tank_top
+  thermostat: input_boolean.switch_heat #binary_sensor.binary_sensor_5_1_thermostat_negative
+  climate: climate.climate_floor_circle
+  servo_value: input_number.servo_value_floor_circle
+
+heater_pump_controller:
+  module: pumpcontroller
+  class: PumpController
+  pump_mode: input_select.pump_mode_radiator_circle
+  pump_switch: switch.switch_5_8_pump_radiator_circle
+  min_temp_boiler: input_number.min_temp_boiler_pump_radiator_circle
+  temp_boiler: sensor.temp_boiler
+  min_temp_tank: input_number.min_temp_tank_pump_radiator_circle
+  temp_tank: sensor.temp_tank_top
+  thermostat: input_boolean.switch_heat #binary_sensor.binary_sensor_5_1_thermostat_negative
+  climate: climate.climate_radiator_circle
+  servo_value: input_number.servo_value_radiator_circle
+
+waterheater_controller:
+  module: waterheatercontroller
+  class: WaterHeaterController
+  water_heater_mode: input_select.water_heater_mode
+  switch_electric_heat_disconnect: switch.switch_5_14_electric_heat_off
+  temp_tank: sensor.temp_tank_top
+  temp_boiler: sensor.temp_boiler
+  min_temp_tank: input_number.min_temp_tank_water_heater
+  min_temp_boiler: input_number.min_temp_boiler_water_heater
+  servo_water_heater: switch.switch_5_15_servo_waterheater
+  climate_thermostat: climate.climate_waterheater
+  pump_water_heater: switch.switch_5_9_pump_waterheater
+
+watchdog_controller:
+  module: watchdogcontroller
+  class: WatchDogController
+  appdaemon_time: input_text.appdaemon_time
+  ups_online: binary_sensor.waveshare_ups_hat_online
+
+pool_pump_controller:
+  module: poolpumpcontroller
+  class: PoolPumpController
+  pool_pump_switch: switch.switch_7_7_pool_pump
+  pool_pump_button: binary_sensor.binary_sensor_7_1_pool_pump_button

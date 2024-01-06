@@ -10,6 +10,8 @@
       "language": "en",
       "number_format": "system",
       "time_format": "24",
+      "date_format": "language",
+      "time_zone": "local",
       "first_weekday": "language"
     }
   }

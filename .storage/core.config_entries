@@ -7,6 +7,7 @@
       {
         "entry_id": "fb92a6fe12dc11eb8f497780613272f0",
         "version": 1,
+        "minor_version": 1,
         "domain": "met",
         "title": "Home",
         "data": {
@@ -22,6 +23,7 @@
       {
         "entry_id": "fc2ea8ae12dc11eba1cd171d3db553b7",
         "version": 1,
+        "minor_version": 1,
         "domain": "rpi_power",
         "title": "Raspberry Pi Power Supply Checker",
         "data": {},
@@ -35,6 +37,7 @@
       {
         "entry_id": "aab46b3213d811ebbb1527a61cb15489",
         "version": 1,
+        "minor_version": 1,
         "domain": "samsungtv",
         "title": "Ignored",
         "data": {
@@ -52,6 +55,7 @@
       {
         "entry_id": "18d000bf83d9b0c2f4253bb82e2fc828",
         "version": 1,
+        "minor_version": 1,
         "domain": "samsungtv",
         "title": "Ignored",
         "data": {
@@ -69,6 +73,7 @@
       {
         "entry_id": "910337c048662abab5e35f51f9693c83",
         "version": 1,
+        "minor_version": 1,
         "domain": "samsungtv",
         "title": "Ignored",
         "data": {
@@ -86,6 +91,7 @@
       {
         "entry_id": "93eb3f551830d0c89f1f4458ff908446",
         "version": 1,
+        "minor_version": 1,
         "domain": "samsungtv",
         "title": "Ignored",
         "data": {},
@@ -99,6 +105,7 @@
       {
         "entry_id": "710d3f8941231afa2bcd4cd4ab26492a",
         "version": 1,
+        "minor_version": 1,
         "domain": "samsungtv",
         "title": "Ignored",
         "data": {
@@ -116,6 +123,7 @@
       {
         "entry_id": "af202d4e30dfcd4462768fceb9bb8c8a",
         "version": 1,
+        "minor_version": 1,
         "domain": "hassio",
         "title": "Supervisor",
         "data": {},
@@ -129,6 +137,7 @@
       {
         "entry_id": "4d49387687ef02d6c8435116df6b80d4",
         "version": 2,
+        "minor_version": 1,
         "domain": "samsungtv",
         "title": "UE55F6400",
         "data": {
@@ -145,6 +154,7 @@
       {
         "entry_id": "1a5340ae2ae3f05ae7291f2cf903165e",
         "version": 1,
+        "minor_version": 1,
         "domain": "spotify",
         "title": "Spotify",
         "data": {},
@@ -158,10 +168,11 @@
       {
         "entry_id": "46278f782caf8ed75d2abc95ec154a2f",
         "version": 1,
+        "minor_version": 1,
         "domain": "dlna_dmr",
         "title": "IR11x 002261804010",
         "data": {
-          "url": "http://192.168.89.118:8080/dd.xml",
+          "url": "http://192.168.89.32:8080/dd.xml",
           "mac": "00:22:61:80:40:10"
         },
         "options": {},
@@ -174,6 +185,7 @@
       {
         "entry_id": "6ff8b5986be6b002e1d80ebb39c1982c",
         "version": 1,
+        "minor_version": 1,
         "domain": "sun",
         "title": "Sun",
         "data": {},
@@ -187,6 +199,7 @@
       {
         "entry_id": "e4541f5efdbec22d6362b2ca81006247",
         "version": 1,
+        "minor_version": 1,
         "domain": "raspberry_pi",
         "title": "Raspberry Pi",
         "data": {},
@@ -200,6 +213,7 @@
       {
         "entry_id": "60ede7c153334c9e397a4795a5555d1d",
         "version": 1,
+        "minor_version": 1,
         "domain": "bluetooth",
         "title": "DC:A6:32:C1:6D:29",
         "data": {},
@@ -213,6 +227,7 @@
       {
         "entry_id": "cf4e1402a6076dcc22f92642d17cd0c5",
         "version": 1,
+        "minor_version": 1,
         "domain": "dlna_dmr",
         "title": "[TV]Samsung LED55",
         "data": {
@@ -229,6 +244,7 @@
       {
         "entry_id": "943fab86cceb08589a8545a9841bb0ae",
         "version": 1,
+        "minor_version": 1,
         "domain": "upnp",
         "title": "Archer C24 AC750 Dual Band Wi-Fi Router",
         "data": {
@@ -247,6 +263,7 @@
       {
         "entry_id": "b35159b22489fd483c4186978d412f92",
         "version": 2,
+        "minor_version": 1,
         "domain": "samsungtv",
         "title": "[TV]Samsung LED48 (UE48H5500)",
         "data": {
@@ -266,6 +283,7 @@
       {
         "entry_id": "a667e544eeb4d56e1cd29d01d2dbfe72",
         "version": 1,
+        "minor_version": 1,
         "domain": "cast",
         "title": "Google Cast",
         "data": {},
@@ -279,6 +297,7 @@
       {
         "entry_id": "0d746ff6b2300da552ab87d790f46333",
         "version": 1,
+        "minor_version": 1,
         "domain": "mobile_app",
         "title": "Redmi 4X",
         "data": {
@@ -310,6 +329,7 @@
       {
         "entry_id": "5ce68a55c1a19c1f895a585911eb468f",
         "version": 2,
+        "minor_version": 1,
         "domain": "samsungtv",
         "title": "Samsung 7 Series (55) (UE55RU7402UXXH)",
         "data": {
@@ -328,6 +348,7 @@
       {
         "entry_id": "baccb4bfb11813a130b4f5666fb90b63",
         "version": 1,
+        "minor_version": 1,
         "domain": "filesize",
         "title": "home-assistant_v2.db",
         "data": {
@@ -343,10 +364,11 @@
       {
         "entry_id": "56500bb08793fa9189c8b8c25c91b3ae",
         "version": 1,
+        "minor_version": 1,
         "domain": "hacs",
         "title": "",
         "data": {
-          "token": "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"
+          "token": "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"
         },
         "options": {
           "sidepanel_title": "HACS",
@@ -367,15 +389,28 @@
       {
         "entry_id": "dd6afdd9be87a3985cf1a23051575f6a",
         "version": 1,
+        "minor_version": 1,
         "domain": "mqtt",
-        "title": "Mosquitto broker",
+        "title": "core-mosquitto",
         "data": {
           "broker": "core-mosquitto",
           "port": 1883,
-          "username": "homeassistant",
-          "password": "Pae7Un8ieNgoh0eechie9os0ahra8cohquiquei2Eeje9aek4oorixeeh4Dee3oo",
+          "username": "jlola",
+          "password": "13111",
           "discovery": true,
-          "discovery_prefix": "homeassistant"
+          "discovery_prefix": "homeassistant",
+          "birth_message": {
+            "topic": "homeassistant/status",
+            "payload": "online",
+            "qos": 0,
+            "retain": false
+          },
+          "will_message": {
+            "topic": "homeassistant/status",
+            "payload": "offline",
+            "qos": 0,
+            "retain": false
+          }
         },
         "options": {},
         "pref_disable_new_entities": false,
@@ -387,6 +422,7 @@
       {
         "entry_id": "8287716edddc00cd39c2a39f7d8fdc82",
         "version": 1,
+        "minor_version": 1,
         "domain": "tasmota",
         "title": "Tasmota",
         "data": {
@@ -402,6 +438,7 @@
       {
         "entry_id": "4bf71773ab9b17b3328c2e2333542bd0",
         "version": 1,
+        "minor_version": 1,
         "domain": "homekit_controller",
         "title": "LG webOS TV 9314 (Television)",
         "data": {
@@ -418,6 +455,7 @@
       {
         "entry_id": "714ffceb1dff857931fdf555dd7ce985",
         "version": 1,
+        "minor_version": 1,
         "domain": "dlna_dmr",
         "title": "[TV] Samsung 7 Series (55)",
         "data": {
@@ -431,6 +469,49 @@
         "pref_disable_polling": false,
         "source": "ignore",
         "unique_id": "uuid:f78cb781-815d-4667-bd55-3e84f6d13dfb",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "e580b93ada2065323ecf86101a5a73ee",
+        "version": 1,
+        "minor_version": 1,
+        "domain": "systemmonitor",
+        "title": "System Monitor",
+        "data": {},
+        "options": {
+          "sensor": {
+            "process": []
+          },
+          "resources": [
+            "disk_use_percent_/",
+            "disk_use_/",
+            "disk_free_/",
+            "memory_use_percent_",
+            "memory_use_",
+            "memory_free_",
+            "swap_use_percent_",
+            "swap_use_",
+            "swap_free_",
+            "load_1m_",
+            "load_5m_",
+            "load_15m_",
+            "network_in_eth0",
+            "network_out_eth0",
+            "throughput_network_in_eth0",
+            "throughput_network_out_eth0",
+            "packets_in_eth0",
+            "packets_out_eth0",
+            "ipv4_address_eth0",
+            "ipv6_address_eth0",
+            "processor_use_",
+            "processor_temperature_",
+            "last_boot_"
+          ]
+        },
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "import",
+        "unique_id": null,
         "disabled_by": null
       }
     ]

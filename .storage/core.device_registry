@@ -1,32 +1,9 @@
 {
   "version": 1,
-  "minor_version": 3,
+  "minor_version": 4,
   "key": "core.device_registry",
   "data": {
     "devices": [
-      {
-        "area_id": null,
-        "config_entries": [
-          "fb92a6fe12dc11eb8f497780613272f0"
-        ],
-        "configuration_url": "https://www.met.no/en",
-        "connections": [],
-        "disabled_by": null,
-        "entry_type": "service",
-        "hw_version": null,
-        "id": "15592919cb2d5992ed3d98a45e819008",
-        "identifiers": [
-          [
-            "met"
-          ]
-        ],
-        "manufacturer": "Met.no",
-        "model": "Forecast",
-        "name_by_user": null,
-        "name": "Forecast",
-        "sw_version": null,
-        "via_device_id": null
-      },
       {
         "area_id": null,
         "config_entries": [
@@ -48,7 +25,8 @@
         "model": "Home Assistant Add-on",
         "name_by_user": null,
         "name": "Terminal & SSH",
-        "sw_version": "9.6.1",
+        "serial_number": null,
+        "sw_version": "9.8.1",
         "via_device_id": null
       },
       {
@@ -72,31 +50,8 @@
         "model": "Home Assistant Add-on",
         "name_by_user": null,
         "name": "AppDaemon",
-        "sw_version": "0.11.0",
-        "via_device_id": null
-      },
-      {
-        "area_id": null,
-        "config_entries": [
-          "af202d4e30dfcd4462768fceb9bb8c8a"
-        ],
-        "configuration_url": "homeassistant://hassio/addon/a0d7b954_portainer",
-        "connections": [],
-        "disabled_by": null,
-        "entry_type": "service",
-        "hw_version": null,
-        "id": "c94a1ebc18be0d16a69cdd0fe02f5c5c",
-        "identifiers": [
-          [
-            "hassio",
-            "a0d7b954_portainer"
-          ]
-        ],
-        "manufacturer": "Home Assistant Community Add-ons",
-        "model": "Home Assistant Add-on",
-        "name_by_user": null,
-        "name": "Portainer",
-        "sw_version": "2.0.0",
+        "serial_number": null,
+        "sw_version": "0.16.0",
         "via_device_id": null
       },
       {
@@ -120,55 +75,8 @@
         "model": "Home Assistant Operating System",
         "name_by_user": null,
         "name": "Home Assistant Operating System",
-        "sw_version": "9.5",
-        "via_device_id": null
-      },
-      {
-        "area_id": null,
-        "config_entries": [
-          "af202d4e30dfcd4462768fceb9bb8c8a"
-        ],
-        "configuration_url": "homeassistant://hassio/addon/a0d7b954_vscode",
-        "connections": [],
-        "disabled_by": null,
-        "entry_type": "service",
-        "hw_version": null,
-        "id": "edcbc18c0fd54d9c9270a022041449cc",
-        "identifiers": [
-          [
-            "hassio",
-            "a0d7b954_vscode"
-          ]
-        ],
-        "manufacturer": "Home Assistant Community Add-ons",
-        "model": "Home Assistant Add-on",
-        "name_by_user": null,
-        "name": "Studio Code Server",
-        "sw_version": "5.5.2",
-        "via_device_id": null
-      },
-      {
-        "area_id": null,
-        "config_entries": [
-          "af202d4e30dfcd4462768fceb9bb8c8a"
-        ],
-        "configuration_url": "homeassistant://hassio/addon/core_git_pull",
-        "connections": [],
-        "disabled_by": null,
-        "entry_type": "service",
-        "hw_version": null,
-        "id": "8058a11068599b6c769ffbae55d178f7",
-        "identifiers": [
-          [
-            "hassio",
-            "core_git_pull"
-          ]
-        ],
-        "manufacturer": "Official add-ons",
-        "model": "Home Assistant Add-on",
-        "name_by_user": null,
-        "name": "Git pull",
-        "sw_version": "7.13.1",
+        "serial_number": null,
+        "sw_version": "11.3",
         "via_device_id": null
       },
       {
@@ -192,7 +100,8 @@
         "model": "Home Assistant Core",
         "name_by_user": null,
         "name": "Home Assistant Core",
-        "sw_version": "2023.2.3",
+        "serial_number": null,
+        "sw_version": "2024.1.1",
         "via_device_id": null
       },
       {
@@ -216,55 +125,8 @@
         "model": "Home Assistant Supervisor",
         "name_by_user": null,
         "name": "Home Assistant Supervisor",
-        "sw_version": "2023.01.1",
-        "via_device_id": null
-      },
-      {
-        "area_id": null,
-        "config_entries": [
-          "af202d4e30dfcd4462768fceb9bb8c8a"
-        ],
-        "configuration_url": "homeassistant://hassio/addon/1f3d020e_hassos_ssh_configurator_addon",
-        "connections": [],
-        "disabled_by": null,
-        "entry_type": "service",
-        "hw_version": null,
-        "id": "6fd13a52420fd5540ec6bd63955fda8d",
-        "identifiers": [
-          [
-            "hassio",
-            "1f3d020e_hassos_ssh_configurator_addon"
-          ]
-        ],
-        "manufacturer": "HassOS Configurator",
-        "model": "Home Assistant Add-on",
-        "name_by_user": null,
-        "name": "HassOS SSH port 22222 Configurator",
-        "sw_version": "0.9.1a",
-        "via_device_id": null
-      },
-      {
-        "area_id": null,
-        "config_entries": [
-          "af202d4e30dfcd4462768fceb9bb8c8a"
-        ],
-        "configuration_url": "homeassistant://hassio/addon/1f3d020e_hassosi2cconfiguratoraddon",
-        "connections": [],
-        "disabled_by": null,
-        "entry_type": "service",
-        "hw_version": null,
-        "id": "69269c957e20c272d9eecda61cd53bba",
-        "identifiers": [
-          [
-            "hassio",
-            "1f3d020e_hassosi2cconfiguratoraddon"
-          ]
-        ],
-        "manufacturer": "HassOS Configurator",
-        "model": "Home Assistant Add-on",
-        "name_by_user": null,
-        "name": "HassOS I2C Configurator",
-        "sw_version": "0.13a",
+        "serial_number": null,
+        "sw_version": "2023.12.0",
         "via_device_id": null
       },
       {
@@ -288,6 +150,7 @@
         "model": "Redmi 4X",
         "name_by_user": null,
         "name": "Redmi 4X",
+        "serial_number": null,
         "sw_version": "30",
         "via_device_id": null
       },
@@ -312,31 +175,8 @@
         "model": null,
         "name_by_user": null,
         "name": "home-assistant_v2.db",
+        "serial_number": null,
         "sw_version": null,
-        "via_device_id": null
-      },
-      {
-        "area_id": null,
-        "config_entries": [
-          "af202d4e30dfcd4462768fceb9bb8c8a"
-        ],
-        "configuration_url": "homeassistant://hassio/addon/a0d7b954_sqlite-web",
-        "connections": [],
-        "disabled_by": null,
-        "entry_type": "service",
-        "hw_version": null,
-        "id": "cf6a04605f77476aa98e50a94a3f8542",
-        "identifiers": [
-          [
-            "hassio",
-            "a0d7b954_sqlite-web"
-          ]
-        ],
-        "manufacturer": "Home Assistant Community Add-ons",
-        "model": "Home Assistant Add-on",
-        "name_by_user": null,
-        "name": "SQLite Web",
-        "sw_version": "3.7.0",
         "via_device_id": null
       },
       {
@@ -360,31 +200,8 @@
         "model": "",
         "name_by_user": null,
         "name": "HACS",
-        "sw_version": "1.30.1",
-        "via_device_id": null
-      },
-      {
-        "area_id": null,
-        "config_entries": [
-          "af202d4e30dfcd4462768fceb9bb8c8a"
-        ],
-        "configuration_url": "homeassistant://hassio/addon/core_mosquitto",
-        "connections": [],
-        "disabled_by": null,
-        "entry_type": "service",
-        "hw_version": null,
-        "id": "86529c6e977979f902e1fa5fb991b5c6",
-        "identifiers": [
-          [
-            "hassio",
-            "core_mosquitto"
-          ]
-        ],
-        "manufacturer": "Official add-ons",
-        "model": "Home Assistant Add-on",
-        "name_by_user": null,
-        "name": "Mosquitto broker",
-        "sw_version": "6.1.3",
+        "serial_number": null,
+        "sw_version": "1.33.0",
         "via_device_id": null
       },
       {
@@ -408,7 +225,258 @@
         "model": "NSPanel",
         "name_by_user": null,
         "name": "Tasmota",
-        "sw_version": "12.3.1.2",
+        "serial_number": null,
+        "sw_version": "12.4.0",
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "af202d4e30dfcd4462768fceb9bb8c8a"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": "service",
+        "hw_version": null,
+        "id": "6a3a2e5b0e28f95d6dde05b345568554",
+        "identifiers": [
+          [
+            "hassio",
+            "host"
+          ]
+        ],
+        "manufacturer": "Home Assistant",
+        "model": "Home Assistant Host",
+        "name_by_user": null,
+        "name": "Home Assistant Host",
+        "serial_number": null,
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "6ff8b5986be6b002e1d80ebb39c1982c"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": "service",
+        "hw_version": null,
+        "id": "6948036249ac87d30c8c4c501bd4123e",
+        "identifiers": [
+          [
+            "sun",
+            "6ff8b5986be6b002e1d80ebb39c1982c"
+          ]
+        ],
+        "manufacturer": null,
+        "model": null,
+        "name_by_user": null,
+        "name": "Sun",
+        "serial_number": null,
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "af202d4e30dfcd4462768fceb9bb8c8a"
+        ],
+        "configuration_url": "homeassistant://hassio/addon/1f3d020e_hassosi2cconfiguratoraddon",
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": "service",
+        "hw_version": null,
+        "id": "69269c957e20c272d9eecda61cd53bba",
+        "identifiers": [
+          [
+            "hassio",
+            "1f3d020e_hassosi2cconfiguratoraddon"
+          ]
+        ],
+        "manufacturer": "HassOS Configurator",
+        "model": "Home Assistant Add-on",
+        "name_by_user": null,
+        "name": "HassOS I2C Configurator",
+        "serial_number": null,
+        "sw_version": "0.13a",
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "af202d4e30dfcd4462768fceb9bb8c8a"
+        ],
+        "configuration_url": "homeassistant://hassio/addon/core_mosquitto",
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": "service",
+        "hw_version": null,
+        "id": "86529c6e977979f902e1fa5fb991b5c6",
+        "identifiers": [
+          [
+            "hassio",
+            "core_mosquitto"
+          ]
+        ],
+        "manufacturer": "Official add-ons",
+        "model": "Home Assistant Add-on",
+        "name_by_user": null,
+        "name": "Mosquitto broker",
+        "serial_number": null,
+        "sw_version": "6.4.0",
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "af202d4e30dfcd4462768fceb9bb8c8a"
+        ],
+        "configuration_url": "homeassistant://hassio/addon/a0d7b954_vscode",
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": "service",
+        "hw_version": null,
+        "id": "edcbc18c0fd54d9c9270a022041449cc",
+        "identifiers": [
+          [
+            "hassio",
+            "a0d7b954_vscode"
+          ]
+        ],
+        "manufacturer": "Home Assistant Community Add-ons",
+        "model": "Home Assistant Add-on",
+        "name_by_user": null,
+        "name": "Studio Code Server",
+        "serial_number": null,
+        "sw_version": "5.14.2",
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "af202d4e30dfcd4462768fceb9bb8c8a"
+        ],
+        "configuration_url": "homeassistant://hassio/addon/1f3d020e_hassos_ssh_configurator_addon",
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": "service",
+        "hw_version": null,
+        "id": "6fd13a52420fd5540ec6bd63955fda8d",
+        "identifiers": [
+          [
+            "hassio",
+            "1f3d020e_hassos_ssh_configurator_addon"
+          ]
+        ],
+        "manufacturer": "HassOS Configurator",
+        "model": "Home Assistant Add-on",
+        "name_by_user": null,
+        "name": "HassOS SSH port 22222 Configurator",
+        "serial_number": null,
+        "sw_version": "0.9.3",
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "af202d4e30dfcd4462768fceb9bb8c8a"
+        ],
+        "configuration_url": "homeassistant://hassio/addon/a0d7b954_sqlite-web",
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": "service",
+        "hw_version": null,
+        "id": "cf6a04605f77476aa98e50a94a3f8542",
+        "identifiers": [
+          [
+            "hassio",
+            "a0d7b954_sqlite-web"
+          ]
+        ],
+        "manufacturer": "Home Assistant Community Add-ons",
+        "model": "Home Assistant Add-on",
+        "name_by_user": null,
+        "name": "SQLite Web",
+        "serial_number": null,
+        "sw_version": "4.0.0",
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "fb92a6fe12dc11eb8f497780613272f0"
+        ],
+        "configuration_url": "https://www.met.no/en",
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": "service",
+        "hw_version": null,
+        "id": "b006d9dfc518ca224afea1bef84e81f0",
+        "identifiers": [
+          [
+            "met",
+            "fb92a6fe12dc11eb8f497780613272f0"
+          ]
+        ],
+        "manufacturer": "Met.no",
+        "model": "Forecast",
+        "name_by_user": null,
+        "name": "Forecast",
+        "serial_number": null,
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "af202d4e30dfcd4462768fceb9bb8c8a"
+        ],
+        "configuration_url": "homeassistant://hassio/addon/c6a2317c_netdaemon4",
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": "service",
+        "hw_version": null,
+        "id": "7fa212e39438e18ef00fef6fcece6125",
+        "identifiers": [
+          [
+            "hassio",
+            "c6a2317c_netdaemon4"
+          ]
+        ],
+        "manufacturer": "NetDaemon add-on",
+        "model": "Home Assistant Add-on",
+        "name_by_user": null,
+        "name": "NetDaemon V4 (.NET 8)",
+        "serial_number": null,
+        "sw_version": "23.46.1",
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "e580b93ada2065323ecf86101a5a73ee"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": "service",
+        "hw_version": null,
+        "id": "6bc7dd469b9484dc1f4eeefd26aef4f0",
+        "identifiers": [
+          [
+            "systemmonitor",
+            "e580b93ada2065323ecf86101a5a73ee"
+          ]
+        ],
+        "manufacturer": "System Monitor",
+        "model": null,
+        "name_by_user": null,
+        "name": "System Monitor",
+        "serial_number": null,
+        "sw_version": null,
         "via_device_id": null
       }
     ],
@@ -537,6 +605,47 @@
           ]
         ],
         "id": "bd516e8bbb14b14a968ac2a0dd38be9f",
+        "orphaned_timestamp": null
+      },
+      {
+        "config_entries": [
+          "af202d4e30dfcd4462768fceb9bb8c8a"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "hassio",
+            "a0d7b954_portainer"
+          ]
+        ],
+        "id": "c94a1ebc18be0d16a69cdd0fe02f5c5c",
+        "orphaned_timestamp": null
+      },
+      {
+        "config_entries": [
+          "af202d4e30dfcd4462768fceb9bb8c8a"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "hassio",
+            "core_git_pull"
+          ]
+        ],
+        "id": "8058a11068599b6c769ffbae55d178f7",
+        "orphaned_timestamp": null
+      },
+      {
+        "config_entries": [
+          "fb92a6fe12dc11eb8f497780613272f0"
+        ],
+        "connections": [],
+        "identifiers": [
+          [
+            "met"
+          ]
+        ],
+        "id": "15592919cb2d5992ed3d98a45e819008",
         "orphaned_timestamp": null
       },
       {

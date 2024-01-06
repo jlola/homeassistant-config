@@ -3,6 +3,28 @@
   "minor_version": 2,
   "key": "repairs.issue_registry",
   "data": {
-    "issues": []
+    "issues": [
+      {
+        "created": "2023-06-08T19:14:27.439020+00:00",
+        "dismissed_version": null,
+        "domain": "hassio",
+        "is_persistent": false,
+        "issue_id": "f0a52aaa61e74e0db2e108004e0901da"
+      },
+      {
+        "created": "2023-06-08T19:15:05.459531+00:00",
+        "dismissed_version": null,
+        "domain": "command_line",
+        "is_persistent": false,
+        "issue_id": "deprecated_yaml_sensor"
+      },
+      {
+        "created": "2024-01-04T05:38:06.951052+00:00",
+        "dismissed_version": null,
+        "domain": "homeassistant",
+        "is_persistent": false,
+        "issue_id": "deprecated_yaml_systemmonitor"
+      }
+    ]
   }
 }

@@ -29,7 +29,7 @@ class ServoController(hass.Hass):
             self.log(f"servo_value_callback: value: {new} ignored because resetting")
             return
         newpercent = float(new)
-        #self.log(f"servo_value_callback: new percent value: {new}")
+        self.log(f"servo_value_callback: new percent value: {new}")
         if (newpercent > 100):
             newpercent = 100
         elif (newpercent < 0):
@@ -73,7 +73,7 @@ class ServoController(hass.Hass):
 
     def __on_timer(self, kwargs):
         servo_time = self.get_servo_time()
-        #self.log(f"servo_time:{servo_time}, request_time: {self.__request_time}")
+        self.log(f"servo_time:{servo_time}, request_time: {self.__request_time}")
         if (servo_time == self.__request_time):
             self.equalCounter = self.equalCounter + 1
             #vypnu servo jen kdyz jsem uprostred rizeni

@@ -58,11 +58,7 @@
                 "eco": "Eco",
                 "home": "En casa",
                 "none": "Ninguno",
-                "sleep": "Dormir",
-                "manual": "Manual",
-                "programming": "Programado",
-                "temporary_manual": "Temporal",
-                "holiday": "Vacaciones"
+                "sleep": "Dormir"
             }
         },
         "humidifier": {

@@ -182,9 +182,6 @@
               "type": "entities",
               "entities": [
                 {
-                  "entity": "binary_sensor.binary_sensor_7_1"
-                },
-                {
                   "entity": "binary_sensor.binary_sensor_7_2"
                 },
                 {
@@ -198,9 +195,6 @@
                 },
                 {
                   "entity": "binary_sensor.binary_sensor_7_6"
-                },
-                {
-                  "entity": "switch.switch_7_7"
                 },
                 {
                   "entity": "switch.switch_7_8"
@@ -225,6 +219,15 @@
                 },
                 {
                   "entity": "switch.switch_7_15"
+                },
+                {
+                  "entity": "sensor.temp_solar_heater"
+                },
+                {
+                  "entity": "switch.switch_7_7_pool_pump"
+                },
+                {
+                  "entity": "binary_sensor.binary_sensor_7_1_pool_pump_button"
                 }
               ],
               "title": "board 7 - garaz"

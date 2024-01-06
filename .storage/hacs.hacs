@@ -4,15 +4,22 @@
   "key": "hacs.hacs",
   "data": {
     "archived_repositories": [
-      "dummylabs/watchman",
-      "DavidMStraub/homeassistant-homeconnect",
-      "clayauld/lovelace-darksky-card",
-      "natekspencer/hacs-litterrobot",
       "frenck/home-assistant-theme-outline",
-      "NemesisRE/lovelace-swipe-navigation",
-      "custom-components/sensor.untappd",
       "gjohansson-ST/stl",
-      "jessevl/homeassistant-greenchoice"
+      "clayauld/lovelace-darksky-card",
+      "walthowd/ha-automower",
+      "bieniu/ha-zadnego-ale",
+      "custom-components/sensor.untappd",
+      "thebino/rki_covid",
+      "NemesisRE/lovelace-swipe-navigation",
+      "DavidMStraub/homeassistant-homeconnect",
+      "jessevl/homeassistant-greenchoice",
+      "gerardag/person-entity-card",
+      "Tiemooowh/homeassistant-teletask",
+      "briis/hass-weatherflow",
+      "natekspencer/hacs-litterrobot",
+      "tikismoke/home-assistant-nespressoble",
+      "dummylabs/watchman"
     ],
     "renamed_repositories": {
       "78wesley/Darkish-Theme": "78wesley/Home-Assistant-Darkish-Theme",
@@ -25,7 +32,13 @@
       "wills106/homsassistant-solax-modbus": "wills106/homeassistant-solax-modbus",
       "wernerhp/appdaemon_aqara_motion_sensors": "wernerhp/ha.appdaemon.aqara_motion_sensors",
       "wernerhp/appdaemon_wasp": "wernerhp/ha.appdaemon.wasp",
-      "jadson179/consul": "gtjadsonsantos/consul"
+      "jadson179/consul": "gtjadsonsantos/consul",
+      "Farfar/homeassistant-skodaconnect": "skodaconnect/homeassistant-skodaconnect",
+      "lendy007/homeassistant-skodaconnect": "skodaconnect/homeassistant-skodaconnect",
+      "haberda/update_lights": "haberda/Periodic-lights",
+      "Wibias/hass-variables": "enkama/hass-variables",
+      "alexander0042/pirate-weather-ha": "Pirate-Weather/pirate-weather-ha",
+      "custom-components/alexa_media_player": "alandtse/alexa_media_player"
     },
     "ignored_repositories": []
   }

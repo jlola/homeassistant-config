@@ -10,7 +10,7 @@ system_log:
   max_entries: 1000
 
 recorder:
-  purge_keep_days: 3
+  purge_keep_days: 10
   commit_interval: 60
   exclude:
     domains:
@@ -97,6 +97,12 @@ homeassistant:
       friendly_name: "Spirala bojleru vypnuta"
     sensor.temp_kitchen:
       friendly_name: "Teplota v kuchyni"
+    sensor.temp_solar_heater:
+      friendly_name: "Teplota solárního panelu"
+    switch.switch_7_7_pool_pump:
+      friendly_name: "Cerpadlo bazenu"
+    binary_sensor.binary_sensor_7_1_pool_pump_button:
+      friendly_name: "Tlacitko cerpadlo bazen"
 
 template:
   - sensor:
@@ -115,6 +121,13 @@ template:
             2000
           {% endif %}
         unit_of_measurement: W
+      - name: hdo_tarif
+        state: >
+          {% if is_state("binary_sensor.binary_sensor_5_2_HDO", "on") %}
+            Nízký tarif
+          {% else %}
+            Vysoký tarif
+          {% endif %}
       - name: "floor_set_point"
         unit_of_measurement: "°C"
         state: "{{  state_attr('climate.climate_floor_circle','temperature') }}"
@@ -132,6 +145,12 @@ utility_meter:
 binary_sensor:
   - platform: waveshare_ups_hat
 
+command_line:
+  - sensor:
+      name: CPU Temperature
+      command: "cat /sys/class/thermal/thermal_zone0/temp"
+      unit_of_measurement: "°C"
+      value_template: "{{ value | multiply(0.001) }}"
 sensor:
   - platform: waveshare_ups_hat
   - platform: integration
@@ -142,45 +161,6 @@ sensor:
     method: left
     round: 2
     unique_id: waterheater_power3
-  - platform: command_line
-    name: CPU Temperature
-    command: "cat /sys/class/thermal/thermal_zone0/temp"
-    unit_of_measurement: "°C"
-    value_template: "{{ value | multiply(0.001) }}"
-  # Example configuration.yaml entry with all entry types (delete/comment out as necessary)
-  - platform: systemmonitor
-    resources:
-      - type: disk_use_percent
-      - type: disk_use
-      - type: disk_free
-      - type: memory_use_percent
-      - type: memory_use
-      - type: memory_free
-      - type: swap_use_percent
-      - type: swap_use
-      - type: swap_free
-      - type: load_1m
-      - type: load_5m
-      - type: load_15m
-      - type: network_in
-        arg: eth0
-      - type: network_out
-        arg: eth0
-      - type: throughput_network_in
-        arg: eth0
-      - type: throughput_network_out
-        arg: eth0
-      - type: packets_in
-        arg: eth0
-      - type: packets_out
-        arg: eth0
-      - type: ipv4_address
-        arg: eth0
-      - type: ipv6_address
-        arg: eth0
-      - type: processor_use
-      - type: processor_temperature
-      - type: last_boot
 climate:
   - platform: generic_thermostat
     name: climate_kitchen
@@ -276,8 +256,8 @@ input_select:
   water_heater_mode:
     name: "Režim boileru"
     options:
-      - Electric
-      - Boiler
+      - Elektrina
+      - Kotel
       - Auto
 
 input_text:
@@ -778,7 +758,7 @@ binary_sensor 7:
   - holdings:
       - bit: 8
         hub: default
-        name: binary_sensor_7_1
+        name: binary_sensor_7_1_pool_pump_button
         offset: 23
         slave: 7
         value_off: 0
@@ -829,12 +809,22 @@ binary_sensor 7:
         value_off: 0
         value_on: 1
     platform: modified_modbus
+sensor  7:
+  - holdings:
+      - OwId: 28ffb0ae641501cd
+        device_class: temperature
+        holdings_type: ds18b20
+        hub: default
+        name: temp_solar_heater
+        slave: 7
+        unit_of_measurement: "°C"
+    platform: modified_modbus
 switch 7:
   - holdings:
       - command_off: 7
         command_on: 263
         hub: default
-        name: switch_7_7
+        name: switch_7_7_pool_pump
         offset: 29
         slave: 7
         state_off: 7

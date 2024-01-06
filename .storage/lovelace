@@ -29,9 +29,6 @@
               "type": "entities",
               "entities": [
                 {
-                  "entity": "binary_sensor.binary_sensor_5_1_thermostat_negative"
-                },
-                {
                   "entity": "sensor.temp_kitchen"
                 },
                 {
@@ -84,8 +81,8 @@
             },
             {
               "type": "entity",
-              "entity": "binary_sensor.binary_sensor_5_2_hdo",
-              "name": "Nízký tarif"
+              "entity": "sensor.hdo_tarif",
+              "name": "HDO"
             },
             {
               "type": "weather-forecast",
@@ -102,11 +99,17 @@
             {
               "type": "thermostat",
               "entity": "climate.climate_kitchen",
-              "name": "Kuchyn"
-            },
-            {
-              "type": "entity",
-              "entity": "input_boolean.switch_heat"
+              "name": "Kuchyn",
+              "show_current_as_primary": true,
+              "features": [
+                {
+                  "type": "climate-hvac-modes",
+                  "hvac_modes": [
+                    "heat",
+                    "off"
+                  ]
+                }
+              ]
             },
             {
               "type": "history-graph",
