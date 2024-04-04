@@ -368,7 +368,7 @@
         "domain": "hacs",
         "title": "",
         "data": {
-          "token": "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"
+          "token": "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"
         },
         "options": {
           "sidepanel_title": "HACS",
@@ -474,7 +474,7 @@
       {
         "entry_id": "e580b93ada2065323ecf86101a5a73ee",
         "version": 1,
-        "minor_version": 1,
+        "minor_version": 2,
         "domain": "systemmonitor",
         "title": "System Monitor",
         "data": {},
@@ -506,12 +506,63 @@
             "processor_use_",
             "processor_temperature_",
             "last_boot_"
-          ]
+          ],
+          "binary_sensor": {
+            "process": []
+          }
         },
         "pref_disable_new_entities": false,
         "pref_disable_polling": false,
         "source": "import",
         "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "65830ed4e03805ba96631e5d330573b6",
+        "version": 1,
+        "minor_version": 1,
+        "domain": "dlna_dms",
+        "title": "PD: pc:",
+        "data": {
+          "url": "http://192.168.89.211:2869/upnphost/udhisapi.dll?content=uuid:a40fb177-b1b5-4657-b30f-836d2177bb3a",
+          "device_id": "uuid:a40fb177-b1b5-4657-b30f-836d2177bb3a::urn:schemas-upnp-org:device:MediaServer:1",
+          "source_id": "pd_pc"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ssdp",
+        "unique_id": "uuid:a40fb177-b1b5-4657-b30f-836d2177bb3a::urn:schemas-upnp-org:device:MediaServer:1",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "21f24905e2468183845e0ea896030a9a",
+        "version": 1,
+        "minor_version": 1,
+        "domain": "frontier_silicon",
+        "title": "IR11x 002261804010",
+        "data": {
+          "webfsapi_url": "http://192.168.89.32:80/fsapi"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "002261804010",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "efa3363f1fc84234f73b6a7a087f4147",
+        "version": 1,
+        "minor_version": 1,
+        "domain": "bluetooth",
+        "title": "hci0 (E4:5F:01:4E:39:07)",
+        "data": {},
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "ignore",
+        "unique_id": "E4:5F:01:4E:39:07",
         "disabled_by": null
       }
     ]

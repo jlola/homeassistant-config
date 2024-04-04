@@ -1,10 +1,9 @@
 import datetime
 
 import apis
-
 from helper import scale, pos_to_color, rgb_dec565
-
 from pages import LuiPagesGen
+from luibackend.config import Card
 
 class LuiController(object):
 
@@ -13,31 +12,27 @@ class LuiController(object):
         self._send_mqtt_msg = send_mqtt_msg
 
         self._current_card = self._config._config_screensaver
+
         self._previous_cards = []
         # first card (default, after startup)
-        self._previous_cards.append(self._config.getCard(0))
-        
+        self._previous_cards.append(self._config.get_default_card())
         self._pages_gen = LuiPagesGen(config, send_mqtt_msg)
 
         # send panel back to startup page on restart of this script
         self._pages_gen.page_type("pageStartup")
-       
+
         # calculate current brightness
         self.current_screensaver_brightness = self.calc_current_brightness(self._config.get("sleepBrightness"))
         self.current_screen_brightness      = self.calc_current_brightness(self._config.get("screenBrightness"))
-       
         # register callbacks
-        self.register_callbacks()     
+        self.register_callbacks()
+
 
     def startup(self):
         apis.ha_api.log(f"Startup Event")
         # send time and date on startup
         self._pages_gen.update_time("")
         self._pages_gen.update_date("")
-
-        # set screensaver timeout
-        timeout = self._config.get("sleepTimeout")
-        self._send_mqtt_msg(f"timeout~{timeout}")
         
         # set current screensaver brightness
         self.update_screensaver_brightness(kwargs={"ssbr": self.current_screensaver_brightness, "sbr": self.current_screen_brightness})
@@ -91,7 +86,11 @@ class LuiController(object):
         elif type(defaultBackgroundColor) is list:
             dbc = rgb_dec565(defaultBackgroundColor)
 
-        self._send_mqtt_msg(f"dimmode~{sleepBrightness}~{brightness}~{dbc}")
+        featureExperimentalSliders=0
+        if self._config.get("featureExperimentalSliders"):
+            featureExperimentalSliders=1
+
+        self._send_mqtt_msg(f"dimmode~{sleepBrightness}~{brightness}~{dbc}~~{featureExperimentalSliders}")
         
     def calc_current_brightness(self, sleep_brightness_config):
         current_screensaver_brightness = 20
@@ -150,26 +149,38 @@ class LuiController(object):
             apis.ha_api.listen_state(self.update_screensaver_brightness_state_callback, entity_id=screen_brightness_config)   
     
         items = self._config.get_all_entity_names()
+        apis.ha_api.log(f"gtest123: {items}")
+        prefixes = ("navigate.", "delete", "iText")
+        items = [x for x in items if not (x is None or x.startswith(prefixes))]
         apis.ha_api.log(f"Registering callbacks for the following items: {items}")
         for item in items:
             if apis.ha_api.entity_exists(item):
                 apis.ha_api.listen_state(self.state_change_callback, entity_id=item, attribute="all")
 
     def state_change_callback(self, entity, attribute, old, new, kwargs):
-        apis.ha_api.log(f"Got callback for: {entity}", level="DEBUG")
-        apis.ha_api.log(f"Current page has the following items: {self._current_card.get_entity_names()}", level="DEBUG")
-        if entity in self._current_card.get_entity_names():
-            apis.ha_api.log(f"Callback Entity is on current page: {entity}", level="DEBUG")
+        #apis.ha_api.log(f"Got callback for: {entity}")
+        #apis.ha_api.log(f"Current page has the following items: {self._current_card.get_entity_names(uuid=True)}")
+        entities_on_card = self._current_card.get_entity_names(uuid=True)
+
+        res_uuid = "uuid.notfound"
+        if entity in sum(entities_on_card.values(), []):
+            for uuid, names in entities_on_card.items():
+                #apis.ha_api.log(f"test124 items: {entities_on_card.items()} names: {names}")
+                #apis.ha_api.log(f"State change callback matched for entity on current page: {names}")
+                if entity in names:
+                    res_uuid = uuid
+
+            #apis.ha_api.log(f"Callback Entity is on current page: {entity}")
             self._pages_gen.render_card(self._current_card, send_page_type=False)
             # send detail page update, just in case
-            if self._current_card.cardType in ["cardGrid", "cardEntities", "cardMedia"]:
+            if self._current_card.cardType in ["cardGrid", "cardGrid2", "cardEntities", "cardMedia"]:
                 if entity.startswith("light"):
-                    self._pages_gen.generate_light_detail_page(entity)
+                    self._pages_gen.generate_light_detail_page(res_uuid)
                 if entity.startswith("cover"):
                     self._pages_gen.generate_shutter_detail_page(entity)
                 if entity.startswith("fan"):
                     self._pages_gen.generate_fan_detail_page(entity)
-                if entity.startswith("input_select"):
+                if entity.startswith("input_select") or entity.startswith("select"):
                     self._pages_gen.generate_input_select_detail_page(entity)
                 if entity.startswith("media_player"):
                     self._pages_gen.generate_input_select_detail_page(entity)
@@ -182,19 +193,24 @@ class LuiController(object):
 
     def detail_open(self, detail_type, entity_id):
         if detail_type == "popupShutter":
-            self._pages_gen.generate_shutter_detail_page(entity_id)
+            self._pages_gen.generate_shutter_detail_page(entity_id, True)
         if detail_type == "popupLight":
-            self._pages_gen.generate_light_detail_page(entity_id)
+            self._pages_gen.generate_light_detail_page(entity_id, True)
         if detail_type == "popupFan":
-            self._pages_gen.generate_fan_detail_page(entity_id)
+            self._pages_gen.generate_fan_detail_page(entity_id, True)
         if detail_type == "popupThermo":
-            self._pages_gen.generate_thermo_detail_page(entity_id)
+            self._pages_gen.generate_thermo_detail_page(entity_id, True)
         if detail_type == "popupInSel":
-            self._pages_gen.generate_input_select_detail_page(entity_id)
+            self._pages_gen.generate_input_select_detail_page(entity_id, True)
         if detail_type == "popupTimer":
-            self._pages_gen.generate_timer_detail_page(entity_id)   
+            self._pages_gen.generate_timer_detail_page(entity_id, True)
+
     def button_press(self, entity_id, button_type, value):
         apis.ha_api.log(f"Button Press Event; entity_id: {entity_id}; button_type: {button_type}; value: {value} ")
+        if entity_id.startswith('uuid'):
+            entity_config = self._config._config_entites_table.get(entity_id)
+            if entity_config is not None:
+                entity_id = entity_config.entityId
         # internal buttons
         if entity_id == "screensaver" and button_type == "bExit":
             # get default card if there is one
@@ -202,14 +218,14 @@ class LuiController(object):
             if defaultCard is not None:
                 defaultCard = apis.ha_api.render_template(defaultCard)
                 apis.ha_api.log(f"Searching for the following page as defaultPage: {defaultCard}")
-                dstCard = self._config.searchCard(defaultCard)
+                dstCard = self._config.search_card(defaultCard)
                 apis.ha_api.log(f"Result for the following page as defaultPage: {dstCard}")
                 if dstCard is not None:
                     self._previous_cards = []
                     self._previous_cards.append(dstCard)
-            # set _previous_cards to first page in case it's empty
+            # set _previous_cards to default page in case it's empty
             if len(self._previous_cards) == 0:
-                self._previous_cards.append(self._config.getCard(0))
+                self._previous_cards.append(self._config.get_default_card())
             # check for double tap if configured and render current page
             if self._config.get("screensaver.doubleTapToUnlock") and int(value) >= 2:
                 self._current_card = self._previous_cards.pop()
@@ -227,28 +243,6 @@ class LuiController(object):
 
         if button_type == "bExit":
             self._pages_gen.render_card(self._current_card)
-        if button_type == "bUp":
-            if self._previous_cards:
-                self._current_card = self._previous_cards.pop()
-            else:
-                self._current_card = self._config.getCard(0)
-            self._pages_gen.render_card(self._current_card)
-        if button_type == "bHome":
-            if self._previous_cards:
-                self._current_card = self._previous_cards[0]
-                self._previous_cards.clear()
-            else:
-                self._current_card = self._config.getCard(0)
-            self._pages_gen.render_card(self._current_card)
-            
-        if button_type == "bNext":
-            card = self._config.getCard(self._current_card.pos+1)
-            self._current_card = card
-            self._pages_gen.render_card(card)
-        if button_type == "bPrev":
-            card = self._config.getCard(self._current_card.pos-1)
-            self._current_card = card
-            self._pages_gen.render_card(card)
         
         elif entity_id == "updateDisplayNoYes" and value == "no":
             self._pages_gen.render_card(self._current_card)
@@ -286,23 +280,38 @@ class LuiController(object):
             apis.ha_api.get_entity(entity_id).call_service("close_cover_tilt")
         if button_type == "tiltSlider":
             pos = int(value)
-            apis.ha_api.get_entity(entity_id).call_service("set_cover_tilt_position", position=pos)
+            apis.ha_api.get_entity(entity_id).call_service("set_cover_tilt_position", tilt_position=pos)
 
 
         if button_type == "button":
-            if entity_id.startswith('uuid'):
-                le = self._config._config_entites_table.get(entity_id)
-                entity_id = le.entityId
-
             if entity_id.startswith('navigate'):
+                # internal navigation for next/prev
+                if entity_id.startswith('navigate.uuid'):
+                    dstCard = self._config.get_card_by_uuid(entity_id.replace('navigate.',''))
                 # internal for navigation to nested pages
-                dstCard = self._config.searchCard(entity_id)
+                else:
+                    dstCard = self._config.search_card(entity_id)
                 if dstCard is not None:
-                    self._previous_cards.append(self._current_card)
+                    if dstCard.hidden:
+                        self._previous_cards.append(self._current_card)
                     self._current_card = dstCard
                     self._pages_gen.render_card(self._current_card)
                 else:
                     apis.ha_api.log(f"No page with key {entity_id} found")
+            if entity_id.startswith('navUp'):
+                if self._previous_cards:
+                    self._current_card = self._previous_cards.pop()
+                else:
+                    self._current_card = self._config.get_default_card()
+                self._pages_gen.render_card(self._current_card)
+            if entity_id.startswith('navPrev'):
+                if self._current_card.uuid_prev:
+                    self._current_card = self._config.get_card_by_uuid(self._current_card.uuid_prev)
+                    self._pages_gen.render_card(self._current_card)
+            if entity_id.startswith('navNext'):
+                if self._current_card.uuid_next:
+                    self._current_card = self._config.get_card_by_uuid(self._current_card.uuid_next)
+                    self._pages_gen.render_card(self._current_card)
             elif entity_id.startswith('scene'):
                 apis.ha_api.get_entity(entity_id).call_service("turn_on")
             elif entity_id.startswith('script'):
@@ -316,7 +325,7 @@ class LuiController(object):
                     apis.ha_api.get_entity(entity_id).call_service("lock")
             elif entity_id.startswith('button') or entity_id.startswith('input_button'):
                 apis.ha_api.get_entity(entity_id).call_service("press")
-            elif entity_id.startswith('input_select'):
+            elif entity_id.startswith('input_select') or entity_id.startswith('select'):
                 apis.ha_api.get_entity(entity_id).call_service("select_next")
             elif entity_id.startswith('vacuum'):
                 if apis.ha_api.get_entity(entity_id).state == "docked":
@@ -324,7 +333,7 @@ class LuiController(object):
                 else:
                     apis.ha_api.get_entity(entity_id).call_service("return_to_base")
             elif entity_id.startswith('service'):
-                apis.ha_api.call_service(entity_id.replace('service.', '', 1).replace('.','/', 1), **le.data)
+                apis.ha_api.call_service(entity_id.replace('service.', '', 1).replace('.','/', 1), **entity_config.data)
 
         # for media page
         if button_type == "media-next":
@@ -389,6 +398,18 @@ class LuiController(object):
                     msg += f"- {apis.ha_api.get_entity(e).attributes.friendly_name}\r\n"
             self._pages_gen.send_message_page("opnSensorNotifyRes", "", msg, "", "")
 
+        # for cardUnlock
+        if button_type == "cardUnlock-unlock":
+            curCard = self._config.get_card_by_uuid(entity_id.replace('navigate.',''))
+            if curCard is not None:
+                if int(curCard.raw_config.get("pin")) == int(value):
+                    dstCard = self._config.search_card(curCard.raw_config.get("destination"))
+                    if dstCard is not None:
+                        if dstCard.hidden:
+                            self._previous_cards.append(self._current_card)
+                        self._current_card = dstCard
+                        self._pages_gen.render_card(self._current_card)
+
         if button_type == "mode-preset_modes":
             entity = apis.ha_api.get_entity(entity_id)
             preset_mode = entity.attributes.preset_modes[int(value)]
@@ -404,15 +425,22 @@ class LuiController(object):
             fan_mode = entity.attributes.fan_modes[int(value)]
             entity.call_service("set_fan_mode", fan_mode=fan_mode)
 
-        if button_type == "mode-input_select":
+        if button_type in ["mode-input_select", "mode-select"]:
             entity = apis.ha_api.get_entity(entity_id)
             option = entity.attributes.options[int(value)]
             entity.call_service("select_option", option=option)
 
         if button_type == "mode-light":
+            if entity_id.startswith('uuid'):
+                entity_config = self._config._config_entites_table.get(entity_id)
+                entity_id = entity_config.entityId
             entity = apis.ha_api.get_entity(entity_id)
-            option = entity.attributes.effect_list[int(value)]
-            entity.call_service("select_effect", option=option)
+            options_list = entity_config.entity_input_config.get("effectList")
+            if options_list is not None:
+                option = options_list[int(value)]
+            else:
+                option = entity.attributes.effect_list[int(value)]
+            entity.call_service("turn_on", effect=option)
             
         if button_type == "mode-media_player":
             entity = apis.ha_api.get_entity(entity_id)
@@ -431,3 +459,9 @@ class LuiController(object):
             apis.ha_api.get_entity(entity_id).call_service("pause")
         if button_type == "timer-finish":
             apis.ha_api.get_entity(entity_id).call_service("finish")
+            
+    @property
+    def current_card(self) -> Card:
+        """Used to get the current card"""
+
+        return self._current_card

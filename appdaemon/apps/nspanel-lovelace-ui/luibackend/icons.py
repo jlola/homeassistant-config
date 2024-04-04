@@ -181,10 +181,6 @@ def get_icon(ha_type, overwrite=None):
     if overwrite is not None:
         if type(overwrite) is str:
             return get_icon_char(overwrite)
-        if type(overwrite) is dict:
-            for overwrite_state, overwrite_icon in overwrite.items():
-                if overwrite_state == state:
-                    return get_icon_char(overwrite_icon)
     
     result_icon = "alert-circle-outline"
     if ha_type == "script":
@@ -217,6 +213,9 @@ def get_icon_ha(entity_id, overwrite=None, stateOverwrite=None):
         entity = apis.ha_api.get_entity(entity_id)
         state = entity.state if stateOverwrite is None else stateOverwrite
 
+    if entity_id in ["sensor.weather_forecast_daily", "sensor.weather_forecast_hourly"]:
+        ha_type = "weather"
+        
     if overwrite is not None:
         if type(overwrite) is str:
             return get_icon_char(overwrite)

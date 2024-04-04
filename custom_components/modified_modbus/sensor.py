@@ -194,8 +194,11 @@ class ModbusRegisterSensor(RestoreEntity,IDeviceEventConsumer):
         try:         
             if (self._holdingsType==CONF_DS18B20):
                 dsval = self._unitScanner.GetDS18B20Value(self._owid)
-                #if (dsval!=85):
-                self._value = dsval
+                if (dsval!=85):
+                    self._value = dsval
+                else:
+                    self._available = False
+                    return
             elif (self._holdingsType==CONF_STRING):
                 self._value = self.__ReadString(self._slave, self._offset, self._count)
             elif (self._holdingsType==CONF_HEX):

@@ -119,7 +119,8 @@
                 }
               ],
               "title": "Kuchyn",
-              "hours_to_show": 5
+              "hours_to_show": 12,
+              "logarithmic_scale": false
             }
           ]
         },

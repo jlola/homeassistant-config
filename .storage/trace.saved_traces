@@ -2,5 +2,240 @@
   "version": 1,
   "minor_version": 1,
   "key": "trace.saved_traces",
-  "data": {}
+  "data": {
+    "automation.1666283701554": [
+      {
+        "extended_dict": {
+          "last_step": "action/0",
+          "run_id": "920d7e4eff4468e92c3712e6cdd01cab",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2024-04-03T02:00:00.401232+00:00",
+            "finish": "2024-04-03T02:00:00.422175+00:00"
+          },
+          "domain": "automation",
+          "item_id": "1666283701554",
+          "trigger": "time",
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2024-04-03T02:00:00.401433+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.shutdown",
+                    "state": "on",
+                    "attributes": {
+                      "id": "1666283701554",
+                      "last_triggered": "2024-04-02T02:00:00.409909+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "purge db"
+                    },
+                    "last_changed": "2024-04-02T21:27:01.469362+00:00",
+                    "last_updated": "2024-04-02T21:27:01.469362+00:00",
+                    "context": {
+                      "id": "01HTGBAMJXE567CNME6C82XAKZ",
+                      "parent_id": null,
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": null,
+                    "platform": "time",
+                    "now": "2024-04-03T04:00:00.400338+02:00",
+                    "description": "time",
+                    "entity_id": null
+                  }
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2024-04-03T02:00:00.411476+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01HTGTYFMHF5FAPS05RQBHH9VJ",
+                    "parent_id": null,
+                    "user_id": null
+                  }
+                },
+                "result": {
+                  "params": {
+                    "domain": "recorder",
+                    "service": "purge",
+                    "service_data": {
+                      "repack": true
+                    },
+                    "target": {}
+                  },
+                  "running_script": false
+                }
+              }
+            ]
+          },
+          "config": {
+            "id": "1666283701554",
+            "alias": "purge db",
+            "description": "",
+            "trigger": [
+              {
+                "platform": "time",
+                "at": "04:00:00"
+              }
+            ],
+            "condition": [],
+            "action": [
+              {
+                "service": "recorder.purge",
+                "data": {
+                  "repack": true
+                }
+              }
+            ],
+            "mode": "single"
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01HTGTYFMHF5FAPS05RQBHH9VJ",
+            "parent_id": null,
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/0",
+          "run_id": "920d7e4eff4468e92c3712e6cdd01cab",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2024-04-03T02:00:00.401232+00:00",
+            "finish": "2024-04-03T02:00:00.422175+00:00"
+          },
+          "domain": "automation",
+          "item_id": "1666283701554",
+          "trigger": "time"
+        }
+      },
+      {
+        "extended_dict": {
+          "last_step": "action/0",
+          "run_id": "5b07b496a39d89a5926a9897cf1d1380",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2024-04-04T02:00:00.399146+00:00",
+            "finish": "2024-04-04T02:00:00.420467+00:00"
+          },
+          "domain": "automation",
+          "item_id": "1666283701554",
+          "trigger": "time",
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2024-04-04T02:00:00.399277+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.shutdown",
+                    "state": "on",
+                    "attributes": {
+                      "id": "1666283701554",
+                      "last_triggered": "2024-04-03T02:00:00.402241+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "purge db"
+                    },
+                    "last_changed": "2024-04-02T21:27:01.469362+00:00",
+                    "last_updated": "2024-04-03T02:00:00.420517+00:00",
+                    "context": {
+                      "id": "01HTGTYFMHF5FAPS05RQBHH9VJ",
+                      "parent_id": null,
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": null,
+                    "platform": "time",
+                    "now": "2024-04-04T04:00:00.398609+02:00",
+                    "description": "time",
+                    "entity_id": null
+                  }
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2024-04-04T02:00:00.405968+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01HTKDB6MF5JCH6K54XKYRYWBD",
+                    "parent_id": null,
+                    "user_id": null
+                  }
+                },
+                "result": {
+                  "params": {
+                    "domain": "recorder",
+                    "service": "purge",
+                    "service_data": {
+                      "repack": true
+                    },
+                    "target": {}
+                  },
+                  "running_script": false
+                }
+              }
+            ]
+          },
+          "config": {
+            "id": "1666283701554",
+            "alias": "purge db",
+            "description": "",
+            "trigger": [
+              {
+                "platform": "time",
+                "at": "04:00:00"
+              }
+            ],
+            "condition": [],
+            "action": [
+              {
+                "service": "recorder.purge",
+                "data": {
+                  "repack": true
+                }
+              }
+            ],
+            "mode": "single"
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01HTKDB6MF5JCH6K54XKYRYWBD",
+            "parent_id": null,
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/0",
+          "run_id": "5b07b496a39d89a5926a9897cf1d1380",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2024-04-04T02:00:00.399146+00:00",
+            "finish": "2024-04-04T02:00:00.420467+00:00"
+          },
+          "domain": "automation",
+          "item_id": "1666283701554",
+          "trigger": "time"
+        }
+      }
+    ]
+  }
 }

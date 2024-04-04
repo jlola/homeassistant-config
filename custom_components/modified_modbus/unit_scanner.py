@@ -22,15 +22,17 @@ class UnitScanner(object):
 
     def __scan(self):
         _LOGGER.info(f"Scan | Slave: {self._slave} started.")
-
+        #prectu hlavicku
         self.__read()
         #pydevd.settrace("192.168.89.25", port=5678)        
         _LOGGER.info(f"Scan | Slave: {self._slave} Last index: {self._header.LastIndex}")
         _LOGGER.info(f"Scan | Slave: {self._slave} Started. Detected {len(self._typedefs)} types")
 
+        #zjistim jestli ma modul obsahovat 1wire teploty
         owtypedef = self.FindTypeDefByType(self._typedefs, ETypes.DS18B20Temp)
         if (owtypedef!=None):
             #_LOGGER.info(f"Scan | Slave: {self._slave} Found owtypedef")
+            #pokud ano provedu scan
             self._scanOneWire(owtypedef)
             self._holdings = self._hub.readHoldings(self._slave,0,self._header.LastIndex,150)
                         
