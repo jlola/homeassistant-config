@@ -8,3 +8,5 @@ tts/
 scan/
 *.log.*
 *.db.*
+hacs
+tapo
