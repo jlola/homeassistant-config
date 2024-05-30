@@ -23,7 +23,6 @@
               "user": "cdc786aacdce49eeb86ae1d0343059af"
             }
           ],
-          "badges": [],
           "cards": [
             {
               "type": "entities",
@@ -86,15 +85,16 @@
             },
             {
               "type": "weather-forecast",
-              "entity": "weather.home"
+              "entity": "weather.home",
+              "forecast_type": "daily"
             }
-          ]
+          ],
+          "icon": "mdi:home-map-marker"
         },
         {
           "theme": "Backend-selected",
           "title": "Teplota v dome",
           "path": "teplota-prostoru",
-          "badges": [],
           "cards": [
             {
               "type": "thermostat",
@@ -122,7 +122,8 @@
               "hours_to_show": 12,
               "logarithmic_scale": false
             }
-          ]
+          ],
+          "icon": "mdi:home-thermometer-outline"
         },
         {
           "theme": "Backend-selected",
@@ -133,7 +134,6 @@
               "user": "b09f7b37fe70417390c67b7d02d9e0bc"
             }
           ],
-          "badges": [],
           "cards": [
             {
               "show_name": true,
@@ -166,6 +166,41 @@
                   "entity": "sensor.temp_wc"
                 }
               ]
+            }
+          ],
+          "icon": "mdi:air-conditioner"
+        },
+        {
+          "title": "Bazén",
+          "path": "bazen",
+          "icon": "mdi:pool",
+          "cards": [
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "switch.switch_7_7_pool_pump"
+                },
+                {
+                  "entity": "sensor.temp_solar_heater"
+                },
+                {
+                  "entity": "input_select.solar_pump_mode"
+                }
+              ]
+            },
+            {
+              "type": "history-graph",
+              "entities": [
+                {
+                  "entity": "sensor.temp_solar_heater"
+                },
+                {
+                  "entity": "switch.switch_7_7_pool_pump"
+                }
+              ],
+              "title": "Ohrev bazenu",
+              "hours_to_show": 6
             }
           ]
         }

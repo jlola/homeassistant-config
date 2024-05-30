@@ -5,7 +5,7 @@
   "data": {
     "items": [
       {
-        "conversation_engine": "homeassistant",
+        "conversation_engine": "conversation.home_assistant",
         "conversation_language": "en",
         "id": "01gzksvn1wjj7q3wp5vt5fvewn",
         "language": "en",

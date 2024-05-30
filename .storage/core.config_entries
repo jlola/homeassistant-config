@@ -295,38 +295,6 @@
         "disabled_by": null
       },
       {
-        "entry_id": "0d746ff6b2300da552ab87d790f46333",
-        "version": 1,
-        "minor_version": 1,
-        "domain": "mobile_app",
-        "title": "Redmi 4X",
-        "data": {
-          "app_id": "io.homeassistant.companion.android",
-          "app_name": "Home Assistant",
-          "app_version": "2022.11.0-full (2948)",
-          "device_name": "Redmi 4X",
-          "manufacturer": "Xiaomi",
-          "model": "Redmi 4X",
-          "os_name": "Android",
-          "os_version": "30",
-          "supports_encryption": false,
-          "app_data": {
-            "push_websocket_channel": true,
-            "push_url": "https://mobile-apps.home-assistant.io/api/sendPush/android/v1",
-            "push_token": "ejTd7WU3T0GbvLM0T6yYmE:APA91bHtORSBG8qD_Es49pzgTWHu34l5VpXCa3r0ijV756tCw1i9s1RwQgXeOMc_8RBScoiMpF_ua7i8fLxzHZjrHKjrpzbFY67Gj_9_CqZbXo1o6BldY7i2R2pbtgCik0kUSUD-k9K6"
-          },
-          "device_id": "d04f688c2ae277d7",
-          "webhook_id": "47617d929cc26140b4e7cb0cecb3e57af5877ab70b4105652d0202f7bfab9566",
-          "user_id": "b09f7b37fe70417390c67b7d02d9e0bc"
-        },
-        "options": {},
-        "pref_disable_new_entities": false,
-        "pref_disable_polling": false,
-        "source": "registration",
-        "unique_id": "io.homeassistant.companion.android-d04f688c2ae277d7",
-        "disabled_by": null
-      },
-      {
         "entry_id": "5ce68a55c1a19c1f895a585911eb468f",
         "version": 2,
         "minor_version": 1,
@@ -359,31 +327,6 @@
         "pref_disable_polling": false,
         "source": "user",
         "unique_id": "/config/home-assistant_v2.db",
-        "disabled_by": null
-      },
-      {
-        "entry_id": "56500bb08793fa9189c8b8c25c91b3ae",
-        "version": 1,
-        "minor_version": 1,
-        "domain": "hacs",
-        "title": "",
-        "data": {
-          "token": "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"
-        },
-        "options": {
-          "sidepanel_title": "HACS",
-          "sidepanel_icon": "hacs:hacs",
-          "release_limit": 5,
-          "country": "ALL",
-          "appdaemon": true,
-          "netdaemon": true,
-          "debug": false,
-          "experimental": false
-        },
-        "pref_disable_new_entities": false,
-        "pref_disable_polling": false,
-        "source": "user",
-        "unique_id": null,
         "disabled_by": null
       },
       {
@@ -563,6 +506,31 @@
         "pref_disable_polling": false,
         "source": "ignore",
         "unique_id": "E4:5F:01:4E:39:07",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "c52d31ee2b1266069701e85ce072bedd",
+        "version": 1,
+        "minor_version": 1,
+        "domain": "hacs",
+        "title": "",
+        "data": {
+          "token": "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"
+        },
+        "options": {
+          "sidepanel_title": "HACS",
+          "sidepanel_icon": "hacs:hacs",
+          "release_limit": 5,
+          "country": "ALL",
+          "appdaemon": true,
+          "netdaemon": false,
+          "debug": false,
+          "experimental": true
+        },
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": null,
         "disabled_by": null
       }
     ]

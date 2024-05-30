@@ -39,12 +39,20 @@ homeassistant:
   time_zone: Europe/Prague
   country: CZ
   customize:
+    sensor.temp_floor_livingrom:
+      friendly_name: "Teplota podlahy obývák"
+    sensor.temp_bathroom:
+      friendly_name: "Teplota koupelna"
+    sensor.temp_wc:
+      friendly_name: "Teplota WC"
     sensor.3_temperature_outside:
       friendly_name: "Venkovní teplota"
     sensor.3_temperature_waterheater:
       friendly_name: "Teplota boileru"
     switch.switch_wc:
       friendly_name: "Vetrak wc"
+    switch.switch_bathroom:
+      friendly_name: "Vetrak koupelna"
     switch.switch_5_10_servo_open_floor_circle:
       friendly_name: "Servo podlahy otevírá"
     switch.switch_5_11_servo_close_floor_circle:
@@ -105,6 +113,26 @@ homeassistant:
       friendly_name: "Tlacitko cerpadlo bazen"
 
 template:
+  - trigger:
+      - platform: time_pattern
+        minutes: /1
+      - platform: homeassistant
+        event: start
+    action:
+      - service: weather.get_forecasts
+        data:
+          type: daily
+        target:
+          entity_id: weather.home # change to your weather entity
+        response_variable: agenda
+    sensor:
+      - name: "weather forecast daily"
+        unique_id: weather_forecast_daily
+        state: "{{ states('weather.home') }}" # # change to your weather entity in this line
+        attributes:
+          forecast: "{{ agenda['weather.home'].forecast }}" # change to your weather entity
+          temperature: "{{ state_attr('weather.home', 'temperature') }}" # change to your weather entity
+          temperature_unit: "{{ state_attr('weather.home', 'temperature_unit') }}" # change to your weather entity
   - sensor:
       - name: "ups_current"
         state: "{{ state_attr('sensor.waveshare_ups_hat','current') }}"
@@ -239,6 +267,13 @@ input_boolean:
   switch_heat:
     name: "Spinac topeni"
 input_select:
+  solar_pump_mode:
+    name: "Rezim cerpadla bazenu"
+    options:
+      - "On"
+      - "Off"
+      - "Auto"
+      - "Swimming"
   pump_mode_floor_circle:
     name: Režim čerpadla
     options:
