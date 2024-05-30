@@ -1,0 +1,2005 @@
+{
+  "domains": [
+    {
+      "domain": "light",
+      "entities": [],
+      "attributes": [
+        {
+          "jsonName": "supported_color_modes",
+          "cSharpName": "SupportedColorModes",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.String]"
+        },
+        {
+          "jsonName": "supported_features",
+          "cSharpName": "SupportedFeatures",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "color_mode",
+          "cSharpName": "ColorMode",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "min_color_temp_kelvin",
+          "cSharpName": "MinColorTempKelvin",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "max_color_temp_kelvin",
+          "cSharpName": "MaxColorTempKelvin",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "min_mireds",
+          "cSharpName": "MinMireds",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "max_mireds",
+          "cSharpName": "MaxMireds",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "brightness",
+          "cSharpName": "Brightness",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "color_temp_kelvin",
+          "cSharpName": "ColorTempKelvin",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "color_temp",
+          "cSharpName": "ColorTemp",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "hs_color",
+          "cSharpName": "HsColor",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.Double]"
+        },
+        {
+          "jsonName": "rgb_color",
+          "cSharpName": "RgbColor",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.Double]"
+        },
+        {
+          "jsonName": "xy_color",
+          "cSharpName": "XyColor",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.Double]"
+        },
+        {
+          "jsonName": "entity_id",
+          "cSharpName": "EntityId",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.String]"
+        },
+        {
+          "jsonName": "effect_list",
+          "cSharpName": "EffectList",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.String]"
+        },
+        {
+          "jsonName": "color",
+          "cSharpName": "Color",
+          "clrType": "System.Object"
+        }
+      ]
+    },
+    {
+      "domain": "media_player",
+      "entities": [],
+      "attributes": [
+        {
+          "jsonName": "app_id",
+          "cSharpName": "AppId",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "app_name",
+          "cSharpName": "AppName",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "device_class",
+          "cSharpName": "DeviceClass",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "entity_picture_local",
+          "cSharpName": "EntityPictureLocal",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "entity_picture",
+          "cSharpName": "EntityPicture",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "icon",
+          "cSharpName": "Icon",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "supported_features",
+          "cSharpName": "SupportedFeatures",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "volume_level",
+          "cSharpName": "VolumeLevel",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "is_volume_muted",
+          "cSharpName": "IsVolumeMuted",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "media_content_id",
+          "cSharpName": "MediaContentId",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "media_content_type",
+          "cSharpName": "MediaContentType",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "media_duration",
+          "cSharpName": "MediaDuration",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "media_position",
+          "cSharpName": "MediaPosition",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "media_position_updated_at",
+          "cSharpName": "MediaPositionUpdatedAt",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "media_title",
+          "cSharpName": "MediaTitle",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "media_album_name",
+          "cSharpName": "MediaAlbumName",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "media_image_url",
+          "cSharpName": "MediaImageUrl",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "media_artist",
+          "cSharpName": "MediaArtist",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "sound_mode_list",
+          "cSharpName": "SoundModeList",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.String]"
+        },
+        {
+          "jsonName": "media_track",
+          "cSharpName": "MediaTrack",
+          "clrType": "System.Object"
+        },
+        {
+          "jsonName": "shuffle",
+          "cSharpName": "Shuffle",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "repeat",
+          "cSharpName": "Repeat",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "source_list",
+          "cSharpName": "SourceList",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.String]"
+        },
+        {
+          "jsonName": "source",
+          "cSharpName": "Source",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "adb_response",
+          "cSharpName": "AdbResponse",
+          "clrType": "System.Object"
+        },
+        {
+          "jsonName": "hdmi_input",
+          "cSharpName": "HdmiInput",
+          "clrType": "System.Object"
+        },
+        {
+          "jsonName": "sound_mode",
+          "cSharpName": "SoundMode",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "sound_mode_raw",
+          "cSharpName": "SoundModeRaw",
+          "clrType": "System.String"
+        }
+      ]
+    },
+    {
+      "domain": "automation",
+      "entities": [
+        {
+          "id": "automation.shutdown",
+          "friendlyName": "purge db",
+          "cSharpName": "Shutdown"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "id",
+          "cSharpName": "Id",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "last_triggered",
+          "cSharpName": "LastTriggered",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "mode",
+          "cSharpName": "Mode",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "current",
+          "cSharpName": "Current",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        }
+      ]
+    },
+    {
+      "domain": "binary_sensor",
+      "entities": [
+        {
+          "id": "binary_sensor.appdaemon_4_running",
+          "friendlyName": "AppDaemon Running",
+          "cSharpName": "Appdaemon4Running"
+        },
+        {
+          "id": "binary_sensor.binary_sensor_3_2_waterheater_ison",
+          "friendlyName": "Spirala bojleru vypnuta",
+          "cSharpName": "BinarySensor32WaterheaterIson"
+        },
+        {
+          "id": "binary_sensor.binary_sensor_4_1",
+          "friendlyName": "binary_sensor_4_1",
+          "cSharpName": "BinarySensor41"
+        },
+        {
+          "id": "binary_sensor.binary_sensor_4_3",
+          "friendlyName": "binary_sensor_4_3",
+          "cSharpName": "BinarySensor43"
+        },
+        {
+          "id": "binary_sensor.binary_sensor_5_1_thermostat",
+          "friendlyName": "binary_sensor_5_1_thermostat",
+          "cSharpName": "BinarySensor51Thermostat"
+        },
+        {
+          "id": "binary_sensor.binary_sensor_5_1_thermostat_negative",
+          "friendlyName": "Termostat kuchy\u0148",
+          "cSharpName": "BinarySensor51ThermostatNegative"
+        },
+        {
+          "id": "binary_sensor.binary_sensor_5_2_hdo",
+          "friendlyName": "binary_sensor_5_2_HDO",
+          "cSharpName": "BinarySensor52Hdo"
+        },
+        {
+          "id": "binary_sensor.binary_sensor_5_3",
+          "friendlyName": "binary_sensor_5_3",
+          "cSharpName": "BinarySensor53"
+        },
+        {
+          "id": "binary_sensor.binary_sensor_5_4",
+          "friendlyName": "binary_sensor_5_4",
+          "cSharpName": "BinarySensor54"
+        },
+        {
+          "id": "binary_sensor.binary_sensor_5_5",
+          "friendlyName": "binary_sensor_5_5",
+          "cSharpName": "BinarySensor55"
+        },
+        {
+          "id": "binary_sensor.binary_sensor_5_6",
+          "friendlyName": "binary_sensor_5_6",
+          "cSharpName": "BinarySensor56"
+        },
+        {
+          "id": "binary_sensor.binary_sensor_6_1",
+          "friendlyName": "binary_sensor_6_1",
+          "cSharpName": "BinarySensor61"
+        },
+        {
+          "id": "binary_sensor.binary_sensor_6_2",
+          "friendlyName": "binary_sensor_6_2",
+          "cSharpName": "BinarySensor62"
+        },
+        {
+          "id": "binary_sensor.binary_sensor_7_1_pool_pump_button",
+          "friendlyName": "Tlacitko cerpadlo bazen",
+          "cSharpName": "BinarySensor71PoolPumpButton"
+        },
+        {
+          "id": "binary_sensor.binary_sensor_7_2",
+          "friendlyName": "binary_sensor_7_2",
+          "cSharpName": "BinarySensor72"
+        },
+        {
+          "id": "binary_sensor.binary_sensor_7_3",
+          "friendlyName": "binary_sensor_7_3",
+          "cSharpName": "BinarySensor73"
+        },
+        {
+          "id": "binary_sensor.binary_sensor_7_4",
+          "friendlyName": "binary_sensor_7_4",
+          "cSharpName": "BinarySensor74"
+        },
+        {
+          "id": "binary_sensor.binary_sensor_7_5",
+          "friendlyName": "binary_sensor_7_5",
+          "cSharpName": "BinarySensor75"
+        },
+        {
+          "id": "binary_sensor.binary_sensor_7_6",
+          "friendlyName": "binary_sensor_7_6",
+          "cSharpName": "BinarySensor76"
+        },
+        {
+          "id": "binary_sensor.binary_sensor_bathroom",
+          "friendlyName": "binary_sensor_bathroom",
+          "cSharpName": "BinarySensorBathroom"
+        },
+        {
+          "id": "binary_sensor.binary_sensor_wc",
+          "friendlyName": "binary_sensor_wc",
+          "cSharpName": "BinarySensorWc"
+        },
+        {
+          "id": "binary_sensor.home_assistant_operating_system_running",
+          "friendlyName": "Home Assistant Operating System: Running",
+          "cSharpName": "HomeAssistantOperatingSystemRunning"
+        },
+        {
+          "id": "binary_sensor.rpi_power_status",
+          "friendlyName": "RPi Power status",
+          "cSharpName": "RpiPowerStatus"
+        },
+        {
+          "id": "binary_sensor.terminal_ssh_running",
+          "friendlyName": "Terminal \u0026 SSH Running",
+          "cSharpName": "TerminalSshRunning"
+        },
+        {
+          "id": "binary_sensor.ups_low_battery",
+          "friendlyName": "ups_low_battery",
+          "cSharpName": "UpsLowBattery"
+        },
+        {
+          "id": "binary_sensor.waveshare_ups_hat_online",
+          "friendlyName": "waveshare_ups_hat_online",
+          "cSharpName": "WaveshareUpsHatOnline"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "device_class",
+          "cSharpName": "DeviceClass",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "icon",
+          "cSharpName": "Icon",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "restored",
+          "cSharpName": "Restored",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "supported_features",
+          "cSharpName": "SupportedFeatures",
+          "clrType": "System.Double"
+        }
+      ]
+    },
+    {
+      "domain": "climate",
+      "entities": [
+        {
+          "id": "climate.climate_floor_circle",
+          "friendlyName": "PID regul\u00E1tor podlahy",
+          "cSharpName": "ClimateFloorCircle"
+        },
+        {
+          "id": "climate.climate_kitchen",
+          "friendlyName": "climate_kitchen",
+          "cSharpName": "ClimateKitchen"
+        },
+        {
+          "id": "climate.climate_radiator_circle",
+          "friendlyName": "PID regul\u00E1tor radi\u00E1tor\u016F",
+          "cSharpName": "ClimateRadiatorCircle"
+        },
+        {
+          "id": "climate.climate_waterheater",
+          "friendlyName": "climate_waterheater",
+          "cSharpName": "ClimateWaterheater"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "hvac_modes",
+          "cSharpName": "HvacModes",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.String]"
+        },
+        {
+          "jsonName": "min_temp",
+          "cSharpName": "MinTemp",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "max_temp",
+          "cSharpName": "MaxTemp",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "target_temp_step",
+          "cSharpName": "TargetTempStep",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "preset_modes",
+          "cSharpName": "PresetModes",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.String]"
+        },
+        {
+          "jsonName": "current_temperature",
+          "cSharpName": "CurrentTemperature",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "temperature",
+          "cSharpName": "Temperature",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "hvac_action",
+          "cSharpName": "HvacAction",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "preset_mode",
+          "cSharpName": "PresetMode",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "supported_features",
+          "cSharpName": "SupportedFeatures",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "away_temp",
+          "cSharpName": "AwayTemp",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "eco_temp",
+          "cSharpName": "EcoTemp",
+          "clrType": null
+        },
+        {
+          "jsonName": "boost_temp",
+          "cSharpName": "BoostTemp",
+          "clrType": null
+        },
+        {
+          "jsonName": "comfort_temp",
+          "cSharpName": "ComfortTemp",
+          "clrType": null
+        },
+        {
+          "jsonName": "home_temp",
+          "cSharpName": "HomeTemp",
+          "clrType": null
+        },
+        {
+          "jsonName": "sleep_temp",
+          "cSharpName": "SleepTemp",
+          "clrType": null
+        },
+        {
+          "jsonName": "activity_temp",
+          "cSharpName": "ActivityTemp",
+          "clrType": null
+        },
+        {
+          "jsonName": "control_output",
+          "cSharpName": "ControlOutput",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "kp",
+          "cSharpName": "Kp",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "ki",
+          "cSharpName": "Ki",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "kd",
+          "cSharpName": "Kd",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "ke",
+          "cSharpName": "Ke",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "pid_mode",
+          "cSharpName": "PidMode",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "pid_i",
+          "cSharpName": "PidI",
+          "clrType": "System.Double"
+        }
+      ]
+    },
+    {
+      "domain": "conversation",
+      "entities": [
+        {
+          "id": "conversation.home_assistant",
+          "friendlyName": "Home Assistant",
+          "cSharpName": "HomeAssistant"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        }
+      ]
+    },
+    {
+      "domain": "input_boolean",
+      "entities": [
+        {
+          "id": "input_boolean.netdaemon_app_model_hello_yaml_app",
+          "friendlyName": "netdaemon_app_model_hello_yaml_app",
+          "cSharpName": "NetdaemonAppModelHelloYamlApp"
+        },
+        {
+          "id": "input_boolean.netdaemon_extensions_scheduling_scheduling_app",
+          "friendlyName": "netdaemon_extensions_scheduling_scheduling_app",
+          "cSharpName": "NetdaemonExtensionsSchedulingSchedulingApp"
+        },
+        {
+          "id": "input_boolean.netdaemon_hass_model_hello_world_app",
+          "friendlyName": "netdaemon_hass_model_hello_world_app",
+          "cSharpName": "NetdaemonHassModelHelloWorldApp"
+        },
+        {
+          "id": "input_boolean.netdaemon_hass_model_home_apps_controllers_pool_pump_controller",
+          "friendlyName": "netdaemon_hass_model_home_apps_controllers_pool_pump_controller",
+          "cSharpName": "NetdaemonHassModelHomeAppsControllersPoolPumpController"
+        },
+        {
+          "id": "input_boolean.netdaemon_hass_model_light_on_movement",
+          "friendlyName": "netdaemon_hass_model_light_on_movement",
+          "cSharpName": "NetdaemonHassModelLightOnMovement"
+        },
+        {
+          "id": "input_boolean.switch_heat",
+          "friendlyName": "Spinac topeni",
+          "cSharpName": "SwitchHeat"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "editable",
+          "cSharpName": "Editable",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        }
+      ]
+    },
+    {
+      "domain": "input_number",
+      "isNumeric": true,
+      "entities": [
+        {
+          "id": "input_number.heater_servo_time",
+          "friendlyName": "Heater servo time",
+          "cSharpName": "HeaterServoTime"
+        },
+        {
+          "id": "input_number.min_temp_boiler_pump_floor_circle",
+          "friendlyName": "Minim\u00E1ln\u00ED teplota kotle",
+          "cSharpName": "MinTempBoilerPumpFloorCircle"
+        },
+        {
+          "id": "input_number.min_temp_boiler_pump_radiator_circle",
+          "friendlyName": "Minim\u00E1ln\u00ED teplota kotle",
+          "cSharpName": "MinTempBoilerPumpRadiatorCircle"
+        },
+        {
+          "id": "input_number.min_temp_boiler_water_heater",
+          "friendlyName": "Minim\u00E1ln\u00ED teplota kotle",
+          "cSharpName": "MinTempBoilerWaterHeater"
+        },
+        {
+          "id": "input_number.min_temp_tank_pump_floor_circle",
+          "friendlyName": "Minim\u00E1ln\u00ED teplota n\u00E1dr\u017Ee",
+          "cSharpName": "MinTempTankPumpFloorCircle"
+        },
+        {
+          "id": "input_number.min_temp_tank_pump_radiator_circle",
+          "friendlyName": "Minim\u00E1ln\u00ED teplota n\u00E1dr\u017Ee",
+          "cSharpName": "MinTempTankPumpRadiatorCircle"
+        },
+        {
+          "id": "input_number.min_temp_tank_water_heater",
+          "friendlyName": "Minim\u00E1ln\u00ED teplota n\u00E1dr\u017Ee",
+          "cSharpName": "MinTempTankWaterHeater"
+        },
+        {
+          "id": "input_number.pump_t_tank_min_heater",
+          "friendlyName": "Minimalni teplota nadrze",
+          "cSharpName": "PumpTTankMinHeater"
+        },
+        {
+          "id": "input_number.pump_temp_boiler_min_floor_circle",
+          "friendlyName": "Minimalni teplota kotle",
+          "cSharpName": "PumpTempBoilerMinFloorCircle"
+        },
+        {
+          "id": "input_number.pump_temp_boiler_min_radiator_circle",
+          "friendlyName": "Minimalni teplota kotle",
+          "cSharpName": "PumpTempBoilerMinRadiatorCircle"
+        },
+        {
+          "id": "input_number.pump_temp_tank_min_floor_circle",
+          "friendlyName": "Minimalni teplota nadrze",
+          "cSharpName": "PumpTempTankMinFloorCircle"
+        },
+        {
+          "id": "input_number.pump_temp_tank_min_radiator_circle",
+          "friendlyName": "Minimalni teplota nadrze",
+          "cSharpName": "PumpTempTankMinRadiatorCircle"
+        },
+        {
+          "id": "input_number.servo_time_floor_circle",
+          "friendlyName": "\u010Cas otev\u0159en\u00ED serva podlahy (s)",
+          "cSharpName": "ServoTimeFloorCircle"
+        },
+        {
+          "id": "input_number.servo_time_radiator_circle",
+          "friendlyName": "\u010Cas otev\u0159en\u00ED serva radi\u00E1tory (s)",
+          "cSharpName": "ServoTimeRadiatorCircle"
+        },
+        {
+          "id": "input_number.servo_value_floor_circle",
+          "friendlyName": "Otev\u0159en\u00ED serva podlahy (%)",
+          "cSharpName": "ServoValueFloorCircle"
+        },
+        {
+          "id": "input_number.servo_value_radiator_circle",
+          "friendlyName": "Otev\u0159en\u00ED serva radi\u00E1tor\u016F (%)",
+          "cSharpName": "ServoValueRadiatorCircle"
+        },
+        {
+          "id": "input_number.setpoint_floor_circle",
+          "friendlyName": null,
+          "cSharpName": "SetpointFloorCircle"
+        },
+        {
+          "id": "input_number.setpoint_radiator_circle",
+          "friendlyName": null,
+          "cSharpName": "SetpointRadiatorCircle"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "initial",
+          "cSharpName": "Initial",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "editable",
+          "cSharpName": "Editable",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "min",
+          "cSharpName": "Min",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "max",
+          "cSharpName": "Max",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "step",
+          "cSharpName": "Step",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "mode",
+          "cSharpName": "Mode",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "unit_of_measurement",
+          "cSharpName": "UnitOfMeasurement",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "restored",
+          "cSharpName": "Restored",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "supported_features",
+          "cSharpName": "SupportedFeatures",
+          "clrType": "System.Double"
+        }
+      ]
+    },
+    {
+      "domain": "input_select",
+      "entities": [
+        {
+          "id": "input_select.floor_servo_mode",
+          "friendlyName": "Floor servo mode",
+          "cSharpName": "FloorServoMode"
+        },
+        {
+          "id": "input_select.heater_servo_mode",
+          "friendlyName": "Heater servo mode",
+          "cSharpName": "HeaterServoMode"
+        },
+        {
+          "id": "input_select.pump_mode_floor_circle",
+          "friendlyName": "Re\u017Eim \u010Derpadla",
+          "cSharpName": "PumpModeFloorCircle"
+        },
+        {
+          "id": "input_select.pump_mode_radiator_circle",
+          "friendlyName": "Re\u017Eim \u010Derpadla",
+          "cSharpName": "PumpModeRadiatorCircle"
+        },
+        {
+          "id": "input_select.solar_pump_mode",
+          "friendlyName": "Rezim cerpadla bazenu",
+          "cSharpName": "SolarPumpMode"
+        },
+        {
+          "id": "input_select.water_heater_mode",
+          "friendlyName": "Re\u017Eim boileru",
+          "cSharpName": "WaterHeaterMode"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "options",
+          "cSharpName": "Options",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.String]"
+        },
+        {
+          "jsonName": "editable",
+          "cSharpName": "Editable",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "restored",
+          "cSharpName": "Restored",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "supported_features",
+          "cSharpName": "SupportedFeatures",
+          "clrType": "System.Double"
+        }
+      ]
+    },
+    {
+      "domain": "input_text",
+      "entities": [
+        {
+          "id": "input_text.appdaemon_time",
+          "friendlyName": "Aktualni cas appdaemon",
+          "cSharpName": "AppdaemonTime"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "editable",
+          "cSharpName": "Editable",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "min",
+          "cSharpName": "Min",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "max",
+          "cSharpName": "Max",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "pattern",
+          "cSharpName": "Pattern",
+          "clrType": null
+        },
+        {
+          "jsonName": "mode",
+          "cSharpName": "Mode",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        }
+      ]
+    },
+    {
+      "domain": "person",
+      "entities": [
+        {
+          "id": "person.josef_lola",
+          "friendlyName": "Josef Lola",
+          "cSharpName": "JosefLola"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "editable",
+          "cSharpName": "Editable",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "id",
+          "cSharpName": "Id",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "device_trackers",
+          "cSharpName": "DeviceTrackers",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.Object]"
+        },
+        {
+          "jsonName": "user_id",
+          "cSharpName": "UserId",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        }
+      ]
+    },
+    {
+      "domain": "sensor",
+      "entities": [
+        {
+          "id": "sensor.appdaemon_4_newest_version",
+          "friendlyName": "AppDaemon Newest version",
+          "cSharpName": "Appdaemon4NewestVersion"
+        },
+        {
+          "id": "sensor.appdaemon_4_version",
+          "friendlyName": "AppDaemon Version",
+          "cSharpName": "Appdaemon4Version"
+        },
+        {
+          "id": "sensor.hdo_tarif",
+          "friendlyName": "hdo_tarif",
+          "cSharpName": "HdoTarif"
+        },
+        {
+          "id": "sensor.home_assistant_operating_system_newest_version",
+          "friendlyName": "Home Assistant Operating System Newest version",
+          "cSharpName": "HomeAssistantOperatingSystemNewestVersion"
+        },
+        {
+          "id": "sensor.home_assistant_operating_system_version",
+          "friendlyName": "Home Assistant Operating System Version",
+          "cSharpName": "HomeAssistantOperatingSystemVersion"
+        },
+        {
+          "id": "sensor.homeserver_uptime",
+          "friendlyName": "Homeserver Uptime",
+          "cSharpName": "HomeserverUptime"
+        },
+        {
+          "id": "sensor.ipv4_address_eth0",
+          "friendlyName": "IPv4 address eth0",
+          "cSharpName": "Ipv4AddressEth0"
+        },
+        {
+          "id": "sensor.ipv6_address_eth0",
+          "friendlyName": "IPv6 address eth0",
+          "cSharpName": "Ipv6AddressEth0"
+        },
+        {
+          "id": "sensor.last_boot",
+          "friendlyName": "System Monitor Last boot",
+          "cSharpName": "LastBoot"
+        },
+        {
+          "id": "sensor.load_15m",
+          "friendlyName": "System Monitor Load (15m)",
+          "cSharpName": "Load15m"
+        },
+        {
+          "id": "sensor.load_1m",
+          "friendlyName": "System Monitor Load (1m)",
+          "cSharpName": "Load1m"
+        },
+        {
+          "id": "sensor.load_5m",
+          "friendlyName": "System Monitor Load (5m)",
+          "cSharpName": "Load5m"
+        },
+        {
+          "id": "sensor.packets_in_eth0",
+          "friendlyName": "Packets in eth0",
+          "cSharpName": "PacketsInEth0"
+        },
+        {
+          "id": "sensor.packets_out_eth0",
+          "friendlyName": "Packets out eth0",
+          "cSharpName": "PacketsOutEth0"
+        },
+        {
+          "id": "sensor.rfidreader_3",
+          "friendlyName": "rfidreader_3",
+          "cSharpName": "Rfidreader3"
+        },
+        {
+          "id": "sensor.sun_next_dawn",
+          "friendlyName": "Sun Next dawn",
+          "cSharpName": "SunNextDawn"
+        },
+        {
+          "id": "sensor.sun_next_dusk",
+          "friendlyName": "Sun Next dusk",
+          "cSharpName": "SunNextDusk"
+        },
+        {
+          "id": "sensor.sun_next_midnight",
+          "friendlyName": "Sun Next midnight",
+          "cSharpName": "SunNextMidnight"
+        },
+        {
+          "id": "sensor.sun_next_noon",
+          "friendlyName": "Sun Next noon",
+          "cSharpName": "SunNextNoon"
+        },
+        {
+          "id": "sensor.sun_next_rising",
+          "friendlyName": "Sun Next rising",
+          "cSharpName": "SunNextRising"
+        },
+        {
+          "id": "sensor.sun_next_setting",
+          "friendlyName": "Sun Next setting",
+          "cSharpName": "SunNextSetting"
+        },
+        {
+          "id": "sensor.tasmota_last_restart_time",
+          "friendlyName": "Tasmota Last Restart Time",
+          "cSharpName": "TasmotaLastRestartTime"
+        },
+        {
+          "id": "sensor.tasmota_mqtt_connect_count",
+          "friendlyName": "Tasmota MQTT Connect Count",
+          "cSharpName": "TasmotaMqttConnectCount"
+        },
+        {
+          "id": "sensor.tasmota_restart_reason",
+          "friendlyName": "Tasmota Restart Reason",
+          "cSharpName": "TasmotaRestartReason"
+        },
+        {
+          "id": "sensor.tasmota_ssid",
+          "friendlyName": "Tasmota SSID",
+          "cSharpName": "TasmotaSsid"
+        },
+        {
+          "id": "sensor.tasmota_wifi_connect_count",
+          "friendlyName": "Tasmota WiFi Connect Count",
+          "cSharpName": "TasmotaWifiConnectCount"
+        },
+        {
+          "id": "sensor.terminal_ssh_newest_version",
+          "friendlyName": "Terminal \u0026 SSH Newest version",
+          "cSharpName": "TerminalSshNewestVersion"
+        },
+        {
+          "id": "sensor.terminal_ssh_version",
+          "friendlyName": "Terminal \u0026 SSH Version",
+          "cSharpName": "TerminalSshVersion"
+        },
+        {
+          "id": "sensor.weather_forecast_daily",
+          "friendlyName": "weather forecast daily",
+          "cSharpName": "WeatherForecastDaily"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "device_class",
+          "cSharpName": "DeviceClass",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "state_class",
+          "cSharpName": "StateClass",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "icon",
+          "cSharpName": "Icon",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "forecast",
+          "cSharpName": "Forecast",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.Object]"
+        },
+        {
+          "jsonName": "temperature",
+          "cSharpName": "Temperature",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "temperature_unit",
+          "cSharpName": "TemperatureUnit",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "restored",
+          "cSharpName": "Restored",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "supported_features",
+          "cSharpName": "SupportedFeatures",
+          "clrType": "System.Double"
+        }
+      ]
+    },
+    {
+      "domain": "sensor",
+      "isNumeric": true,
+      "entities": [
+        {
+          "id": "sensor.3_temperature_outside",
+          "friendlyName": "Venkovn\u00ED teplota",
+          "cSharpName": "_3TemperatureOutside"
+        },
+        {
+          "id": "sensor.3_temperature_waterheater",
+          "friendlyName": "Teplota boileru",
+          "cSharpName": "_3TemperatureWaterheater"
+        },
+        {
+          "id": "sensor.appdaemon_4_cpu_percent",
+          "friendlyName": "AppDaemon CPU percent",
+          "cSharpName": "Appdaemon4CpuPercent"
+        },
+        {
+          "id": "sensor.appdaemon_4_memory_percent",
+          "friendlyName": "AppDaemon Memory percent",
+          "cSharpName": "Appdaemon4MemoryPercent"
+        },
+        {
+          "id": "sensor.cpu_temperature",
+          "friendlyName": "CPU Temperature",
+          "cSharpName": "CpuTemperature"
+        },
+        {
+          "id": "sensor.disk_free",
+          "friendlyName": "System Monitor Disk free /",
+          "cSharpName": "DiskFree"
+        },
+        {
+          "id": "sensor.disk_use",
+          "friendlyName": "System Monitor Disk use /",
+          "cSharpName": "DiskUse"
+        },
+        {
+          "id": "sensor.disk_use_percent",
+          "friendlyName": "System Monitor Disk usage /",
+          "cSharpName": "DiskUsePercent"
+        },
+        {
+          "id": "sensor.disk_use_percent_config",
+          "friendlyName": "System Monitor Disk usage /config",
+          "cSharpName": "DiskUsePercentConfig"
+        },
+        {
+          "id": "sensor.energy",
+          "friendlyName": "energy",
+          "cSharpName": "Energy"
+        },
+        {
+          "id": "sensor.energy_cost",
+          "friendlyName": "sensor Cost",
+          "cSharpName": "EnergyCost"
+        },
+        {
+          "id": "sensor.floor_set_point",
+          "friendlyName": "floor_set_point",
+          "cSharpName": "FloorSetPoint"
+        },
+        {
+          "id": "sensor.home_assistant_v2_db_size",
+          "friendlyName": "home-assistant_v2.db Size",
+          "cSharpName": "HomeAssistantV2DbSize"
+        },
+        {
+          "id": "sensor.homeserver_cpu_1min",
+          "friendlyName": "Homeserver CPU 1min",
+          "cSharpName": "HomeserverCpu1min"
+        },
+        {
+          "id": "sensor.homeserver_free_memory",
+          "friendlyName": "Homeserver free memory",
+          "cSharpName": "HomeserverFreeMemory"
+        },
+        {
+          "id": "sensor.homeserver_used_ext_space",
+          "friendlyName": "Homeserver used ext space",
+          "cSharpName": "HomeserverUsedExtSpace"
+        },
+        {
+          "id": "sensor.memory_free",
+          "friendlyName": "System Monitor Memory free",
+          "cSharpName": "MemoryFree"
+        },
+        {
+          "id": "sensor.memory_use",
+          "friendlyName": "System Monitor Memory use",
+          "cSharpName": "MemoryUse"
+        },
+        {
+          "id": "sensor.memory_use_percent",
+          "friendlyName": "System Monitor Memory usage",
+          "cSharpName": "MemoryUsePercent"
+        },
+        {
+          "id": "sensor.network_in_eth0",
+          "friendlyName": "Network in eth0",
+          "cSharpName": "NetworkInEth0"
+        },
+        {
+          "id": "sensor.network_out_eth0",
+          "friendlyName": "Network out eth0",
+          "cSharpName": "NetworkOutEth0"
+        },
+        {
+          "id": "sensor.network_throughput_in_eth0",
+          "friendlyName": "Network throughput in eth0",
+          "cSharpName": "NetworkThroughputInEth0"
+        },
+        {
+          "id": "sensor.network_throughput_out_eth0",
+          "friendlyName": "Network throughput out eth0",
+          "cSharpName": "NetworkThroughputOutEth0"
+        },
+        {
+          "id": "sensor.processor_temperature",
+          "friendlyName": "System Monitor Processor temperature",
+          "cSharpName": "ProcessorTemperature"
+        },
+        {
+          "id": "sensor.processor_use",
+          "friendlyName": "System Monitor Processor use",
+          "cSharpName": "ProcessorUse"
+        },
+        {
+          "id": "sensor.swap_free",
+          "friendlyName": "System Monitor Swap free",
+          "cSharpName": "SwapFree"
+        },
+        {
+          "id": "sensor.swap_use",
+          "friendlyName": "System Monitor Swap use",
+          "cSharpName": "SwapUse"
+        },
+        {
+          "id": "sensor.swap_use_percent",
+          "friendlyName": "System Monitor Swap usage",
+          "cSharpName": "SwapUsePercent"
+        },
+        {
+          "id": "sensor.tasmota_analog_temperature1",
+          "friendlyName": "Tasmota ANALOG Temperature1",
+          "cSharpName": "TasmotaAnalogTemperature1"
+        },
+        {
+          "id": "sensor.temp_bathroom",
+          "friendlyName": "Teplota koupelna",
+          "cSharpName": "TempBathroom"
+        },
+        {
+          "id": "sensor.temp_boiler",
+          "friendlyName": "Teplota kotle",
+          "cSharpName": "TempBoiler"
+        },
+        {
+          "id": "sensor.temp_floor_circle",
+          "friendlyName": "Teplota podlahov\u00FD okruh",
+          "cSharpName": "TempFloorCircle"
+        },
+        {
+          "id": "sensor.temp_floor_livingrom",
+          "friendlyName": "Teplota podlahy ob\u00FDv\u00E1k",
+          "cSharpName": "TempFloorLivingrom"
+        },
+        {
+          "id": "sensor.temp_kitchen",
+          "friendlyName": "Teplota v kuchyni",
+          "cSharpName": "TempKitchen"
+        },
+        {
+          "id": "sensor.temp_radiator_circle",
+          "friendlyName": "Teplota radi\u00E1torov\u00FD okruh",
+          "cSharpName": "TempRadiatorCircle"
+        },
+        {
+          "id": "sensor.temp_solar_heater",
+          "friendlyName": "Teplota sol\u00E1rn\u00EDho panelu",
+          "cSharpName": "TempSolarHeater"
+        },
+        {
+          "id": "sensor.temp_tank_bottom",
+          "friendlyName": "Teplota n\u00E1dr\u017Ee doln\u00ED",
+          "cSharpName": "TempTankBottom"
+        },
+        {
+          "id": "sensor.temp_tank_middle",
+          "friendlyName": "Teplota n\u00E1dr\u017Ee st\u0159ed",
+          "cSharpName": "TempTankMiddle"
+        },
+        {
+          "id": "sensor.temp_tank_top",
+          "friendlyName": "Teplota n\u00E1dr\u017Ee horn\u00ED",
+          "cSharpName": "TempTankTop"
+        },
+        {
+          "id": "sensor.temp_wc",
+          "friendlyName": "Teplota WC",
+          "cSharpName": "TempWc"
+        },
+        {
+          "id": "sensor.terminal_ssh_cpu_percent",
+          "friendlyName": "Terminal \u0026 SSH CPU percent",
+          "cSharpName": "TerminalSshCpuPercent"
+        },
+        {
+          "id": "sensor.terminal_ssh_memory_percent",
+          "friendlyName": "Terminal \u0026 SSH Memory percent",
+          "cSharpName": "TerminalSshMemoryPercent"
+        },
+        {
+          "id": "sensor.test_string",
+          "friendlyName": "test_string",
+          "cSharpName": "TestString"
+        },
+        {
+          "id": "sensor.ups_current",
+          "friendlyName": "ups_current",
+          "cSharpName": "UpsCurrent"
+        },
+        {
+          "id": "sensor.ups_psu_voltage",
+          "friendlyName": "ups_psu_voltage",
+          "cSharpName": "UpsPsuVoltage"
+        },
+        {
+          "id": "sensor.waterheater_actualpower",
+          "friendlyName": "Bojler aktualni pr\u00EDkon",
+          "cSharpName": "WaterheaterActualpower"
+        },
+        {
+          "id": "sensor.waterheater_power",
+          "friendlyName": "waterheater_power",
+          "cSharpName": "WaterheaterPower"
+        },
+        {
+          "id": "sensor.waveshare_ups_hat",
+          "friendlyName": "waveshare_ups_hat",
+          "cSharpName": "WaveshareUpsHat"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "state_class",
+          "cSharpName": "StateClass",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "unit_of_measurement",
+          "cSharpName": "UnitOfMeasurement",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "device_class",
+          "cSharpName": "DeviceClass",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "capacity",
+          "cSharpName": "Capacity",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "soc",
+          "cSharpName": "Soc",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "real_soc",
+          "cSharpName": "RealSoc",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "psu_voltage",
+          "cSharpName": "PsuVoltage",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "load_voltage",
+          "cSharpName": "LoadVoltage",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "shunt_voltage",
+          "cSharpName": "ShuntVoltage",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "current",
+          "cSharpName": "Current",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "power",
+          "cSharpName": "Power",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "power_calculated",
+          "cSharpName": "PowerCalculated",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "charging",
+          "cSharpName": "Charging",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "online",
+          "cSharpName": "Online",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "remaining_battery_capacity",
+          "cSharpName": "RemainingBatteryCapacity",
+          "clrType": null
+        },
+        {
+          "jsonName": "remaining_time_min",
+          "cSharpName": "RemainingTimeMin",
+          "clrType": null
+        },
+        {
+          "jsonName": "low_battery",
+          "cSharpName": "LowBattery",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "source",
+          "cSharpName": "Source",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "last_reset",
+          "cSharpName": "LastReset",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "icon",
+          "cSharpName": "Icon",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "status",
+          "cSharpName": "Status",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "last_period",
+          "cSharpName": "LastPeriod",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "last_valid_state",
+          "cSharpName": "LastValidState",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "meter_period",
+          "cSharpName": "MeterPeriod",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "cron pattern",
+          "cSharpName": "Cronpattern",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "restored",
+          "cSharpName": "Restored",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "supported_features",
+          "cSharpName": "SupportedFeatures",
+          "clrType": "System.Double"
+        }
+      ]
+    },
+    {
+      "domain": "sun",
+      "entities": [
+        {
+          "id": "sun.sun",
+          "friendlyName": "Sun",
+          "cSharpName": "Sun"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "next_dawn",
+          "cSharpName": "NextDawn",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "next_dusk",
+          "cSharpName": "NextDusk",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "next_midnight",
+          "cSharpName": "NextMidnight",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "next_noon",
+          "cSharpName": "NextNoon",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "next_rising",
+          "cSharpName": "NextRising",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "next_setting",
+          "cSharpName": "NextSetting",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "elevation",
+          "cSharpName": "Elevation",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "azimuth",
+          "cSharpName": "Azimuth",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "rising",
+          "cSharpName": "Rising",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        }
+      ]
+    },
+    {
+      "domain": "switch",
+      "entities": [
+        {
+          "id": "switch.rfidreader_reset_3",
+          "friendlyName": "rfidreader_reset_3",
+          "cSharpName": "RfidreaderReset3"
+        },
+        {
+          "id": "switch.switch_3_0",
+          "friendlyName": "switch_3_0",
+          "cSharpName": "Switch30"
+        },
+        {
+          "id": "switch.switch_5_10_servo_open_floor_circle",
+          "friendlyName": "Servo podlahy otev\u00EDr\u00E1",
+          "cSharpName": "Switch510ServoOpenFloorCircle"
+        },
+        {
+          "id": "switch.switch_5_11_servo_close_floor_circle",
+          "friendlyName": "Servo podlahy zav\u00EDr\u00E1",
+          "cSharpName": "Switch511ServoCloseFloorCircle"
+        },
+        {
+          "id": "switch.switch_5_12_servo_open_radiator_circle",
+          "friendlyName": "Servo radi\u00E1tor\u016F otev\u00EDr\u00E1",
+          "cSharpName": "Switch512ServoOpenRadiatorCircle"
+        },
+        {
+          "id": "switch.switch_5_13_servo_close_radiator_circle",
+          "friendlyName": "Servo radi\u00E1tor\u016F zav\u00EDr\u00E1",
+          "cSharpName": "Switch513ServoCloseRadiatorCircle"
+        },
+        {
+          "id": "switch.switch_5_14_electric_heat_off",
+          "friendlyName": "Odpojen\u00ED spiraly boileru",
+          "cSharpName": "Switch514ElectricHeatOff"
+        },
+        {
+          "id": "switch.switch_5_15_servo_waterheater",
+          "friendlyName": "Servo boiler",
+          "cSharpName": "Switch515ServoWaterheater"
+        },
+        {
+          "id": "switch.switch_5_7_pump_floor_circle",
+          "friendlyName": "\u010Cerpadlo podlaha",
+          "cSharpName": "Switch57PumpFloorCircle"
+        },
+        {
+          "id": "switch.switch_5_8_pump_radiator_circle",
+          "friendlyName": "\u010Cerpadlo radi\u00E1tory",
+          "cSharpName": "Switch58PumpRadiatorCircle"
+        },
+        {
+          "id": "switch.switch_5_9_pump_waterheater",
+          "friendlyName": "\u010Cerpadlo boiler",
+          "cSharpName": "Switch59PumpWaterheater"
+        },
+        {
+          "id": "switch.switch_7_10",
+          "friendlyName": "switch_7_10",
+          "cSharpName": "Switch710"
+        },
+        {
+          "id": "switch.switch_7_11",
+          "friendlyName": "switch_7_11",
+          "cSharpName": "Switch711"
+        },
+        {
+          "id": "switch.switch_7_12",
+          "friendlyName": "switch_7_12",
+          "cSharpName": "Switch712"
+        },
+        {
+          "id": "switch.switch_7_13",
+          "friendlyName": "switch_7_13",
+          "cSharpName": "Switch713"
+        },
+        {
+          "id": "switch.switch_7_14",
+          "friendlyName": "switch_7_14",
+          "cSharpName": "Switch714"
+        },
+        {
+          "id": "switch.switch_7_15",
+          "friendlyName": "switch_7_15",
+          "cSharpName": "Switch715"
+        },
+        {
+          "id": "switch.switch_7_7_pool_pump",
+          "friendlyName": "Cerpadlo bazenu",
+          "cSharpName": "Switch77PoolPump"
+        },
+        {
+          "id": "switch.switch_7_8",
+          "friendlyName": "switch_7_8",
+          "cSharpName": "Switch78"
+        },
+        {
+          "id": "switch.switch_7_9",
+          "friendlyName": "switch_7_9",
+          "cSharpName": "Switch79"
+        },
+        {
+          "id": "switch.switch_bathroom",
+          "friendlyName": "Vetrak koupelna",
+          "cSharpName": "SwitchBathroom"
+        },
+        {
+          "id": "switch.switch_wc",
+          "friendlyName": "Vetrak wc",
+          "cSharpName": "SwitchWc"
+        },
+        {
+          "id": "switch.tasmota",
+          "friendlyName": "Tasmota",
+          "cSharpName": "Tasmota"
+        },
+        {
+          "id": "switch.tasmota_0cdc7e32084c_switch_relay_1",
+          "friendlyName": "Tasmota ",
+          "cSharpName": "Tasmota0cdc7e32084cSwitchRelay1"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        }
+      ]
+    },
+    {
+      "domain": "update",
+      "entities": [
+        {
+          "id": "update.appdaemon_update",
+          "friendlyName": "AppDaemon Update",
+          "cSharpName": "AppdaemonUpdate"
+        },
+        {
+          "id": "update.hacs_update",
+          "friendlyName": "HACS update",
+          "cSharpName": "HacsUpdate"
+        },
+        {
+          "id": "update.hassos_i2c_configurator_update",
+          "friendlyName": "HassOS I2C Configurator Update",
+          "cSharpName": "HassosI2cConfiguratorUpdate"
+        },
+        {
+          "id": "update.hassos_ssh_port_22222_configurator_update",
+          "friendlyName": "HassOS SSH port 22222 Configurator Update",
+          "cSharpName": "HassosSshPort22222ConfiguratorUpdate"
+        },
+        {
+          "id": "update.home_assistant_core_update",
+          "friendlyName": "Home Assistant Core Update",
+          "cSharpName": "HomeAssistantCoreUpdate"
+        },
+        {
+          "id": "update.home_assistant_operating_system_update",
+          "friendlyName": "Home Assistant Operating System Update",
+          "cSharpName": "HomeAssistantOperatingSystemUpdate"
+        },
+        {
+          "id": "update.home_assistant_supervisor_update",
+          "friendlyName": "Home Assistant Supervisor Update",
+          "cSharpName": "HomeAssistantSupervisorUpdate"
+        },
+        {
+          "id": "update.mosquitto_broker_update",
+          "friendlyName": "Mosquitto broker Update",
+          "cSharpName": "MosquittoBrokerUpdate"
+        },
+        {
+          "id": "update.netdaemon_v4_net_8_update",
+          "friendlyName": "NetDaemon V4 (.NET 8) Update",
+          "cSharpName": "NetdaemonV4Net8Update"
+        },
+        {
+          "id": "update.nspanel_lovelace_ui_backend_update",
+          "friendlyName": "NSPanel Lovelace UI Backend update",
+          "cSharpName": "NspanelLovelaceUiBackendUpdate"
+        },
+        {
+          "id": "update.sqlite_web_update",
+          "friendlyName": "SQLite Web Update",
+          "cSharpName": "SqliteWebUpdate"
+        },
+        {
+          "id": "update.studio_code_server_update",
+          "friendlyName": "Studio Code Server Update",
+          "cSharpName": "StudioCodeServerUpdate"
+        },
+        {
+          "id": "update.tapo_cameras_control_update",
+          "friendlyName": "Tapo: Cameras Control update",
+          "cSharpName": "TapoCamerasControlUpdate"
+        },
+        {
+          "id": "update.tasmoadmin_update",
+          "friendlyName": "TasmoAdmin Update",
+          "cSharpName": "TasmoadminUpdate"
+        },
+        {
+          "id": "update.terminal_ssh_update",
+          "friendlyName": "Terminal \u0026 SSH Update",
+          "cSharpName": "TerminalSshUpdate"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "auto_update",
+          "cSharpName": "AutoUpdate",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "installed_version",
+          "cSharpName": "InstalledVersion",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "in_progress",
+          "cSharpName": "InProgress",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "latest_version",
+          "cSharpName": "LatestVersion",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "release_summary",
+          "cSharpName": "ReleaseSummary",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "release_url",
+          "cSharpName": "ReleaseUrl",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "skipped_version",
+          "cSharpName": "SkippedVersion",
+          "clrType": null
+        },
+        {
+          "jsonName": "title",
+          "cSharpName": "Title",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "entity_picture",
+          "cSharpName": "EntityPicture",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "supported_features",
+          "cSharpName": "SupportedFeatures",
+          "clrType": "System.Double"
+        }
+      ]
+    },
+    {
+      "domain": "weather",
+      "entities": [
+        {
+          "id": "weather.home",
+          "friendlyName": "Home",
+          "cSharpName": "Home"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "temperature",
+          "cSharpName": "Temperature",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "dew_point",
+          "cSharpName": "DewPoint",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "temperature_unit",
+          "cSharpName": "TemperatureUnit",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "humidity",
+          "cSharpName": "Humidity",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "cloud_coverage",
+          "cSharpName": "CloudCoverage",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "pressure",
+          "cSharpName": "Pressure",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "pressure_unit",
+          "cSharpName": "PressureUnit",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "wind_bearing",
+          "cSharpName": "WindBearing",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "wind_speed",
+          "cSharpName": "WindSpeed",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "wind_speed_unit",
+          "cSharpName": "WindSpeedUnit",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "visibility_unit",
+          "cSharpName": "VisibilityUnit",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "precipitation_unit",
+          "cSharpName": "PrecipitationUnit",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "attribution",
+          "cSharpName": "Attribution",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "supported_features",
+          "cSharpName": "SupportedFeatures",
+          "clrType": "System.Double"
+        }
+      ]
+    },
+    {
+      "domain": "zone",
+      "entities": [
+        {
+          "id": "zone.doma",
+          "friendlyName": "doma",
+          "cSharpName": "Doma"
+        },
+        {
+          "id": "zone.home",
+          "friendlyName": "Home",
+          "cSharpName": "Home"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "latitude",
+          "cSharpName": "Latitude",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "longitude",
+          "cSharpName": "Longitude",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "radius",
+          "cSharpName": "Radius",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "passive",
+          "cSharpName": "Passive",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "persons",
+          "cSharpName": "Persons",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.Object]"
+        },
+        {
+          "jsonName": "editable",
+          "cSharpName": "Editable",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "icon",
+          "cSharpName": "Icon",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        }
+      ]
+    }
+  ]
+}
