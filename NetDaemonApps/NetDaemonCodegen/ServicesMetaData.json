@@ -1,4 +1,57 @@
 {
+  "persistent_notification": {
+    "create": {
+      "name": "Create",
+      "description": "Shows a notification on the notifications panel.",
+      "fields": {
+        "message": {
+          "required": true,
+          "example": "Please check your configuration.yaml.",
+          "selector": {
+            "text": null
+          },
+          "name": "Message",
+          "description": "Message body of the notification."
+        },
+        "title": {
+          "example": "Test notification",
+          "selector": {
+            "text": null
+          },
+          "name": "Title",
+          "description": "Optional title of the notification."
+        },
+        "notification_id": {
+          "example": 1234,
+          "selector": {
+            "text": null
+          },
+          "name": "Notification ID",
+          "description": "ID of the notification. This new notification will overwrite an existing notification with the same ID."
+        }
+      }
+    },
+    "dismiss": {
+      "name": "Dismiss",
+      "description": "Removes a notification from the notifications panel.",
+      "fields": {
+        "notification_id": {
+          "required": true,
+          "example": 1234,
+          "selector": {
+            "text": null
+          },
+          "name": "Notification ID",
+          "description": "ID of the notification to be removed."
+        }
+      }
+    },
+    "dismiss_all": {
+      "name": "Dismiss all",
+      "description": "Removes all notifications from the notifications panel.",
+      "fields": {}
+    }
+  },
   "homeassistant": {
     "save_persistent_states": {
       "name": "Save persistent states",
@@ -7,7 +60,7 @@
     },
     "turn_off": {
       "name": "Generic turn off",
-      "description": "Generic service to turn devices off under any domain.",
+      "description": "Generic action to turn devices off under any domain.",
       "fields": {},
       "target": {
         "entity": [
@@ -17,7 +70,7 @@
     },
     "turn_on": {
       "name": "Generic turn on",
-      "description": "Generic service to turn devices on under any domain.",
+      "description": "Generic action to turn devices on under any domain.",
       "fields": {},
       "target": {
         "entity": [
@@ -27,7 +80,7 @@
     },
     "toggle": {
       "name": "Generic toggle",
-      "description": "Generic service to toggle devices on/off under any domain.",
+      "description": "Generic action to toggle devices on/off under any domain.",
       "fields": {},
       "target": {
         "entity": [
@@ -53,11 +106,17 @@
     "update_entity": {
       "name": "Update entity",
       "description": "Forces one or more entities to update its data.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {}
-        ]
+      "fields": {
+        "entity_id": {
+          "required": true,
+          "selector": {
+            "entity": {
+              "multiple": true
+            }
+          },
+          "name": "Entities to update",
+          "description": "List of entities to force update."
+        }
       }
     },
     "reload_core_config": {
@@ -146,59 +205,6 @@
       "fields": {}
     }
   },
-  "persistent_notification": {
-    "create": {
-      "name": "Create",
-      "description": "Shows a notification on the **Notifications** panel.",
-      "fields": {
-        "message": {
-          "required": true,
-          "example": "Please check your configuration.yaml.",
-          "selector": {
-            "text": null
-          },
-          "name": "Message",
-          "description": "Message body of the notification."
-        },
-        "title": {
-          "example": "Test notification",
-          "selector": {
-            "text": null
-          },
-          "name": "Title",
-          "description": "Optional title of the notification."
-        },
-        "notification_id": {
-          "example": 1234,
-          "selector": {
-            "text": null
-          },
-          "name": "Notification ID",
-          "description": "ID of the notification. This new notification will overwrite an existing notification with the same ID."
-        }
-      }
-    },
-    "dismiss": {
-      "name": "Dismiss",
-      "description": "Removes a notification from the **Notifications** panel.",
-      "fields": {
-        "notification_id": {
-          "required": true,
-          "example": 1234,
-          "selector": {
-            "text": null
-          },
-          "name": "Notification ID",
-          "description": "ID of the notification to be removed."
-        }
-      }
-    },
-    "dismiss_all": {
-      "name": "Dismiss all",
-      "description": "Removes all notifications from the **Notifications** panel.",
-      "fields": {}
-    }
-  },
   "logger": {
     "set_default_level": {
       "name": "Set default level",
@@ -274,6 +280,51 @@
           "description": "Logger name under which to log the message. Defaults to \u0060system_log.external\u0060."
         }
       }
+    }
+  },
+  "person": {
+    "reload": {
+      "name": "Reload",
+      "description": "Reloads persons from the YAML-configuration.",
+      "fields": {}
+    }
+  },
+  "frontend": {
+    "set_theme": {
+      "name": "Set the default theme",
+      "description": "Sets the default theme Home Assistant uses. Can be overridden by a user.",
+      "fields": {
+        "name": {
+          "required": true,
+          "example": "default",
+          "selector": {
+            "theme": {
+              "include_default": true
+            }
+          },
+          "name": "Theme",
+          "description": "Name of a theme."
+        },
+        "mode": {
+          "default": "light",
+          "selector": {
+            "select": {
+              "options": [
+                "dark",
+                "light"
+              ],
+              "translation_key": "mode"
+            }
+          },
+          "name": "Mode",
+          "description": "Theme mode."
+        }
+      }
+    },
+    "reload_themes": {
+      "name": "Reload themes",
+      "description": "Reloads themes from the YAML-configuration.",
+      "fields": {}
     }
   },
   "recorder": {
@@ -367,51 +418,6 @@
       "fields": {}
     }
   },
-  "person": {
-    "reload": {
-      "name": "Reload",
-      "description": "Reloads persons from the YAML-configuration.",
-      "fields": {}
-    }
-  },
-  "frontend": {
-    "set_theme": {
-      "name": "Set the default theme",
-      "description": "Sets the default theme Home Assistant uses. Can be overridden by a user.",
-      "fields": {
-        "name": {
-          "required": true,
-          "example": "default",
-          "selector": {
-            "theme": {
-              "include_default": true
-            }
-          },
-          "name": "Theme",
-          "description": "Name of a theme."
-        },
-        "mode": {
-          "default": "light",
-          "selector": {
-            "select": {
-              "options": [
-                "dark",
-                "light"
-              ],
-              "translation_key": "mode"
-            }
-          },
-          "name": "Mode",
-          "description": "Theme mode."
-        }
-      }
-    },
-    "reload_themes": {
-      "name": "Reload themes",
-      "description": "Reloads themes from the YAML-configuration.",
-      "fields": {}
-    }
-  },
   "hassio": {
     "addon_start": {
       "name": "Start add-on",
@@ -460,7 +466,7 @@
     },
     "addon_update": {
       "name": "Update add-on.",
-      "description": "Updates an add-on. This service should be used with caution since add-on updates can contain breaking changes. It is highly recommended that you review release notes/change logs before updating an add-on.",
+      "description": "Updates an add-on. This action should be used with caution since add-on updates can contain breaking changes. It is highly recommended that you review release notes/change logs before updating an add-on.",
       "fields": {
         "addon": {
           "required": true,
@@ -1136,142 +1142,44 @@
       }
     }
   },
-  "group": {
-    "reload": {
-      "name": "Reload",
-      "description": "Reloads group configuration, entities, and notify services from YAML-configuration.",
-      "fields": {}
-    },
-    "set": {
-      "name": "Set",
-      "description": "Creates/Updates a user group.",
+  "logbook": {
+    "log": {
+      "name": "Log",
+      "description": "Creates a custom entry in the logbook.",
       "fields": {
-        "object_id": {
-          "required": true,
-          "example": "test_group",
-          "selector": {
-            "text": null
-          },
-          "name": "Object ID",
-          "description": "Object ID of this group. This object ID is used as part of the entity ID. Entity ID format: [domain].[object_id]."
-        },
         "name": {
-          "example": "My test group",
+          "required": true,
+          "example": "Kitchen",
           "selector": {
             "text": null
           },
           "name": "Name",
-          "description": "Name of the group."
+          "description": "Custom name for an entity, can be referenced using an \u0060entity_id\u0060."
         },
-        "icon": {
-          "example": "mdi:camera",
-          "selector": {
-            "icon": null
-          },
-          "name": "Icon",
-          "description": "Name of the icon for the group."
-        },
-        "entities": {
-          "example": "domain.entity_id1, domain.entity_id2",
-          "selector": {
-            "entity": {
-              "multiple": true
-            }
-          },
-          "name": "Entities",
-          "description": "List of all members in the group. Cannot be used in combination with \u0060Add entities\u0060 or \u0060Remove entities\u0060."
-        },
-        "add_entities": {
-          "example": "domain.entity_id1, domain.entity_id2",
-          "selector": {
-            "entity": {
-              "multiple": true
-            }
-          },
-          "name": "Add entities",
-          "description": "List of members to be added to the group. Cannot be used in combination with \u0060Entities\u0060 or \u0060Remove entities\u0060."
-        },
-        "remove_entities": {
-          "example": "domain.entity_id1, domain.entity_id2",
-          "selector": {
-            "entity": {
-              "multiple": true
-            }
-          },
-          "name": "Remove entities",
-          "description": "List of members to be removed from a group. Cannot be used in combination with \u0060Entities\u0060 or \u0060Add entities\u0060."
-        },
-        "all": {
-          "selector": {
-            "boolean": null
-          },
-          "name": "All",
-          "description": "Enable this option if the group should only be used when all entities are in state \u0060on\u0060."
-        }
-      }
-    },
-    "remove": {
-      "name": "Remove",
-      "description": "Removes a group.",
-      "fields": {
-        "object_id": {
+        "message": {
           "required": true,
-          "example": "test_group",
+          "example": "is being used",
           "selector": {
-            "object": null
+            "text": null
           },
-          "name": "Object ID",
-          "description": "Object ID of this group. This object ID is used as part of the entity ID. Entity ID format: [domain].[object_id]."
+          "name": "Message",
+          "description": "Message of the logbook entry."
+        },
+        "entity_id": {
+          "selector": {
+            "entity": null
+          },
+          "name": "Entity ID",
+          "description": "Entity to reference in the logbook entry."
+        },
+        "domain": {
+          "example": "light",
+          "selector": {
+            "text": null
+          },
+          "name": "Domain",
+          "description": "Determines which icon is used in the logbook entry. The icon illustrates the integration domain related to this logbook entry."
         }
-      }
-    }
-  },
-  "script": {
-    "reload": {
-      "name": "Reload",
-      "description": "Reloads all the available scripts.",
-      "fields": {}
-    },
-    "turn_on": {
-      "name": "Turn on",
-      "description": "Runs the sequence of actions defined in a script.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "script"
-            ]
-          }
-        ]
-      }
-    },
-    "turn_off": {
-      "name": "Turn off",
-      "description": "Stops a running script.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "script"
-            ]
-          }
-        ]
-      }
-    },
-    "toggle": {
-      "name": "Toggle",
-      "description": "Toggle a script. Starts it, if isn\u0027t running, stops it otherwise.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "script"
-            ]
-          }
-        ]
       }
     }
   },
@@ -1372,6 +1280,55 @@
       }
     }
   },
+  "script": {
+    "reload": {
+      "name": "Reload",
+      "description": "Reloads all the available scripts.",
+      "fields": {}
+    },
+    "turn_on": {
+      "name": "Turn on",
+      "description": "Runs the sequence of actions defined in a script.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "script"
+            ]
+          }
+        ]
+      }
+    },
+    "turn_off": {
+      "name": "Turn off",
+      "description": "Stops a running script.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "script"
+            ]
+          }
+        ]
+      }
+    },
+    "toggle": {
+      "name": "Toggle",
+      "description": "Toggle a script. Starts it, if isn\u0027t running, stops it otherwise.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "script"
+            ]
+          }
+        ]
+      }
+    }
+  },
   "counter": {
     "increment": {
       "name": "Increment",
@@ -1443,43 +1400,92 @@
       }
     }
   },
-  "logbook": {
-    "log": {
-      "name": "Log",
-      "description": "Creates a custom entry in the logbook.",
+  "group": {
+    "reload": {
+      "name": "Reload",
+      "description": "Reloads group configuration, entities, and notify services from YAML-configuration.",
+      "fields": {}
+    },
+    "set": {
+      "name": "Set",
+      "description": "Creates/Updates a user group.",
       "fields": {
-        "name": {
+        "object_id": {
           "required": true,
-          "example": "Kitchen",
+          "example": "test_group",
+          "selector": {
+            "text": null
+          },
+          "name": "Object ID",
+          "description": "Object ID of this group. This object ID is used as part of the entity ID. Entity ID format: [domain].[object_id]."
+        },
+        "name": {
+          "example": "My test group",
           "selector": {
             "text": null
           },
           "name": "Name",
-          "description": "Custom name for an entity, can be referenced using an \u0060entity_id\u0060."
+          "description": "Name of the group."
         },
-        "message": {
+        "icon": {
+          "example": "mdi:camera",
+          "selector": {
+            "icon": null
+          },
+          "name": "Icon",
+          "description": "Name of the icon for the group."
+        },
+        "entities": {
+          "example": "domain.entity_id1, domain.entity_id2",
+          "selector": {
+            "entity": {
+              "multiple": true
+            }
+          },
+          "name": "Entities",
+          "description": "List of all members in the group. Cannot be used in combination with \u0060Add entities\u0060 or \u0060Remove entities\u0060."
+        },
+        "add_entities": {
+          "example": "domain.entity_id1, domain.entity_id2",
+          "selector": {
+            "entity": {
+              "multiple": true
+            }
+          },
+          "name": "Add entities",
+          "description": "List of members to be added to the group. Cannot be used in combination with \u0060Entities\u0060 or \u0060Remove entities\u0060."
+        },
+        "remove_entities": {
+          "example": "domain.entity_id1, domain.entity_id2",
+          "selector": {
+            "entity": {
+              "multiple": true
+            }
+          },
+          "name": "Remove entities",
+          "description": "List of members to be removed from a group. Cannot be used in combination with \u0060Entities\u0060 or \u0060Add entities\u0060."
+        },
+        "all": {
+          "selector": {
+            "boolean": null
+          },
+          "name": "All",
+          "description": "Enable this option if the group should only be used when all entities are in state \u0060on\u0060."
+        }
+      }
+    },
+    "remove": {
+      "name": "Remove",
+      "description": "Removes a group.",
+      "fields": {
+        "object_id": {
           "required": true,
-          "example": "is being used",
+          "example": "test_group",
           "selector": {
-            "text": null
+            "object": null
           },
-          "name": "Message",
-          "description": "Message of the logbook entry."
-        },
-        "entity_id": {
-          "selector": {
-            "entity": null
-          },
-          "name": "Entity ID",
-          "description": "Entity to reference in the logbook entry."
-        },
-        "domain": {
-          "example": "light",
-          "selector": {
-            "text": null
-          },
-          "name": "Domain",
-          "description": "Determines which icon is used in the logbook entry. The icon illustrates the integration domain related to this logbook entry."
+          "name": "Object ID",
+          "description": "Object ID of this group. This object ID is used as part of the entity ID. Entity ID format: [domain].[object_id]."
         }
       }
     }
@@ -1489,6 +1495,69 @@
       "name": "Reload",
       "description": "Reloads zones from the YAML-configuration.",
       "fields": {}
+    }
+  },
+  "input_number": {
+    "reload": {
+      "name": "Reload",
+      "description": "Reloads helpers from the YAML-configuration.",
+      "fields": {}
+    },
+    "set_value": {
+      "name": "Set",
+      "description": "Sets the value.",
+      "fields": {
+        "value": {
+          "required": true,
+          "selector": {
+            "number": {
+              "min": 0,
+              "max": 9223372036854775807,
+              "step": 0.001,
+              "mode": "box"
+            }
+          },
+          "name": "Value",
+          "description": "The target value."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "input_number"
+            ]
+          }
+        ]
+      }
+    },
+    "increment": {
+      "name": "Increment",
+      "description": "Increments the value by 1 step.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "input_number"
+            ]
+          }
+        ]
+      }
+    },
+    "decrement": {
+      "name": "Decrement",
+      "description": "Decrements the current value by 1 step.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "input_number"
+            ]
+          }
+        ]
+      }
     }
   },
   "input_select": {
@@ -1603,7 +1672,9 @@
           "required": true,
           "example": "[\u0022Item A\u0022, \u0022Item B\u0022, \u0022Item C\u0022]",
           "selector": {
-            "object": null
+            "text": {
+              "multiple": true
+            }
           },
           "name": "Options",
           "description": "List of options."
@@ -1663,69 +1734,6 @@
           {
             "domain": [
               "input_boolean"
-            ]
-          }
-        ]
-      }
-    }
-  },
-  "input_number": {
-    "reload": {
-      "name": "Reload",
-      "description": "Reloads helpers from the YAML-configuration.",
-      "fields": {}
-    },
-    "set_value": {
-      "name": "Set",
-      "description": "Sets the value.",
-      "fields": {
-        "value": {
-          "required": true,
-          "selector": {
-            "number": {
-              "min": 0,
-              "max": 9223372036854775807,
-              "step": 0.001,
-              "mode": "box"
-            }
-          },
-          "name": "Value",
-          "description": "The target value."
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "input_number"
-            ]
-          }
-        ]
-      }
-    },
-    "increment": {
-      "name": "Increment",
-      "description": "Increments the value by 1 step.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "input_number"
-            ]
-          }
-        ]
-      }
-    },
-    "decrement": {
-      "name": "Decrement",
-      "description": "Decrements the current value by 1 step.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "input_number"
             ]
           }
         ]
@@ -1840,13 +1848,6 @@
           }
         ]
       }
-    }
-  },
-  "generic_thermostat": {
-    "reload": {
-      "name": "Reload",
-      "description": "Reloads generic thermostats from the YAML-configuration.",
-      "fields": {}
     }
   },
   "smart_thermostat": {
@@ -2484,6 +2485,13 @@
       }
     }
   },
+  "command_line": {
+    "reload": {
+      "name": "Reload",
+      "description": "Reloads command line configuration from the YAML-configuration.",
+      "fields": {}
+    }
+  },
   "input_datetime": {
     "reload": {
       "name": "Reload",
@@ -2541,137 +2549,11 @@
       }
     }
   },
-  "command_line": {
-    "reload": {
-      "name": "Reload",
-      "description": "Reloads command line configuration from the YAML-configuration.",
-      "fields": {}
-    }
-  },
   "schedule": {
     "reload": {
       "name": "Reload",
       "description": "Reloads schedules from the YAML-configuration.",
       "fields": {}
-    }
-  },
-  "mqtt": {
-    "publish": {
-      "name": "Publish",
-      "description": "Publishes a message to an MQTT topic.",
-      "fields": {
-        "topic": {
-          "required": true,
-          "example": "/homeassistant/hello",
-          "selector": {
-            "text": null
-          },
-          "name": "Topic",
-          "description": "Topic to publish to."
-        },
-        "payload": {
-          "example": "This is great",
-          "selector": {
-            "text": null
-          },
-          "name": "Payload",
-          "description": "The payload to publish."
-        },
-        "payload_template": {
-          "advanced": true,
-          "example": "{{ states(\u0027sensor.temperature\u0027) }}",
-          "selector": {
-            "template": null
-          },
-          "name": "Payload template",
-          "description": "Template to render as a payload value. If a payload is provided, the template is ignored."
-        },
-        "qos": {
-          "advanced": true,
-          "default": 0,
-          "selector": {
-            "select": {
-              "options": [
-                "0",
-                "1",
-                "2"
-              ]
-            }
-          },
-          "name": "QoS",
-          "description": "Quality of Service to use. 0: At most once. 1: At least once. 2: Exactly once."
-        },
-        "retain": {
-          "default": false,
-          "selector": {
-            "boolean": null
-          },
-          "name": "Retain",
-          "description": "If the message should have the retain flag set. If set, the broker stores the most recent message on a topic."
-        }
-      }
-    },
-    "dump": {
-      "name": "Export",
-      "description": "Writes all messages on a specific topic into the \u0060mqtt_dump.txt\u0060 file in your configuration folder.",
-      "fields": {
-        "topic": {
-          "example": "OpenZWave/#",
-          "selector": {
-            "text": null
-          },
-          "name": "Topic",
-          "description": "Topic to listen to."
-        },
-        "duration": {
-          "default": 5,
-          "selector": {
-            "number": {
-              "min": 1,
-              "max": 300,
-              "unit_of_measurement": "seconds"
-            }
-          },
-          "name": "Duration",
-          "description": "How long we should listen for messages in seconds."
-        }
-      }
-    },
-    "reload": {
-      "name": "Reload",
-      "description": "Reloads MQTT entities from the YAML-configuration.",
-      "fields": {}
-    }
-  },
-  "input_text": {
-    "reload": {
-      "name": "Reload",
-      "description": "Reloads helpers from the YAML-configuration.",
-      "fields": {}
-    },
-    "set_value": {
-      "name": "Set",
-      "description": "Sets the value.",
-      "fields": {
-        "value": {
-          "required": true,
-          "example": "This is an example text",
-          "selector": {
-            "text": null
-          },
-          "name": "Value",
-          "description": "The target value."
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "input_text"
-            ]
-          }
-        ]
-      }
     }
   },
   "utility_meter": {
@@ -2713,6 +2595,245 @@
             "integration": "utility_meter"
           }
         ]
+      }
+    }
+  },
+  "input_text": {
+    "reload": {
+      "name": "Reload",
+      "description": "Reloads helpers from the YAML-configuration.",
+      "fields": {}
+    },
+    "set_value": {
+      "name": "Set",
+      "description": "Sets the value.",
+      "fields": {
+        "value": {
+          "required": true,
+          "example": "This is an example text",
+          "selector": {
+            "text": null
+          },
+          "name": "Value",
+          "description": "The target value."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "input_text"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "generic_thermostat": {
+    "reload": {
+      "name": "Reload",
+      "description": "Reloads generic thermostats from the YAML-configuration.",
+      "fields": {}
+    }
+  },
+  "notify": {
+    "send_message": {
+      "name": "Send a notification message",
+      "description": "Sends a notification message.",
+      "fields": {
+        "message": {
+          "required": true,
+          "selector": {
+            "text": null
+          },
+          "name": "Message",
+          "description": "Your notification message."
+        },
+        "title": {
+          "required": false,
+          "selector": {
+            "text": null
+          },
+          "filter": {
+            "supported_features": [
+              1
+            ]
+          },
+          "name": "Title",
+          "description": "Title for your notification message."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "notify"
+            ]
+          }
+        ]
+      }
+    },
+    "persistent_notification": {
+      "name": "Send a persistent notification",
+      "description": "Sends a notification that is visible in the notifications panel.",
+      "fields": {
+        "message": {
+          "required": true,
+          "example": "The garage door has been open for 10 minutes.",
+          "selector": {
+            "text": null
+          },
+          "name": "Message",
+          "description": "Message body of the notification."
+        },
+        "title": {
+          "example": "Your Garage Door Friend",
+          "selector": {
+            "text": null
+          },
+          "name": "Title",
+          "description": "Title of the notification."
+        },
+        "data": {
+          "example": "platform specific",
+          "selector": {
+            "object": null
+          },
+          "name": "Data",
+          "description": "Some integrations provide extended functionality. For information on how to use _data_, refer to the integration documentation.."
+        }
+      }
+    },
+    "mobile_app_sm_a127f": {
+      "name": "Send a notification via mobile_app_sm_a127f",
+      "description": "Sends a notification message using the mobile_app_sm_a127f integration.",
+      "fields": {
+        "message": {
+          "required": true,
+          "example": "The garage door has been open for 10 minutes.",
+          "selector": {
+            "text": null
+          }
+        },
+        "title": {
+          "example": "Your Garage Door Friend",
+          "selector": {
+            "text": null
+          }
+        },
+        "target": {
+          "example": "platform specific",
+          "selector": {
+            "object": null
+          }
+        },
+        "data": {
+          "example": "platform specific",
+          "selector": {
+            "object": null
+          }
+        }
+      }
+    },
+    "notify": {
+      "name": "Send a notification with notify",
+      "description": "Sends a notification message using the notify service.",
+      "fields": {
+        "message": {
+          "required": true,
+          "example": "The garage door has been open for 10 minutes.",
+          "selector": {
+            "text": null
+          }
+        },
+        "title": {
+          "example": "Your Garage Door Friend",
+          "selector": {
+            "text": null
+          }
+        },
+        "target": {
+          "example": "platform specific",
+          "selector": {
+            "object": null
+          }
+        },
+        "data": {
+          "example": "platform specific",
+          "selector": {
+            "object": null
+          }
+        }
+      }
+    }
+  },
+  "device_tracker": {
+    "see": {
+      "name": "See",
+      "description": "Records a seen tracked device.",
+      "fields": {
+        "mac": {
+          "example": "FF:FF:FF:FF:FF:FF",
+          "selector": {
+            "text": null
+          },
+          "name": "MAC address",
+          "description": "MAC address of the device."
+        },
+        "dev_id": {
+          "example": "phonedave",
+          "selector": {
+            "text": null
+          },
+          "name": "Device ID",
+          "description": "ID of the device (find the ID in \u0060known_devices.yaml\u0060)."
+        },
+        "host_name": {
+          "example": "Dave",
+          "selector": {
+            "text": null
+          },
+          "name": "Hostname",
+          "description": "Hostname of the device."
+        },
+        "location_name": {
+          "example": "home",
+          "selector": {
+            "text": null
+          },
+          "name": "Location",
+          "description": "Name of the location where the device is located. The options are: \u0060home\u0060, \u0060not_home\u0060, or the name of the zone."
+        },
+        "gps": {
+          "example": "[51.509802, -0.086692]",
+          "selector": {
+            "object": null
+          },
+          "name": "GPS coordinates",
+          "description": "GPS coordinates where the device is located, specified by latitude and longitude (for example: [51.513845, -0.100539])."
+        },
+        "gps_accuracy": {
+          "selector": {
+            "number": {
+              "min": 0,
+              "mode": "box",
+              "unit_of_measurement": "m"
+            }
+          },
+          "name": "GPS accuracy",
+          "description": "Accuracy of the GPS coordinates."
+        },
+        "battery": {
+          "selector": {
+            "number": {
+              "min": 0,
+              "max": 100,
+              "unit_of_measurement": "%"
+            }
+          },
+          "name": "Battery level",
+          "description": "Battery level of the device."
+        }
       }
     }
   },
@@ -2797,132 +2918,96 @@
       "fields": {}
     }
   },
-  "notify": {
-    "send_message": {
-      "name": "Send a notification message",
-      "description": "Sends a notification message.",
+  "mqtt": {
+    "publish": {
+      "name": "Publish",
+      "description": "Publishes a message to an MQTT topic.",
       "fields": {
-        "message": {
+        "topic": {
           "required": true,
+          "example": "/homeassistant/hello",
           "selector": {
             "text": null
           },
-          "name": "Message",
-          "description": "Your notification message."
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "notify"
-            ]
-          }
-        ]
-      }
-    },
-    "persistent_notification": {
-      "name": "Send a persistent notification",
-      "description": "Sends a notification that is visible in the **Notifications** panel.",
-      "fields": {
-        "message": {
+          "name": "Topic",
+          "description": "Topic to publish to."
+        },
+        "payload": {
           "required": true,
-          "example": "The garage door has been open for 10 minutes.",
+          "example": "The temperature is {{ states(\u0027sensor.temperature\u0027) }}",
           "selector": {
-            "text": null
+            "template": null
           },
-          "name": "Message",
-          "description": "Message body of the notification."
+          "name": "Payload",
+          "description": "The payload to publish."
         },
-        "title": {
-          "example": "Your Garage Door Friend",
+        "evaluate_payload": {
+          "advanced": true,
+          "default": false,
           "selector": {
-            "text": null
+            "boolean": null
           },
-          "name": "Title",
-          "description": "Title of the notification."
+          "name": "Evaluate payload",
+          "description": "When \u0060payload\u0060 is a Python bytes literal, evaluate the bytes literal and publish the raw data."
         },
-        "data": {
-          "example": "platform specific",
-          "selector": {
-            "object": null
-          },
-          "name": "Data",
-          "description": "Some integrations provide extended functionality. For information on how to use _data_, refer to the integration documentation.."
-        }
-      }
-    },
-    "notify": {
-      "name": "Send a notification with notify",
-      "description": "Sends a notification message using the notify service.",
-      "fields": {
-        "message": {
-          "required": true,
-          "example": "The garage door has been open for 10 minutes.",
-          "selector": {
-            "text": null
-          }
-        },
-        "title": {
-          "example": "Your Garage Door Friend",
-          "selector": {
-            "text": null
-          }
-        },
-        "target": {
-          "example": "platform specific",
-          "selector": {
-            "object": null
-          }
-        },
-        "data": {
-          "example": "platform specific",
-          "selector": {
-            "object": null
-          }
-        }
-      }
-    }
-  },
-  "weather": {
-    "get_forecast": {
-      "name": "Get forecast",
-      "description": "Get weather forecast.",
-      "fields": {
-        "type": {
-          "required": true,
+        "qos": {
+          "advanced": true,
+          "default": 0,
           "selector": {
             "select": {
               "options": [
-                "daily",
-                "hourly",
-                "twice_daily"
-              ],
-              "translation_key": "forecast_type"
+                "0",
+                "1",
+                "2"
+              ]
             }
           },
-          "name": "Forecast type",
-          "description": "Forecast type: daily, hourly or twice daily."
+          "name": "QoS",
+          "description": "Quality of Service to use. 0: At most once. 1: At least once. 2: Exactly once."
+        },
+        "retain": {
+          "default": false,
+          "selector": {
+            "boolean": null
+          },
+          "name": "Retain",
+          "description": "If the message should have the retain flag set. If set, the broker stores the most recent message on a topic."
         }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "weather"
-            ],
-            "supported_features": [
-              1,
-              2,
-              4
-            ]
-          }
-        ]
-      },
-      "response": {
-        "optional": false
       }
     },
+    "dump": {
+      "name": "Export",
+      "description": "Writes all messages on a specific topic into the \u0060mqtt_dump.txt\u0060 file in your configuration folder.",
+      "fields": {
+        "topic": {
+          "example": "OpenZWave/#",
+          "selector": {
+            "text": null
+          },
+          "name": "Topic",
+          "description": "Topic to listen to."
+        },
+        "duration": {
+          "default": 5,
+          "selector": {
+            "number": {
+              "min": 1,
+              "max": 300,
+              "unit_of_measurement": "seconds"
+            }
+          },
+          "name": "Duration",
+          "description": "How long we should listen for messages in seconds."
+        }
+      }
+    },
+    "reload": {
+      "name": "Reload",
+      "description": "Reloads MQTT entities from the YAML-configuration.",
+      "fields": {}
+    }
+  },
+  "weather": {
     "get_forecasts": {
       "name": "Get forecasts",
       "description": "Get weather forecasts.",
@@ -2960,6 +3045,13 @@
       "response": {
         "optional": false
       }
+    }
+  },
+  "template": {
+    "reload": {
+      "name": "Reload",
+      "description": "Reloads template entities from the YAML-configuration.",
+      "fields": {}
     }
   },
   "cover": {
@@ -3200,6 +3292,9 @@
           {
             "domain": [
               "fan"
+            ],
+            "supported_features": [
+              32
             ]
           }
         ]
@@ -3214,6 +3309,9 @@
           {
             "domain": [
               "fan"
+            ],
+            "supported_features": [
+              16
             ]
           }
         ]
@@ -3444,285 +3542,12 @@
               ]
             }
           },
+          "example": "[255, 100, 100]",
           "selector": {
             "color_rgb": null
           },
           "name": "Color",
           "description": "The color in RGB format. A list of three integers between 0 and 255 representing the values of red, green, and blue."
-        },
-        "rgbw_color": {
-          "filter": {
-            "attribute": {
-              "supported_color_modes": [
-                "hs",
-                "xy",
-                "rgb",
-                "rgbw",
-                "rgbww"
-              ]
-            }
-          },
-          "advanced": true,
-          "example": "[255, 100, 100, 50]",
-          "selector": {
-            "object": null
-          },
-          "name": "RGBW-color",
-          "description": "The color in RGBW format. A list of four integers between 0 and 255 representing the values of red, green, blue, and white."
-        },
-        "rgbww_color": {
-          "filter": {
-            "attribute": {
-              "supported_color_modes": [
-                "hs",
-                "xy",
-                "rgb",
-                "rgbw",
-                "rgbww"
-              ]
-            }
-          },
-          "advanced": true,
-          "example": "[255, 100, 100, 50, 70]",
-          "selector": {
-            "object": null
-          },
-          "name": "RGBWW-color",
-          "description": "The color in RGBWW format. A list of five integers between 0 and 255 representing the values of red, green, blue, cold white, and warm white."
-        },
-        "color_name": {
-          "filter": {
-            "attribute": {
-              "supported_color_modes": [
-                "hs",
-                "xy",
-                "rgb",
-                "rgbw",
-                "rgbww"
-              ]
-            }
-          },
-          "advanced": true,
-          "selector": {
-            "select": {
-              "translation_key": "color_name",
-              "options": [
-                "homeassistant",
-                "aliceblue",
-                "antiquewhite",
-                "aqua",
-                "aquamarine",
-                "azure",
-                "beige",
-                "bisque",
-                "blanchedalmond",
-                "blue",
-                "blueviolet",
-                "brown",
-                "burlywood",
-                "cadetblue",
-                "chartreuse",
-                "chocolate",
-                "coral",
-                "cornflowerblue",
-                "cornsilk",
-                "crimson",
-                "cyan",
-                "darkblue",
-                "darkcyan",
-                "darkgoldenrod",
-                "darkgray",
-                "darkgreen",
-                "darkgrey",
-                "darkkhaki",
-                "darkmagenta",
-                "darkolivegreen",
-                "darkorange",
-                "darkorchid",
-                "darkred",
-                "darksalmon",
-                "darkseagreen",
-                "darkslateblue",
-                "darkslategray",
-                "darkslategrey",
-                "darkturquoise",
-                "darkviolet",
-                "deeppink",
-                "deepskyblue",
-                "dimgray",
-                "dimgrey",
-                "dodgerblue",
-                "firebrick",
-                "floralwhite",
-                "forestgreen",
-                "fuchsia",
-                "gainsboro",
-                "ghostwhite",
-                "gold",
-                "goldenrod",
-                "gray",
-                "green",
-                "greenyellow",
-                "grey",
-                "honeydew",
-                "hotpink",
-                "indianred",
-                "indigo",
-                "ivory",
-                "khaki",
-                "lavender",
-                "lavenderblush",
-                "lawngreen",
-                "lemonchiffon",
-                "lightblue",
-                "lightcoral",
-                "lightcyan",
-                "lightgoldenrodyellow",
-                "lightgray",
-                "lightgreen",
-                "lightgrey",
-                "lightpink",
-                "lightsalmon",
-                "lightseagreen",
-                "lightskyblue",
-                "lightslategray",
-                "lightslategrey",
-                "lightsteelblue",
-                "lightyellow",
-                "lime",
-                "limegreen",
-                "linen",
-                "magenta",
-                "maroon",
-                "mediumaquamarine",
-                "mediumblue",
-                "mediumorchid",
-                "mediumpurple",
-                "mediumseagreen",
-                "mediumslateblue",
-                "mediumspringgreen",
-                "mediumturquoise",
-                "mediumvioletred",
-                "midnightblue",
-                "mintcream",
-                "mistyrose",
-                "moccasin",
-                "navajowhite",
-                "navy",
-                "navyblue",
-                "oldlace",
-                "olive",
-                "olivedrab",
-                "orange",
-                "orangered",
-                "orchid",
-                "palegoldenrod",
-                "palegreen",
-                "paleturquoise",
-                "palevioletred",
-                "papayawhip",
-                "peachpuff",
-                "peru",
-                "pink",
-                "plum",
-                "powderblue",
-                "purple",
-                "red",
-                "rosybrown",
-                "royalblue",
-                "saddlebrown",
-                "salmon",
-                "sandybrown",
-                "seagreen",
-                "seashell",
-                "sienna",
-                "silver",
-                "skyblue",
-                "slateblue",
-                "slategray",
-                "slategrey",
-                "snow",
-                "springgreen",
-                "steelblue",
-                "tan",
-                "teal",
-                "thistle",
-                "tomato",
-                "turquoise",
-                "violet",
-                "wheat",
-                "white",
-                "whitesmoke",
-                "yellow",
-                "yellowgreen"
-              ]
-            }
-          },
-          "name": "Color name",
-          "description": "A human-readable color name."
-        },
-        "hs_color": {
-          "filter": {
-            "attribute": {
-              "supported_color_modes": [
-                "hs",
-                "xy",
-                "rgb",
-                "rgbw",
-                "rgbww"
-              ]
-            }
-          },
-          "advanced": true,
-          "example": "[300, 70]",
-          "selector": {
-            "object": null
-          },
-          "name": "Hue/Sat color",
-          "description": "Color in hue/sat format. A list of two integers. Hue is 0-360 and Sat is 0-100."
-        },
-        "xy_color": {
-          "filter": {
-            "attribute": {
-              "supported_color_modes": [
-                "hs",
-                "xy",
-                "rgb",
-                "rgbw",
-                "rgbww"
-              ]
-            }
-          },
-          "advanced": true,
-          "example": "[0.52, 0.43]",
-          "selector": {
-            "object": null
-          },
-          "name": "XY-color",
-          "description": "Color in XY-format. A list of two decimal numbers between 0 and 1."
-        },
-        "color_temp": {
-          "filter": {
-            "attribute": {
-              "supported_color_modes": [
-                "color_temp",
-                "hs",
-                "xy",
-                "rgb",
-                "rgbw",
-                "rgbww"
-              ]
-            }
-          },
-          "selector": {
-            "color_temp": {
-              "unit": "mired",
-              "min": 153,
-              "max": 500
-            }
-          },
-          "name": "Color temperature",
-          "description": "Color temperature in mireds."
         },
         "kelvin": {
           "filter": {
@@ -3737,7 +3562,6 @@
               ]
             }
           },
-          "advanced": true,
           "selector": {
             "color_temp": {
               "unit": "kelvin",
@@ -3747,30 +3571,6 @@
           },
           "name": "Color temperature",
           "description": "Color temperature in Kelvin."
-        },
-        "brightness": {
-          "filter": {
-            "attribute": {
-              "supported_color_modes": [
-                "brightness",
-                "color_temp",
-                "hs",
-                "xy",
-                "rgb",
-                "rgbw",
-                "rgbww"
-              ]
-            }
-          },
-          "advanced": true,
-          "selector": {
-            "number": {
-              "min": 0,
-              "max": 255
-            }
-          },
-          "name": "Brightness value",
-          "description": "Number indicating brightness, where 0 turns the light off, 1 is the minimum brightness, and 255 is the maximum brightness."
         },
         "brightness_pct": {
           "filter": {
@@ -3796,30 +3596,6 @@
           "name": "Brightness",
           "description": "Number indicating the percentage of full brightness, where 0 turns the light off, 1 is the minimum brightness, and 100 is the maximum brightness."
         },
-        "brightness_step": {
-          "filter": {
-            "attribute": {
-              "supported_color_modes": [
-                "brightness",
-                "color_temp",
-                "hs",
-                "xy",
-                "rgb",
-                "rgbw",
-                "rgbww"
-              ]
-            }
-          },
-          "advanced": true,
-          "selector": {
-            "number": {
-              "min": -225,
-              "max": 255
-            }
-          },
-          "name": "Brightness step value",
-          "description": "Change brightness by an amount."
-        },
         "brightness_step_pct": {
           "filter": {
             "attribute": {
@@ -3844,57 +3620,6 @@
           "name": "Brightness step",
           "description": "Change brightness by a percentage."
         },
-        "white": {
-          "filter": {
-            "attribute": {
-              "supported_color_modes": [
-                "white"
-              ]
-            }
-          },
-          "advanced": true,
-          "selector": {
-            "constant": {
-              "value": true,
-              "label": "Enabled"
-            }
-          },
-          "name": "White",
-          "description": "Set the light to white mode."
-        },
-        "profile": {
-          "advanced": true,
-          "example": "relax",
-          "selector": {
-            "text": null
-          },
-          "name": "Profile",
-          "description": "Name of a light profile to use."
-        },
-        "flash": {
-          "filter": {
-            "supported_features": [
-              8
-            ]
-          },
-          "advanced": true,
-          "selector": {
-            "select": {
-              "options": [
-                {
-                  "label": "Long",
-                  "value": "long"
-                },
-                {
-                  "label": "Short",
-                  "value": "short"
-                }
-              ]
-            }
-          },
-          "name": "Flash",
-          "description": "Tell light to flash, can be either value short or long."
-        },
         "effect": {
           "filter": {
             "supported_features": [
@@ -3906,6 +3631,352 @@
           },
           "name": "Effect",
           "description": "Light effect."
+        },
+        "advanced_fields": {
+          "collapsed": true,
+          "fields": {
+            "rgbw_color": {
+              "filter": {
+                "attribute": {
+                  "supported_color_modes": [
+                    "hs",
+                    "xy",
+                    "rgb",
+                    "rgbw",
+                    "rgbww"
+                  ]
+                }
+              },
+              "example": "[255, 100, 100, 50]",
+              "selector": {
+                "object": null
+              }
+            },
+            "rgbww_color": {
+              "filter": {
+                "attribute": {
+                  "supported_color_modes": [
+                    "hs",
+                    "xy",
+                    "rgb",
+                    "rgbw",
+                    "rgbww"
+                  ]
+                }
+              },
+              "example": "[255, 100, 100, 50, 70]",
+              "selector": {
+                "object": null
+              }
+            },
+            "color_name": {
+              "filter": {
+                "attribute": {
+                  "supported_color_modes": [
+                    "hs",
+                    "xy",
+                    "rgb",
+                    "rgbw",
+                    "rgbww"
+                  ]
+                }
+              },
+              "selector": {
+                "select": {
+                  "translation_key": "color_name",
+                  "options": [
+                    "homeassistant",
+                    "aliceblue",
+                    "antiquewhite",
+                    "aqua",
+                    "aquamarine",
+                    "azure",
+                    "beige",
+                    "bisque",
+                    "blanchedalmond",
+                    "blue",
+                    "blueviolet",
+                    "brown",
+                    "burlywood",
+                    "cadetblue",
+                    "chartreuse",
+                    "chocolate",
+                    "coral",
+                    "cornflowerblue",
+                    "cornsilk",
+                    "crimson",
+                    "cyan",
+                    "darkblue",
+                    "darkcyan",
+                    "darkgoldenrod",
+                    "darkgray",
+                    "darkgreen",
+                    "darkgrey",
+                    "darkkhaki",
+                    "darkmagenta",
+                    "darkolivegreen",
+                    "darkorange",
+                    "darkorchid",
+                    "darkred",
+                    "darksalmon",
+                    "darkseagreen",
+                    "darkslateblue",
+                    "darkslategray",
+                    "darkslategrey",
+                    "darkturquoise",
+                    "darkviolet",
+                    "deeppink",
+                    "deepskyblue",
+                    "dimgray",
+                    "dimgrey",
+                    "dodgerblue",
+                    "firebrick",
+                    "floralwhite",
+                    "forestgreen",
+                    "fuchsia",
+                    "gainsboro",
+                    "ghostwhite",
+                    "gold",
+                    "goldenrod",
+                    "gray",
+                    "green",
+                    "greenyellow",
+                    "grey",
+                    "honeydew",
+                    "hotpink",
+                    "indianred",
+                    "indigo",
+                    "ivory",
+                    "khaki",
+                    "lavender",
+                    "lavenderblush",
+                    "lawngreen",
+                    "lemonchiffon",
+                    "lightblue",
+                    "lightcoral",
+                    "lightcyan",
+                    "lightgoldenrodyellow",
+                    "lightgray",
+                    "lightgreen",
+                    "lightgrey",
+                    "lightpink",
+                    "lightsalmon",
+                    "lightseagreen",
+                    "lightskyblue",
+                    "lightslategray",
+                    "lightslategrey",
+                    "lightsteelblue",
+                    "lightyellow",
+                    "lime",
+                    "limegreen",
+                    "linen",
+                    "magenta",
+                    "maroon",
+                    "mediumaquamarine",
+                    "mediumblue",
+                    "mediumorchid",
+                    "mediumpurple",
+                    "mediumseagreen",
+                    "mediumslateblue",
+                    "mediumspringgreen",
+                    "mediumturquoise",
+                    "mediumvioletred",
+                    "midnightblue",
+                    "mintcream",
+                    "mistyrose",
+                    "moccasin",
+                    "navajowhite",
+                    "navy",
+                    "navyblue",
+                    "oldlace",
+                    "olive",
+                    "olivedrab",
+                    "orange",
+                    "orangered",
+                    "orchid",
+                    "palegoldenrod",
+                    "palegreen",
+                    "paleturquoise",
+                    "palevioletred",
+                    "papayawhip",
+                    "peachpuff",
+                    "peru",
+                    "pink",
+                    "plum",
+                    "powderblue",
+                    "purple",
+                    "red",
+                    "rosybrown",
+                    "royalblue",
+                    "saddlebrown",
+                    "salmon",
+                    "sandybrown",
+                    "seagreen",
+                    "seashell",
+                    "sienna",
+                    "silver",
+                    "skyblue",
+                    "slateblue",
+                    "slategray",
+                    "slategrey",
+                    "snow",
+                    "springgreen",
+                    "steelblue",
+                    "tan",
+                    "teal",
+                    "thistle",
+                    "tomato",
+                    "turquoise",
+                    "violet",
+                    "wheat",
+                    "white",
+                    "whitesmoke",
+                    "yellow",
+                    "yellowgreen"
+                  ]
+                }
+              }
+            },
+            "hs_color": {
+              "filter": {
+                "attribute": {
+                  "supported_color_modes": [
+                    "hs",
+                    "xy",
+                    "rgb",
+                    "rgbw",
+                    "rgbww"
+                  ]
+                }
+              },
+              "example": "[300, 70]",
+              "selector": {
+                "object": null
+              }
+            },
+            "xy_color": {
+              "filter": {
+                "attribute": {
+                  "supported_color_modes": [
+                    "hs",
+                    "xy",
+                    "rgb",
+                    "rgbw",
+                    "rgbww"
+                  ]
+                }
+              },
+              "example": "[0.52, 0.43]",
+              "selector": {
+                "object": null
+              }
+            },
+            "color_temp": {
+              "filter": {
+                "attribute": {
+                  "supported_color_modes": [
+                    "color_temp",
+                    "hs",
+                    "xy",
+                    "rgb",
+                    "rgbw",
+                    "rgbww"
+                  ]
+                }
+              },
+              "selector": {
+                "color_temp": {
+                  "unit": "mired",
+                  "min": 153,
+                  "max": 500
+                }
+              }
+            },
+            "brightness": {
+              "filter": {
+                "attribute": {
+                  "supported_color_modes": [
+                    "brightness",
+                    "color_temp",
+                    "hs",
+                    "xy",
+                    "rgb",
+                    "rgbw",
+                    "rgbww"
+                  ]
+                }
+              },
+              "selector": {
+                "number": {
+                  "min": 0,
+                  "max": 255
+                }
+              }
+            },
+            "brightness_step": {
+              "filter": {
+                "attribute": {
+                  "supported_color_modes": [
+                    "brightness",
+                    "color_temp",
+                    "hs",
+                    "xy",
+                    "rgb",
+                    "rgbw",
+                    "rgbww"
+                  ]
+                }
+              },
+              "selector": {
+                "number": {
+                  "min": -225,
+                  "max": 255
+                }
+              }
+            },
+            "white": {
+              "filter": {
+                "attribute": {
+                  "supported_color_modes": [
+                    "white"
+                  ]
+                }
+              },
+              "selector": {
+                "constant": {
+                  "value": true,
+                  "label": "Enabled"
+                }
+              }
+            },
+            "profile": {
+              "example": "relax",
+              "selector": {
+                "text": null
+              }
+            },
+            "flash": {
+              "filter": {
+                "supported_features": [
+                  8
+                ]
+              },
+              "selector": {
+                "select": {
+                  "options": [
+                    {
+                      "label": "Long",
+                      "value": "long"
+                    },
+                    {
+                      "label": "Short",
+                      "value": "short"
+                    }
+                  ]
+                }
+              }
+            }
+          }
         }
       },
       "target": {
@@ -3938,29 +4009,31 @@
           "name": "Transition",
           "description": "Duration it takes to get to next state."
         },
-        "flash": {
-          "filter": {
-            "supported_features": [
-              8
-            ]
-          },
-          "advanced": true,
-          "selector": {
-            "select": {
-              "options": [
-                {
-                  "label": "Long",
-                  "value": "long"
-                },
-                {
-                  "label": "Short",
-                  "value": "short"
+        "advanced_fields": {
+          "collapsed": true,
+          "fields": {
+            "flash": {
+              "filter": {
+                "supported_features": [
+                  8
+                ]
+              },
+              "selector": {
+                "select": {
+                  "options": [
+                    {
+                      "label": "Long",
+                      "value": "long"
+                    },
+                    {
+                      "label": "Short",
+                      "value": "short"
+                    }
+                  ]
                 }
-              ]
+              }
             }
-          },
-          "name": "Flash",
-          "description": "Tell light to flash, can be either value short or long."
+          }
         }
       },
       "target": {
@@ -4005,244 +4078,12 @@
               ]
             }
           },
-          "advanced": true,
           "example": "[255, 100, 100]",
           "selector": {
             "color_rgb": null
           },
           "name": "Color",
           "description": "The color in RGB format. A list of three integers between 0 and 255 representing the values of red, green, and blue."
-        },
-        "color_name": {
-          "filter": {
-            "attribute": {
-              "supported_color_modes": [
-                "hs",
-                "xy",
-                "rgb",
-                "rgbw",
-                "rgbww"
-              ]
-            }
-          },
-          "advanced": true,
-          "selector": {
-            "select": {
-              "translation_key": "color_name",
-              "options": [
-                "homeassistant",
-                "aliceblue",
-                "antiquewhite",
-                "aqua",
-                "aquamarine",
-                "azure",
-                "beige",
-                "bisque",
-                "blanchedalmond",
-                "blue",
-                "blueviolet",
-                "brown",
-                "burlywood",
-                "cadetblue",
-                "chartreuse",
-                "chocolate",
-                "coral",
-                "cornflowerblue",
-                "cornsilk",
-                "crimson",
-                "cyan",
-                "darkblue",
-                "darkcyan",
-                "darkgoldenrod",
-                "darkgray",
-                "darkgreen",
-                "darkgrey",
-                "darkkhaki",
-                "darkmagenta",
-                "darkolivegreen",
-                "darkorange",
-                "darkorchid",
-                "darkred",
-                "darksalmon",
-                "darkseagreen",
-                "darkslateblue",
-                "darkslategray",
-                "darkslategrey",
-                "darkturquoise",
-                "darkviolet",
-                "deeppink",
-                "deepskyblue",
-                "dimgray",
-                "dimgrey",
-                "dodgerblue",
-                "firebrick",
-                "floralwhite",
-                "forestgreen",
-                "fuchsia",
-                "gainsboro",
-                "ghostwhite",
-                "gold",
-                "goldenrod",
-                "gray",
-                "green",
-                "greenyellow",
-                "grey",
-                "honeydew",
-                "hotpink",
-                "indianred",
-                "indigo",
-                "ivory",
-                "khaki",
-                "lavender",
-                "lavenderblush",
-                "lawngreen",
-                "lemonchiffon",
-                "lightblue",
-                "lightcoral",
-                "lightcyan",
-                "lightgoldenrodyellow",
-                "lightgray",
-                "lightgreen",
-                "lightgrey",
-                "lightpink",
-                "lightsalmon",
-                "lightseagreen",
-                "lightskyblue",
-                "lightslategray",
-                "lightslategrey",
-                "lightsteelblue",
-                "lightyellow",
-                "lime",
-                "limegreen",
-                "linen",
-                "magenta",
-                "maroon",
-                "mediumaquamarine",
-                "mediumblue",
-                "mediumorchid",
-                "mediumpurple",
-                "mediumseagreen",
-                "mediumslateblue",
-                "mediumspringgreen",
-                "mediumturquoise",
-                "mediumvioletred",
-                "midnightblue",
-                "mintcream",
-                "mistyrose",
-                "moccasin",
-                "navajowhite",
-                "navy",
-                "navyblue",
-                "oldlace",
-                "olive",
-                "olivedrab",
-                "orange",
-                "orangered",
-                "orchid",
-                "palegoldenrod",
-                "palegreen",
-                "paleturquoise",
-                "palevioletred",
-                "papayawhip",
-                "peachpuff",
-                "peru",
-                "pink",
-                "plum",
-                "powderblue",
-                "purple",
-                "red",
-                "rosybrown",
-                "royalblue",
-                "saddlebrown",
-                "salmon",
-                "sandybrown",
-                "seagreen",
-                "seashell",
-                "sienna",
-                "silver",
-                "skyblue",
-                "slateblue",
-                "slategray",
-                "slategrey",
-                "snow",
-                "springgreen",
-                "steelblue",
-                "tan",
-                "teal",
-                "thistle",
-                "tomato",
-                "turquoise",
-                "violet",
-                "wheat",
-                "white",
-                "whitesmoke",
-                "yellow",
-                "yellowgreen"
-              ]
-            }
-          },
-          "name": "Color name",
-          "description": "A human-readable color name."
-        },
-        "hs_color": {
-          "filter": {
-            "attribute": {
-              "supported_color_modes": [
-                "hs",
-                "xy",
-                "rgb",
-                "rgbw",
-                "rgbww"
-              ]
-            }
-          },
-          "advanced": true,
-          "example": "[300, 70]",
-          "selector": {
-            "object": null
-          },
-          "name": "Hue/Sat color",
-          "description": "Color in hue/sat format. A list of two integers. Hue is 0-360 and Sat is 0-100."
-        },
-        "xy_color": {
-          "filter": {
-            "attribute": {
-              "supported_color_modes": [
-                "hs",
-                "xy",
-                "rgb",
-                "rgbw",
-                "rgbww"
-              ]
-            }
-          },
-          "advanced": true,
-          "example": "[0.52, 0.43]",
-          "selector": {
-            "object": null
-          },
-          "name": "XY-color",
-          "description": "Color in XY-format. A list of two decimal numbers between 0 and 1."
-        },
-        "color_temp": {
-          "filter": {
-            "attribute": {
-              "supported_color_modes": [
-                "color_temp",
-                "hs",
-                "xy",
-                "rgb",
-                "rgbw",
-                "rgbww"
-              ]
-            }
-          },
-          "advanced": true,
-          "selector": {
-            "color_temp": null
-          },
-          "name": "Color temperature",
-          "description": "Color temperature in mireds."
         },
         "kelvin": {
           "filter": {
@@ -4257,7 +4098,6 @@
               ]
             }
           },
-          "advanced": true,
           "selector": {
             "color_temp": {
               "unit": "kelvin",
@@ -4267,30 +4107,6 @@
           },
           "name": "Color temperature",
           "description": "Color temperature in Kelvin."
-        },
-        "brightness": {
-          "filter": {
-            "attribute": {
-              "supported_color_modes": [
-                "brightness",
-                "color_temp",
-                "hs",
-                "xy",
-                "rgb",
-                "rgbw",
-                "rgbww"
-              ]
-            }
-          },
-          "advanced": true,
-          "selector": {
-            "number": {
-              "min": 0,
-              "max": 255
-            }
-          },
-          "name": "Brightness value",
-          "description": "Number indicating brightness, where 0 turns the light off, 1 is the minimum brightness, and 255 is the maximum brightness."
         },
         "brightness_pct": {
           "filter": {
@@ -4316,57 +4132,6 @@
           "name": "Brightness",
           "description": "Number indicating the percentage of full brightness, where 0 turns the light off, 1 is the minimum brightness, and 100 is the maximum brightness."
         },
-        "white": {
-          "filter": {
-            "attribute": {
-              "supported_color_modes": [
-                "white"
-              ]
-            }
-          },
-          "advanced": true,
-          "selector": {
-            "constant": {
-              "value": true,
-              "label": "Enabled"
-            }
-          },
-          "name": "White",
-          "description": "Set the light to white mode."
-        },
-        "profile": {
-          "advanced": true,
-          "example": "relax",
-          "selector": {
-            "text": null
-          },
-          "name": "Profile",
-          "description": "Name of a light profile to use."
-        },
-        "flash": {
-          "filter": {
-            "supported_features": [
-              8
-            ]
-          },
-          "advanced": true,
-          "selector": {
-            "select": {
-              "options": [
-                {
-                  "label": "Long",
-                  "value": "long"
-                },
-                {
-                  "label": "Short",
-                  "value": "short"
-                }
-              ]
-            }
-          },
-          "name": "Flash",
-          "description": "Tell light to flash, can be either value short or long."
-        },
         "effect": {
           "filter": {
             "supported_features": [
@@ -4378,6 +4143,331 @@
           },
           "name": "Effect",
           "description": "Light effect."
+        },
+        "advanced_fields": {
+          "collapsed": true,
+          "fields": {
+            "rgbw_color": {
+              "filter": {
+                "attribute": {
+                  "supported_color_modes": [
+                    "hs",
+                    "xy",
+                    "rgb",
+                    "rgbw",
+                    "rgbww"
+                  ]
+                }
+              },
+              "example": "[255, 100, 100, 50]",
+              "selector": {
+                "object": null
+              }
+            },
+            "rgbww_color": {
+              "filter": {
+                "attribute": {
+                  "supported_color_modes": [
+                    "hs",
+                    "xy",
+                    "rgb",
+                    "rgbw",
+                    "rgbww"
+                  ]
+                }
+              },
+              "example": "[255, 100, 100, 50, 70]",
+              "selector": {
+                "object": null
+              }
+            },
+            "color_name": {
+              "filter": {
+                "attribute": {
+                  "supported_color_modes": [
+                    "hs",
+                    "xy",
+                    "rgb",
+                    "rgbw",
+                    "rgbww"
+                  ]
+                }
+              },
+              "selector": {
+                "select": {
+                  "translation_key": "color_name",
+                  "options": [
+                    "homeassistant",
+                    "aliceblue",
+                    "antiquewhite",
+                    "aqua",
+                    "aquamarine",
+                    "azure",
+                    "beige",
+                    "bisque",
+                    "blanchedalmond",
+                    "blue",
+                    "blueviolet",
+                    "brown",
+                    "burlywood",
+                    "cadetblue",
+                    "chartreuse",
+                    "chocolate",
+                    "coral",
+                    "cornflowerblue",
+                    "cornsilk",
+                    "crimson",
+                    "cyan",
+                    "darkblue",
+                    "darkcyan",
+                    "darkgoldenrod",
+                    "darkgray",
+                    "darkgreen",
+                    "darkgrey",
+                    "darkkhaki",
+                    "darkmagenta",
+                    "darkolivegreen",
+                    "darkorange",
+                    "darkorchid",
+                    "darkred",
+                    "darksalmon",
+                    "darkseagreen",
+                    "darkslateblue",
+                    "darkslategray",
+                    "darkslategrey",
+                    "darkturquoise",
+                    "darkviolet",
+                    "deeppink",
+                    "deepskyblue",
+                    "dimgray",
+                    "dimgrey",
+                    "dodgerblue",
+                    "firebrick",
+                    "floralwhite",
+                    "forestgreen",
+                    "fuchsia",
+                    "gainsboro",
+                    "ghostwhite",
+                    "gold",
+                    "goldenrod",
+                    "gray",
+                    "green",
+                    "greenyellow",
+                    "grey",
+                    "honeydew",
+                    "hotpink",
+                    "indianred",
+                    "indigo",
+                    "ivory",
+                    "khaki",
+                    "lavender",
+                    "lavenderblush",
+                    "lawngreen",
+                    "lemonchiffon",
+                    "lightblue",
+                    "lightcoral",
+                    "lightcyan",
+                    "lightgoldenrodyellow",
+                    "lightgray",
+                    "lightgreen",
+                    "lightgrey",
+                    "lightpink",
+                    "lightsalmon",
+                    "lightseagreen",
+                    "lightskyblue",
+                    "lightslategray",
+                    "lightslategrey",
+                    "lightsteelblue",
+                    "lightyellow",
+                    "lime",
+                    "limegreen",
+                    "linen",
+                    "magenta",
+                    "maroon",
+                    "mediumaquamarine",
+                    "mediumblue",
+                    "mediumorchid",
+                    "mediumpurple",
+                    "mediumseagreen",
+                    "mediumslateblue",
+                    "mediumspringgreen",
+                    "mediumturquoise",
+                    "mediumvioletred",
+                    "midnightblue",
+                    "mintcream",
+                    "mistyrose",
+                    "moccasin",
+                    "navajowhite",
+                    "navy",
+                    "navyblue",
+                    "oldlace",
+                    "olive",
+                    "olivedrab",
+                    "orange",
+                    "orangered",
+                    "orchid",
+                    "palegoldenrod",
+                    "palegreen",
+                    "paleturquoise",
+                    "palevioletred",
+                    "papayawhip",
+                    "peachpuff",
+                    "peru",
+                    "pink",
+                    "plum",
+                    "powderblue",
+                    "purple",
+                    "red",
+                    "rosybrown",
+                    "royalblue",
+                    "saddlebrown",
+                    "salmon",
+                    "sandybrown",
+                    "seagreen",
+                    "seashell",
+                    "sienna",
+                    "silver",
+                    "skyblue",
+                    "slateblue",
+                    "slategray",
+                    "slategrey",
+                    "snow",
+                    "springgreen",
+                    "steelblue",
+                    "tan",
+                    "teal",
+                    "thistle",
+                    "tomato",
+                    "turquoise",
+                    "violet",
+                    "wheat",
+                    "white",
+                    "whitesmoke",
+                    "yellow",
+                    "yellowgreen"
+                  ]
+                }
+              }
+            },
+            "hs_color": {
+              "filter": {
+                "attribute": {
+                  "supported_color_modes": [
+                    "hs",
+                    "xy",
+                    "rgb",
+                    "rgbw",
+                    "rgbww"
+                  ]
+                }
+              },
+              "example": "[300, 70]",
+              "selector": {
+                "object": null
+              }
+            },
+            "xy_color": {
+              "filter": {
+                "attribute": {
+                  "supported_color_modes": [
+                    "hs",
+                    "xy",
+                    "rgb",
+                    "rgbw",
+                    "rgbww"
+                  ]
+                }
+              },
+              "example": "[0.52, 0.43]",
+              "selector": {
+                "object": null
+              }
+            },
+            "color_temp": {
+              "filter": {
+                "attribute": {
+                  "supported_color_modes": [
+                    "color_temp",
+                    "hs",
+                    "xy",
+                    "rgb",
+                    "rgbw",
+                    "rgbww"
+                  ]
+                }
+              },
+              "selector": {
+                "color_temp": {
+                  "unit": "mired",
+                  "min": 153,
+                  "max": 500
+                }
+              }
+            },
+            "brightness": {
+              "filter": {
+                "attribute": {
+                  "supported_color_modes": [
+                    "brightness",
+                    "color_temp",
+                    "hs",
+                    "xy",
+                    "rgb",
+                    "rgbw",
+                    "rgbww"
+                  ]
+                }
+              },
+              "selector": {
+                "number": {
+                  "min": 0,
+                  "max": 255
+                }
+              }
+            },
+            "white": {
+              "filter": {
+                "attribute": {
+                  "supported_color_modes": [
+                    "white"
+                  ]
+                }
+              },
+              "selector": {
+                "constant": {
+                  "value": true,
+                  "label": "Enabled"
+                }
+              }
+            },
+            "profile": {
+              "example": "relax",
+              "selector": {
+                "text": null
+              }
+            },
+            "flash": {
+              "filter": {
+                "supported_features": [
+                  8
+                ]
+              },
+              "selector": {
+                "select": {
+                  "options": [
+                    {
+                      "label": "Long",
+                      "value": "long"
+                    },
+                    {
+                      "label": "Short",
+                      "value": "short"
+                    }
+                  ]
+                }
+              }
+            }
+          }
         }
       },
       "target": {
@@ -4389,13 +4479,6 @@
           }
         ]
       }
-    }
-  },
-  "template": {
-    "reload": {
-      "name": "Reload",
-      "description": "Reloads template entities from the YAML-configuration.",
-      "fields": {}
     }
   }
 }

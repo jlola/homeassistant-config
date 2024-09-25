@@ -5,6 +5,7 @@ appdaemon:
   longitude: 4.899431
   elevation: 2
   time_zone: Europe/Prague
+  app_dir: /homeassistant/appdaemon/apps/
   plugins:
     HASS:
       type: hass

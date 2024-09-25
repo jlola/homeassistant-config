@@ -602,6 +602,11 @@
           "jsonName": "friendly_name",
           "cSharpName": "FriendlyName",
           "clrType": "System.String"
+        },
+        {
+          "jsonName": "supported_features",
+          "cSharpName": "SupportedFeatures",
+          "clrType": "System.Double"
         }
       ]
     },
@@ -609,29 +614,9 @@
       "domain": "input_boolean",
       "entities": [
         {
-          "id": "input_boolean.netdaemon_app_model_hello_yaml_app",
-          "friendlyName": "netdaemon_app_model_hello_yaml_app",
-          "cSharpName": "NetdaemonAppModelHelloYamlApp"
-        },
-        {
-          "id": "input_boolean.netdaemon_extensions_scheduling_scheduling_app",
-          "friendlyName": "netdaemon_extensions_scheduling_scheduling_app",
-          "cSharpName": "NetdaemonExtensionsSchedulingSchedulingApp"
-        },
-        {
-          "id": "input_boolean.netdaemon_hass_model_hello_world_app",
-          "friendlyName": "netdaemon_hass_model_hello_world_app",
-          "cSharpName": "NetdaemonHassModelHelloWorldApp"
-        },
-        {
           "id": "input_boolean.netdaemon_hass_model_home_apps_controllers_pool_pump_controller",
           "friendlyName": "netdaemon_hass_model_home_apps_controllers_pool_pump_controller",
           "cSharpName": "NetdaemonHassModelHomeAppsControllersPoolPumpController"
-        },
-        {
-          "id": "input_boolean.netdaemon_hass_model_light_on_movement",
-          "friendlyName": "netdaemon_hass_model_light_on_movement",
-          "cSharpName": "NetdaemonHassModelLightOnMovement"
         },
         {
           "id": "input_boolean.switch_heat",
@@ -745,6 +730,16 @@
           "id": "input_number.setpoint_radiator_circle",
           "friendlyName": null,
           "cSharpName": "SetpointRadiatorCircle"
+        },
+        {
+          "id": "input_number.solarpanel_temperature_max",
+          "friendlyName": "Teplota zapnut\u00ED \u010Derpadla",
+          "cSharpName": "SolarpanelTemperatureMax"
+        },
+        {
+          "id": "input_number.solarpanel_temperature_min",
+          "friendlyName": "Teplota vypnut\u00ED \u010Derpadla",
+          "cSharpName": "SolarpanelTemperatureMin"
         }
       ],
       "attributes": [
@@ -1020,6 +1015,16 @@
           "cSharpName": "Rfidreader3"
         },
         {
+          "id": "sensor.sm_a127f_battery_state",
+          "friendlyName": "SM-A127F Battery state",
+          "cSharpName": "SmA127fBatteryState"
+        },
+        {
+          "id": "sensor.sm_a127f_charger_type",
+          "friendlyName": "SM-A127F Charger type",
+          "cSharpName": "SmA127fChargerType"
+        },
+        {
           "id": "sensor.sun_next_dawn",
           "friendlyName": "Sun Next dawn",
           "cSharpName": "SunNextDawn"
@@ -1086,7 +1091,7 @@
         },
         {
           "id": "sensor.weather_forecast_daily",
-          "friendlyName": "weather forecast daily",
+          "friendlyName": "Weather Forecast Daily",
           "cSharpName": "WeatherForecastDaily"
         }
       ],
@@ -1135,6 +1140,11 @@
           "jsonName": "supported_features",
           "cSharpName": "SupportedFeatures",
           "clrType": "System.Double"
+        },
+        {
+          "jsonName": "options",
+          "cSharpName": "Options",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.String]"
         }
       ]
     },
@@ -1258,6 +1268,11 @@
           "cSharpName": "NetworkThroughputOutEth0"
         },
         {
+          "id": "sensor.pooltemp_polltemperature",
+          "friendlyName": "PoolTemp PollTemperature",
+          "cSharpName": "PooltempPolltemperature"
+        },
+        {
           "id": "sensor.processor_temperature",
           "friendlyName": "System Monitor Processor temperature",
           "cSharpName": "ProcessorTemperature"
@@ -1266,6 +1281,11 @@
           "id": "sensor.processor_use",
           "friendlyName": "System Monitor Processor use",
           "cSharpName": "ProcessorUse"
+        },
+        {
+          "id": "sensor.sm_a127f_battery_level",
+          "friendlyName": "SM-A127F Battery level",
+          "cSharpName": "SmA127fBatteryLevel"
         },
         {
           "id": "sensor.swap_free",
@@ -1319,7 +1339,7 @@
         },
         {
           "id": "sensor.temp_solar_heater",
-          "friendlyName": "Teplota sol\u00E1rn\u00EDho panelu",
+          "friendlyName": "Teplota v\u00FDstupu sol\u00E1rn\u00EDho panelu",
           "cSharpName": "TempSolarHeater"
         },
         {
@@ -1523,6 +1543,11 @@
           "jsonName": "supported_features",
           "cSharpName": "SupportedFeatures",
           "clrType": "System.Double"
+        },
+        {
+          "jsonName": "next_reset",
+          "cSharpName": "NextReset",
+          "clrType": "System.String"
         }
       ]
     },
@@ -1727,6 +1752,11 @@
           "id": "update.appdaemon_update",
           "friendlyName": "AppDaemon Update",
           "cSharpName": "AppdaemonUpdate"
+        },
+        {
+          "id": "update.esphome_update",
+          "friendlyName": "ESPHome Update",
+          "cSharpName": "EsphomeUpdate"
         },
         {
           "id": "update.hacs_update",
@@ -1993,6 +2023,55 @@
           "jsonName": "icon",
           "cSharpName": "Icon",
           "clrType": "System.String"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        }
+      ]
+    },
+    {
+      "domain": "device_tracker",
+      "entities": [
+        {
+          "id": "device_tracker.sm_a127f",
+          "friendlyName": "SM-A127F",
+          "cSharpName": "SmA127f"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "source_type",
+          "cSharpName": "SourceType",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        }
+      ]
+    },
+    {
+      "domain": "tag",
+      "entities": [
+        {
+          "id": "tag.tesr",
+          "friendlyName": "tesr",
+          "cSharpName": "Tesr"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "tag_id",
+          "cSharpName": "TagId",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "last_scanned_by_device_id",
+          "cSharpName": "LastScannedByDeviceId",
+          "clrType": null
         },
         {
           "jsonName": "friendly_name",

@@ -1,7 +1,7 @@
 import hassapi as hass
 
-MODE_ELECTRIC = "Electric"
-MODE_BOILER = "Boiler"
+MODE_ELECTRIC = "Elektrina"
+MODE_BOILER = "Kotel"
 MODE_AUTO = "Auto"
 
 KEY_ELECTRIC_HEAT_DISCONNECT = "switch_electric_heat_disconnect"
@@ -14,7 +14,7 @@ KEY_MIN_TEMP_BOILER = "min_temp_boiler"
 KEY_SERVO_WATERHEATER = "servo_water_heater"
 KEY_PUMP_WATERHEATER = "pump_water_heater"
 KEY_WATER_HEATER_TEMPERATURE = "water_heater_temperature"
-KEY_CLIMATE_THERMOSTAT = "climate_thermostat"
+KEY_CLIMATE_WATERHEATER = "climate_thermostat"
 
 #waterheatercontroller:
 #   water_heater_mode: input_select.water_heater_mode
@@ -37,7 +37,7 @@ class WaterHeaterController(hass.Hass):
         self.listen_state(self.callback, self.args[KEY_MIN_TEMP_TANK], attribute = "state")
         self.listen_state(self.callback, self.args[KEY_MIN_TEMP_BOILER], attribute = "state")
         self.listen_state(self.OnServoState, self.args[KEY_SERVO_WATERHEATER], attribute = "state")
-        self.__climate = self.args[KEY_CLIMATE_THERMOSTAT]
+        self.__climate = self.args[KEY_CLIMATE_WATERHEATER]
 
     def OnServoState(self, entity, attribute, old, new, kwargs):
         self.log(f"OnServoState run:{self.IsServoRun()}")

@@ -198,6 +198,8 @@ class ModbusRegisterSensor(RestoreEntity,IDeviceEventConsumer):
                     self._value = dsval
                 else:
                     self._available = False
+                    self._value = -1000
+                    _LOGGER.info(f"Sensor: slave: {self._name} is not available. Readed value: {dsval}")
                     return
             elif (self._holdingsType==CONF_STRING):
                 self._value = self.__ReadString(self._slave, self._offset, self._count)

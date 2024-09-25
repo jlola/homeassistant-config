@@ -106,7 +106,7 @@ homeassistant:
     sensor.temp_kitchen:
       friendly_name: "Teplota v kuchyni"
     sensor.temp_solar_heater:
-      friendly_name: "Teplota solárního panelu"
+      friendly_name: "Teplota výstupu solárního panelu"
     switch.switch_7_7_pool_pump:
       friendly_name: "Cerpadlo bazenu"
     binary_sensor.binary_sensor_7_1_pool_pump_button:
@@ -115,7 +115,7 @@ homeassistant:
 template:
   - trigger:
       - platform: time_pattern
-        minutes: /1
+        hours: /1
       - platform: homeassistant
         event: start
     action:
@@ -124,15 +124,15 @@ template:
           type: daily
         target:
           entity_id: weather.home # change to your weather entity
-        response_variable: agenda
+        response_variable: daily
     sensor:
-      - name: "weather forecast daily"
+      - name: Weather Forecast Daily
         unique_id: weather_forecast_daily
         state: "{{ states('weather.home') }}" # # change to your weather entity in this line
         attributes:
-          forecast: "{{ agenda['weather.home'].forecast }}" # change to your weather entity
           temperature: "{{ state_attr('weather.home', 'temperature') }}" # change to your weather entity
           temperature_unit: "{{ state_attr('weather.home', 'temperature_unit') }}" # change to your weather entity
+          forecast: "{{ daily['weather.home'].forecast }}" # change to your weather entity
   - sensor:
       - name: "ups_current"
         state: "{{ state_attr('sensor.waveshare_ups_hat','current') }}"
@@ -164,6 +164,12 @@ template:
         state: "{{ state_attr('sensor.waveshare_ups_hat','low_battery') }}"
       - name: binary_sensor_5_1_thermostat_negative
         state: "{{is_state('binary_sensor.binary_sensor_5_1_thermostat', 'off')}}"
+
+mqtt:
+  sensor:
+    - name: "pool_temperature_mqtt"
+      state_topic: "pooltemp/sensor/polltemperature/state"
+      unit_of_measurement: "°C"
 
 utility_meter:
   energy:
@@ -301,6 +307,20 @@ input_text:
     initial: "Nefunkcni!!"
 
 input_number:
+  solarpanel_temperature_min:
+    name: "Teplota vypnutí čerpadla"
+    min: 10
+    max: 100
+    step: 0.2
+    mode: box
+    unit_of_measurement: "°C"
+  solarpanel_temperature_max:
+    name: "Teplota zapnutí čerpadla"
+    min: 10
+    max: 100
+    step: 1
+    mode: box
+    unit_of_measurement: "°C"
   servo_value_floor_circle:
     name: "Otevření serva podlahy (%)"
     initial: 0
