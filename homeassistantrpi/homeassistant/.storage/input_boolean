@@ -5,44 +5,8 @@
   "data": {
     "items": [
       {
-        "id": "netdaemon_extensions_scheduling_scheduling_app",
-        "name": "netdaemon_extensions_scheduling_scheduling_app"
-      },
-      {
-        "id": "netdaemon_hass_model_light_on_movement",
-        "name": "netdaemon_hass_model_light_on_movement"
-      },
-      {
-        "id": "netdaemon_hass_model_hello_world_app",
-        "name": "netdaemon_hass_model_hello_world_app"
-      },
-      {
-        "id": "netdaemon_app_model_hello_yaml_app",
-        "name": "netdaemon_app_model_hello_yaml_app"
-      },
-      {
         "id": "netdaemon_hass_model_home_apps_controllers_pool_pump_controller",
         "name": "netdaemon_hass_model_home_apps_controllers_pool_pump_controller"
-      },
-      {
-        "id": "dev_netdaemon_hass_model_hello_world_app",
-        "name": "dev_netdaemon_hass_model_hello_world_app"
-      },
-      {
-        "id": "dev_netdaemon_hass_model_light_on_movement",
-        "name": "dev_netdaemon_hass_model_light_on_movement"
-      },
-      {
-        "id": "dev_netdaemon_hass_model_home_apps_controllers_pool_pump_controller",
-        "name": "dev_netdaemon_hass_model_home_apps_controllers_pool_pump_controller"
-      },
-      {
-        "id": "dev_netdaemon_extensions_scheduling_scheduling_app",
-        "name": "dev_netdaemon_extensions_scheduling_scheduling_app"
-      },
-      {
-        "id": "dev_netdaemon_app_model_hello_yaml_app",
-        "name": "dev_netdaemon_app_model_hello_yaml_app"
       }
     ]
   }

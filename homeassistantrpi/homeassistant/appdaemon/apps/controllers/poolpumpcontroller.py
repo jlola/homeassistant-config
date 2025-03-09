@@ -35,7 +35,7 @@ class PoolPumpController(hass.Hass):
     def __pump_pool_on(self,run):
         self.log(f"__pump_pool_on run:{run}") 
         if (run==True):
-            self.turn_on(self.args[KEY_PUMP_SWITCdefH])
+            self.turn_on(self.args[KEY_PUMP_SWITCH])
         else:
             self.turn_off(self.args[KEY_PUMP_SWITCH])
 

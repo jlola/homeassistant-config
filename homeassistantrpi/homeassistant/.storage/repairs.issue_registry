@@ -24,6 +24,34 @@
         "domain": "homeassistant",
         "is_persistent": false,
         "issue_id": "deprecated_yaml_systemmonitor"
+      },
+      {
+        "created": "2024-06-25T10:23:49.745597+00:00",
+        "dismissed_version": null,
+        "domain": "homeassistant",
+        "is_persistent": false,
+        "issue_id": "platform_integration_no_support_sensor_modified_modbus"
+      },
+      {
+        "created": "2024-07-05T18:47:16.726580+00:00",
+        "dismissed_version": null,
+        "domain": "hacs",
+        "is_persistent": false,
+        "issue_id": "restart_required_300358676_tags/5.4.26"
+      },
+      {
+        "created": "2024-07-30T12:25:39.993943+00:00",
+        "dismissed_version": null,
+        "domain": "hacs",
+        "is_persistent": false,
+        "issue_id": "restart_required_300358676_tags/5.5.4"
+      },
+      {
+        "created": "2024-08-18T21:41:54.233905+00:00",
+        "dismissed_version": null,
+        "domain": "hacs",
+        "is_persistent": false,
+        "issue_id": "restart_required_300358676_tags/5.6.1"
       }
     ]
   }

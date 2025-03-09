@@ -205,8 +205,9 @@ class ModbusRegisterSensor(RestoreEntity,IDeviceEventConsumer):
                 self._value = self.__ReadString(self._slave, self._offset, self._count)
             elif (self._holdingsType==CONF_HEX):
                 self._value = self.__ReadHex(self._slave, self._offset, self._count)
-        except Exception as args:
-            _LOGGER.error(args.args)
+        except Exception as ex:
+            _LOGGER.error(f"Sensor {self._name} Update error: {ex}")
+            _LOGGER.exception(ex)
             self._available = False
             return        
         self._available = True

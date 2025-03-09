@@ -151,7 +151,7 @@ template:
         unit_of_measurement: W
       - name: hdo_tarif
         state: >
-          {% if is_state("binary_sensor.binary_sensor_5_2_HDO", "on") %}
+          {% if is_state("binary_sensor.binary_sensor_5_2_HDO", "off") %}
             Nízký tarif
           {% else %}
             Vysoký tarif
@@ -246,7 +246,6 @@ climate:
     ki: 0.02
     kd: 1
     pwm: 0
-    difference: 100
     noiseband: 0.01
     sampling_period: 1
   - platform: smart_thermostat
@@ -265,7 +264,6 @@ climate:
     ki: 0.02
     kd: 1
     pwm: 0
-    difference: 100
     noiseband: 0.01
     sampling_period: 1
 
@@ -587,6 +585,15 @@ binary_sensor 5:
 
 sensor  5:
   - holdings:
+      - OwId: 28ff63ad64150155
+        device_class: temperature
+        holdings_type: ds18b20
+        hub: default
+        name: testtemperature_circle
+        slave: 5
+        unit_of_measurement: "°C"
+    platform: modified_modbus
+  - holdings:
       - OwId: 28ff76d0641501ce
         device_class: temperature
         holdings_type: ds18b20
@@ -596,7 +603,7 @@ sensor  5:
         unit_of_measurement: "°C"
     platform: modified_modbus
   - holdings:
-      - OwId: 28ff63ad64150155
+      - OwId: 28c4cff301000042
         device_class: temperature
         holdings_type: ds18b20
         hub: default

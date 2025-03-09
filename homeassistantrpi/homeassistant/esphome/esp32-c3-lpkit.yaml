@@ -1,0 +1,77 @@
+esphome:
+  name: esp32c3-lpkit
+  friendly_name: esp32c3-lpkit
+  platformio_options:
+    board_build.flash_mode: dio
+    board_build.f_flash: 40000000L
+    board_build.flash_size: 4MB
+    board_build.mcu: esp32c3
+
+esp32:
+  board: esp32-c3-devkitm-1
+  variant: ESP32C3
+  framework:
+    type: arduino
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+#api:
+#  encryption:
+#    key: "Wc6m+PCchPxJKjRg8KmjYY8XHWzIF3Eb3/3ak5xQgNA="
+
+ota:
+  - platform: esphome    
+
+mqtt:
+  broker: 192.168.89.11
+  username: jlola 
+  password: 13111
+
+deep_sleep:
+    run_duration: 20s
+    sleep_duration: 2min
+    id: deep_sleep_1    
+
+one_wire:
+  - platform: gpio
+    pin: GPIO08
+
+sensor:
+  - platform: dallas_temp
+    name: PollTemperature
+    address: 0x38011564c1a2ff28 
+    resolution: 12
+    update_interval: 20s
+    id: pool_temp
+    state_topic: "pooltemp/sensor/polltemperature/state"        
+
+# Allow provisioning Wi-Fi via serial
+improv_serial:
+
+wifi:
+  networks:
+  - ssid: LOLOVI
+    password: djampl1311
+  # Set up a wifi access point  
+  #power_save_mode: LIGHT
+  fast_connect: true
+  manual_ip:
+    static_ip: 192.168.89.37
+    gateway: 192.168.89.1
+    subnet: 255.255.255.0
+    dns1: 192.168.89.1
+
+# In combination with the `ap` this allows the user
+# to provision wifi credentials to the device via WiFi AP.
+#captive_portal:
+
+#dashboard_import:
+#  package_import_url: github://esphome/example-configs/esphome-web/esp8266.yaml@main
+#  import_full_config: true
+
+# To have a "next url" for improv serial
+#web_server:
+
+    

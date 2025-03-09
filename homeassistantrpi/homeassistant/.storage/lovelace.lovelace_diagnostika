@@ -149,6 +149,9 @@
                 },
                 {
                   "entity": "sensor.temp_floor_livingrom"
+                },
+                {
+                  "entity": "sensor.testtemperature_circle"
                 }
               ],
               "title": "board 5 - kotelna"

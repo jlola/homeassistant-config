@@ -68,8 +68,8 @@ namespace HassModel.HomeApps.Controllers
 
 
         public void OnPoolPumpModeSelectChanged(StateChange state)
-        {
-            switch(state.New?.State)
+        {            
+            switch(state?.New?.State)
             {
                 case SOLARPUMP_MODE_SWIMMING:
                 case SOLARPUMP_MODE_OFF:
@@ -96,7 +96,7 @@ namespace HassModel.HomeApps.Controllers
         }
 
         public void OnSensorTemperatureSolarPanelChange(StateChange state)
-        {
+        {            
             if (SensorTemperatureSolarPanel.State==null)
             {
                 this.logger.LogInformation("OnSensorTemperatureSolarPanelChange State is null return");
@@ -146,7 +146,7 @@ namespace HassModel.HomeApps.Controllers
             }
             
             if (!firstRun)
-            {
+            {                
                 if (state.New != null && state.Old != null && state.New.State != state.Old.State && !EntityStateExt.IsUnavailable(state.New) && !EntityStateExt.IsUnavailable(state.Old))
                 {
                     if (state.New.IsOff())

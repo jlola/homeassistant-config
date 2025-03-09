@@ -12,6 +12,15 @@
         "passive": false,
         "radius": 100.0,
         "id": "doma"
+      },
+      {
+        "id": "doubravnik",
+        "latitude": 49.423011322813885,
+        "longitude": 16.35376475748672,
+        "name": "Doubravnik",
+        "icon": "mdi:map-marker",
+        "passive": false,
+        "radius": 130.0
       }
     ]
   }

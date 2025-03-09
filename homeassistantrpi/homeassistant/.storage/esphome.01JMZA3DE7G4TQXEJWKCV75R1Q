@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "esphome.01JMZA3DE7G4TQXEJWKCV75R1Q",
+  "data": {
+    "device_info": {
+      "uses_password": false,
+      "name": "esp32c3-lpkit",
+      "friendly_name": "esp32c3-lpkit",
+      "mac_address": "80:65:99:91:C7:0C",
+      "compilation_time": "Feb 27 2025, 21:35:37",
+      "model": "esp32-c3-devkitm-1",
+      "manufacturer": "Espressif",
+      "has_deep_sleep": true,
+      "esphome_version": "2025.2.1",
+      "project_name": "",
+      "project_version": "",
+      "webserver_port": 0,
+      "legacy_voice_assistant_version": 0,
+      "voice_assistant_feature_flags": 0,
+      "legacy_bluetooth_proxy_version": 0,
+      "bluetooth_proxy_feature_flags": 0,
+      "suggested_area": ""
+    },
+    "services": [],
+    "api_version": {
+      "major": 1,
+      "minor": 10
+    },
+    "update": [],
+    "sensor": [
+      {
+        "object_id": "polltemperature",
+        "key": 3179083220,
+        "name": "PollTemperature",
+        "unique_id": "esp32c3-lpkitsensorpolltemperature",
+        "disabled_by_default": false,
+        "icon": "",
+        "entity_category": 0,
+        "device_class": "temperature",
+        "unit_of_measurement": "°C",
+        "accuracy_decimals": 1,
+        "force_update": false,
+        "state_class": 1,
+        "last_reset_type": 0
+      }
+    ],
+    "text_sensor": []
+  }
+}

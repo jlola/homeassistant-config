@@ -3,9 +3,10 @@
 import voluptuous as vol
 
 from homeassistant.components.binary_sensor import BinarySensorEntity
+from homeassistant.components.sensor import SensorDeviceClass
 import homeassistant.helpers.config_validation as cv
 from .ina219 import INA219
-from homeassistant.const import DEVICE_CLASS_POWER
+#from homeassistant.const import DEVICE_CLASS_POWER
 
 DEFAULT_NAME = "waveshare_ups_hat_online"
 from .const import MIN_ONLINE_CURRENT
@@ -42,7 +43,7 @@ class OnlineStatus(BinarySensorEntity):
     @property
     def device_class(self):
         """Return the device class of the binary sensor."""
-        return DEVICE_CLASS_POWER
+        return SensorDeviceClass.POWER
 
     @property
     def is_on(self):

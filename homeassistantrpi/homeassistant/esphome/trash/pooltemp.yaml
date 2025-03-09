@@ -1,0 +1,75 @@
+substitutions:
+  name: "pooltemp"
+  friendly_name: PoolTemp
+
+esphome:
+  name: ${name}
+  friendly_name: ${friendly_name}
+  min_version: 2024.6.0
+  name_add_mac_suffix: false  
+  project:
+    name: esphome.web
+    version: dev
+
+esp8266:
+  board: d1_mini
+  #board: esp01_1m
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+#api:
+
+mqtt:
+  broker: 192.168.89.11
+  username: jlola 
+  password: 13111
+
+#deep_sleep:
+#    run_duration: 2min
+#    sleep_duration: 10s
+#    id: deep_sleep_1    
+
+one_wire:
+  - platform: gpio
+    pin: GPIO04
+
+sensor:
+  - platform: dallas_temp
+    name: PollTemperature
+    address: 0x38011564c1a2ff28 
+    resolution: 12
+    update_interval: 10s
+    id: pool_temp    
+    
+# Allow Over-The-Air updates
+ota:
+- platform: esphome
+
+# Allow provisioning Wi-Fi via serial
+improv_serial:
+
+wifi:
+  networks:
+  - ssid: LOLOVI
+    password: djampl1311
+  # Set up a wifi access point  
+  power_save_mode: LIGHT
+  fast_connect: true
+  manual_ip:
+    static_ip: 192.168.89.53
+    gateway: 192.168.89.1
+    subnet: 255.255.255.0
+    dns1: 192.168.89.1
+
+# In combination with the `ap` this allows the user
+# to provision wifi credentials to the device via WiFi AP.
+captive_portal:
+
+#dashboard_import:
+#  package_import_url: github://esphome/example-configs/esphome-web/esp8266.yaml@main
+#  import_full_config: true
+
+# To have a "next url" for improv serial
+#web_server:

@@ -72,8 +72,17 @@ class DS18B20(object):
         self.value = self.GetValue(data[self._offset+OFFSET_VALUE])
         
     def GetValue(self,val):
-        val = np.int16(val)
+        try:        
+            val = self.toSigned16(val)
+        except Exception as ex:
+            hexval = "{0:04x} ".format(val)
+            _LOGGER.exception(f"Error GetValue Convert: {hexval} to integer")
+            raise
         return val/100.0
+
+    def toSigned16(self,n):
+        n = n & 0xffff
+        return (n ^ 0x8000) - 0x8000
 
     @property
     def OneWireHeaderOffset(self):

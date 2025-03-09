@@ -23,12 +23,6 @@
                   "entity": "climate.climate_radiator_circle"
                 },
                 {
-                  "entity": "input_number.servo_time_floor_circle"
-                },
-                {
-                  "entity": "input_number.servo_time_radiator_circle"
-                },
-                {
                   "entity": "input_number.servo_value_floor_circle"
                 },
                 {
@@ -36,6 +30,9 @@
                 },
                 {
                   "entity": "sensor.temp_boiler"
+                },
+                {
+                  "entity": "input_boolean.switch_heat"
                 }
               ],
               "title": "Regulace",
@@ -53,67 +50,6 @@
             {
               "type": "vertical-stack",
               "cards": [
-                {
-                  "type": "horizontal-stack",
-                  "cards": [
-                    {
-                      "type": "entities",
-                      "entities": [
-                        {
-                          "entity": "input_select.pump_mode_floor_circle"
-                        },
-                        {
-                          "entity": "binary_sensor.binary_sensor_5_1_thermostat_negative"
-                        },
-                        {
-                          "entity": "switch.switch_5_7_pump_floor_circle"
-                        },
-                        {
-                          "entity": "input_number.min_temp_boiler_pump_floor_circle"
-                        },
-                        {
-                          "entity": "sensor.temp_boiler"
-                        },
-                        {
-                          "entity": "input_number.min_temp_tank_pump_floor_circle"
-                        },
-                        {
-                          "entity": "sensor.temp_tank_top"
-                        }
-                      ],
-                      "title": "Cerpadlo podlahove topeni",
-                      "state_color": true
-                    },
-                    {
-                      "type": "entities",
-                      "entities": [
-                        {
-                          "entity": "input_select.pump_mode_radiator_circle"
-                        },
-                        {
-                          "entity": "binary_sensor.binary_sensor_5_1_thermostat_negative"
-                        },
-                        {
-                          "entity": "switch.switch_5_8_pump_radiator_circle"
-                        },
-                        {
-                          "entity": "input_number.min_temp_boiler_pump_radiator_circle"
-                        },
-                        {
-                          "entity": "sensor.temp_boiler"
-                        },
-                        {
-                          "entity": "input_number.min_temp_tank_pump_radiator_circle"
-                        },
-                        {
-                          "entity": "sensor.temp_tank_top"
-                        }
-                      ],
-                      "title": "Cerpadlo radiatory",
-                      "state_color": true
-                    }
-                  ]
-                },
                 {
                   "type": "horizontal-stack",
                   "cards": [
@@ -175,6 +111,61 @@
                       "title": "Servo Radiatory",
                       "state_color": true,
                       "show_header_toggle": false
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "entities",
+                      "entities": [
+                        {
+                          "entity": "input_select.pump_mode_floor_circle"
+                        },
+                        {
+                          "entity": "switch.switch_5_7_pump_floor_circle"
+                        },
+                        {
+                          "entity": "input_number.min_temp_boiler_pump_floor_circle"
+                        },
+                        {
+                          "entity": "sensor.temp_boiler"
+                        },
+                        {
+                          "entity": "input_number.min_temp_tank_pump_floor_circle"
+                        },
+                        {
+                          "entity": "sensor.temp_tank_top"
+                        }
+                      ],
+                      "title": "Cerpadlo podlahove topeni",
+                      "state_color": true
+                    },
+                    {
+                      "type": "entities",
+                      "entities": [
+                        {
+                          "entity": "input_select.pump_mode_radiator_circle"
+                        },
+                        {
+                          "entity": "switch.switch_5_8_pump_radiator_circle"
+                        },
+                        {
+                          "entity": "input_number.min_temp_boiler_pump_radiator_circle"
+                        },
+                        {
+                          "entity": "sensor.temp_boiler"
+                        },
+                        {
+                          "entity": "input_number.min_temp_tank_pump_radiator_circle"
+                        },
+                        {
+                          "entity": "sensor.temp_tank_top"
+                        }
+                      ],
+                      "title": "Cerpadlo radiatory",
+                      "state_color": true
                     }
                   ]
                 }

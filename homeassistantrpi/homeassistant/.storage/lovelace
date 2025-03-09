@@ -38,12 +38,15 @@
                 },
                 {
                   "entity": "sensor.temp_floor_livingrom"
+                },
+                {
+                  "entity": "sensor.testtemperature_circle"
                 }
               ]
             },
             {
-              "hours_to_show": 24,
               "graph": "line",
+              "hours_to_show": 48,
               "type": "sensor",
               "entity": "sensor.3_temperature_outside",
               "detail": 1
@@ -89,7 +92,8 @@
               "forecast_type": "daily"
             }
           ],
-          "icon": "mdi:home-map-marker"
+          "icon": "mdi:home-map-marker",
+          "badges": []
         },
         {
           "theme": "Backend-selected",
@@ -185,7 +189,18 @@
                   "entity": "sensor.temp_solar_heater"
                 },
                 {
+                  "entity": "sensor.pool_temperature_mqtt"
+                },
+                {
                   "entity": "input_select.solar_pump_mode"
+                },
+                {
+                  "entity": "input_number.solarpanel_temperature_max",
+                  "icon": "mdi:thermometer-plus"
+                },
+                {
+                  "entity": "input_number.solarpanel_temperature_min",
+                  "icon": "mdi:thermometer-minus"
                 }
               ]
             },
@@ -197,10 +212,22 @@
                 },
                 {
                   "entity": "switch.switch_7_7_pool_pump"
+                },
+                {
+                  "entity": "sensor.pool_temperature_mqtt"
                 }
               ],
               "title": "Ohrev bazenu",
               "hours_to_show": 6
+            },
+            {
+              "type": "history-graph",
+              "entities": [
+                {
+                  "entity": "sensor.pool_temperature_mqtt"
+                }
+              ],
+              "hours_to_show": 3
             }
           ]
         }

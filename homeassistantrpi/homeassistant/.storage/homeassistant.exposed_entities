@@ -529,6 +529,27 @@
             "should_expose": false
           }
         }
+      },
+      "sensor.temp_solar_input": {
+        "assistants": {
+          "conversation": {
+            "should_expose": true
+          }
+        }
+      },
+      "sensor.pool_temperature_mqtt": {
+        "assistants": {
+          "conversation": {
+            "should_expose": false
+          }
+        }
+      },
+      "sensor.testtemperature_circle": {
+        "assistants": {
+          "conversation": {
+            "should_expose": true
+          }
+        }
       }
     }
   }
